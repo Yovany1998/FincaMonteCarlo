@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D093A7EF-AC85-48F8-8C70-1B1747086975}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Monte_Carlos</RootNamespace>
+    <AssemblyName>Monte_Carlos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySqlConnector, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.1.3.10\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Carta\Bebidas.cs" />
+    <Compile Include="Carta\Comida.cs" />
+    <Compile Include="Carta\Ingreso_Comida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carta\Ingreso_Comida.Designer.cs">
+      <DependentUpon>Ingreso_Comida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carta\Introducir_bebidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carta\Introducir_bebidas.Designer.cs">
+      <DependentUpon>Introducir_bebidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carta\Menu_Carta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carta\Menu_Carta.Designer.cs">
+      <DependentUpon>Menu_Carta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\Cliente.cs" />
+    <Compile Include="Cliente\Insertar_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\Insertar_Cliente.Designer.cs">
+      <DependentUpon>Insertar_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\Modificar_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\Modificar_Cliente.Designer.cs">
+      <DependentUpon>Modificar_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\Ver_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\Ver_Cliente.Designer.cs">
+      <DependentUpon>Ver_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Empleado\Eliminar_Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado\Eliminar_Empleado.Designer.cs">
+      <DependentUpon>Eliminar_Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado\Empleado.cs" />
+    <Compile Include="Empleado\Insertar_Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado\Insertar_Empleado.Designer.cs">
+      <DependentUpon>Insertar_Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado\Menu_Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado\Menu_Empleado.Designer.cs">
+      <DependentUpon>Menu_Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado\Modificar_Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado\Modificar_Empleado.Designer.cs">
+      <DependentUpon>Modificar_Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado\Ver_Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado\Ver_Empleado.Designer.cs">
+      <DependentUpon>Ver_Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniciarSecion.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\Menu_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\Menu_Cliente.Designer.cs">
+      <DependentUpon>Menu_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservaciones\Eliminar_Reservaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservaciones\Eliminar_Reservaciones.Designer.cs">
+      <DependentUpon>Eliminar_Reservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservaciones\Insertar_Reservaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservaciones\Insertar_Reservaciones.Designer.cs">
+      <DependentUpon>Insertar_Reservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservaciones\Menu_Reservaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservaciones\Menu_Reservaciones.Designer.cs">
+      <DependentUpon>Menu_Reservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservaciones\Modificar_Reservaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservaciones\Modificar_Reservaciones.Designer.cs">
+      <DependentUpon>Modificar_Reservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservaciones\Reservacion.cs" />
+    <Compile Include="Reservaciones\Ver_Reservaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservaciones\Ver_Reservaciones.Designer.cs">
+      <DependentUpon>Ver_Reservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicio\Eliminar_Pedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicio\Eliminar_Pedido.Designer.cs">
+      <DependentUpon>Eliminar_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicio\Insertar_Pedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicio\Insertar_Pedido.Designer.cs">
+      <DependentUpon>Insertar_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicio\Menu_Servico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicio\Menu_Servico.Designer.cs">
+      <DependentUpon>Menu_Servico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicio\Modificar_Pedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicio\Modificar_Pedido.Designer.cs">
+      <DependentUpon>Modificar_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicio\Servicio.cs" />
+    <Compile Include="Servicio\Ver_Pedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servicio\Ver_Pedido.Designer.cs">
+      <DependentUpon>Ver_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validar.cs" />
+    <Compile Include="Venta\Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\Generar_Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\Generar_Venta.Designer.cs">
+      <DependentUpon>Generar_Venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\Menu_Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\Menu_Venta.Designer.cs">
+      <DependentUpon>Menu_Venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta\Pago.Designer.cs">
+      <DependentUpon>Pago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\Validacion.cs" />
+    <Compile Include="Venta\Ventas.cs" />
+    <EmbeddedResource Include="Carta\Ingreso_Comida.resx">
+      <DependentUpon>Ingreso_Comida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carta\Introducir_bebidas.resx">
+      <DependentUpon>Introducir_bebidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carta\Menu_Carta.resx">
+      <DependentUpon>Menu_Carta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\Insertar_Cliente.resx">
+      <DependentUpon>Insertar_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\Menu_Cliente.resx">
+      <DependentUpon>Menu_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\Modificar_Cliente.resx">
+      <DependentUpon>Modificar_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\Ver_Cliente.resx">
+      <DependentUpon>Ver_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado\Eliminar_Empleado.resx">
+      <DependentUpon>Eliminar_Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado\Insertar_Empleado.resx">
+      <DependentUpon>Insertar_Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado\Menu_Empleado.resx">
+      <DependentUpon>Menu_Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado\Modificar_Empleado.resx">
+      <DependentUpon>Modificar_Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado\Ver_Empleado.resx">
+      <DependentUpon>Ver_Empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reservaciones\Eliminar_Reservaciones.resx">
+      <DependentUpon>Eliminar_Reservaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservaciones\Insertar_Reservaciones.resx">
+      <DependentUpon>Insertar_Reservaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservaciones\Menu_Reservaciones.resx">
+      <DependentUpon>Menu_Reservaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservaciones\Modificar_Reservaciones.resx">
+      <DependentUpon>Modificar_Reservaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservaciones\Ver_Reservaciones.resx">
+      <DependentUpon>Ver_Reservaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servicio\Eliminar_Pedido.resx">
+      <DependentUpon>Eliminar_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servicio\Insertar_Pedido.resx">
+      <DependentUpon>Insertar_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servicio\Menu_Servico.resx">
+      <DependentUpon>Menu_Servico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servicio\Modificar_Pedido.resx">
+      <DependentUpon>Modificar_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servicio\Ver_Pedido.resx">
+      <DependentUpon>Ver_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\Generar_Venta.resx">
+      <DependentUpon>Generar_Venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\Menu_Venta.resx">
+      <DependentUpon>Menu_Venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\Pago.resx">
+      <DependentUpon>Pago.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conjunto-ilustracion-logotipo-restaurante-vintage_23-2148470301.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-computer-keyboard-backspace-computer-icons-delete-5b1f7b735c5340.3740717315287898753782.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\64497.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
