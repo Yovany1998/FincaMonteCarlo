@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data.EntityFramework, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Web, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySqlConnector, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
@@ -58,19 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Carta\Bebidas.cs" />
-    <Compile Include="Carta\Comida.cs" />
-    <Compile Include="Carta\Ingreso_Comida.cs">
+    <Compile Include="Carta\Ingreso_Comida-Bebida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Carta\Ingreso_Comida.Designer.cs">
-      <DependentUpon>Ingreso_Comida.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Carta\Introducir_bebidas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Carta\Introducir_bebidas.Designer.cs">
-      <DependentUpon>Introducir_bebidas.cs</DependentUpon>
+    <Compile Include="Carta\Ingreso_Comida-Bebida.Designer.cs">
+      <DependentUpon>Ingreso_Comida-Bebida.cs</DependentUpon>
     </Compile>
     <Compile Include="Carta\Menu_Carta.cs">
       <SubType>Form</SubType>
@@ -78,7 +67,6 @@
     <Compile Include="Carta\Menu_Carta.Designer.cs">
       <DependentUpon>Menu_Carta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente\Cliente.cs" />
     <Compile Include="Cliente\Insertar_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,14 +85,12 @@
     <Compile Include="Cliente\Ver_Cliente.Designer.cs">
       <DependentUpon>Ver_Cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Conexion.cs" />
     <Compile Include="Empleado\Eliminar_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empleado\Eliminar_Empleado.Designer.cs">
       <DependentUpon>Eliminar_Empleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empleado\Empleado.cs" />
     <Compile Include="Empleado\Insertar_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,7 +115,6 @@
     <Compile Include="Empleado\Ver_Empleado.Designer.cs">
       <DependentUpon>Ver_Empleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="IniciarSecion.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,7 +159,6 @@
     <Compile Include="Reservaciones\Modificar_Reservaciones.Designer.cs">
       <DependentUpon>Modificar_Reservaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reservaciones\Reservacion.cs" />
     <Compile Include="Reservaciones\Ver_Reservaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,14 +189,12 @@
     <Compile Include="Servicio\Modificar_Pedido.Designer.cs">
       <DependentUpon>Modificar_Pedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Servicio\Servicio.cs" />
     <Compile Include="Servicio\Ver_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Servicio\Ver_Pedido.Designer.cs">
       <DependentUpon>Ver_Pedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Validar.cs" />
     <Compile Include="Venta\Factura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,19 +213,9 @@
     <Compile Include="Venta\Menu_Venta.Designer.cs">
       <DependentUpon>Menu_Venta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Venta\Pago.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venta\Pago.Designer.cs">
-      <DependentUpon>Pago.cs</DependentUpon>
-    </Compile>
     <Compile Include="Venta\Validacion.cs" />
-    <Compile Include="Venta\Ventas.cs" />
-    <EmbeddedResource Include="Carta\Ingreso_Comida.resx">
-      <DependentUpon>Ingreso_Comida.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Carta\Introducir_bebidas.resx">
-      <DependentUpon>Introducir_bebidas.cs</DependentUpon>
+    <EmbeddedResource Include="Carta\Ingreso_Comida-Bebida.resx">
+      <DependentUpon>Ingreso_Comida-Bebida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Carta\Menu_Carta.resx">
       <DependentUpon>Menu_Carta.cs</DependentUpon>
@@ -329,9 +301,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Venta\Menu_Venta.resx">
       <DependentUpon>Menu_Venta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Venta\Pago.resx">
-      <DependentUpon>Pago.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

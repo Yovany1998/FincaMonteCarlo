@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.btnReservaciones = new System.Windows.Forms.Button();
             this.Venta = new System.Windows.Forms.Button();
             this.btnservicio = new System.Windows.Forms.Button();
@@ -128,11 +129,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Monte_Carlos.Properties.Resources.conjunto_ilustracion_logotipo_restaurante_vintage_23_2148470301;
-            this.pictureBox1.Location = new System.Drawing.Point(216, 99);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(115, -68);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(356, 245);
+            this.pictureBox1.Size = new System.Drawing.Size(529, 457);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -145,9 +146,9 @@
             this.lblHora.Location = new System.Drawing.Point(308, 19);
             this.lblHora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(152, 55);
+            this.lblHora.Size = new System.Drawing.Size(129, 55);
             this.lblHora.TabIndex = 13;
-            this.lblHora.Text = "label1";
+            this.lblHora.Text = "Hora";
             // 
             // lblFecha
             // 
@@ -157,9 +158,9 @@
             this.lblFecha.Location = new System.Drawing.Point(340, 67);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(51, 20);
+            this.lblFecha.Size = new System.Drawing.Size(54, 20);
             this.lblFecha.TabIndex = 14;
-            this.lblFecha.Text = "label1";
+            this.lblFecha.Text = "Fecha";
             this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
             // 
             // horafecha
@@ -176,12 +177,12 @@
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnReservaciones);
             this.Controls.Add(this.Venta);
             this.Controls.Add(this.btnservicio);
             this.Controls.Add(this.btnempleado);
             this.Controls.Add(this.btncliente);
+            this.Controls.Add(this.pictureBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Menu";

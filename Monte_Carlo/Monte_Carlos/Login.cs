@@ -12,53 +12,18 @@ namespace Monte_Carlos
 {
     public partial class Login : Form
     {
-        IniciarSecion user = new IniciarSecion();
-        Conexion conexion = new Conexion();
         public Login()
         {
             InitializeComponent();
-            conexion = new Conexion();
+           
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            btnIniciar.ForeColor = Color.White;
 
-            if (txtContraseña.Text == "" && txtUsuario.Text == "")
-            {
-                MessageBox.Show("Campos vacios.", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                try
-                {
-                    /*conexion.conectar();
-                    this.Hide();
-                    Modulos ventana = new Modulos();
-                    ventana.Show();
-                    */
-                    IniciarSecion login = user.BucarUsuario(txtUsuario.Text);
-
-                    if (login.Password == txtContraseña.Text)
-                    {
-                        MessageBox.Show("Bienvenido al sistema.");
-
-                        conexion.conectar();
-
-                        this.Hide();
-                        Menu ventana = new Menu();
-                        ventana.Show();
-
-                    }
-                    else { MessageBox.Show("DATOS INCORRECTOS"); }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            }
-
+            this.Hide();
+            Menu ventana = new Menu();
+            ventana.Show();
 
         }
 
@@ -82,6 +47,11 @@ namespace Monte_Carlos
         {
             txtUsuario.Text = "";
             panel1.BackColor = Color.FromArgb(217, 4, 142);
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

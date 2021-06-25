@@ -27,9 +27,9 @@ namespace Monte_Carlos.Carta
 
         private void btnInsertarBebidas_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Introducir_bebidas ventana = new Introducir_bebidas();
-            ventana.Show();
+          //  this.Hide();
+            //Introducir_bebidas ventana = new Introducir_bebidas();
+           // ventana.Show();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -37,6 +37,11 @@ namespace Monte_Carlos.Carta
             this.Hide();
             Menu ventana = new Menu();
             ventana.Show();
+        }
+
+        private void Menu_Carta_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,13 +12,13 @@ namespace Monte_Carlos.Reservaciones
 {
     public partial class Insertar_Reservaciones : Form
     {
-        private Reservacion reservacion;
-        Conexion conexion;
+      
+
         public Insertar_Reservaciones()
         {
             InitializeComponent();
-            reservacion = new Reservacion ();
-            conexion = new Conexion();
+      
+            
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -46,18 +46,7 @@ namespace Monte_Carlos.Reservaciones
         private void btnInsertar_Click(object sender, EventArgs e)
         {
 
-            reservacion.IdCliente = txtCodigo.Text;
-            reservacion.IdMesa = txtMesa.Text;
-            reservacion.Fecha = dateFecha.Value;
-            reservacion.Hora = txtHora.Text;
-            if (reservacion.Guardar())
-            {
-                MessageBox.Show("Registro guardado correctamente", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(string.Format("Error\n{0}", reservacion.Error.ToString()), "Reservacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
             limpiar();
         }
         private void limpiar()
@@ -75,6 +64,11 @@ namespace Monte_Carlos.Reservaciones
             this.Hide();
             Menu_Reservaciones ventana = new Menu_Reservaciones();
             ventana.Show();
+        }
+
+        private void Insertar_Reservaciones_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -15,15 +15,15 @@ namespace Monte_Carlos.Venta
 
         private int contador;
 
-        Conexion conexion;
-        private Ventas venta;
+     
+       // private Ventas venta;
         //private Validar validacion;
         public Generar_Venta()
         {
             InitializeComponent();
-            venta = new Ventas();
+          //  venta = new Ventas();
             //validacion = new Validar();
-            conexion = new Conexion();
+         
             
         }
 
@@ -56,40 +56,7 @@ namespace Monte_Carlos.Venta
 
         private void BtnInsertar_Click(object sender, EventArgs e)
         {
-            if (Validar() == true)
-            {
-                contador = 1;
-                double subventa;
-                subventa = (Convert.ToDouble(txtPrecio.Text) * Convert.ToDouble(txtCantidad.Text));
-
-
-                venta.IdVenta = Convert.ToInt32(txtIdVenta.Text);
-                venta.IdFactura = Convert.ToInt32(txtIdFactura.Text);
-                //venta.IdComida= Convert.ToInt32(txtIdPedido.Text);
-                venta.IdComida = Convert.ToInt32(cmbComida.SelectedValue.ToString());
-
-                venta.Precio = Convert.ToDouble(txtPrecio.Text);
-                venta.Cantidades = Convert.ToInt32(txtCantidad.Text);
-                venta.Total = Convert.ToDouble(subventa);
-
-                if (venta.Insertar())
-                {
-                    MessageBox.Show("Registro guardado correctamente", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    venta.IdVenta = Convert.ToInt32(txtIdVenta.Text);
-                    Total.Text = Convert.ToString(conexion.consulta(string.Format("SELECT SUM(Total) from DetalleDeFactura where idVenta = {0}", venta.IdVenta)).Rows[0][0].ToString());
-                    DataTable Datos = conexion.consulta(String.Format("SELECT idVenta as 'Numero De Venta',idFactura as 'Numero De Factura',idComida as 'Comida',precio as 'Precio',Cantidad,Total FROM DetalleDeFactura  where idVenta = {0};", venta.IdVenta));
-                    dgvVenta.DataSource = Datos;
-                    dgvVenta.Refresh();
-                }
-                else
-                {
-                    MessageBox.Show(string.Format("Error\n{0}", venta.Error.ToString()), "Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Se cancelo el ingreso");
-            }
+           
             limpiardetalle();
         }
 
@@ -181,18 +148,7 @@ namespace Monte_Carlos.Venta
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            if (venta.Eliminar() == true)
-            {
-                MessageBox.Show("La venta ha sido cancelada", " ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                venta.IdVenta = Convert.ToInt32(txtIdVenta.Text);
-                limpiar();
-                contador = 2;
-                limpiardetalle();
-
-                DataTable Datos = conexion.consulta(String.Format("SELECT idVenta as 'Numero De Venta',idFactura as 'Numero De Factura',idComida as 'Comida',precio as 'Precio',Cantidad,Total FROM DetalleDeFactura  where idFactura = {0};", venta.IdVenta));
-                dgvVenta.DataSource = Datos;
-                dgvVenta.Refresh();
-            }
+         
         }
 
         private void BtnGenerarVenta_Click(object sender, EventArgs e)
@@ -207,35 +163,7 @@ namespace Monte_Carlos.Venta
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ValidarVenta() == true)
-            {
-                venta.IdCliente = (Convert.ToString(txtCliente.Text));
-                venta.IdEmpleado = (Convert.ToString(txtEmpleado.Text));
-                venta.Fecha = DateTime.Today;
-
-
-
-                if (venta.Venta())
-                {
-                    txtIdVenta.Text = Convert.ToString(venta.IdVenta);
-                    txtIdFactura.Text = Convert.ToString(venta.IdFactura);
-
-                    MessageBox.Show("Registro guardado correctamente ", "venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show(string.Format("Error\n{0}", venta.Error.ToString()), "Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-
-
-
-            }
-            else
-            {
-                MessageBox.Show("Se cancelo la edición");
-            }
-
+           
         }
 
         private void Generar_Venta_Load(object sender, EventArgs e)
@@ -245,16 +173,7 @@ namespace Monte_Carlos.Venta
 
         private void llenarCategoria()
         {
-            DataTable comida = new DataTable();
-            Conexion nuevo = new Conexion();
-            comida = nuevo.consulta(string.Format("SELECT * FROM ventas_comedor.comida"));
-            cmbComida.DataSource = null;
-            cmbComida.Items.Clear();
-            cmbComida.ValueMember = comida.Columns["idComida"].ColumnName;
-            cmbComida.DisplayMember = comida.Columns["idComida"].ColumnName;
-            cmbComida.DataSource = comida;
-            cmbComida.SelectedIndex = -1;
-            cmbComida.Text = "Selecciona una opcion";
+           
         }
 
 
@@ -322,8 +241,8 @@ namespace Monte_Carlos.Venta
                 // txtPrecio.Text = conexion.consulta(string.Format("SELECT precio FROM ventas_comedor.comida where  {0};", ud)).Rows[0][0].ToString();
       
              
-                txtIdPedido.Text = (Convert.ToString(conexion.consulta(string.Format("SELECT comida from comida where idComida = {0};", cmbComida.Text)).Rows[0][0].ToString()));
-                txtPrecio.Text = Convert.ToString(conexion.consulta(string.Format("SELECT precio from comida where idComida = {0};", cmbComida.Text)).Rows[0][0].ToString());
+              //  txtIdPedido.Text = (Convert.ToString(conexion.consulta(string.Format("SELECT comida from comida where idComida = {0};", cmbComida.Text)).Rows[0][0].ToString()));
+               // txtPrecio.Text = Convert.ToString(conexion.consulta(string.Format("SELECT precio from comida where idComida = {0};", cmbComida.Text)).Rows[0][0].ToString());
           
 
             }

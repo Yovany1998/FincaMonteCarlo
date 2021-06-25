@@ -204,6 +204,7 @@
             this.MinimizeBox = false;
             this.Name = "Insertar_Reservaciones";
             this.Text = "Insertar_Reservaciones";
+            this.Load += new System.EventHandler(this.Insertar_Reservaciones_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
