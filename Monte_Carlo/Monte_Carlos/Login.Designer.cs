@@ -40,11 +40,11 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.BackColor = System.Drawing.Color.Maroon;
+            this.txtUsuario.BackColor = System.Drawing.Color.Goldenrod;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.Color.White;
-            this.txtUsuario.Location = new System.Drawing.Point(56, 336);
+            this.txtUsuario.ForeColor = System.Drawing.Color.Transparent;
+            this.txtUsuario.Location = new System.Drawing.Point(54, 336);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(0);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(167, 22);
@@ -56,10 +56,10 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.BackColor = System.Drawing.Color.Maroon;
+            this.txtContraseña.BackColor = System.Drawing.Color.Goldenrod;
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.ForeColor = System.Drawing.Color.White;
+            this.txtContraseña.ForeColor = System.Drawing.Color.Transparent;
             this.txtContraseña.Location = new System.Drawing.Point(54, 375);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(0);
             this.txtContraseña.Name = "txtContraseña";
@@ -72,10 +72,10 @@
             // 
             // btnIniciar
             // 
-            this.btnIniciar.BackColor = System.Drawing.Color.Silver;
+            this.btnIniciar.BackColor = System.Drawing.Color.LimeGreen;
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(4)))), ((int)(((byte)(142)))));
+            this.btnIniciar.ForeColor = System.Drawing.Color.Transparent;
             this.btnIniciar.Location = new System.Drawing.Point(56, 424);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(158, 23);
@@ -90,7 +90,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 345);
+            this.pictureBox1.Size = new System.Drawing.Size(273, 322);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
