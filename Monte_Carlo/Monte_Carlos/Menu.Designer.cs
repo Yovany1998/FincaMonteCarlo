@@ -53,7 +53,7 @@
             this.btnReservaciones.Name = "btnReservaciones";
             this.btnReservaciones.Size = new System.Drawing.Size(135, 41);
             this.btnReservaciones.TabIndex = 10;
-            this.btnReservaciones.Text = "Reservacion";
+            this.btnReservaciones.Text = "Reservación";
             this.btnReservaciones.UseVisualStyleBackColor = false;
             this.btnReservaciones.Click += new System.EventHandler(this.btnReservaciones_Click);
             // 
@@ -81,7 +81,7 @@
             this.btnservicio.Name = "btnservicio";
             this.btnservicio.Size = new System.Drawing.Size(135, 41);
             this.btnservicio.TabIndex = 8;
-            this.btnservicio.Text = "Servicio";
+            this.btnservicio.Text = "Pedidos";
             this.btnservicio.UseVisualStyleBackColor = false;
             this.btnservicio.Click += new System.EventHandler(this.btnservicio_Click);
             // 
@@ -123,7 +123,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 41);
             this.button1.TabIndex = 12;
-            this.button1.Text = "Carta";
+            this.button1.Text = "Menu";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Insertar_Empleado));
             this.txtcargo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,7 +55,7 @@
             // 
             this.txtcargo.AllowDrop = true;
             this.txtcargo.Location = new System.Drawing.Point(416, 140);
-            this.txtcargo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcargo.Margin = new System.Windows.Forms.Padding(2);
             this.txtcargo.Multiline = true;
             this.txtcargo.Name = "txtcargo";
             this.txtcargo.Size = new System.Drawing.Size(148, 24);
@@ -84,7 +85,7 @@
             // 
             this.txtapellido.AllowDrop = true;
             this.txtapellido.Location = new System.Drawing.Point(166, 183);
-            this.txtapellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtapellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtapellido.Multiline = true;
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(148, 24);
@@ -98,7 +99,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(614, 57);
             this.panel1.TabIndex = 23;
@@ -116,9 +117,9 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Monte_Carlos.Properties.Resources.conjunto_ilustracion_logotipo_restaurante_vintage_23_2148470301;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(86, 57);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,7 +130,7 @@
             // 
             this.pictureBox1.Image = global::Monte_Carlos.Properties.Resources._64497;
             this.pictureBox1.Location = new System.Drawing.Point(502, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -151,7 +152,7 @@
             // 
             this.txtnombre.AllowDrop = true;
             this.txtnombre.Location = new System.Drawing.Point(166, 140);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre.Multiline = true;
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(148, 24);
@@ -172,7 +173,7 @@
             this.dvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvempleado.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dvempleado.Location = new System.Drawing.Point(0, 267);
-            this.dvempleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dvempleado.Margin = new System.Windows.Forms.Padding(2);
             this.dvempleado.Name = "dvempleado";
             this.dvempleado.RowHeadersWidth = 51;
             this.dvempleado.RowTemplate.Height = 24;
@@ -184,7 +185,7 @@
             // 
             this.txtedad.AllowDrop = true;
             this.txtedad.Location = new System.Drawing.Point(416, 94);
-            this.txtedad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtedad.Margin = new System.Windows.Forms.Padding(2);
             this.txtedad.Multiline = true;
             this.txtedad.Name = "txtedad";
             this.txtedad.Size = new System.Drawing.Size(148, 23);

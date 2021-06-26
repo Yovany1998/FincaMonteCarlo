@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu_Empleado));
             this.btnModificarEmpleado = new System.Windows.Forms.Button();
             this.btnInsertarEmpleado = new System.Windows.Forms.Button();
             this.btnEliminarEmpleado = new System.Windows.Forms.Button();
@@ -44,10 +45,9 @@
             // 
             this.btnModificarEmpleado.BackColor = System.Drawing.Color.Peru;
             this.btnModificarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificarEmpleado.Location = new System.Drawing.Point(263, 289);
-            this.btnModificarEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificarEmpleado.Location = new System.Drawing.Point(197, 235);
             this.btnModificarEmpleado.Name = "btnModificarEmpleado";
-            this.btnModificarEmpleado.Size = new System.Drawing.Size(177, 66);
+            this.btnModificarEmpleado.Size = new System.Drawing.Size(133, 54);
             this.btnModificarEmpleado.TabIndex = 3;
             this.btnModificarEmpleado.Text = "Modificar Empleado";
             this.btnModificarEmpleado.UseVisualStyleBackColor = false;
@@ -57,10 +57,9 @@
             // 
             this.btnInsertarEmpleado.BackColor = System.Drawing.Color.Peru;
             this.btnInsertarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInsertarEmpleado.Location = new System.Drawing.Point(46, 289);
-            this.btnInsertarEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInsertarEmpleado.Location = new System.Drawing.Point(34, 235);
             this.btnInsertarEmpleado.Name = "btnInsertarEmpleado";
-            this.btnInsertarEmpleado.Size = new System.Drawing.Size(177, 66);
+            this.btnInsertarEmpleado.Size = new System.Drawing.Size(133, 54);
             this.btnInsertarEmpleado.TabIndex = 4;
             this.btnInsertarEmpleado.Text = "Insertar Empleado";
             this.btnInsertarEmpleado.UseVisualStyleBackColor = false;
@@ -70,10 +69,9 @@
             // 
             this.btnEliminarEmpleado.BackColor = System.Drawing.Color.Peru;
             this.btnEliminarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminarEmpleado.Location = new System.Drawing.Point(46, 394);
-            this.btnEliminarEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarEmpleado.Location = new System.Drawing.Point(34, 320);
             this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
-            this.btnEliminarEmpleado.Size = new System.Drawing.Size(177, 66);
+            this.btnEliminarEmpleado.Size = new System.Drawing.Size(133, 54);
             this.btnEliminarEmpleado.TabIndex = 5;
             this.btnEliminarEmpleado.Text = "Eliminar Empleado";
             this.btnEliminarEmpleado.UseVisualStyleBackColor = false;
@@ -83,10 +81,9 @@
             // 
             this.btnVer.BackColor = System.Drawing.Color.Peru;
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVer.Location = new System.Drawing.Point(263, 394);
-            this.btnVer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVer.Location = new System.Drawing.Point(197, 320);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(177, 66);
+            this.btnVer.Size = new System.Drawing.Size(133, 54);
             this.btnVer.TabIndex = 6;
             this.btnVer.Text = "Ver Empleado";
             this.btnVer.UseVisualStyleBackColor = false;
@@ -94,10 +91,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Monte_Carlos.Properties.Resources.conjunto_ilustracion_logotipo_restaurante_vintage_23_2148470301;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 55);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(20, 35);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(438, 227);
+            this.pictureBox1.Size = new System.Drawing.Size(328, 194);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -109,17 +107,19 @@
             this.panel1.Controls.Add(this.btnReturn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(491, 38);
+            this.panel1.Size = new System.Drawing.Size(368, 31);
             this.panel1.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bernard MT Condensed", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(177, 6);
+            this.label1.Location = new System.Drawing.Point(133, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 28);
+            this.label1.Size = new System.Drawing.Size(125, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "Menu Empleado";
             // 
@@ -133,7 +133,7 @@
             this.btnReturn.Location = new System.Drawing.Point(0, 0);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(51, 38);
+            this.btnReturn.Size = new System.Drawing.Size(38, 31);
             this.btnReturn.TabIndex = 7;
             this.btnReturn.Text = "←";
             this.btnReturn.UseVisualStyleBackColor = false;
@@ -141,17 +141,16 @@
             // 
             // Menu_Empleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(491, 475);
+            this.ClientSize = new System.Drawing.Size(368, 386);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.btnEliminarEmpleado);
             this.Controls.Add(this.btnInsertarEmpleado);
             this.Controls.Add(this.btnModificarEmpleado);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Menu_Empleado";
             this.Text = "Menu_Empleado";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

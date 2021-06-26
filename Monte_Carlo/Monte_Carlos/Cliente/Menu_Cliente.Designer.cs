@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu_Cliente));
             this.btnInsertarCliente = new System.Windows.Forms.Button();
             this.btnModificarCliente = new System.Windows.Forms.Button();
             this.btnVerCliente = new System.Windows.Forms.Button();
@@ -44,10 +45,9 @@
             this.btnInsertarCliente.BackColor = System.Drawing.Color.Peru;
             this.btnInsertarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInsertarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertarCliente.Location = new System.Drawing.Point(150, 393);
-            this.btnInsertarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInsertarCliente.Location = new System.Drawing.Point(33, 251);
             this.btnInsertarCliente.Name = "btnInsertarCliente";
-            this.btnInsertarCliente.Size = new System.Drawing.Size(177, 66);
+            this.btnInsertarCliente.Size = new System.Drawing.Size(133, 54);
             this.btnInsertarCliente.TabIndex = 1;
             this.btnInsertarCliente.Text = "Insertar Cliente";
             this.btnInsertarCliente.UseVisualStyleBackColor = false;
@@ -58,10 +58,9 @@
             this.btnModificarCliente.BackColor = System.Drawing.Color.Peru;
             this.btnModificarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarCliente.Location = new System.Drawing.Point(269, 300);
-            this.btnModificarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificarCliente.Location = new System.Drawing.Point(202, 252);
             this.btnModificarCliente.Name = "btnModificarCliente";
-            this.btnModificarCliente.Size = new System.Drawing.Size(177, 66);
+            this.btnModificarCliente.Size = new System.Drawing.Size(133, 54);
             this.btnModificarCliente.TabIndex = 2;
             this.btnModificarCliente.Text = "Modificar Cliente";
             this.btnModificarCliente.UseVisualStyleBackColor = false;
@@ -72,10 +71,9 @@
             this.btnVerCliente.BackColor = System.Drawing.Color.Peru;
             this.btnVerCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVerCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerCliente.Location = new System.Drawing.Point(44, 300);
-            this.btnVerCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerCliente.Location = new System.Drawing.Point(112, 314);
             this.btnVerCliente.Name = "btnVerCliente";
-            this.btnVerCliente.Size = new System.Drawing.Size(177, 66);
+            this.btnVerCliente.Size = new System.Drawing.Size(133, 54);
             this.btnVerCliente.TabIndex = 3;
             this.btnVerCliente.Text = "Ver Cliente";
             this.btnVerCliente.UseVisualStyleBackColor = false;
@@ -88,17 +86,19 @@
             this.panel1.Controls.Add(this.btnReturn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(491, 38);
+            this.panel1.Size = new System.Drawing.Size(368, 31);
             this.panel1.TabIndex = 19;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bernard MT Condensed", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(177, 6);
+            this.label1.Location = new System.Drawing.Point(133, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 28);
+            this.label1.Size = new System.Drawing.Size(103, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "Menu Cliente";
             // 
@@ -112,7 +112,7 @@
             this.btnReturn.Location = new System.Drawing.Point(0, 0);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(51, 38);
+            this.btnReturn.Size = new System.Drawing.Size(38, 31);
             this.btnReturn.TabIndex = 7;
             this.btnReturn.Text = "←";
             this.btnReturn.UseVisualStyleBackColor = false;
@@ -120,26 +120,26 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Monte_Carlos.Properties.Resources.conjunto_ilustracion_logotipo_restaurante_vintage_23_2148470301;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 57);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(11, 29);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(438, 227);
+            this.pictureBox1.Size = new System.Drawing.Size(346, 219);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
             // Menu_Cliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(491, 475);
+            this.ClientSize = new System.Drawing.Size(368, 386);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVerCliente);
             this.Controls.Add(this.btnModificarCliente);
             this.Controls.Add(this.btnInsertarCliente);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Menu_Cliente";
             this.Text = "Menu_Cliente";
             this.panel1.ResumeLayout(false);

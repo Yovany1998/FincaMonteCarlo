@@ -51,8 +51,7 @@ namespace Monte_Carlos.Reservaciones
         }
         private void limpiar()
         {
-            txtCodigo.Text = "";
-            txtMesa.Text = "";
+          
             txtHora.Text = "";
 
            
@@ -69,6 +68,13 @@ namespace Monte_Carlos.Reservaciones
         private void Insertar_Reservaciones_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu_Reservaciones ventana = new Menu_Reservaciones();
+            ventana.Show();
         }
     }
 }

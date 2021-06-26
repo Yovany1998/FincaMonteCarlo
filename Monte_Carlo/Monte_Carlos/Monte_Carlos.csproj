@@ -55,16 +55,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Carta\Ingreso_Comida-Bebida.cs">
+    <Compile Include="Menu\Ingreso_Comida-Bebida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Carta\Ingreso_Comida-Bebida.Designer.cs">
+    <Compile Include="Menu\Ingreso_Comida-Bebida.Designer.cs">
       <DependentUpon>Ingreso_Comida-Bebida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Carta\Menu_Carta.cs">
+    <Compile Include="Menu\Menu_Carta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Carta\Menu_Carta.Designer.cs">
+    <Compile Include="Menu\Menu_Carta.Designer.cs">
       <DependentUpon>Menu_Carta.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente\Insertar_Cliente.cs">
@@ -165,34 +165,34 @@
     <Compile Include="Reservaciones\Ver_Reservaciones.Designer.cs">
       <DependentUpon>Ver_Reservaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Servicio\Eliminar_Pedido.cs">
+    <Compile Include="Pedidos\Eliminar_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Servicio\Eliminar_Pedido.Designer.cs">
+    <Compile Include="Pedidos\Eliminar_Pedido.Designer.cs">
       <DependentUpon>Eliminar_Pedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Servicio\Insertar_Pedido.cs">
+    <Compile Include="Pedidos\Insertar_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Servicio\Insertar_Pedido.Designer.cs">
+    <Compile Include="Pedidos\Insertar_Pedido.Designer.cs">
       <DependentUpon>Insertar_Pedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Servicio\Menu_Servico.cs">
+    <Compile Include="Pedidos\Menu_Servico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Servicio\Menu_Servico.Designer.cs">
+    <Compile Include="Pedidos\Menu_Servico.Designer.cs">
       <DependentUpon>Menu_Servico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Servicio\Modificar_Pedido.cs">
+    <Compile Include="Pedidos\Modificar_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Servicio\Modificar_Pedido.Designer.cs">
+    <Compile Include="Pedidos\Modificar_Pedido.Designer.cs">
       <DependentUpon>Modificar_Pedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Servicio\Ver_Pedido.cs">
+    <Compile Include="Pedidos\Ver_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Servicio\Ver_Pedido.Designer.cs">
+    <Compile Include="Pedidos\Ver_Pedido.Designer.cs">
       <DependentUpon>Ver_Pedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Venta\Factura.cs">
@@ -214,10 +214,10 @@
       <DependentUpon>Menu_Venta.cs</DependentUpon>
     </Compile>
     <Compile Include="Venta\Validacion.cs" />
-    <EmbeddedResource Include="Carta\Ingreso_Comida-Bebida.resx">
+    <EmbeddedResource Include="Menu\Ingreso_Comida-Bebida.resx">
       <DependentUpon>Ingreso_Comida-Bebida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Carta\Menu_Carta.resx">
+    <EmbeddedResource Include="Menu\Menu_Carta.resx">
       <DependentUpon>Menu_Carta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\Insertar_Cliente.resx">
@@ -278,19 +278,19 @@
     <EmbeddedResource Include="Reservaciones\Ver_Reservaciones.resx">
       <DependentUpon>Ver_Reservaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Servicio\Eliminar_Pedido.resx">
+    <EmbeddedResource Include="Pedidos\Eliminar_Pedido.resx">
       <DependentUpon>Eliminar_Pedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Servicio\Insertar_Pedido.resx">
+    <EmbeddedResource Include="Pedidos\Insertar_Pedido.resx">
       <DependentUpon>Insertar_Pedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Servicio\Menu_Servico.resx">
+    <EmbeddedResource Include="Pedidos\Menu_Servico.resx">
       <DependentUpon>Menu_Servico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Servicio\Modificar_Pedido.resx">
+    <EmbeddedResource Include="Pedidos\Modificar_Pedido.resx">
       <DependentUpon>Modificar_Pedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Servicio\Ver_Pedido.resx">
+    <EmbeddedResource Include="Pedidos\Ver_Pedido.resx">
       <DependentUpon>Ver_Pedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta\Factura.resx">
