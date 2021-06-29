@@ -42,7 +42,7 @@ namespace Monte_Carlos
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu ventana = new Menu();
+            Inicio ventana = new Inicio();
             ventana.Show();
         }
     }

@@ -20,7 +20,7 @@ namespace Monte_Carlos.Venta
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu ventana = new Menu();
+            Inicio ventana = new Inicio();
             ventana.Show();
         }
 
@@ -41,7 +41,7 @@ namespace Monte_Carlos.Venta
         private void btnReturn_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Menu ventana = new Menu();
+            Inicio ventana = new Inicio();
             ventana.Show();
 
         }

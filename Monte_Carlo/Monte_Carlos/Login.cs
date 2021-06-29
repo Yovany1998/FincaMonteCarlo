@@ -22,7 +22,7 @@ namespace Monte_Carlos
         {
 
             this.Hide();
-            Menu ventana = new Menu();
+            Inicio ventana = new Inicio();
             ventana.Show();
 
         }
