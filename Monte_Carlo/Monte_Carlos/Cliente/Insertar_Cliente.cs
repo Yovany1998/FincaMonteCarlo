@@ -34,7 +34,7 @@ namespace Monte_Carlos.Cliente
         }
         private void limpiar()
         {
-            txtIdCliente.Text = "";
+            txtIdentidad.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
 
