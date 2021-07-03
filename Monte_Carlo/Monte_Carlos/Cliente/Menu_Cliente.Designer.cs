@@ -48,7 +48,7 @@
             this.btnInsertarCliente.Location = new System.Drawing.Point(33, 251);
             this.btnInsertarCliente.Name = "btnInsertarCliente";
             this.btnInsertarCliente.Size = new System.Drawing.Size(133, 54);
-            this.btnInsertarCliente.TabIndex = 1;
+            this.btnInsertarCliente.TabIndex = 0;
             this.btnInsertarCliente.Text = "Insertar Cliente";
             this.btnInsertarCliente.UseVisualStyleBackColor = false;
             this.btnInsertarCliente.Click += new System.EventHandler(this.btnInsertarCliente_Click);
@@ -61,7 +61,7 @@
             this.btnModificarCliente.Location = new System.Drawing.Point(202, 252);
             this.btnModificarCliente.Name = "btnModificarCliente";
             this.btnModificarCliente.Size = new System.Drawing.Size(133, 54);
-            this.btnModificarCliente.TabIndex = 2;
+            this.btnModificarCliente.TabIndex = 1;
             this.btnModificarCliente.Text = "Modificar Cliente";
             this.btnModificarCliente.UseVisualStyleBackColor = false;
             this.btnModificarCliente.Click += new System.EventHandler(this.btnModificarCliente_Click);
@@ -74,7 +74,7 @@
             this.btnVerCliente.Location = new System.Drawing.Point(112, 314);
             this.btnVerCliente.Name = "btnVerCliente";
             this.btnVerCliente.Size = new System.Drawing.Size(133, 54);
-            this.btnVerCliente.TabIndex = 3;
+            this.btnVerCliente.TabIndex = 2;
             this.btnVerCliente.Text = "Ver Cliente";
             this.btnVerCliente.UseVisualStyleBackColor = false;
             this.btnVerCliente.Click += new System.EventHandler(this.btnVerCliente_Click);
@@ -86,7 +86,7 @@
             this.panel1.Controls.Add(this.btnReturn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(368, 31);
             this.panel1.TabIndex = 19;
@@ -113,7 +113,7 @@
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(38, 31);
-            this.btnReturn.TabIndex = 7;
+            this.btnReturn.TabIndex = 1;
             this.btnReturn.Text = "←";
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -122,7 +122,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(11, 29);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(346, 219);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -141,6 +141,7 @@
             this.Controls.Add(this.btnModificarCliente);
             this.Controls.Add(this.btnInsertarCliente);
             this.Name = "Menu_Cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_Cliente";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

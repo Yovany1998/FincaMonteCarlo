@@ -17,7 +17,7 @@ namespace Monte_Carlos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Pedidos()
         {
-            this.Venta = new HashSet<Ventas>();
+            this.Ventas = new HashSet<Ventas>();
         }
     
         public int IdPedido { get; set; }
@@ -28,6 +28,6 @@ namespace Monte_Carlos
         public Nullable<int> Cantidad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ventas> Venta { get; set; }
+        public virtual ICollection<Ventas> Ventas { get; set; }
     }
 }

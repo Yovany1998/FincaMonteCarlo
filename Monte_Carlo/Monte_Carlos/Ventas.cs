@@ -17,12 +17,12 @@ namespace Monte_Carlos
         public int IdVenta { get; set; }
         public int IdFactura { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
-        public Nullable<int> IdPedido { get; set; }
-        public Nullable<int> IdCliente { get; set; }
+        public int IdPedido { get; set; }
+        public int IdCliente { get; set; }
         public string NombreCliente { get; set; }
-        public Nullable<int> IdComidaBebida { get; set; }
+        public int IdComidaBebida { get; set; }
         public string Nombre { get; set; }
-        public Nullable<double> Precio { get; set; }
+        public Nullable<decimal> Precio { get; set; }
         public Nullable<int> Cantidad { get; set; }
         public Nullable<double> Impuesto { get; set; }
         public string Pagado { get; set; }

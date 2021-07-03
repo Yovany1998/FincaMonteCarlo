@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Finca_Monte_CarloModelStoreContainer" CdmEntityContainer="Finca_Monte_CarloEntities">
+  <EntityContainerMapping StorageEntityContainer="Finca_Monte_CarloModelStoreContainer" CdmEntityContainer="Finca_Monte_CarloEntities1">
     <EntitySetMapping Name="Clientes">
       <EntityTypeMapping TypeName="Finca_Monte_CarloModel.Clientes">
         <MappingFragment StoreEntitySet="Clientes">
@@ -80,25 +80,26 @@
           <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
           <ScalarProperty Name="NIdentidad" ColumnName="NIdentidad" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
           <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Venta">
-      <EntityTypeMapping TypeName="Finca_Monte_CarloModel.Venta">
-        <MappingFragment StoreEntitySet="Venta">
-          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
-          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
-          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
-          <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
-          <ScalarProperty Name="IdComidaBebida" ColumnName="IdComidaBebida" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Precio" ColumnName="Precio" />
-          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-          <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+    <EntitySetMapping Name="Ventas">
+      <EntityTypeMapping TypeName="Finca_Monte_CarloModel.Ventas">
+        <MappingFragment StoreEntitySet="Ventas">
           <ScalarProperty Name="Pagado" ColumnName="Pagado" />
+          <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdComidaBebida" ColumnName="IdComidaBebida" />
+          <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

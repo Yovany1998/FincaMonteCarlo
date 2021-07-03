@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="28b3b8a0a62f4046a124d131b4268801" Name="Diagram1">
-        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Clientes" Width="1.5" PointX="0.5" PointY="4.125" IsExpanded="true" />
+      <Diagram DiagramId="5fc2263c723d4ca6aee5c4032d0ef202" Name="Diagram1">
+        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Clientes" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Finca_Monte_CarloModel.Empleados" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Facturas" Width="1.5" PointX="5.5" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Menu" Width="1.5" PointX="0.5" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Pedidos" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Reservaciones" Width="1.5" PointX="7.625" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Usuario" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Venta" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="Finca_Monte_CarloModel.FK_Venta_Clientes" ManuallyRouted="false" />
-        <AssociationConnector Association="Finca_Monte_CarloModel.FK_Venta_Facturas" ManuallyRouted="false" />
-        <AssociationConnector Association="Finca_Monte_CarloModel.FK_Venta_Menu" ManuallyRouted="false" />
-        <AssociationConnector Association="Finca_Monte_CarloModel.FK_Venta_Pedidos" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Facturas" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Menu" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Pedidos" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Reservaciones" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Usuario" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Ventas" Width="1.5" PointX="5.375" PointY="7.75" />
+        <AssociationConnector Association="Finca_Monte_CarloModel.FK_Ventas_Clientes" />
+        <AssociationConnector Association="Finca_Monte_CarloModel.FK_Ventas_Facturas" />
+        <AssociationConnector Association="Finca_Monte_CarloModel.FK_Ventas_Menu" />
+        <AssociationConnector Association="Finca_Monte_CarloModel.FK_Ventas_Pedidos" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

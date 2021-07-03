@@ -52,7 +52,7 @@
             this.btnReservaciones.Location = new System.Drawing.Point(8, 249);
             this.btnReservaciones.Name = "btnReservaciones";
             this.btnReservaciones.Size = new System.Drawing.Size(135, 41);
-            this.btnReservaciones.TabIndex = 10;
+            this.btnReservaciones.TabIndex = 4;
             this.btnReservaciones.Text = "Reservación";
             this.btnReservaciones.UseVisualStyleBackColor = false;
             this.btnReservaciones.Click += new System.EventHandler(this.btnReservaciones_Click);
@@ -66,7 +66,7 @@
             this.Venta.Location = new System.Drawing.Point(9, 77);
             this.Venta.Name = "Venta";
             this.Venta.Size = new System.Drawing.Size(135, 41);
-            this.Venta.TabIndex = 9;
+            this.Venta.TabIndex = 1;
             this.Venta.Text = "Venta";
             this.Venta.UseVisualStyleBackColor = false;
             this.Venta.Click += new System.EventHandler(this.Venta_Click);
@@ -80,7 +80,7 @@
             this.btnservicio.Location = new System.Drawing.Point(9, 134);
             this.btnservicio.Name = "btnservicio";
             this.btnservicio.Size = new System.Drawing.Size(135, 41);
-            this.btnservicio.TabIndex = 8;
+            this.btnservicio.TabIndex = 2;
             this.btnservicio.Text = "Pedidos";
             this.btnservicio.UseVisualStyleBackColor = false;
             this.btnservicio.Click += new System.EventHandler(this.btnservicio_Click);
@@ -94,7 +94,7 @@
             this.btnempleado.Location = new System.Drawing.Point(9, 192);
             this.btnempleado.Name = "btnempleado";
             this.btnempleado.Size = new System.Drawing.Size(135, 41);
-            this.btnempleado.TabIndex = 7;
+            this.btnempleado.TabIndex = 3;
             this.btnempleado.Text = "Empleado";
             this.btnempleado.UseVisualStyleBackColor = false;
             this.btnempleado.Click += new System.EventHandler(this.btnempleado_Click);
@@ -108,7 +108,7 @@
             this.btncliente.Location = new System.Drawing.Point(9, 302);
             this.btncliente.Name = "btncliente";
             this.btncliente.Size = new System.Drawing.Size(134, 41);
-            this.btncliente.TabIndex = 6;
+            this.btncliente.TabIndex = 5;
             this.btncliente.Text = "Cliente";
             this.btncliente.UseVisualStyleBackColor = false;
             this.btncliente.Click += new System.EventHandler(this.btncliente_Click);
@@ -122,7 +122,7 @@
             this.button1.Location = new System.Drawing.Point(10, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 41);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 0;
             this.button1.Text = "Menu";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -170,7 +170,7 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
-            // Menu
+            // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,7 +187,8 @@
             this.Controls.Add(this.pictureBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Menu";
+            this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

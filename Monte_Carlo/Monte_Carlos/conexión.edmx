@@ -76,60 +76,73 @@
           <Key>
             <PropertyRef Name="IdUsuario" />
           </Key>
-          <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUsuario" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NIdentidad" Type="varchar" MaxLength="50" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="Contrasena" Type="int" />
+          <Property Name="Estado" Type="bit" />
+          <Property Name="Contrasena" Type="nvarchar(max)" />
         </EntityType>
-        <EntityType Name="Venta">
+        <EntityType Name="Ventas">
           <Key>
             <PropertyRef Name="IdVenta" />
           </Key>
           <Property Name="IdVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdFactura" Type="int" Nullable="false" />
           <Property Name="Fecha" Type="datetime" />
-          <Property Name="IdPedido" Type="int" />
-          <Property Name="IdCliente" Type="int" />
-          <Property Name="NombreCliente" Type="varchar" MaxLength="50" />
-          <Property Name="IdComidaBebida" Type="int" />
+          <Property Name="IdPedido" Type="int" Nullable="false" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="NombreCliente" Type="nchar" MaxLength="10" />
+          <Property Name="IdComidaBebida" Type="int" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="Precio" Type="float" />
+          <Property Name="Precio" Type="money" />
           <Property Name="Cantidad" Type="int" />
           <Property Name="Impuesto" Type="float" />
           <Property Name="Pagado" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_Venta_Clientes">
-          <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+        <Association Name="FK_Ventas_Clientes">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clientes">
               <PropertyRef Name="IdCliente" />
             </Principal>
-            <Dependent Role="Venta">
+            <Dependent Role="Ventas">
               <PropertyRef Name="IdCliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Venta_Facturas">
+        <Association Name="FK_Ventas_Facturas">
           <End Role="Facturas" Type="Self.Facturas" Multiplicity="1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Facturas">
               <PropertyRef Name="IdFactura" />
             </Principal>
-            <Dependent Role="Venta">
+            <Dependent Role="Ventas">
               <PropertyRef Name="IdFactura" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Venta_Pedidos">
-          <End Role="Pedidos" Type="Self.Pedidos" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+        <Association Name="FK_Ventas_Menu">
+          <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="IdComidaBebida" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="IdComidaBebida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ventas_Pedidos">
+          <End Role="Pedidos" Type="Self.Pedidos" Multiplicity="1" />
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Pedidos">
               <PropertyRef Name="IdPedido" />
             </Principal>
-            <Dependent Role="Venta">
+            <Dependent Role="Ventas">
               <PropertyRef Name="IdPedido" />
             </Dependent>
           </ReferentialConstraint>
@@ -142,18 +155,22 @@
           <EntitySet Name="Pedidos" EntityType="Self.Pedidos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reservaciones" EntityType="Self.Reservaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Venta_Clientes" Association="Self.FK_Venta_Clientes">
+          <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Ventas_Clientes" Association="Self.FK_Ventas_Clientes">
             <End Role="Clientes" EntitySet="Clientes" />
-            <End Role="Venta" EntitySet="Venta" />
+            <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK_Venta_Facturas" Association="Self.FK_Venta_Facturas">
+          <AssociationSet Name="FK_Ventas_Facturas" Association="Self.FK_Ventas_Facturas">
             <End Role="Facturas" EntitySet="Facturas" />
-            <End Role="Venta" EntitySet="Venta" />
+            <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK_Venta_Pedidos" Association="Self.FK_Venta_Pedidos">
+          <AssociationSet Name="FK_Ventas_Menu" Association="Self.FK_Ventas_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="Ventas" EntitySet="Ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ventas_Pedidos" Association="Self.FK_Ventas_Pedidos">
             <End Role="Pedidos" EntitySet="Pedidos" />
-            <End Role="Venta" EntitySet="Venta" />
+            <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -171,7 +188,7 @@
           <Property Name="Edad" Type="Int32" />
           <Property Name="Telefono" Type="Int32" />
           <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK_Venta_Clientes" FromRole="Clientes" ToRole="Venta" />
+          <NavigationProperty Name="Ventas" Relationship="Finca_Monte_CarloModel.FK_Ventas_Clientes" FromRole="Clientes" ToRole="Ventas" />
         </EntityType>
         <EntityType Name="Empleados">
           <Key>
@@ -196,7 +213,7 @@
           <Property Name="Subtotal" Type="Double" />
           <Property Name="Impuesto" Type="Double" />
           <Property Name="Total" Type="Double" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK_Venta_Facturas" FromRole="Facturas" ToRole="Venta" />
+          <NavigationProperty Name="Ventas" Relationship="Finca_Monte_CarloModel.FK_Ventas_Facturas" FromRole="Facturas" ToRole="Ventas" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -206,7 +223,7 @@
           <Property Name="Nombre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Precio" Type="Double" />
           <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK_Venta_Menu" FromRole="Menu" ToRole="Venta" />
+          <NavigationProperty Name="Ventas" Relationship="Finca_Monte_CarloModel.FK_Ventas_Menu" FromRole="Menu" ToRole="Ventas" />
         </EntityType>
         <EntityType Name="Pedidos">
           <Key>
@@ -218,7 +235,7 @@
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Precio" Type="Double" />
           <Property Name="Cantidad" Type="Int32" />
-          <NavigationProperty Name="Venta" Relationship="Self.FK_Venta_Pedidos" FromRole="Pedidos" ToRole="Venta" />
+          <NavigationProperty Name="Ventas" Relationship="Finca_Monte_CarloModel.FK_Ventas_Pedidos" FromRole="Pedidos" ToRole="Ventas" />
         </EntityType>
         <EntityType Name="Reservaciones">
           <Key>
@@ -235,81 +252,13 @@
           <Key>
             <PropertyRef Name="IdUsuario" />
           </Key>
-          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NIdentidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Contrasena" Type="Int32" />
+          <Property Name="Estado" Type="Boolean" />
+          <Property Name="Contrasena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Venta">
-          <Key>
-            <PropertyRef Name="IdVenta" />
-          </Key>
-          <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdFactura" Type="Int32" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Precision="3" />
-          <Property Name="IdPedido" Type="Int32" />
-          <Property Name="IdCliente" Type="Int32" />
-          <Property Name="NombreCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IdComidaBebida" Type="Int32" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Precio" Type="Double" />
-          <Property Name="Cantidad" Type="Int32" />
-          <Property Name="Impuesto" Type="Double" />
-          <Property Name="Pagado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Clientes" Relationship="Self.FK_Venta_Clientes" FromRole="Venta" ToRole="Clientes" />
-          <NavigationProperty Name="Facturas" Relationship="Self.FK_Venta_Facturas" FromRole="Venta" ToRole="Facturas" />
-          <NavigationProperty Name="Menu" Relationship="Self.FK_Venta_Menu" FromRole="Venta" ToRole="Menu" />
-          <NavigationProperty Name="Pedidos" Relationship="Self.FK_Venta_Pedidos" FromRole="Venta" ToRole="Pedidos" />
-        </EntityType>
-        <Association Name="FK_Venta_Clientes">
-          <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Clientes">
-              <PropertyRef Name="IdCliente" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="IdCliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Venta_Facturas">
-          <End Role="Facturas" Type="Self.Facturas" Multiplicity="1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Facturas">
-              <PropertyRef Name="IdFactura" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="IdFactura" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Venta_Menu">
-          <End Role="Menu" Type="Self.Menu" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Menu">
-              <PropertyRef Name="IdComidaBebida" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="IdComidaBebida" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Venta_Pedidos">
-          <End Role="Pedidos" Type="Self.Pedidos" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pedidos">
-              <PropertyRef Name="IdPedido" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="IdPedido" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="Finca_Monte_CarloEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Finca_Monte_CarloEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" />
           <EntitySet Name="Empleados" EntityType="Self.Empleados" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" />
@@ -317,30 +266,99 @@
           <EntitySet Name="Pedidos" EntityType="Self.Pedidos" />
           <EntitySet Name="Reservaciones" EntityType="Self.Reservaciones" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <EntitySet Name="Venta" EntityType="Self.Venta" />
-          <AssociationSet Name="FK_Venta_Clientes" Association="Self.FK_Venta_Clientes">
+          <EntitySet Name="Ventas" EntityType="Finca_Monte_CarloModel.Ventas" />
+          <AssociationSet Name="FK_Ventas_Clientes" Association="Finca_Monte_CarloModel.FK_Ventas_Clientes">
             <End Role="Clientes" EntitySet="Clientes" />
-            <End Role="Venta" EntitySet="Venta" />
+            <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK_Venta_Facturas" Association="Self.FK_Venta_Facturas">
+          <AssociationSet Name="FK_Ventas_Facturas" Association="Finca_Monte_CarloModel.FK_Ventas_Facturas">
             <End Role="Facturas" EntitySet="Facturas" />
-            <End Role="Venta" EntitySet="Venta" />
+            <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK_Venta_Menu" Association="Self.FK_Venta_Menu">
+          <AssociationSet Name="FK_Ventas_Menu" Association="Finca_Monte_CarloModel.FK_Ventas_Menu">
             <End Role="Menu" EntitySet="Menu" />
-            <End Role="Venta" EntitySet="Venta" />
+            <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK_Venta_Pedidos" Association="Self.FK_Venta_Pedidos">
+          <AssociationSet Name="FK_Ventas_Pedidos" Association="Finca_Monte_CarloModel.FK_Ventas_Pedidos">
             <End Role="Pedidos" EntitySet="Pedidos" />
-            <End Role="Venta" EntitySet="Venta" />
+            <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Ventas">
+          <Key>
+            <PropertyRef Name="IdVenta" />
+          </Key>
+          <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdFactura" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="IdPedido" Type="Int32" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="NombreCliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IdComidaBebida" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="Impuesto" Type="Double" />
+          <Property Name="Pagado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clientes" Relationship="Finca_Monte_CarloModel.FK_Ventas_Clientes" FromRole="Ventas" ToRole="Clientes" />
+          <NavigationProperty Name="Facturas" Relationship="Finca_Monte_CarloModel.FK_Ventas_Facturas" FromRole="Ventas" ToRole="Facturas" />
+          <NavigationProperty Name="Menu" Relationship="Finca_Monte_CarloModel.FK_Ventas_Menu" FromRole="Ventas" ToRole="Menu" />
+          <NavigationProperty Name="Pedidos" Relationship="Finca_Monte_CarloModel.FK_Ventas_Pedidos" FromRole="Ventas" ToRole="Pedidos" />
+        </EntityType>
+        <Association Name="FK_Ventas_Clientes">
+          <End Type="Finca_Monte_CarloModel.Clientes" Role="Clientes" Multiplicity="1" />
+          <End Type="Finca_Monte_CarloModel.Ventas" Role="Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ventas_Facturas">
+          <End Type="Finca_Monte_CarloModel.Facturas" Role="Facturas" Multiplicity="1" />
+          <End Type="Finca_Monte_CarloModel.Ventas" Role="Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas">
+              <PropertyRef Name="IdFactura" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="IdFactura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ventas_Menu">
+          <End Type="Finca_Monte_CarloModel.Menu" Role="Menu" Multiplicity="1" />
+          <End Type="Finca_Monte_CarloModel.Ventas" Role="Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="IdComidaBebida" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="IdComidaBebida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ventas_Pedidos">
+          <End Type="Finca_Monte_CarloModel.Pedidos" Role="Pedidos" Multiplicity="1" />
+          <End Type="Finca_Monte_CarloModel.Ventas" Role="Ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedidos">
+              <PropertyRef Name="IdPedido" />
+            </Principal>
+            <Dependent Role="Ventas">
+              <PropertyRef Name="IdPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Finca_Monte_CarloModelStoreContainer" CdmEntityContainer="Finca_Monte_CarloEntities">
+        <EntityContainerMapping StorageEntityContainer="Finca_Monte_CarloModelStoreContainer" CdmEntityContainer="Finca_Monte_CarloEntities1">
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="Finca_Monte_CarloModel.Clientes">
               <MappingFragment StoreEntitySet="Clientes">
@@ -420,25 +438,26 @@
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
                 <ScalarProperty Name="NIdentidad" ColumnName="NIdentidad" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Venta">
-            <EntityTypeMapping TypeName="Finca_Monte_CarloModel.Venta">
-              <MappingFragment StoreEntitySet="Venta">
-                <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
-                <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
-                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
-                <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
-                <ScalarProperty Name="IdComidaBebida" ColumnName="IdComidaBebida" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Precio" ColumnName="Precio" />
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-                <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+          <EntitySetMapping Name="Ventas">
+            <EntityTypeMapping TypeName="Finca_Monte_CarloModel.Ventas">
+              <MappingFragment StoreEntitySet="Ventas">
                 <ScalarProperty Name="Pagado" ColumnName="Pagado" />
+                <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdComidaBebida" ColumnName="IdComidaBebida" />
+                <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+                <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -13,10 +13,10 @@ namespace Monte_Carlos
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Finca_Monte_CarloEntities : DbContext
+    public partial class Finca_Monte_CarloEntities1 : DbContext
     {
-        public Finca_Monte_CarloEntities()
-            : base("name=Finca_Monte_CarloEntities")
+        public Finca_Monte_CarloEntities1()
+            : base("name=Finca_Monte_CarloEntities1")
         {
         }
     
@@ -32,6 +32,6 @@ namespace Monte_Carlos
         public virtual DbSet<Pedidos> Pedidos { get; set; }
         public virtual DbSet<Reservacion> Reservaciones { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
-        public virtual DbSet<Ventas> Venta { get; set; }
+        public virtual DbSet<Ventas> Ventas { get; set; }
     }
 }

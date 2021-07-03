@@ -65,31 +65,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clientes.cs">
-      <DependentUpon>conexión.tt</DependentUpon>
+      <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
-    <Compile Include="conexión.Context.cs">
+    <Compile Include="Conexión.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>conexión.Context.tt</DependentUpon>
+      <DependentUpon>Conexión.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="conexión.cs">
+    <Compile Include="Conexión.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>conexión.tt</DependentUpon>
+      <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
-    <Compile Include="conexión.Designer.cs">
+    <Compile Include="Conexión.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>conexión.edmx</DependentUpon>
+      <DependentUpon>Conexión.edmx</DependentUpon>
     </Compile>
     <Compile Include="Empleados.cs">
-      <DependentUpon>conexión.tt</DependentUpon>
+      <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
     <Compile Include="Facturas.cs">
-      <DependentUpon>conexión.tt</DependentUpon>
+      <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
+    <Compile Include="LINQTODATATABLE.cs" />
     <Compile Include="Menu.cs">
-      <DependentUpon>conexión.tt</DependentUpon>
+      <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
     <Compile Include="Menu\Ingreso_Comida-Bebida.cs">
       <SubType>Form</SubType>
@@ -170,12 +171,12 @@
       <DependentUpon>Menu_Cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedidos.cs">
-      <DependentUpon>conexión.tt</DependentUpon>
+      <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservaciones.cs">
-      <DependentUpon>conexión.tt</DependentUpon>
+      <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
     <Compile Include="Reservaciones\Eliminar_Reservaciones.cs">
       <SubType>Form</SubType>
@@ -238,10 +239,10 @@
       <DependentUpon>Ver_Pedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
-      <DependentUpon>conexión.tt</DependentUpon>
+      <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
-    <Compile Include="Venta.cs">
-      <DependentUpon>conexión.tt</DependentUpon>
+    <Compile Include="Ventas.cs">
+      <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
     <Compile Include="Venta\Factura.cs">
       <SubType>Form</SubType>
@@ -350,12 +351,12 @@
     <EmbeddedResource Include="Venta\Menu_Venta.resx">
       <DependentUpon>Menu_Venta.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="conexión.edmx">
+    <EntityDeploy Include="Conexión.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>conexión.Designer.cs</LastGenOutput>
+      <LastGenOutput>Conexión.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="conexión.edmx.diagram">
-      <DependentUpon>conexión.edmx</DependentUpon>
+    <None Include="Conexión.edmx.diagram">
+      <DependentUpon>Conexión.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -384,19 +385,19 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="conexión.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>conexión.Context.cs</LastGenOutput>
-      <DependentUpon>conexión.edmx</DependentUpon>
-    </Content>
-    <Content Include="conexión.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>conexión.edmx</DependentUpon>
-      <LastGenOutput>conexión.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Conexión.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Conexión.edmx</DependentUpon>
+      <LastGenOutput>Conexión.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Conexión.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Conexión.edmx</DependentUpon>
+      <LastGenOutput>Conexión.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

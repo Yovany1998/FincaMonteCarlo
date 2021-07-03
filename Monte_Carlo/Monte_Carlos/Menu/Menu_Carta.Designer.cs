@@ -74,7 +74,7 @@
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(38, 31);
-            this.btnReturn.TabIndex = 7;
+            this.btnReturn.TabIndex = 0;
             this.btnReturn.Text = "←";
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -86,7 +86,7 @@
             this.btnVerReservacion.Location = new System.Drawing.Point(116, 308);
             this.btnVerReservacion.Name = "btnVerReservacion";
             this.btnVerReservacion.Size = new System.Drawing.Size(133, 54);
-            this.btnVerReservacion.TabIndex = 15;
+            this.btnVerReservacion.TabIndex = 2;
             this.btnVerReservacion.Text = " Ver Menu";
             this.btnVerReservacion.UseVisualStyleBackColor = false;
             // 
@@ -97,7 +97,7 @@
             this.btnInsertarComida.Location = new System.Drawing.Point(32, 248);
             this.btnInsertarComida.Name = "btnInsertarComida";
             this.btnInsertarComida.Size = new System.Drawing.Size(133, 54);
-            this.btnInsertarComida.TabIndex = 14;
+            this.btnInsertarComida.TabIndex = 0;
             this.btnInsertarComida.Text = "Insertar comida/bebida";
             this.btnInsertarComida.UseVisualStyleBackColor = false;
             this.btnInsertarComida.Click += new System.EventHandler(this.btnInsertarComida_Click);
@@ -109,7 +109,7 @@
             this.btnModificarReservacion.Location = new System.Drawing.Point(194, 248);
             this.btnModificarReservacion.Name = "btnModificarReservacion";
             this.btnModificarReservacion.Size = new System.Drawing.Size(133, 54);
-            this.btnModificarReservacion.TabIndex = 13;
+            this.btnModificarReservacion.TabIndex = 1;
             this.btnModificarReservacion.Text = "Modificar Menu";
             this.btnModificarReservacion.UseVisualStyleBackColor = false;
             // 
