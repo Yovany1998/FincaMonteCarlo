@@ -147,6 +147,7 @@
             this.txtIdentidad.AllowDrop = true;
             this.txtIdentidad.Location = new System.Drawing.Point(169, 90);
             this.txtIdentidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdentidad.MaxLength = 15;
             this.txtIdentidad.Multiline = true;
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Size = new System.Drawing.Size(148, 24);
@@ -188,6 +189,7 @@
             this.txtTelefono.AllowDrop = true;
             this.txtTelefono.Location = new System.Drawing.Point(169, 167);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(148, 23);

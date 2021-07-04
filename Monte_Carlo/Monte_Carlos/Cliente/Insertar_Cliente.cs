@@ -31,6 +31,35 @@ namespace Monte_Carlos.Cliente
 
         private void txtInsertarCliente_Click(object sender, EventArgs e)
         {
+            String Identidad = txtIdentidad.Text;
+
+
+            var tClientee = Variables.Clientes.FirstOrDefault(x => x.Identidad == Identidad);
+
+            if (tClientee != null)              
+            {
+                MessageBox.Show("El numero de identidad ya existe");
+                txtIdentidad.Focus();
+                return;
+            }
+
+            var TamanoIdentidad = txtIdentidad.TextLength;
+            if (TamanoIdentidad < 15)
+            {
+                MessageBox.Show("El numero de identidad es muy corto");
+                txtIdentidad.Focus();
+                return;
+            }
+
+            char guion = Convert.ToChar("-");
+            char Guion1 = txtIdentidad.Text[0];
+            char Guion2 = txtIdentidad.Text[4];
+       if(Guion1 != guion ||  Guion2 != guion) {
+                MessageBox.Show("El numero de idententidad debe llevar guiones o esta mal escrito");
+                txtIdentidad.Focus();
+                return;
+            }
+
 
             if (txtIdentidad.Text.Equals(""))
             {
@@ -52,17 +81,51 @@ namespace Monte_Carlos.Cliente
                 MessageBox.Show("Por favor ingresar la edad");
                 return;
             }
-            if (txtNombre.Text.Equals(""))
-            {
-                MessageBox.Show("Por favor ingresar el nombre");
-                return;
-            }
+
             if (txtTelefono.Text.Equals(""))
             {
                 MessageBox.Show("Por favor ingresar el numero telefonico");
                 return;
             }
+            var TamanoTelefono = txtTelefono.TextLength;
+            if (TamanoTelefono < 8)
+            {
+                MessageBox.Show("El numero de telefono es muy corto");
+                txtTelefono.Focus();
+                return;
+            }
 
+
+            char TigoClaro = txtTelefono.Text[0];
+            if(TigoClaro !=Convert.ToChar("3") || TigoClaro != Convert.ToChar("8") || TigoClaro != Convert.ToChar("9"))
+            {
+                MessageBox.Show("El numero de telefono debe ser tigo o claro");
+            }
+
+            if (txtCorreo.Text != "")
+            {
+                int NArroba = 0;
+                var TamanoCorreo = txtCorreo.TextLength;
+                for (int r=0; r < TamanoCorreo; r++) {
+                    char Arroba = txtCorreo.Text[r];
+                    if ( Arroba == Convert.ToChar("@"))
+                    {
+                         NArroba = NArroba + 1;
+                    }
+
+                }
+
+                if(NArroba == 0)
+                {
+                    MessageBox.Show("El correo ingresado debe llevar @");
+                    txtCorreo.Focus();
+                    return;
+                }
+            }
+            {
+                MessageBox.Show("Por favor ingresar el numero telefonico");
+                return;
+            }
             if (editar)
             {
                 MessageBox.Show("Modifique");
