@@ -106,15 +106,13 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 5;
-            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(380, 198);
+            this.txtPrecio.Location = new System.Drawing.Point(371, 200);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(109, 20);
             this.txtPrecio.TabIndex = 4;
-            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtIdVenta
             // 
@@ -122,8 +120,6 @@
             this.txtIdVenta.Name = "txtIdVenta";
             this.txtIdVenta.Size = new System.Drawing.Size(100, 20);
             this.txtIdVenta.TabIndex = 3;
-            this.txtIdVenta.TextChanged += new System.EventHandler(this.txtIdVenta_TextChanged);
-            this.txtIdVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCliente_KeyPress);
             // 
             // label2
             // 
@@ -289,11 +285,10 @@
             // 
             // txtIdFactura
             // 
-            this.txtIdFactura.Location = new System.Drawing.Point(372, 152);
+            this.txtIdFactura.Location = new System.Drawing.Point(371, 152);
             this.txtIdFactura.Name = "txtIdFactura";
-            this.txtIdFactura.Size = new System.Drawing.Size(100, 20);
+            this.txtIdFactura.Size = new System.Drawing.Size(109, 20);
             this.txtIdFactura.TabIndex = 19;
-            this.txtIdFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdFactura_KeyPress);
             // 
             // cmbComidaBebida
             // 
@@ -306,9 +301,6 @@
             this.cmbComidaBebida.Size = new System.Drawing.Size(100, 21);
             this.cmbComidaBebida.TabIndex = 45;
             this.cmbComidaBebida.SelectedIndexChanged += new System.EventHandler(this.cmbComida_SelectedIndexChanged);
-            this.cmbComidaBebida.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbComida_KeyDown);
-            this.cmbComidaBebida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbComida_KeyPress);
-            this.cmbComidaBebida.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmbComida_MouseDown);
             // 
             // cmbCliente
             // 
@@ -336,7 +328,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(377, 108);
+            this.txtApellido.Location = new System.Drawing.Point(371, 108);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(109, 20);
@@ -361,10 +353,10 @@
             "Exento",
             "15%",
             "18%"});
-            this.cmbImpuesto.Location = new System.Drawing.Point(378, 237);
+            this.cmbImpuesto.Location = new System.Drawing.Point(372, 237);
             this.cmbImpuesto.Margin = new System.Windows.Forms.Padding(2);
             this.cmbImpuesto.Name = "cmbImpuesto";
-            this.cmbImpuesto.Size = new System.Drawing.Size(100, 21);
+            this.cmbImpuesto.Size = new System.Drawing.Size(108, 21);
             this.cmbImpuesto.TabIndex = 53;
             this.cmbImpuesto.SelectedIndexChanged += new System.EventHandler(this.cmbImpuesto_SelectedIndexChanged);
             // 

@@ -52,9 +52,9 @@ namespace Monte_Carlos
 
         private void btnReservaciones_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Menu_Reservaciones ventana = new Menu_Reservaciones();
-            ventana.Show();
+           // this.Hide();
+           // Menu_Reservaciones ventana = new Menu_Reservacion();
+           // ventana.Show();
         }
 
         private void horafecha_Tick(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace Monte_Carlos
         private void btnCarta_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu_Reservaciones ventana = new Menu_Reservaciones();
+            Menu_Carta ventana = new Menu_Carta();
             ventana.Show();
         }
 

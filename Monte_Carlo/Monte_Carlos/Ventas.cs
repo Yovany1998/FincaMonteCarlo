@@ -17,19 +17,7 @@ namespace Monte_Carlos
         public int IdVenta { get; set; }
         public int IdFactura { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
-        public int IdPedido { get; set; }
         public int IdCliente { get; set; }
-        public string NombreCliente { get; set; }
-        public int IdComidaBebida { get; set; }
-        public string Nombre { get; set; }
-        public Nullable<decimal> Precio { get; set; }
-        public Nullable<int> Cantidad { get; set; }
-        public Nullable<double> Impuesto { get; set; }
         public string Pagado { get; set; }
-    
-        public virtual Clientes Clientes { get; set; }
-        public virtual Facturas Facturas { get; set; }
-        public virtual Menu Menu { get; set; }
-        public virtual Pedidos Pedidos { get; set; }
     }
 }

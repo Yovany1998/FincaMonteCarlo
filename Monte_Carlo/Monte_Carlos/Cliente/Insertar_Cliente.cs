@@ -126,6 +126,7 @@ namespace Monte_Carlos.Cliente
                 MessageBox.Show("Por favor ingresar el numero telefonico");
                 return;
             }
+
             if (editar)
             {
                 MessageBox.Show("Modifique");
@@ -181,6 +182,7 @@ namespace Monte_Carlos.Cliente
             txtEdad.Text = "";
             txtTelefono.Text = "";
             txtCorreo.Text = "";
+            
         }
 
         private void Insertar_Cliente_Load(object sender, EventArgs e)

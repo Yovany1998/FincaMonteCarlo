@@ -82,6 +82,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Conexión.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DetalleVenta.cs">
+      <DependentUpon>Conexión.tt</DependentUpon>
+    </Compile>
     <Compile Include="Empleados.cs">
       <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>

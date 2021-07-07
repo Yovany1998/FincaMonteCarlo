@@ -12,6 +12,25 @@
     <Property Name="Telefono" Type="int" />
     <Property Name="Correo" Type="varchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="DetalleVenta">
+    <Key>
+      <PropertyRef Name="IdDetalleVentas" />
+    </Key>
+    <Property Name="IdDetalleVentas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="IdVenta" Type="int" Nullable="false" />
+    <Property Name="IdFactura" Type="int" Nullable="false" />
+    <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" />
+    <Property Name="IdComidaBebida" Type="int" Nullable="false" />
+    <Property Name="NombreComidaBebida" Type="varchar" MaxLength="50" />
+    <Property Name="PrecioComidaBebida" Type="float" />
+    <Property Name="Cantidad" Type="int" />
+    <Property Name="Subtotal" Type="float" />
+    <Property Name="Impuesto" Type="float" />
+    <Property Name="Total" Type="float" />
+  </EntityType>
   <EntityType Name="Empleados">
     <Key>
       <PropertyRef Name="IdEmpleado" />
@@ -84,66 +103,48 @@
     <Property Name="IdVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdFactura" Type="int" Nullable="false" />
     <Property Name="Fecha" Type="datetime" />
-    <Property Name="IdPedido" Type="int" Nullable="false" />
     <Property Name="IdCliente" Type="int" Nullable="false" />
-    <Property Name="NombreCliente" Type="nchar" MaxLength="10" />
-    <Property Name="IdComidaBebida" Type="int" Nullable="false" />
-    <Property Name="Nombre" Type="varchar" MaxLength="50" />
-    <Property Name="Precio" Type="money" />
-    <Property Name="Cantidad" Type="int" />
-    <Property Name="Impuesto" Type="float" />
     <Property Name="Pagado" Type="varchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK_Ventas_Clientes">
+  <Association Name="FK_DetalleVenta_Clientes">
     <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
-    <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+    <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Clientes">
         <PropertyRef Name="IdCliente" />
       </Principal>
-      <Dependent Role="Ventas">
+      <Dependent Role="DetalleVenta">
         <PropertyRef Name="IdCliente" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Ventas_Facturas">
+  <Association Name="FK_DetalleVenta_Facturas">
     <End Role="Facturas" Type="Self.Facturas" Multiplicity="1" />
-    <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+    <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Facturas">
         <PropertyRef Name="IdFactura" />
       </Principal>
-      <Dependent Role="Ventas">
+      <Dependent Role="DetalleVenta">
         <PropertyRef Name="IdFactura" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Ventas_Menu">
+  <Association Name="FK_DetalleVenta_Menu">
     <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
-    <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+    <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Menu">
         <PropertyRef Name="IdComidaBebida" />
       </Principal>
-      <Dependent Role="Ventas">
+      <Dependent Role="DetalleVenta">
         <PropertyRef Name="IdComidaBebida" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Ventas_Pedidos">
-    <End Role="Pedidos" Type="Self.Pedidos" Multiplicity="1" />
-    <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pedidos">
-        <PropertyRef Name="IdPedido" />
-      </Principal>
-      <Dependent Role="Ventas">
-        <PropertyRef Name="IdPedido" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Finca_Monte_CarloModelStoreContainer">
     <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalleVenta" EntityType="Self.DetalleVenta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
@@ -151,21 +152,17 @@
     <EntitySet Name="Reservaciones" EntityType="Self.Reservaciones" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Ventas_Clientes" Association="Self.FK_Ventas_Clientes">
+    <AssociationSet Name="FK_DetalleVenta_Clientes" Association="Self.FK_DetalleVenta_Clientes">
       <End Role="Clientes" EntitySet="Clientes" />
-      <End Role="Ventas" EntitySet="Ventas" />
+      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
     </AssociationSet>
-    <AssociationSet Name="FK_Ventas_Facturas" Association="Self.FK_Ventas_Facturas">
+    <AssociationSet Name="FK_DetalleVenta_Facturas" Association="Self.FK_DetalleVenta_Facturas">
       <End Role="Facturas" EntitySet="Facturas" />
-      <End Role="Ventas" EntitySet="Ventas" />
+      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
     </AssociationSet>
-    <AssociationSet Name="FK_Ventas_Menu" Association="Self.FK_Ventas_Menu">
+    <AssociationSet Name="FK_DetalleVenta_Menu" Association="Self.FK_DetalleVenta_Menu">
       <End Role="Menu" EntitySet="Menu" />
-      <End Role="Ventas" EntitySet="Ventas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Ventas_Pedidos" Association="Self.FK_Ventas_Pedidos">
-      <End Role="Pedidos" EntitySet="Pedidos" />
-      <End Role="Ventas" EntitySet="Ventas" />
+      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

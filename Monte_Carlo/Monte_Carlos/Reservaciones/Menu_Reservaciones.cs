@@ -51,5 +51,10 @@ namespace Monte_Carlos.Reservaciones
             Ver_Reservaciones ventana = new Ver_Reservaciones();
             ventana.Show();
         }
+
+        private void Menu_Reservaciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

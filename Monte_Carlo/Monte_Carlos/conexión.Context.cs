@@ -32,6 +32,7 @@ namespace Monte_Carlos
         public virtual DbSet<Pedidos> Pedidos { get; set; }
         public virtual DbSet<Reservacion> Reservaciones { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<DetalleVenta> DetalleVenta { get; set; }
         public virtual DbSet<Ventas> Ventas { get; set; }
     }
 }

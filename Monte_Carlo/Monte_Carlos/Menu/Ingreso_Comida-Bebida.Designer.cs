@@ -197,7 +197,8 @@
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Items.AddRange(new object[] {
             "Comida",
-            "Bebida"});
+            "Bebida",
+            "Extra"});
             this.cmbTipo.Location = new System.Drawing.Point(130, 189);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipo.Name = "cmbTipo";

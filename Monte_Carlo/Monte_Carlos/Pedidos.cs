@@ -14,20 +14,11 @@ namespace Monte_Carlos
     
     public partial class Pedidos
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Pedidos()
-        {
-            this.Ventas = new HashSet<Ventas>();
-        }
-    
         public int IdPedido { get; set; }
         public Nullable<int> IdVenta { get; set; }
         public Nullable<int> IdComidaBebida { get; set; }
         public string Nombre { get; set; }
         public Nullable<double> Precio { get; set; }
         public Nullable<int> Cantidad { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ventas> Ventas { get; set; }
     }
 }
