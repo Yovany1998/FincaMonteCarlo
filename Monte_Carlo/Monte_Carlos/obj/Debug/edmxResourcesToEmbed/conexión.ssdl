@@ -21,15 +21,11 @@
     <Property Name="IdVenta" Type="int" Nullable="false" />
     <Property Name="IdFactura" Type="int" Nullable="false" />
     <Property Name="IdCliente" Type="int" Nullable="false" />
-    <Property Name="Nombre" Type="varchar" MaxLength="50" />
-    <Property Name="Apellido" Type="varchar" MaxLength="50" />
     <Property Name="IdComidaBebida" Type="int" Nullable="false" />
-    <Property Name="NombreComidaBebida" Type="varchar" MaxLength="50" />
     <Property Name="PrecioComidaBebida" Type="float" />
     <Property Name="Cantidad" Type="int" />
     <Property Name="Subtotal" Type="float" />
     <Property Name="Impuesto" Type="float" />
-    <Property Name="Total" Type="float" />
   </EntityType>
   <EntityType Name="Empleados">
     <Key>
@@ -118,18 +114,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_DetalleVenta_Facturas">
-    <End Role="Facturas" Type="Self.Facturas" Multiplicity="1" />
-    <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Facturas">
-        <PropertyRef Name="IdFactura" />
-      </Principal>
-      <Dependent Role="DetalleVenta">
-        <PropertyRef Name="IdFactura" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DetalleVenta_Menu">
     <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
     <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
@@ -154,10 +138,6 @@
     <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_DetalleVenta_Clientes" Association="Self.FK_DetalleVenta_Clientes">
       <End Role="Clientes" EntitySet="Clientes" />
-      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DetalleVenta_Facturas" Association="Self.FK_DetalleVenta_Facturas">
-      <End Role="Facturas" EntitySet="Facturas" />
       <End Role="DetalleVenta" EntitySet="DetalleVenta" />
     </AssociationSet>
     <AssociationSet Name="FK_DetalleVenta_Menu" Association="Self.FK_DetalleVenta_Menu">

@@ -128,6 +128,7 @@
             this.Controls.Add(this.btnInsertarPedido);
             this.Name = "Menu_Venta";
             this.Text = "Menu_Venta";
+            this.Load += new System.EventHandler(this.Menu_Venta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

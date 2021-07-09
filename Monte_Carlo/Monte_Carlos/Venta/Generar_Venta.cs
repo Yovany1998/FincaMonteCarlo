@@ -13,13 +13,16 @@ namespace Monte_Carlos.Venta
     public partial class Generar_Venta : Form
     {
         private int conta = 0;
+        double total = 0.0;
         private bool VentaValida = true;
         private int contadorcomida=0;
         Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
         long idDetalleVenta = 0;
+        string nombre = "";
         bool editar = false;
         bool ValidarComida = false;
         bool ValidarCliente = false;
+        double impuesto = 0.0;
         DataTable dtVentas = new DataTable();
 
 
@@ -57,62 +60,105 @@ namespace Monte_Carlos.Venta
 
         private void limpiardetalle()
         {
-            //txtIdPedido.Text = "";
-            cmbComidaBebida.SelectedIndex = -1;
+            cmbImpuesto.SelectedValue = 0;
+            
             txtPrecio.Text = "";
             txtCantidad.Text = "";
+           // contadorcomida = 0;
+          //  ValidarComida = false;
         }
 
         private void BtnInsertar_Click(object sender, EventArgs e)
         {
+           
             Validar();
             if (editar)
             {
                 MessageBox.Show("Modifique");
                 var tdetalles = Variables.DetalleVenta.FirstOrDefault(x => x.IdDetalleVentas == idDetalleVenta);
-                tdetalles.NombreComidaBebida = cmbComidaBebida.SelectedItem.ToString();
                 tdetalles.PrecioComidaBebida = Convert.ToDouble(txtPrecio.Text);
                 tdetalles.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                tdetalles.Impuesto = Convert.ToDouble(cmbImpuesto.SelectedItem.ToString());
+                if (cmbCliente.SelectedValue.ToString() == "15%")
+                {
+                    impuesto = 0.15;
+                }
+                if (cmbCliente.SelectedValue.ToString() == "18%")
+                {
+                    impuesto = 0.18;
+                }
+                if (cmbCliente.SelectedValue.ToString() == "Exento")
+                {
+                    impuesto = 0;
+                }
+                tdetalles.Impuesto = impuesto;
 
                 Variables.SaveChanges();
             }
             else
             {
+               if(txtIdVenta.Text == "")
+                {
+                    MessageBox.Show("No puede ingresar un porducto sin ingresar la venta");
+                    btnVenta.Focus();
+                    return;
+                }
+
                 MessageBox.Show("Guarde");
                 DetalleVenta tbdetalles = new DetalleVenta();
-                tbdetalles.NombreComidaBebida = cmbComidaBebida.SelectedItem.ToString();
+                tbdetalles.Fecha = FechaActual;
+                tbdetalles.IdCliente = Convert.ToInt32(cmbCliente.SelectedValue.ToString());
+                tbdetalles.IdVenta = Convert.ToInt32(txtIdVenta.Text);
+                tbdetalles.IdFactura = Convert.ToInt32(txtIdFactura.Text);
+                tbdetalles.IdComidaBebida = Convert.ToInt32(cmbComidaBebida.SelectedValue.ToString());
                 tbdetalles.PrecioComidaBebida = Convert.ToDouble(txtPrecio.Text);
                 tbdetalles.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                tbdetalles.Impuesto = Convert.ToDouble(cmbImpuesto.SelectedItem.ToString());
+                tbdetalles.Subtotal = Convert.ToInt32(txtCantidad.Text)*Convert.ToDouble(txtPrecio.Text);
+                //  MessageBox.Show(cmbImpuesto.SelectedItem.ToString());
+
+                if (cmbImpuesto.SelectedItem.ToString() == "Exento")
+                {
+                    impuesto = 0;
+                }else
+                if (cmbImpuesto.SelectedItem.ToString() == "15%")
+                {
+                    impuesto = 0.15;
+                }else
+                   {
+                    impuesto = 0.18;
+                }
+                impuesto = impuesto * (Convert.ToInt32(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text));
+
+                tbdetalles.Impuesto = impuesto;
                 Variables.DetalleVenta.Add(tbdetalles);
                 Variables.SaveChanges();
+                total = total + Convert.ToInt32(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text)+ impuesto;
+                Total.Text = Convert.ToString(total);
+                limpiardetalle();
             }
 
-            limpiar();
-            editar = false;
-            idDetalleVenta = 0;
-
-
-            Int64 IdVen = Convert.ToInt64(cmbCliente.SelectedValue.ToString());
-
-            var tdetalle  = from p in Variables.DetalleVenta
-                            join t in Variables.Ventas on p.IdVenta equals t.IdVenta
+            //Desplegar en la tabla
+            Int64 IdVen = Convert.ToInt64(txtIdVenta.Text);
+            Int64 IdComidaBebida = Convert.ToInt64(cmbComidaBebida.SelectedValue.ToString());
+            var tdetalle = from p in Variables.DetalleVenta
+                           join t in Variables.Menu on p.IdComidaBebida equals t.IdComidaBebida
+                           join f in Variables.Ventas on p.IdVenta equals f.IdVenta
                             where p.IdVenta == IdVen
-                            select new
-                           {
-                               p.NombreComidaBebida,
-                               p.PrecioComidaBebida,
-                               p.Cantidad,
-                               p.Subtotal,
-                               p.Impuesto,
-                              
-                           };
+                           select new
+                                {  p.IdDetalleVentas,
+                                    t.Nombre,
+                                    p.PrecioComidaBebida,
+                                    p.Cantidad,
+                                    p.Subtotal,
+                                    p.Impuesto,
+                                };
             dvVenta.DataSource = tdetalle.CopyAnonymusToDataTable();
             dvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             idDetalleVenta = 0;
-            limpiar();
+           // limpiar();
             editar = false;
+            ValidarCliente = false;
+            cmbComidaBebida.SelectedIndex = -1;
+           
         }
         private void Validar()
         {
@@ -185,6 +231,12 @@ namespace Monte_Carlos.Venta
                 VentaValida = false;
                 return;
             }
+            if(txtIdVenta.Text != "")
+            {
+                MessageBox.Show("No puede realizar una venta encima de otra");
+                cmbComidaBebida.Focus();
+                return;
+            }
        
         }
         public DateTime FechaActual
@@ -196,14 +248,14 @@ namespace Monte_Carlos.Venta
         private void guardar()
         {
             //Aqui guardo
-            MessageBox.Show("Guarde la venta");
+          //  MessageBox.Show("Guarde la venta");
             Ventas tbventas = new Ventas();
-            MessageBox.Show(txtIdFactura.Text);
+         //   MessageBox.Show(txtIdFactura.Text);
             tbventas.IdFactura =Convert.ToInt32(txtIdFactura.Text);
             tbventas.Fecha = FechaActual;
             tbventas.IdCliente = Convert.ToInt32(cmbCliente.SelectedIndex.ToString());
             //  tbventas.Pagado = ;
-            MessageBox.Show(Convert.ToString(tbventas));
+            //MessageBox.Show(Convert.ToString(tbventas));
      
             Variables.Ventas.Add(tbventas);
             Variables.SaveChanges();
@@ -214,12 +266,10 @@ namespace Monte_Carlos.Venta
         
         private void button1_Click(object sender, EventArgs e)
         {
-         //   try
-           // {
                 validad_venta();
             var rowVenta = Variables.Ventas.OrderByDescending(t => t.IdVenta).FirstOrDefault();
             var rowFactura = Variables.Facturas.OrderByDescending(a => a.IdFactura).FirstOrDefault();
-                MessageBox.Show(Convert.ToString(rowVenta));
+              //  MessageBox.Show(Convert.ToString(rowVenta));
                 if (rowVenta != null)
                 {
                     
@@ -229,7 +279,7 @@ namespace Monte_Carlos.Venta
                 {
                     int idFactura = Convert.ToInt32(rowFactura.IdFactura);
                     txtIdFactura.Text = Convert.ToString(idFactura + 1);
-
+                   
                 }
                 else
                 {
@@ -243,25 +293,11 @@ namespace Monte_Carlos.Venta
                     txtIdVenta.Text = "1";
                     guardar();
                 }
-               
-
-          //  }
-           // catch
-            //{
-              //  if (VentaValida == true)
-               // {
-                 // validad_venta();
-                  //  txtIdVenta.Text = "1";
-                //}
-              
-           // }
-
-            //Area de insertar la venta
-
         }
 
         private void Generar_Venta_Load(object sender, EventArgs e)
         {
+            cmbImpuesto.SelectedIndex = 0;
             var tMod = from mod in Variables.Clientes
                        select new
                        {   mod.IdCliente,
@@ -272,6 +308,7 @@ namespace Monte_Carlos.Venta
             cmbCliente.DataSource = dtMod;
             cmbCliente.ValueMember = dtMod.Columns[0].ColumnName;
             cmbCliente.DisplayMember = dtMod.Columns[1].ColumnName;
+            nombre = (cmbCliente.DisplayMember = dtMod.Columns[1].ColumnName);
             //Comida Bebida
             var tcomi = from c in Variables.Menu
                        select new
@@ -298,10 +335,13 @@ namespace Monte_Carlos.Venta
            // MessageBox.Show(Convert.ToString(contadorcomida));
             if (ValidarComida)
             {
-                Int64 IdComidaBebida = Convert.ToInt64(cmbComidaBebida.SelectedValue.ToString());
-                var tMenus = Variables.Menu.FirstOrDefault(x => x.IdComidaBebida == IdComidaBebida);
-               // MessageBox.Show("Aqui esta el precio");
-                txtPrecio.Text = Convert.ToString(tMenus.Precio);
+                if (cmbComidaBebida.SelectedIndex != -1){
+                    Int64 IdComidaBebida = Convert.ToInt64(cmbComidaBebida.SelectedValue.ToString());
+                    var tMenus = Variables.Menu.FirstOrDefault(x => x.IdComidaBebida == IdComidaBebida);
+                    // MessageBox.Show("Aqui esta el precio");
+                    txtPrecio.Text = Convert.ToString(tMenus.Precio);
+                }
+             
             }
         }   
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -334,6 +374,36 @@ namespace Monte_Carlos.Venta
                // {
                  //   txtIdFactura.Text = "1";
                // }              
+        }
+
+        private void dvVenta_SelectionChanged(object sender, EventArgs e)
+        { limpiardetalle();
+            if (dvVenta.RowCount > 1)
+            {
+                //  MessageBox.Show("Entre");
+                //  int contado = 0;
+                // contado = contado + 1;
+
+                try
+                {
+                    //  MessageBox.Show(Convert.ToString(contado));
+                    idDetalleVenta = Convert.ToInt64(dvVenta.SelectedCells[0].Value);
+                    MessageBox.Show(Convert.ToString(idDetalleVenta));
+                    var tDetalle = Variables.DetalleVenta.FirstOrDefault(x => x.IdDetalleVentas == idDetalleVenta);
+
+                    cmbComidaBebida.Text = Convert.ToString(tDetalle.IdComidaBebida);
+                    txtPrecio.Text = Convert.ToString(tDetalle.PrecioComidaBebida);
+                    txtCantidad.Text = Convert.ToString(tDetalle.Cantidad);
+                    // txtSubtotal.Text= Convert.ToString(tDetalle.Subtotal);
+                   
+                    editar = true;
+
+                }
+                catch (Exception)
+                {
+
+                }
+            }
         }
     }
 }

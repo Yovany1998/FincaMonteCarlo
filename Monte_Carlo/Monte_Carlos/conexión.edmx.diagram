@@ -14,7 +14,6 @@
         <EntityTypeShape EntityType="Finca_Monte_CarloModel.Usuario" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Finca_Monte_CarloModel.DetalleVenta" Width="1.5" PointX="8" PointY="4.25" />
         <AssociationConnector Association="Finca_Monte_CarloModel.FK_DetalleVenta_Clientes" />
-        <AssociationConnector Association="Finca_Monte_CarloModel.FK_DetalleVenta_Facturas" />
         <AssociationConnector Association="Finca_Monte_CarloModel.FK_DetalleVenta_Menu" />
         <EntityTypeShape EntityType="Finca_Monte_CarloModel.Ventas" Width="1.5" PointX="3" PointY="2.25" />
         <AssociationConnector Association="Finca_Monte_CarloModel.FK_Ventas_Facturas" />

@@ -109,6 +109,7 @@
             // 
             // txtPrecio
             // 
+            this.txtPrecio.Enabled = false;
             this.txtPrecio.Location = new System.Drawing.Point(371, 200);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(109, 20);
@@ -116,6 +117,7 @@
             // 
             // txtIdVenta
             // 
+            this.txtIdVenta.Enabled = false;
             this.txtIdVenta.Location = new System.Drawing.Point(148, 151);
             this.txtIdVenta.Name = "txtIdVenta";
             this.txtIdVenta.Size = new System.Drawing.Size(100, 20);
@@ -223,6 +225,7 @@
             this.dvVenta.RowHeadersWidth = 51;
             this.dvVenta.Size = new System.Drawing.Size(615, 107);
             this.dvVenta.TabIndex = 43;
+            this.dvVenta.SelectionChanged += new System.EventHandler(this.dvVenta_SelectionChanged);
             // 
             // btnVenta
             // 
@@ -285,6 +288,7 @@
             // 
             // txtIdFactura
             // 
+            this.txtIdFactura.Enabled = false;
             this.txtIdFactura.Location = new System.Drawing.Point(371, 152);
             this.txtIdFactura.Name = "txtIdFactura";
             this.txtIdFactura.Size = new System.Drawing.Size(109, 20);
@@ -328,6 +332,7 @@
             // 
             // txtApellido
             // 
+            this.txtApellido.Enabled = false;
             this.txtApellido.Location = new System.Drawing.Point(371, 108);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";

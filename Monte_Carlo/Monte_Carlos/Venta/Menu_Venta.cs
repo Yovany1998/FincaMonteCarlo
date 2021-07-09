@@ -45,5 +45,10 @@ namespace Monte_Carlos.Venta
             ventana.Show();
 
         }
+
+        private void Menu_Venta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

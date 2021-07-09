@@ -19,18 +19,13 @@ namespace Monte_Carlos
         public int IdVenta { get; set; }
         public int IdFactura { get; set; }
         public int IdCliente { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
         public int IdComidaBebida { get; set; }
-        public string NombreComidaBebida { get; set; }
         public Nullable<double> PrecioComidaBebida { get; set; }
         public Nullable<int> Cantidad { get; set; }
         public Nullable<double> Subtotal { get; set; }
         public Nullable<double> Impuesto { get; set; }
-        public Nullable<double> Total { get; set; }
     
         public virtual Clientes Clientes { get; set; }
-        public virtual Facturas Facturas { get; set; }
         public virtual Menu Menu { get; set; }
     }
 }
