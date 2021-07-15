@@ -99,7 +99,7 @@
             this.btnModificarPedido.Name = "btnModificarPedido";
             this.btnModificarPedido.Size = new System.Drawing.Size(133, 54);
             this.btnModificarPedido.TabIndex = 13;
-            this.btnModificarPedido.Text = "Factura";
+            this.btnModificarPedido.Text = "Registro Diario";
             this.btnModificarPedido.UseVisualStyleBackColor = false;
             this.btnModificarPedido.Click += new System.EventHandler(this.btnFactura_Click);
             // 
@@ -127,6 +127,7 @@
             this.Controls.Add(this.btnModificarPedido);
             this.Controls.Add(this.btnInsertarPedido);
             this.Name = "Menu_Venta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_Venta";
             this.Load += new System.EventHandler(this.Menu_Venta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

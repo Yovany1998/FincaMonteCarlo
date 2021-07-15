@@ -101,7 +101,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(614, 57);
+            this.panel1.Size = new System.Drawing.Size(574, 57);
             this.panel1.TabIndex = 23;
             // 
             // label6
@@ -177,7 +177,7 @@
             this.dvempleado.Name = "dvempleado";
             this.dvempleado.RowHeadersWidth = 51;
             this.dvempleado.RowTemplate.Height = 24;
-            this.dvempleado.Size = new System.Drawing.Size(614, 164);
+            this.dvempleado.Size = new System.Drawing.Size(574, 164);
             this.dvempleado.TabIndex = 31;
             this.dvempleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvempleado_CellContentClick);
             // 
@@ -193,12 +193,13 @@
             // 
             // btninsertar
             // 
-            this.btninsertar.Location = new System.Drawing.Point(489, 221);
+            this.btninsertar.BackColor = System.Drawing.Color.Peru;
+            this.btninsertar.Location = new System.Drawing.Point(474, 204);
             this.btninsertar.Name = "btninsertar";
-            this.btninsertar.Size = new System.Drawing.Size(75, 23);
+            this.btninsertar.Size = new System.Drawing.Size(90, 40);
             this.btninsertar.TabIndex = 5;
             this.btninsertar.Text = "Insertar";
-            this.btninsertar.UseVisualStyleBackColor = true;
+            this.btninsertar.UseVisualStyleBackColor = false;
             this.btninsertar.Click += new System.EventHandler(this.btninsertar_Click);
             // 
             // txtid
@@ -225,7 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 431);
+            this.ClientSize = new System.Drawing.Size(574, 431);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btninsertar);
@@ -240,6 +241,7 @@
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.label1);
             this.Name = "Insertar_Empleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Insertar_Empleado";
             this.Load += new System.EventHandler(this.Insertar_Empleado_Load);
             this.panel1.ResumeLayout(false);

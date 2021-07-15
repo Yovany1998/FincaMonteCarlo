@@ -292,4 +292,35 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="txtInsertarCliente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAD3SURBVEhL7ZY7DsIwEERzEoRo4QI01CCOwa04DhQ5AhVCfBoqhEQPM8VKVuzE4zjQ4Ce9Is5m
+        J6tskarwRcawhg+44cGvmMI7fEOGe6zhDbKgr084h4STMpTMIMM5uccVhpqpNkNPkGEMJXwJnnuEmqmG
+        Qu0ew23yIG6jFF9wAckIHqF7/wwnsBW3WDU7lLgPKA4SSuyBVLJCSZ/g5iJRXtv22sJ1khocm5Sh3PYo
+        KcGxSQlDpX7WIIb6TdV+cuEWWi1tWyS1n1y4h1bbtb1qP7nwAHeQk7vftMngwSoluJUSnIvcL/fXJ+QF
+        RlnBIcMZuoSFv6KqPigy+kYDsSQIAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnElimicar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAACiSURBVFhH7ZBBCsMwDAR96hv6l/R7oT/sC5J3pFLAEEzNMlIPOWhgD5vgseRWFAGelo/lGOLf
+        /N/fGC/IBvNL0jNuO3uVa0KkDhvZ8zXA/QbIdowS0o5RQtoxSkg7Rglpxygh7RglpB2jhLRjlJB2jBLS
+        jlFC2jFZQQ2QHmC3uGA5G+Nl8bPb2YK8LX2LaFZLmIfFh+gvQeKb++XuKIoJrX0Bm2zXGHb3+q0AAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="btnNuevo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFTSURBVEhL7ZQ7TgQxEETnBiTAHQi4AL+IBJEhOAAZ1+BzLyQQIbAxIXAAfjFQtTttNdPlZSzs
+        iH3S0864ety79qy7Bf+KffgMvxr5BPdggIF6oKaPMKAKWxhQRS0MqKIWBlRRCwPZoBKLxgkV3MDr2eUU
+        3lvdPP0zhmUBFXCCq9nlFN5bnfISHsM1OMS+dMAebslu//mDGo1X4QW8hx+9d/AcMpOoxr/t8QNcguQI
+        vkGfe5kdwoAVeObt8SfcgYRNeW9ZTtaE5haWwiVUv3QDbg3G6CtcgQkLSuGe+omH86jsDCZssJQJ9JMO
+        51EZX7iEDZbil5nLm8MvO59J2GApvvEmBzJsQ6vjPidscKzrkPA/q3JDZXKpx3oCCQ8HlRsqO4V/Jvd3
+        4rL75TVf4DKsAg+FsQfIAawKm/OlUQ0pf2n1pgZPJB4Ot/C9l9fcU7e8XfcN9KB4pgZzicUAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
 </root>

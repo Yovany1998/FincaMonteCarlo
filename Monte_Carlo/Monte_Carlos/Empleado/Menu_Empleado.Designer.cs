@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu_Empleado));
             this.btnModificarEmpleado = new System.Windows.Forms.Button();
             this.btnInsertarEmpleado = new System.Windows.Forms.Button();
-            this.btnEliminarEmpleado = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,7 +44,7 @@
             // 
             this.btnModificarEmpleado.BackColor = System.Drawing.Color.Peru;
             this.btnModificarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificarEmpleado.Location = new System.Drawing.Point(197, 235);
+            this.btnModificarEmpleado.Location = new System.Drawing.Point(197, 273);
             this.btnModificarEmpleado.Name = "btnModificarEmpleado";
             this.btnModificarEmpleado.Size = new System.Drawing.Size(133, 54);
             this.btnModificarEmpleado.TabIndex = 3;
@@ -57,7 +56,7 @@
             // 
             this.btnInsertarEmpleado.BackColor = System.Drawing.Color.Peru;
             this.btnInsertarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInsertarEmpleado.Location = new System.Drawing.Point(34, 235);
+            this.btnInsertarEmpleado.Location = new System.Drawing.Point(34, 273);
             this.btnInsertarEmpleado.Name = "btnInsertarEmpleado";
             this.btnInsertarEmpleado.Size = new System.Drawing.Size(133, 54);
             this.btnInsertarEmpleado.TabIndex = 4;
@@ -65,23 +64,11 @@
             this.btnInsertarEmpleado.UseVisualStyleBackColor = false;
             this.btnInsertarEmpleado.Click += new System.EventHandler(this.btnInsertarEmpleado_Click);
             // 
-            // btnEliminarEmpleado
-            // 
-            this.btnEliminarEmpleado.BackColor = System.Drawing.Color.Peru;
-            this.btnEliminarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminarEmpleado.Location = new System.Drawing.Point(34, 320);
-            this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
-            this.btnEliminarEmpleado.Size = new System.Drawing.Size(133, 54);
-            this.btnEliminarEmpleado.TabIndex = 5;
-            this.btnEliminarEmpleado.Text = "Eliminar Empleado";
-            this.btnEliminarEmpleado.UseVisualStyleBackColor = false;
-            this.btnEliminarEmpleado.Click += new System.EventHandler(this.btnEliminarEmpleado_Click);
-            // 
             // btnVer
             // 
             this.btnVer.BackColor = System.Drawing.Color.Peru;
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVer.Location = new System.Drawing.Point(197, 320);
+            this.btnVer.Location = new System.Drawing.Point(197, 272);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(133, 54);
             this.btnVer.TabIndex = 6;
@@ -93,7 +80,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(20, 35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(328, 194);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -107,7 +94,7 @@
             this.panel1.Controls.Add(this.btnReturn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(368, 31);
             this.panel1.TabIndex = 17;
@@ -148,10 +135,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVer);
-            this.Controls.Add(this.btnEliminarEmpleado);
             this.Controls.Add(this.btnInsertarEmpleado);
             this.Controls.Add(this.btnModificarEmpleado);
             this.Name = "Menu_Empleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_Empleado";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -164,7 +151,6 @@
 
         private System.Windows.Forms.Button btnModificarEmpleado;
         private System.Windows.Forms.Button btnInsertarEmpleado;
-        private System.Windows.Forms.Button btnEliminarEmpleado;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;

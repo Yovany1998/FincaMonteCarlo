@@ -92,6 +92,7 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
@@ -165,12 +166,17 @@
             // 
             // txtInsertarCliente
             // 
-            this.txtInsertarCliente.Location = new System.Drawing.Point(441, 221);
+            this.txtInsertarCliente.BackColor = System.Drawing.Color.Peru;
+            this.txtInsertarCliente.ForeColor = System.Drawing.Color.Black;
+            this.txtInsertarCliente.Image = ((System.Drawing.Image)(resources.GetObject("txtInsertarCliente.Image")));
+            this.txtInsertarCliente.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.txtInsertarCliente.Location = new System.Drawing.Point(441, 222);
             this.txtInsertarCliente.Name = "txtInsertarCliente";
-            this.txtInsertarCliente.Size = new System.Drawing.Size(98, 39);
+            this.txtInsertarCliente.Size = new System.Drawing.Size(98, 49);
             this.txtInsertarCliente.TabIndex = 6;
             this.txtInsertarCliente.Text = "Insertar";
-            this.txtInsertarCliente.UseVisualStyleBackColor = true;
+            this.txtInsertarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.txtInsertarCliente.UseVisualStyleBackColor = false;
             this.txtInsertarCliente.Click += new System.EventHandler(this.txtInsertarCliente_Click);
             // 
             // dvClientes
@@ -247,21 +253,31 @@
             // 
             // btnElimicar
             // 
-            this.btnElimicar.Location = new System.Drawing.Point(244, 221);
+            this.btnElimicar.BackColor = System.Drawing.Color.Peru;
+            this.btnElimicar.ForeColor = System.Drawing.Color.Black;
+            this.btnElimicar.Image = ((System.Drawing.Image)(resources.GetObject("btnElimicar.Image")));
+            this.btnElimicar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnElimicar.Location = new System.Drawing.Point(244, 222);
             this.btnElimicar.Name = "btnElimicar";
-            this.btnElimicar.Size = new System.Drawing.Size(98, 39);
+            this.btnElimicar.Size = new System.Drawing.Size(98, 49);
             this.btnElimicar.TabIndex = 8;
             this.btnElimicar.Text = "Eliminar";
-            this.btnElimicar.UseVisualStyleBackColor = true;
+            this.btnElimicar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnElimicar.UseVisualStyleBackColor = false;
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(50, 221);
+            this.btnNuevo.BackColor = System.Drawing.Color.Peru;
+            this.btnNuevo.ForeColor = System.Drawing.Color.Black;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNuevo.Location = new System.Drawing.Point(50, 222);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(98, 39);
+            this.btnNuevo.Size = new System.Drawing.Size(98, 49);
             this.btnNuevo.TabIndex = 7;
             this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // Insertar_Cliente

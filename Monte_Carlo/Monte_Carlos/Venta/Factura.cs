@@ -13,7 +13,7 @@ namespace Monte_Carlos.Venta
     public partial class Factura : Form
     {
         int contador;
-
+        Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
 
         public Factura()
         {
@@ -35,10 +35,17 @@ namespace Monte_Carlos.Venta
 
         private void Factura_Load(object sender, EventArgs e)
         {
-            llenarFactura();
-           // DataTable Datos = conexion.consulta(String.Format("SELECT a.IdFactura,a.FechaActual as 'Fecha de venta',b.nombre as 'Nombre del cliente',c.nombre as 'Nombre del empleado', d.total as 'Total del detalle de venta',sum(total) FROM ventas_comedor.factura a join ventas_comedor.cliente b on a.idCliente =b.idCliente  join  ventas_comedor.empleado c on c.idEmpleado =a.IdEmpleado join  ventas_comedor.detalledefactura d on d.idFactura = a.idFactura;"));
-            //dgvFactura.DataSource = Datos;
-            //dgvFactura.Refresh();
+            var tMod = from mod in Variables.Facturas
+                       select new
+                       {
+                           mod.IdFactura,
+                           mod.Fecha,
+                       };
+
+            DataTable dtMod = tMod.CopyAnonymusToDataTable();
+            cmbFactura.DataSource = dtMod;
+            cmbFactura.ValueMember = dtMod.Columns[0].ColumnName;
+            cmbFactura.DisplayMember = dtMod.Columns[1].ColumnName;
         }
 
         private void llenarFactura()
@@ -49,27 +56,45 @@ namespace Monte_Carlos.Venta
 
         private void cmbdetalle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            contador = contador + 1;
-
-
-            if (contador > 2)
-            {
-               // DataTable Datos = conexion.consulta(String.Format("SELECT a.IdFactura,a.FechaActual as 'Fecha de venta',b.nombre as 'Nombre del cliente',c.nombre as 'Nombre del empleado',sum(total) as 'Total a pagar de la venta' FROM ventas_comedor.factura a join ventas_comedor.cliente b on a.idCliente =b.idCliente  join  ventas_comedor.empleado c on c.idEmpleado =a.IdEmpleado join  ventas_comedor.detalledefactura d on d.idFactura = a.idFactura where a.idFactura ={0};",cmbdetalle.Text));
-                //dgvFactura.DataSource = Datos;
-                //dgvFactura.Refresh();
-               // contador = 1;
+           // string fee;
+            //Int64 IdFactura = Convert.ToInt64(cmbFactura.SelectedValue.ToString());
+            //var tFac = Variables.Facturas.FirstOrDefault(x => x.IdFactura == IdFactura);
+          // fee = Convert.ToString( tFac.Fecha);
 
 
 
-            }
         }
 
         private void Btndetalle_Click(object sender, EventArgs e)
         {
-        //   DataTable Datos = conexion.consulta(String.Format("SELECT a.IdFactura,a.FechaActual as 'Fecha de venta',b.nombre as 'Nombre del cliente',c.nombre as 'Nombre del empleado',d.total as 'Total detalle' FROM ventas_comedor.factura a join ventas_comedor.cliente b on a.idCliente =b.idCliente  join  ventas_comedor.empleado c on c.idEmpleado =a.IdEmpleado join  ventas_comedor.detalledefactura d on d.idFactura = a.idFactura;"));
-          //  dgvFactura.DataSource = Datos;
-           // dgvFactura.Refresh();
-            // contador = 1;
+            // string Fecha = DateTimes.Value.ToString("yyyy/MM/dd 00:00:00");
+            DateTime Fecha = Convert.ToDateTime (DateTimes.Value.ToString("yyyy/MM/dd 00:00:00"));
+
+            //  Int64 Fechas = Convert.ToInt64(Fecha);           
+            try
+            {
+                var tFactura = from p in Variables.Facturas
+                                    where p.Fecha == Fecha
+                               select new
+                               {
+                                   p.Fecha,
+                                   p.NombreCliente,
+                                   p.Subtotal,
+                                   p.Impuesto,
+                                   p.Total,
+
+                               };
+
+                dvFactura.DataSource = tFactura.CopyAnonymusToDataTable();
+                // MessageBox.Show(Convert.ToString(dvFactura.F));
+                dvFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            }
+            catch
+            {
+                MessageBox.Show("Esa fecha no tiene registro");
+            }
+         
 
         }
     }

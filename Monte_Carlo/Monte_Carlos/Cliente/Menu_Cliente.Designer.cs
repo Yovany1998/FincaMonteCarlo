@@ -45,7 +45,7 @@
             this.btnInsertarCliente.BackColor = System.Drawing.Color.Peru;
             this.btnInsertarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInsertarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertarCliente.Location = new System.Drawing.Point(33, 251);
+            this.btnInsertarCliente.Location = new System.Drawing.Point(32, 292);
             this.btnInsertarCliente.Name = "btnInsertarCliente";
             this.btnInsertarCliente.Size = new System.Drawing.Size(133, 54);
             this.btnInsertarCliente.TabIndex = 0;
@@ -58,7 +58,7 @@
             this.btnModificarCliente.BackColor = System.Drawing.Color.Peru;
             this.btnModificarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarCliente.Location = new System.Drawing.Point(202, 252);
+            this.btnModificarCliente.Location = new System.Drawing.Point(201, 293);
             this.btnModificarCliente.Name = "btnModificarCliente";
             this.btnModificarCliente.Size = new System.Drawing.Size(133, 54);
             this.btnModificarCliente.TabIndex = 1;
@@ -71,7 +71,7 @@
             this.btnVerCliente.BackColor = System.Drawing.Color.Peru;
             this.btnVerCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVerCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerCliente.Location = new System.Drawing.Point(112, 314);
+            this.btnVerCliente.Location = new System.Drawing.Point(201, 294);
             this.btnVerCliente.Name = "btnVerCliente";
             this.btnVerCliente.Size = new System.Drawing.Size(133, 54);
             this.btnVerCliente.TabIndex = 2;

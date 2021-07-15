@@ -14,6 +14,7 @@ namespace Monte_Carlos.Venta
     {
         private int conta = 0;
         double total = 0.0;
+        long idVenta = 0;
         private bool VentaValida = true;
         private int contadorcomida=0;
         Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
@@ -23,18 +24,14 @@ namespace Monte_Carlos.Venta
         bool ValidarComida = false;
         bool ValidarCliente = false;
         double impuesto = 0.0;
+        double TotImpuesto = 0.0;
+        double TotSubtotal = 0.0;
+        double Subtotal = 0.0;
         DataTable dtVentas = new DataTable();
 
-
-        // private Ventas venta;
-        //private Validar validacion;
         public Generar_Venta()
         {
-            InitializeComponent();
-          //  venta = new Ventas();
-            //validacion = new Validar();
-         
-            
+            InitializeComponent();         
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -56,16 +53,15 @@ namespace Monte_Carlos.Venta
             txtPrecio.Text = "";
             txtCantidad.Text = "";
             Total.Text = "";
+            dvVenta.DataSource = " ";
+            dvVenta.Refresh();
         }
 
         private void limpiardetalle()
         {
             cmbImpuesto.SelectedValue = 0;
-            
             txtPrecio.Text = "";
             txtCantidad.Text = "";
-           // contadorcomida = 0;
-          //  ValidarComida = false;
         }
 
         private void BtnInsertar_Click(object sender, EventArgs e)
@@ -112,7 +108,8 @@ namespace Monte_Carlos.Venta
                 tbdetalles.IdComidaBebida = Convert.ToInt32(cmbComidaBebida.SelectedValue.ToString());
                 tbdetalles.PrecioComidaBebida = Convert.ToDouble(txtPrecio.Text);
                 tbdetalles.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                tbdetalles.Subtotal = Convert.ToInt32(txtCantidad.Text)*Convert.ToDouble(txtPrecio.Text);
+                Subtotal  = Convert.ToInt32(txtCantidad.Text)*Convert.ToDouble(txtPrecio.Text);
+                tbdetalles.Subtotal = Subtotal;
                 //  MessageBox.Show(cmbImpuesto.SelectedItem.ToString());
 
                 if (cmbImpuesto.SelectedItem.ToString() == "Exento")
@@ -133,6 +130,8 @@ namespace Monte_Carlos.Venta
                 Variables.SaveChanges();
                 total = total + Convert.ToInt32(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text)+ impuesto;
                 Total.Text = Convert.ToString(total);
+                TotImpuesto = TotImpuesto + impuesto;
+                TotSubtotal = TotSubtotal + Subtotal;
                 limpiardetalle();
             }
 
@@ -210,16 +209,57 @@ namespace Monte_Carlos.Venta
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             limpiar();
+            limpiardetalle();
         }
 
         private void BtnGenerarVenta_Click(object sender, EventArgs e)
         {
+
+
+            Validar();
+            if (editar)
+            {
+                MessageBox.Show("No deberia entrar aqui");
+            }
+            else
+            {
+                if (txtIdVenta.Text == "")
+                {
+                    MessageBox.Show("No puede ingresar un porducto sin ingresar la venta");
+                    btnVenta.Focus();
+                    return;
+                }
+
+                MessageBox.Show("Guarde la factura");
+                Facturas tbfactura = new Facturas();
+                //tbfactura.Fecha = FechaActual;
+                tbfactura.Fecha = DateTime.Today;
+                tbfactura.IdCliente = Convert.ToInt32(cmbCliente.SelectedValue.ToString());
+                tbfactura.Subtotal = TotSubtotal;
+                tbfactura.Impuesto = TotImpuesto;
+                tbfactura.Total = Convert.ToInt32(Total.Text);
+                var rowNomCli = Variables.Clientes.OrderByDescending(a => a.IdCliente).FirstOrDefault();
+                tbfactura.NombreCliente = Convert.ToString(rowNomCli.Nombre);
+                tbfactura.Impuesto = impuesto;
+                Variables.Facturas.Add(tbfactura);
+                Variables.SaveChanges();
+          
+                limpiardetalle();
+            }
+
+           
+            idDetalleVenta = 0;
+            // limpiar();
+            editar = false;
+            ValidarCliente = false;
+            cmbComidaBebida.SelectedIndex = -1;
             limpiar();
             limpiardetalle();
 
             //DataTable Datos = conexion.consulta(String.Format("SELECT idVenta as 'Numero De Venta',idFactura as 'Numero De Factura',idPedido as 'Pedido',precio as 'Precio',Cantidad,Total FROM DetalleDeFactura  where idVenta = {0};", venta.IdVenta));
             dvVenta.DataSource = " ";
             dvVenta.Refresh();
+
         }
 
         private void validad_venta()
@@ -241,25 +281,19 @@ namespace Monte_Carlos.Venta
         }
         public DateTime FechaActual
         {
-            get { return DateTime.Now; }
+            get { return DateTime.Today; ; }
             set { this.FechaActual = value; }
         }
 
         private void guardar()
         {
-            //Aqui guardo
-          //  MessageBox.Show("Guarde la venta");
             Ventas tbventas = new Ventas();
-         //   MessageBox.Show(txtIdFactura.Text);
             tbventas.IdFactura =Convert.ToInt32(txtIdFactura.Text);
             tbventas.Fecha = FechaActual;
             tbventas.IdCliente = Convert.ToInt32(cmbCliente.SelectedIndex.ToString());
-            //  tbventas.Pagado = ;
-            //MessageBox.Show(Convert.ToString(tbventas));
-     
-            Variables.Ventas.Add(tbventas);
+            Variables.Ventas.Add(tbventas);   
             Variables.SaveChanges();
-
+          //  idVenta = tbventas.IdVenta;
         }
 
     
@@ -269,17 +303,22 @@ namespace Monte_Carlos.Venta
                 validad_venta();
             var rowVenta = Variables.Ventas.OrderByDescending(t => t.IdVenta).FirstOrDefault();
             var rowFactura = Variables.Facturas.OrderByDescending(a => a.IdFactura).FirstOrDefault();
-              //  MessageBox.Show(Convert.ToString(rowVenta));
-                if (rowVenta != null)
-                {
-                    
-                    int idVenta = Convert.ToInt32(rowVenta.IdVenta);
-                    txtIdVenta.Text = Convert.ToString(idVenta + 1);
-                if(rowFactura != null)
+            //  MessageBox.Show(Convert.ToString(rowVenta));
+            if (rowVenta != null)
+            {
+
+                int idVenta = Convert.ToInt32(rowVenta.IdVenta);
+                txtIdVenta.Text = Convert.ToString(idVenta + 1);
+            }
+            else
+            {
+                txtIdVenta.Text = "1";
+               
+            }
+            if (rowFactura != null)
                 {
                     int idFactura = Convert.ToInt32(rowFactura.IdFactura);
                     txtIdFactura.Text = Convert.ToString(idFactura + 1);
-                   
                 }
                 else
                 {
@@ -287,12 +326,8 @@ namespace Monte_Carlos.Venta
                 }
                     
                     guardar();
-                }
-                else
-                {
-                    txtIdVenta.Text = "1";
-                    guardar();
-                }
+                
+              
         }
 
         private void Generar_Venta_Load(object sender, EventArgs e)

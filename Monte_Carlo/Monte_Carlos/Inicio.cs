@@ -82,5 +82,10 @@ namespace Monte_Carlos
             ventana.Show();
 
         }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

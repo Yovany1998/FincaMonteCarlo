@@ -52,8 +52,8 @@ namespace Monte_Carlos.Cliente
             }
 
             char guion = Convert.ToChar("-");
-            char Guion1 = txtIdentidad.Text[0];
-            char Guion2 = txtIdentidad.Text[4];
+            char Guion1 = txtIdentidad.Text[4];
+            char Guion2 = txtIdentidad.Text[9];
        if(Guion1 != guion ||  Guion2 != guion) {
                 MessageBox.Show("El numero de idententidad debe llevar guiones o esta mal escrito");
                 txtIdentidad.Focus();
@@ -95,7 +95,7 @@ namespace Monte_Carlos.Cliente
                 return;
             }
 
-
+            //Agregar validacion para 2
             char TigoClaro = txtTelefono.Text[0];
             if(TigoClaro !=Convert.ToChar("3") || TigoClaro != Convert.ToChar("8") || TigoClaro != Convert.ToChar("9"))
             {

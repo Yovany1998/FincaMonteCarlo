@@ -83,7 +83,7 @@
             // 
             this.btnVerReservacion.BackColor = System.Drawing.Color.Peru;
             this.btnVerReservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerReservacion.Location = new System.Drawing.Point(116, 308);
+            this.btnVerReservacion.Location = new System.Drawing.Point(197, 276);
             this.btnVerReservacion.Name = "btnVerReservacion";
             this.btnVerReservacion.Size = new System.Drawing.Size(133, 54);
             this.btnVerReservacion.TabIndex = 2;
@@ -94,7 +94,7 @@
             // 
             this.btnInsertarComida.BackColor = System.Drawing.Color.Peru;
             this.btnInsertarComida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertarComida.Location = new System.Drawing.Point(32, 248);
+            this.btnInsertarComida.Location = new System.Drawing.Point(35, 276);
             this.btnInsertarComida.Name = "btnInsertarComida";
             this.btnInsertarComida.Size = new System.Drawing.Size(133, 54);
             this.btnInsertarComida.TabIndex = 0;
@@ -106,7 +106,7 @@
             // 
             this.btnModificarReservacion.BackColor = System.Drawing.Color.Peru;
             this.btnModificarReservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarReservacion.Location = new System.Drawing.Point(194, 248);
+            this.btnModificarReservacion.Location = new System.Drawing.Point(197, 276);
             this.btnModificarReservacion.Name = "btnModificarReservacion";
             this.btnModificarReservacion.Size = new System.Drawing.Size(133, 54);
             this.btnModificarReservacion.TabIndex = 1;
@@ -136,6 +136,7 @@
             this.Controls.Add(this.btnModificarReservacion);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Menu_Carta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_Carta";
             this.Load += new System.EventHandler(this.Menu_Carta_Load);
             this.panel1.ResumeLayout(false);

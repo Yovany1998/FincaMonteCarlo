@@ -224,6 +224,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ingreso_Comida";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingreso_Comida";
             this.Load += new System.EventHandler(this.Ingreso_Comida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvComida)).EndInit();
