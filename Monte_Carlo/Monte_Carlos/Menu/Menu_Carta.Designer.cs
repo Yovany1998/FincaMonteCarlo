@@ -134,6 +134,7 @@
             this.Controls.Add(this.btnVerReservacion);
             this.Controls.Add(this.btnInsertarComida);
             this.Controls.Add(this.btnModificarReservacion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Menu_Carta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

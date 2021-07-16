@@ -137,6 +137,7 @@
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.btnInsertarEmpleado);
             this.Controls.Add(this.btnModificarEmpleado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu_Empleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_Empleado";

@@ -15,6 +15,7 @@ namespace Monte_Carlos.Carta
         Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
         long idComidaBebida = 0;
         bool editar = false;
+            int contador = 0;
 
         public Ingreso_Comida()
         {
@@ -130,7 +131,7 @@ namespace Monte_Carlos.Carta
 
         private void dvComida_SelectionChanged(object sender, EventArgs e)
         {
-
+            contador++;
             if (dvComida.RowCount > 1)
             {
                 //  MessageBox.Show("Entre");
@@ -154,6 +155,23 @@ namespace Monte_Carlos.Carta
 
                 }
             }
+            if (contador == 5)
+            {
+                limpiar();
+                // contador = 0;
+
+            }
+            if (contador == 3)
+            {
+                limpiar();
+                contador = 2;
+
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
     }
 }

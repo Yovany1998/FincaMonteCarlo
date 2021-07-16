@@ -479,3 +479,4 @@ C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\bin\Debug\EntityFramework.xml
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Venta.Reporte_Ventas.resources

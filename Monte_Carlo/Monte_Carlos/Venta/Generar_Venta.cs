@@ -238,7 +238,7 @@ namespace Monte_Carlos.Venta
                 tbfactura.Subtotal = TotSubtotal;
                 tbfactura.Impuesto = TotImpuesto;
                 tbfactura.Total = Convert.ToInt32(Total.Text);
-                var rowNomCli = Variables.Clientes.OrderByDescending(a => a.IdCliente).FirstOrDefault();
+                var rowNomCli = Variables.Clientes.FirstOrDefault(x => x.IdCliente == tbfactura.IdCliente);
                 tbfactura.NombreCliente = Convert.ToString(rowNomCli.Nombre);
                 tbfactura.Impuesto = impuesto;
                 Variables.Facturas.Add(tbfactura);
@@ -439,6 +439,11 @@ namespace Monte_Carlos.Venta
 
                 }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

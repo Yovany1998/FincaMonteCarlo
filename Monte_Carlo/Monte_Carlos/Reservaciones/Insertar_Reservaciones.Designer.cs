@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Insertar_Reservaciones));
             this.dvReservacion = new System.Windows.Forms.DataGridView();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -40,17 +39,10 @@
             this.dateFecha = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txtLugarReservacion = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dvReservacion)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dvReservacion
@@ -59,7 +51,7 @@
             this.dvReservacion.Location = new System.Drawing.Point(12, 262);
             this.dvReservacion.Name = "dvReservacion";
             this.dvReservacion.RowHeadersWidth = 51;
-            this.dvReservacion.Size = new System.Drawing.Size(554, 129);
+            this.dvReservacion.Size = new System.Drawing.Size(434, 129);
             this.dvReservacion.TabIndex = 40;
             // 
             // txtCantidad
@@ -104,9 +96,9 @@
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(382, 215);
+            this.btnInsertar.Location = new System.Drawing.Point(382, 210);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertar.Size = new System.Drawing.Size(75, 46);
             this.btnInsertar.TabIndex = 35;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -159,52 +151,6 @@
             this.txtLugarReservacion.Size = new System.Drawing.Size(132, 24);
             this.txtLugarReservacion.TabIndex = 30;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Peru;
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(576, 57);
-            this.panel1.TabIndex = 29;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Bernard MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(233, 7);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 50);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Reservaciones";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(86, 57);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Monte_Carlos.Properties.Resources._64497;
-            this.pictureBox1.Location = new System.Drawing.Point(502, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 57);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,7 +186,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(576, 413);
+            this.ClientSize = new System.Drawing.Size(498, 413);
             this.Controls.Add(this.dvReservacion);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label7);
@@ -252,19 +198,16 @@
             this.Controls.Add(this.dateFecha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtLugarReservacion);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombreCliente);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Insertar_Reservaciones";
             this.Text = "Insertar_Reservaciones";
             this.Load += new System.EventHandler(this.Insertar_Reservaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvReservacion)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,10 +226,6 @@
         private System.Windows.Forms.DateTimePicker dateFecha;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLugarReservacion;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.Label label1;

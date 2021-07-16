@@ -40,11 +40,11 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.BackColor = System.Drawing.Color.Goldenrod;
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.Color.Transparent;
-            this.txtUsuario.Location = new System.Drawing.Point(54, 336);
+            this.txtUsuario.ForeColor = System.Drawing.Color.Black;
+            this.txtUsuario.Location = new System.Drawing.Point(98, 336);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(0);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(167, 22);
@@ -56,11 +56,11 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.BackColor = System.Drawing.Color.Goldenrod;
+            this.txtContraseña.BackColor = System.Drawing.Color.White;
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.ForeColor = System.Drawing.Color.Transparent;
-            this.txtContraseña.Location = new System.Drawing.Point(54, 375);
+            this.txtContraseña.ForeColor = System.Drawing.Color.Black;
+            this.txtContraseña.Location = new System.Drawing.Point(98, 375);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(0);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(167, 22);
@@ -76,7 +76,7 @@
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnIniciar.Location = new System.Drawing.Point(56, 424);
+            this.btnIniciar.Location = new System.Drawing.Point(100, 424);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(158, 23);
             this.btnIniciar.TabIndex = 13;
@@ -90,7 +90,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 322);
+            this.pictureBox1.Size = new System.Drawing.Size(371, 322);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -99,7 +99,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(58, 361);
+            this.panel2.Location = new System.Drawing.Point(102, 361);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(163, 1);
             this.panel2.TabIndex = 15;
@@ -107,7 +107,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(58, 400);
+            this.panel1.Location = new System.Drawing.Point(102, 400);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(163, 1);
             this.panel1.TabIndex = 14;
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 479);
+            this.ClientSize = new System.Drawing.Size(367, 479);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

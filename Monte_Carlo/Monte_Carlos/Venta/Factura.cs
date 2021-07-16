@@ -13,6 +13,8 @@ namespace Monte_Carlos.Venta
     public partial class Factura : Form
     {
         int contador;
+        int clave=0;
+        private double total;
         Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
 
         public Factura()
@@ -43,9 +45,7 @@ namespace Monte_Carlos.Venta
                        };
 
             DataTable dtMod = tMod.CopyAnonymusToDataTable();
-            cmbFactura.DataSource = dtMod;
-            cmbFactura.ValueMember = dtMod.Columns[0].ColumnName;
-            cmbFactura.DisplayMember = dtMod.Columns[1].ColumnName;
+         
         }
 
         private void llenarFactura()
@@ -68,15 +68,16 @@ namespace Monte_Carlos.Venta
         private void Btndetalle_Click(object sender, EventArgs e)
         {
             // string Fecha = DateTimes.Value.ToString("yyyy/MM/dd 00:00:00");
-            DateTime Fecha = Convert.ToDateTime (DateTimes.Value.ToString("yyyy/MM/dd 00:00:00"));
+            DateTime Fechas = Convert.ToDateTime (DateTimes.Value.ToString("yyyy/MM/dd 00:00:00"));
 
             //  Int64 Fechas = Convert.ToInt64(Fecha);           
             try
             {
                 var tFactura = from p in Variables.Facturas
-                                    where p.Fecha == Fecha
+                                    where p.Fecha == Fechas
                                select new
                                {
+                                   p.IdFactura,
                                    p.Fecha,
                                    p.NombreCliente,
                                    p.Subtotal,
@@ -88,14 +89,34 @@ namespace Monte_Carlos.Venta
                 dvFactura.DataSource = tFactura.CopyAnonymusToDataTable();
                 // MessageBox.Show(Convert.ToString(dvFactura.F));
                 dvFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                contador = dvFactura.RowCount-1;
+              //  MessageBox.Show(Convert.ToString(contador));
+
+                clave = Convert.ToInt32(dvFactura.SelectedCells[0].Value);
 
             }
             catch
             {
                 MessageBox.Show("Esa fecha no tiene registro");
             }
-         
+            
+            for(int y=0; y < contador; y++)
+            {
+               
+                //  MessageBox.Show(Convert.ToString(Fechas));
 
+                var tFactura = Variables.Facturas.FirstOrDefault(x => x.IdFactura == clave );
+                if(tFactura != null)
+                {
+                    total = total + Convert.ToDouble(tFactura.Total);
+                   // MessageBox.Show(Convert.ToString(dvFactura.SelectedCells[0].Value));
+                    clave=clave+1;
+
+                }
+               
+            }
+            lbTotal.Text = Convert.ToString(total);
+                total = 0;
         }
     }
 }

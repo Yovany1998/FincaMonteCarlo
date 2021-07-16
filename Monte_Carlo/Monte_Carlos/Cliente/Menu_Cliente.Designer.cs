@@ -140,6 +140,7 @@
             this.Controls.Add(this.btnVerCliente);
             this.Controls.Add(this.btnModificarCliente);
             this.Controls.Add(this.btnInsertarCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu_Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_Cliente";

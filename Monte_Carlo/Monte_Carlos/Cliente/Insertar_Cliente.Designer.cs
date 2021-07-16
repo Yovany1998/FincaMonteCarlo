@@ -32,10 +32,6 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdentidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,16 +45,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnElimicar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // txtApellido
             // 
             this.txtApellido.AllowDrop = true;
-            this.txtApellido.Location = new System.Drawing.Point(169, 129);
+            this.txtApellido.Location = new System.Drawing.Point(158, 70);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Multiline = true;
             this.txtApellido.Name = "txtApellido";
@@ -68,7 +61,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 129);
+            this.label3.Location = new System.Drawing.Point(11, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 24);
@@ -78,65 +71,17 @@
             // txtNombre
             // 
             this.txtNombre.AllowDrop = true;
-            this.txtNombre.Location = new System.Drawing.Point(426, 90);
+            this.txtNombre.Location = new System.Drawing.Point(415, 31);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(148, 24);
             this.txtNombre.TabIndex = 1;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Peru;
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(587, 57);
-            this.panel1.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Bernard MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(207, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 57);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Cliente";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(86, 57);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Monte_Carlos.Properties.Resources._64497;
-            this.pictureBox1.Location = new System.Drawing.Point(510, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 57);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(350, 91);
+            this.label2.Location = new System.Drawing.Point(339, 32);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
@@ -146,7 +91,7 @@
             // txtIdentidad
             // 
             this.txtIdentidad.AllowDrop = true;
-            this.txtIdentidad.Location = new System.Drawing.Point(169, 90);
+            this.txtIdentidad.Location = new System.Drawing.Point(158, 31);
             this.txtIdentidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdentidad.MaxLength = 15;
             this.txtIdentidad.Multiline = true;
@@ -157,7 +102,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 90);
+            this.label1.Location = new System.Drawing.Point(11, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 24);
@@ -170,7 +115,7 @@
             this.txtInsertarCliente.ForeColor = System.Drawing.Color.Black;
             this.txtInsertarCliente.Image = ((System.Drawing.Image)(resources.GetObject("txtInsertarCliente.Image")));
             this.txtInsertarCliente.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.txtInsertarCliente.Location = new System.Drawing.Point(441, 222);
+            this.txtInsertarCliente.Location = new System.Drawing.Point(430, 163);
             this.txtInsertarCliente.Name = "txtInsertarCliente";
             this.txtInsertarCliente.Size = new System.Drawing.Size(98, 49);
             this.txtInsertarCliente.TabIndex = 6;
@@ -182,7 +127,7 @@
             // dvClientes
             // 
             this.dvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvClientes.Location = new System.Drawing.Point(25, 276);
+            this.dvClientes.Location = new System.Drawing.Point(14, 217);
             this.dvClientes.Name = "dvClientes";
             this.dvClientes.RowHeadersWidth = 51;
             this.dvClientes.Size = new System.Drawing.Size(545, 176);
@@ -193,7 +138,7 @@
             // txtTelefono
             // 
             this.txtTelefono.AllowDrop = true;
-            this.txtTelefono.Location = new System.Drawing.Point(169, 167);
+            this.txtTelefono.Location = new System.Drawing.Point(158, 108);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Multiline = true;
@@ -204,7 +149,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 167);
+            this.label4.Location = new System.Drawing.Point(11, 108);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 24);
@@ -214,7 +159,7 @@
             // txtCorreo
             // 
             this.txtCorreo.AllowDrop = true;
-            this.txtCorreo.Location = new System.Drawing.Point(426, 168);
+            this.txtCorreo.Location = new System.Drawing.Point(415, 109);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreo.Multiline = true;
             this.txtCorreo.Name = "txtCorreo";
@@ -224,7 +169,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(350, 168);
+            this.label5.Location = new System.Drawing.Point(339, 109);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 24);
@@ -234,7 +179,7 @@
             // txtEdad
             // 
             this.txtEdad.AllowDrop = true;
-            this.txtEdad.Location = new System.Drawing.Point(426, 130);
+            this.txtEdad.Location = new System.Drawing.Point(415, 71);
             this.txtEdad.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdad.Multiline = true;
             this.txtEdad.Name = "txtEdad";
@@ -244,7 +189,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(350, 130);
+            this.label7.Location = new System.Drawing.Point(339, 71);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 24);
@@ -257,7 +202,7 @@
             this.btnElimicar.ForeColor = System.Drawing.Color.Black;
             this.btnElimicar.Image = ((System.Drawing.Image)(resources.GetObject("btnElimicar.Image")));
             this.btnElimicar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnElimicar.Location = new System.Drawing.Point(244, 222);
+            this.btnElimicar.Location = new System.Drawing.Point(233, 163);
             this.btnElimicar.Name = "btnElimicar";
             this.btnElimicar.Size = new System.Drawing.Size(98, 49);
             this.btnElimicar.TabIndex = 8;
@@ -271,7 +216,7 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.Black;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(50, 222);
+            this.btnNuevo.Location = new System.Drawing.Point(39, 163);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
             this.btnNuevo.TabIndex = 7;
@@ -285,7 +230,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(587, 458);
+            this.ClientSize = new System.Drawing.Size(571, 411);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnElimicar);
             this.Controls.Add(this.txtEdad);
@@ -299,17 +244,14 @@
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIdentidad);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Insertar_Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Insertar_Cliente";
             this.Load += new System.EventHandler(this.Insertar_Cliente_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -321,10 +263,6 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtIdentidad;
         private System.Windows.Forms.Label label1;

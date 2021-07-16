@@ -28,55 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.dvPedido = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dvPedido)).BeginInit();
+            this.DateTimes = new System.Windows.Forms.DateTimePicker();
+            this.Btndetalle = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dvFactura = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dvFactura)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnReturn
+            // DateTimes
             // 
-            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReturn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnReturn.FlatAppearance.BorderSize = 0;
-            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Location = new System.Drawing.Point(0, 0);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(79, 450);
-            this.btnReturn.TabIndex = 8;
-            this.btnReturn.Text = "←";
-            this.btnReturn.UseVisualStyleBackColor = false;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            this.DateTimes.Location = new System.Drawing.Point(179, 26);
+            this.DateTimes.Name = "DateTimes";
+            this.DateTimes.Size = new System.Drawing.Size(200, 20);
+            this.DateTimes.TabIndex = 53;
             // 
-            // dvPedido
+            // Btndetalle
             // 
-            this.dvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvPedido.Location = new System.Drawing.Point(125, 65);
-            this.dvPedido.Name = "dvPedido";
-            this.dvPedido.RowHeadersWidth = 51;
-            this.dvPedido.Size = new System.Drawing.Size(628, 313);
-            this.dvPedido.TabIndex = 9;
+            this.Btndetalle.BackColor = System.Drawing.Color.Peru;
+            this.Btndetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btndetalle.Location = new System.Drawing.Point(419, 15);
+            this.Btndetalle.Name = "Btndetalle";
+            this.Btndetalle.Size = new System.Drawing.Size(131, 45);
+            this.Btndetalle.TabIndex = 52;
+            this.Btndetalle.Text = "Desplegar";
+            this.Btndetalle.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(22, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 18);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "Ventas a la fecha:";
+            // 
+            // dvFactura
+            // 
+            this.dvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvFactura.Location = new System.Drawing.Point(28, 71);
+            this.dvFactura.Name = "dvFactura";
+            this.dvFactura.RowHeadersWidth = 51;
+            this.dvFactura.Size = new System.Drawing.Size(522, 238);
+            this.dvFactura.TabIndex = 50;
             // 
             // Ver_Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dvPedido);
-            this.Controls.Add(this.btnReturn);
+            this.ClientSize = new System.Drawing.Size(571, 411);
+            this.Controls.Add(this.DateTimes);
+            this.Controls.Add(this.Btndetalle);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dvFactura);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ver_Pedido";
             this.Text = "Ver_Pedido";
             this.Load += new System.EventHandler(this.Ver_Pedido_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dvPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvFactura)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.DataGridView dvPedido;
+        private System.Windows.Forms.DateTimePicker DateTimes;
+        private System.Windows.Forms.Button Btndetalle;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dvFactura;
     }
 }
