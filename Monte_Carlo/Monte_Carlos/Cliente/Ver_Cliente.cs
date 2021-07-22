@@ -21,9 +21,7 @@ namespace Monte_Carlos.Cliente
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Menu_Cliente ventana = new Menu_Cliente();
-            ventana.Show();
+      
         }
 
         private void Ver_Cliente_Load(object sender, EventArgs e)

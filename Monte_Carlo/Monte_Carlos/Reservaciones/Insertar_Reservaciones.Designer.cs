@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Insertar_Reservaciones));
             this.dvReservacion = new System.Windows.Forms.DataGridView();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,13 +43,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnElimicar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvReservacion)).BeginInit();
             this.SuspendLayout();
             // 
             // dvReservacion
             // 
+            this.dvReservacion.BackgroundColor = System.Drawing.Color.White;
             this.dvReservacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvReservacion.Location = new System.Drawing.Point(12, 262);
+            this.dvReservacion.Location = new System.Drawing.Point(90, 302);
             this.dvReservacion.Name = "dvReservacion";
             this.dvReservacion.RowHeadersWidth = 51;
             this.dvReservacion.Size = new System.Drawing.Size(434, 129);
@@ -57,7 +61,7 @@
             // txtCantidad
             // 
             this.txtCantidad.AllowDrop = true;
-            this.txtCantidad.Location = new System.Drawing.Point(194, 148);
+            this.txtCantidad.Location = new System.Drawing.Point(272, 148);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidad.Multiline = true;
             this.txtCantidad.Name = "txtCantidad";
@@ -67,7 +71,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 148);
+            this.label7.Location = new System.Drawing.Point(98, 148);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 24);
@@ -77,7 +81,7 @@
             // txtPedido
             // 
             this.txtPedido.AllowDrop = true;
-            this.txtPedido.Location = new System.Drawing.Point(192, 114);
+            this.txtPedido.Location = new System.Drawing.Point(270, 114);
             this.txtPedido.Margin = new System.Windows.Forms.Padding(2);
             this.txtPedido.Multiline = true;
             this.txtPedido.Name = "txtPedido";
@@ -87,7 +91,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 114);
+            this.label4.Location = new System.Drawing.Point(96, 114);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 24);
@@ -96,17 +100,20 @@
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(382, 210);
+            this.btnInsertar.BackColor = System.Drawing.Color.Peru;
+            this.btnInsertar.Image = ((System.Drawing.Image)(resources.GetObject("btnInsertar.Image")));
+            this.btnInsertar.Location = new System.Drawing.Point(426, 244);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(75, 46);
+            this.btnInsertar.Size = new System.Drawing.Size(98, 49);
             this.btnInsertar.TabIndex = 35;
             this.btnInsertar.Text = "Insertar";
-            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnInsertar.UseVisualStyleBackColor = false;
             // 
             // txtHora
             // 
             this.txtHora.AllowDrop = true;
-            this.txtHora.Location = new System.Drawing.Point(192, 217);
+            this.txtHora.Location = new System.Drawing.Point(270, 217);
             this.txtHora.Margin = new System.Windows.Forms.Padding(2);
             this.txtHora.Multiline = true;
             this.txtHora.Name = "txtHora";
@@ -116,7 +123,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 217);
+            this.label5.Location = new System.Drawing.Point(98, 217);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 24);
@@ -125,7 +132,7 @@
             // 
             // dateFecha
             // 
-            this.dateFecha.Location = new System.Drawing.Point(192, 181);
+            this.dateFecha.Location = new System.Drawing.Point(270, 181);
             this.dateFecha.Margin = new System.Windows.Forms.Padding(2);
             this.dateFecha.Name = "dateFecha";
             this.dateFecha.Size = new System.Drawing.Size(132, 20);
@@ -134,7 +141,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 181);
+            this.label3.Location = new System.Drawing.Point(98, 181);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 24);
@@ -144,7 +151,7 @@
             // txtLugarReservacion
             // 
             this.txtLugarReservacion.AllowDrop = true;
-            this.txtLugarReservacion.Location = new System.Drawing.Point(192, 74);
+            this.txtLugarReservacion.Location = new System.Drawing.Point(270, 74);
             this.txtLugarReservacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtLugarReservacion.Multiline = true;
             this.txtLugarReservacion.Name = "txtLugarReservacion";
@@ -154,7 +161,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 74);
+            this.label2.Location = new System.Drawing.Point(96, 74);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 24);
@@ -164,7 +171,7 @@
             // txtNombreCliente
             // 
             this.txtNombreCliente.AllowDrop = true;
-            this.txtNombreCliente.Location = new System.Drawing.Point(192, 27);
+            this.txtNombreCliente.Location = new System.Drawing.Point(270, 27);
             this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreCliente.Multiline = true;
             this.txtNombreCliente.Name = "txtNombreCliente";
@@ -174,19 +181,49 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 25);
+            this.label1.Location = new System.Drawing.Point(96, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 24);
             this.label1.TabIndex = 26;
             this.label1.Text = "Nombre del cliente:";
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.Peru;
+            this.btnNuevo.ForeColor = System.Drawing.Color.Black;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNuevo.Location = new System.Drawing.Point(90, 244);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(98, 49);
+            this.btnNuevo.TabIndex = 42;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // btnElimicar
+            // 
+            this.btnElimicar.BackColor = System.Drawing.Color.Peru;
+            this.btnElimicar.ForeColor = System.Drawing.Color.Black;
+            this.btnElimicar.Image = ((System.Drawing.Image)(resources.GetObject("btnElimicar.Image")));
+            this.btnElimicar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnElimicar.Location = new System.Drawing.Point(257, 244);
+            this.btnElimicar.Name = "btnElimicar";
+            this.btnElimicar.Size = new System.Drawing.Size(98, 49);
+            this.btnElimicar.TabIndex = 43;
+            this.btnElimicar.Text = "Eliminar";
+            this.btnElimicar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnElimicar.UseVisualStyleBackColor = false;
+            // 
             // Insertar_Reservaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(498, 413);
+            this.ClientSize = new System.Drawing.Size(605, 472);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnElimicar);
             this.Controls.Add(this.dvReservacion);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label7);
@@ -229,5 +266,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnElimicar;
     }
 }

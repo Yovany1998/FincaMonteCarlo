@@ -46,6 +46,8 @@
             this.Minimizar = new System.Windows.Forms.PictureBox();
             this.GrandePeque = new System.Windows.Forms.PictureBox();
             this.PanelIzquierdo = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -53,8 +55,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelCentral = new System.Windows.Forms.Panel();
-            this.btnReporte = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnGraficos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelArriba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Peque)).BeginInit();
@@ -298,6 +299,7 @@
             // PanelIzquierdo
             // 
             this.PanelIzquierdo.BackColor = System.Drawing.Color.Peru;
+            this.PanelIzquierdo.Controls.Add(this.btnGraficos);
             this.PanelIzquierdo.Controls.Add(this.panel7);
             this.PanelIzquierdo.Controls.Add(this.btnReporte);
             this.PanelIzquierdo.Controls.Add(this.panel6);
@@ -317,6 +319,33 @@
             this.PanelIzquierdo.Name = "PanelIzquierdo";
             this.PanelIzquierdo.Size = new System.Drawing.Size(206, 472);
             this.PanelIzquierdo.TabIndex = 16;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Orange;
+            this.panel7.Location = new System.Drawing.Point(1, 360);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(5, 40);
+            this.panel7.TabIndex = 9;
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.BackColor = System.Drawing.Color.Peru;
+            this.btnReporte.FlatAppearance.BorderSize = 0;
+            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
+            this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporte.Location = new System.Drawing.Point(5, 359);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(192, 37);
+            this.btnReporte.TabIndex = 9;
+            this.btnReporte.Text = "Reportes";
+            this.btnReporte.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // panel6
             // 
@@ -375,32 +404,24 @@
             this.PanelCentral.Size = new System.Drawing.Size(605, 472);
             this.PanelCentral.TabIndex = 17;
             // 
-            // btnReporte
+            // btnGraficos
             // 
-            this.btnReporte.BackColor = System.Drawing.Color.Peru;
-            this.btnReporte.FlatAppearance.BorderSize = 0;
-            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
-            this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.Location = new System.Drawing.Point(5, 359);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(192, 37);
-            this.btnReporte.TabIndex = 9;
-            this.btnReporte.Text = "Reportes";
-            this.btnReporte.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReporte.UseVisualStyleBackColor = false;
-            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Orange;
-            this.panel7.Location = new System.Drawing.Point(1, 360);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(5, 40);
-            this.panel7.TabIndex = 9;
+            this.btnGraficos.BackColor = System.Drawing.Color.Peru;
+            this.btnGraficos.FlatAppearance.BorderSize = 0;
+            this.btnGraficos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.btnGraficos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGraficos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraficos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnGraficos.Image = ((System.Drawing.Image)(resources.GetObject("btnGraficos.Image")));
+            this.btnGraficos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraficos.Location = new System.Drawing.Point(44, 409);
+            this.btnGraficos.Name = "btnGraficos";
+            this.btnGraficos.Size = new System.Drawing.Size(155, 37);
+            this.btnGraficos.TabIndex = 10;
+            this.btnGraficos.Text = "Graficos";
+            this.btnGraficos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGraficos.UseVisualStyleBackColor = false;
+            this.btnGraficos.Click += new System.EventHandler(this.btnGraficos_Click);
             // 
             // Inicio
             // 
@@ -458,5 +479,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnGraficos;
     }
 }

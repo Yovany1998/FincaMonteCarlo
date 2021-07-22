@@ -17,11 +17,6 @@ namespace Monte_Carlos.Servicio
             InitializeComponent();
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu_Servico ventana = new Menu_Servico();
-            ventana.Show();
-        }
+      
     }
 }

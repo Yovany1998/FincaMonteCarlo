@@ -72,7 +72,7 @@ namespace Monte_Carlos
             // this.Hide();
             // Menu_Reservaciones ventana = new Menu_Reservacion();
             // ventana.Show();
-            AbrirFormEnPanel(new Insertar_Reservaciones());
+           // AbrirFormEnPanel(new Insertar_Reservaciones());
         }
 
         private void horafecha_Tick(object sender, EventArgs e)
@@ -149,6 +149,11 @@ namespace Monte_Carlos
         private void btnReporte_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new Factura());
+        }
+
+        private void btnGraficos_Click(object sender, EventArgs e)
+        {
+            //
         }
     }
 }

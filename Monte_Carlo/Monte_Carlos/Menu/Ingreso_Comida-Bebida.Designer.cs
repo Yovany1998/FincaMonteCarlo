@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ingreso_Comida));
             this.dvComida = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,8 +44,9 @@
             // 
             // dvComida
             // 
+            this.dvComida.BackgroundColor = System.Drawing.Color.White;
             this.dvComida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvComida.Location = new System.Drawing.Point(73, 233);
+            this.dvComida.Location = new System.Drawing.Point(87, 247);
             this.dvComida.Margin = new System.Windows.Forms.Padding(2);
             this.dvComida.Name = "dvComida";
             this.dvComida.RowHeadersWidth = 51;
@@ -56,7 +58,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(71, 118);
+            this.label3.Location = new System.Drawing.Point(85, 132);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 24);
@@ -66,7 +68,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 68);
+            this.label2.Location = new System.Drawing.Point(85, 82);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
@@ -76,7 +78,7 @@
             // txtNombre
             // 
             this.txtNombre.AllowDrop = true;
-            this.txtNombre.Location = new System.Drawing.Point(192, 19);
+            this.txtNombre.Location = new System.Drawing.Point(206, 33);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
@@ -86,7 +88,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(71, 19);
+            this.label1.Location = new System.Drawing.Point(85, 33);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 24);
@@ -96,19 +98,22 @@
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.Peru;
-            this.btnIngresar.Location = new System.Drawing.Point(378, 171);
+            this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
+            this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnIngresar.Location = new System.Drawing.Point(392, 185);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(95, 39);
+            this.btnIngresar.Size = new System.Drawing.Size(98, 49);
             this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPrecio
             // 
             this.txtPrecio.AllowDrop = true;
-            this.txtPrecio.Location = new System.Drawing.Point(192, 68);
+            this.txtPrecio.Location = new System.Drawing.Point(206, 82);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
@@ -118,23 +123,29 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
-            this.btnEliminar.Location = new System.Drawing.Point(245, 171);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEliminar.Location = new System.Drawing.Point(259, 185);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(95, 39);
+            this.btnEliminar.Size = new System.Drawing.Size(98, 49);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Peru;
-            this.btnNuevo.Location = new System.Drawing.Point(90, 171);
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNuevo.Location = new System.Drawing.Point(104, 185);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(95, 39);
+            this.btnNuevo.Size = new System.Drawing.Size(98, 49);
             this.btnNuevo.TabIndex = 4;
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -147,7 +158,7 @@
             "Comida",
             "Bebida",
             "Extra"});
-            this.cmbTipo.Location = new System.Drawing.Point(192, 118);
+            this.cmbTipo.Location = new System.Drawing.Point(206, 132);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(148, 21);
@@ -159,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(571, 411);
+            this.ClientSize = new System.Drawing.Size(605, 472);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEliminar);

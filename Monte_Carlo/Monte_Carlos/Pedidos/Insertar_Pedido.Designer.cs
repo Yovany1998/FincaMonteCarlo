@@ -46,7 +46,7 @@
             this.btnReturn.TabIndex = 8;
             this.btnReturn.Text = "←";
             this.btnReturn.UseVisualStyleBackColor = false;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+          
             // 
             // Insertar_Pedido
             // 

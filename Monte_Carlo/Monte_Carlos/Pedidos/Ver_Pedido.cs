@@ -19,13 +19,7 @@ namespace Monte_Carlos.Servicio
           
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu_Servico ventana = new Menu_Servico();
-            ventana.Show();
-        }
-
+  
         private void Ver_Pedido_Load(object sender, EventArgs e)
         {
           //  DataTable Datos = conexion.consulta(String.Format("SELECT idPedido as 'Numero de pedido',idcomida as 'Codido de comida',idbebida as 'Codido de bebida' FROM pedido;"));

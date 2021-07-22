@@ -21,13 +21,7 @@ namespace Monte_Carlos.Reservaciones
             
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu_Reservaciones ventana = new Menu_Reservaciones();
-            ventana.Show();
-        }
-
+      
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -47,9 +41,9 @@ namespace Monte_Carlos.Reservaciones
         {
 
            
-            limpiar();
+            Limpiar();
         }
-        private void limpiar()
+        private void Limpiar()
         {
           
             txtHora.Text = "";
@@ -58,23 +52,12 @@ namespace Monte_Carlos.Reservaciones
           
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu_Reservaciones ventana = new Menu_Reservaciones();
-            ventana.Show();
-        }
+     
 
         private void Insertar_Reservaciones_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu_Reservaciones ventana = new Menu_Reservaciones();
-            ventana.Show();
-        }
     }
 }

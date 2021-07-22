@@ -36,12 +36,10 @@ namespace Monte_Carlos.Venta
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Menu_Venta ventana = new Menu_Venta();
-            ventana.Show();
+        
         }
 
-        private void limpiar()
+        private void Limpiar()
         {
             conta = 2;
             contadorcomida = 4;
@@ -57,7 +55,7 @@ namespace Monte_Carlos.Venta
             dvVenta.Refresh();
         }
 
-        private void limpiardetalle()
+        private void Limpiardetalle()
         {
             cmbImpuesto.SelectedValue = 0;
             txtPrecio.Text = "";
@@ -132,7 +130,7 @@ namespace Monte_Carlos.Venta
                 Total.Text = Convert.ToString(total);
                 TotImpuesto = TotImpuesto + impuesto;
                 TotSubtotal = TotSubtotal + Subtotal;
-                limpiardetalle();
+                Limpiardetalle();
             }
 
             //Desplegar en la tabla
@@ -153,7 +151,7 @@ namespace Monte_Carlos.Venta
             dvVenta.DataSource = tdetalle.CopyAnonymusToDataTable();
             dvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             idDetalleVenta = 0;
-           // limpiar();
+           // Limpiar();
             editar = false;
             ValidarCliente = false;
             cmbComidaBebida.SelectedIndex = -1;
@@ -208,8 +206,8 @@ namespace Monte_Carlos.Venta
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            limpiar();
-            limpiardetalle();
+            Limpiar();
+            Limpiardetalle();
         }
 
         private void BtnGenerarVenta_Click(object sender, EventArgs e)
@@ -244,17 +242,17 @@ namespace Monte_Carlos.Venta
                 Variables.Facturas.Add(tbfactura);
                 Variables.SaveChanges();
           
-                limpiardetalle();
+                Limpiardetalle();
             }
 
            
             idDetalleVenta = 0;
-            // limpiar();
+            // Limpiar();
             editar = false;
             ValidarCliente = false;
             cmbComidaBebida.SelectedIndex = -1;
-            limpiar();
-            limpiardetalle();
+            Limpiar();
+            Limpiardetalle();
 
             //DataTable Datos = conexion.consulta(String.Format("SELECT idVenta as 'Numero De Venta',idFactura as 'Numero De Factura',idPedido as 'Pedido',precio as 'Precio',Cantidad,Total FROM DetalleDeFactura  where idVenta = {0};", venta.IdVenta));
             dvVenta.DataSource = " ";
@@ -355,13 +353,13 @@ namespace Monte_Carlos.Venta
             cmbComidaBebida.DataSource = dtcomi;
             cmbComidaBebida.ValueMember = dtcomi.Columns[0].ColumnName;
             cmbComidaBebida.DisplayMember = dtcomi.Columns[1].ColumnName;
-            limpiar();
+            Limpiar();
         
         }
         private void cmbComida_SelectedIndexChanged(object sender, EventArgs e)
         {
         
-            contadorcomida = contadorcomida + 1;
+            contadorcomida ++;
             if (contadorcomida >5)
             {
 
@@ -381,7 +379,7 @@ namespace Monte_Carlos.Venta
         }   
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            conta = conta + 1;
+            conta ++;
              if(conta == 4)
               {
                 ValidarCliente = true;
@@ -396,23 +394,10 @@ namespace Monte_Carlos.Venta
                
             
         }
-        private void cmbImpuesto_SelectedIndexChanged(object sender, EventArgs e)
-        { 
-             //   var rowFactura = Variables.Facturas.OrderByDescending(t => t.IdFactura).FirstOrDefault();
-              // if(Convert.ToString(rowFactura) != "")
-               // {
-                 //   MessageBox.Show(Convert.ToString(rowFactura));
-                   // int idFactura = Convert.ToInt32(rowFactura.IdFactura);
-                    //txtIdFactura.Text = Convert.ToString(idFactura);
-               // }
-               // else
-               // {
-                 //   txtIdFactura.Text = "1";
-               // }              
-        }
+
 
         private void dvVenta_SelectionChanged(object sender, EventArgs e)
-        { limpiardetalle();
+        { Limpiardetalle();
             if (dvVenta.RowCount > 1)
             {
                 //  MessageBox.Show("Entre");

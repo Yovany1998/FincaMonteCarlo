@@ -70,7 +70,7 @@ namespace Monte_Carlos.Carta
                 Variables.SaveChanges();
             }
             
-            limpiar();
+            Limpiar();
             editar = false;
             idComidaBebida = 0;
 
@@ -86,14 +86,14 @@ namespace Monte_Carlos.Carta
             dvComida.DataSource = tbComidaBebida.CopyAnonymusToDataTable();
 
             MessageBox.Show("Informacion guardada!");
-            limpiar();
+            Limpiar();
             
         }
     
 
     
     
-        private void limpiar()
+        private void Limpiar()
         {
             txtNombre.Text = "";
             txtPrecio.Text = "";
@@ -116,7 +116,7 @@ namespace Monte_Carlos.Carta
             dvComida.DataSource = tComidaBebida.CopyAnonymusToDataTable();
             dvComida.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             idComidaBebida = 0;
-            limpiar();
+            Limpiar();
             editar = false;
         }
 
@@ -157,21 +157,16 @@ namespace Monte_Carlos.Carta
             }
             if (contador == 5)
             {
-                limpiar();
+                Limpiar();
                 // contador = 0;
 
             }
-            if (contador == 3)
-            {
-                limpiar();
-                contador = 2;
-
-            }
+          
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            limpiar();
+            Limpiar();
         }
     }
 }

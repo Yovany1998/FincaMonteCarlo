@@ -12,7 +12,11 @@ namespace Monte_Carlos.Empleado
 {
     public partial class Insertar_Empleado : Form
     {
-     
+        Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
+        long idEmpleado = 0;
+        bool editar = false;
+        int contador = 0;
+
 
         public Insertar_Empleado()
         {
@@ -22,36 +26,89 @@ namespace Monte_Carlos.Empleado
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Menu_Empleado ventana = new Menu_Empleado();
-            ventana.Show();
+        
         }
 
         private void Insertar_Empleado_Load(object sender, EventArgs e)
         {
-           // DataTable Datos = conexion.consulta(String.Format("SELECT idEmpleado, nombre, apeliido, edad, cargo FROM empleado;"));
-            //dvempleado.DataSource = Datos;
-            //dvempleado.Refresh();
+            var tEmpleado = from p in Variables.Empleados
+                            select new
+                            {
+                                p.NIdentidad,
+                                p.Nombre,
+                                p.Apellidos,
+                                p.Edad,
+                                p.Cargo,
+                                p.FechaIngreso
+                                };
+
+            dvEmpleado.DataSource = tEmpleado.CopyAnonymusToDataTable();
+            dvEmpleado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            idEmpleado = 0;
+            Limpiar();
+            editar = false;
         }
 
         private void btninsertar_Click(object sender, EventArgs e)
         {
-           
-            limpiar();
+
+
+            if (editar)
+            {
+                MessageBox.Show("Modifique");
+                var tEmpleado = Variables.Empleados.FirstOrDefault(x => x.IdEmpleado == idEmpleado);
+                tEmpleado.NIdentidad = txtId.Text;
+                tEmpleado.Nombre = txtNombre.Text;
+                tEmpleado.Apellidos = txtApellido.Text;
+                tEmpleado.Edad = Convert.ToInt32(txtEdad.Text);
+                tEmpleado.FechaIngreso = DateTime.Today;
+                tEmpleado.Cargo = cmbCargo.SelectedItem.ToString();
+
+                Variables.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Guarde");
+                Empleados tbEmpleado = new Empleados();
+                tbEmpleado.NIdentidad = txtId.Text;
+                tbEmpleado.Nombre = txtNombre.Text;
+                tbEmpleado.Apellidos = txtApellido.Text;
+                tbEmpleado.Edad = Convert.ToInt32(txtEdad.Text);
+                tbEmpleado.FechaIngreso = DateTime.Today;
+                tbEmpleado.Cargo = cmbCargo.SelectedItem.ToString();
+                Variables.Empleados.Add(tbEmpleado);
+                Variables.SaveChanges();
+            }
+
+            Limpiar();
+            editar = false;
+            idEmpleado = 0;
+
+            var tblEmpleado = from p in Variables.Empleados
+                                 select new
+                                 {
+                                     p.NIdentidad,
+                                     p.Nombre,
+                                     p.Apellidos,
+                                     p.Edad,
+                                     p.Cargo,
+                                     p.FechaIngreso
+
+                                 };
+            dvEmpleado.DataSource = tblEmpleado.CopyAnonymusToDataTable();
+
+            MessageBox.Show("Informacion guardada!");
+            Limpiar();
+
         }
 
-        private void limpiar()
+        private void Limpiar()
         {
-            txtid.Text = "";
-            txtnombre.Text = "";
-            txtapellido.Text = "";
-            txtedad.Text = "";
-            txtcargo.Text = "";
-
-           // DataTable Datos = conexion.consulta(String.Format("SELECT idEmpleado, nombre, apeliido, edad, cargo FROM empleado;"));
-            //dvempleado.DataSource = Datos;
-            //dvempleado.Refresh();
-
+            txtId.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtEdad.Text = "";
+            cmbCargo.SelectedIndex = cmbCargo.SelectedIndex = cmbCargo.SelectedIndex = -1;
 
         }
 

@@ -22,7 +22,7 @@
             <PropertyRef Name="IdDetalleVentas" />
           </Key>
           <Property Name="IdDetalleVentas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Fecha" Type="date" />
           <Property Name="IdVenta" Type="int" Nullable="false" />
           <Property Name="IdFactura" Type="int" Nullable="false" />
           <Property Name="IdCliente" Type="int" Nullable="false" />
@@ -42,14 +42,14 @@
           <Property Name="Apellidos" Type="varchar" MaxLength="50" />
           <Property Name="Edad" Type="int" />
           <Property Name="Cargo" Type="varchar" MaxLength="50" />
-          <Property Name="FechaIngreso" Type="datetime" />
+          <Property Name="FechaIngreso" Type="date" />
         </EntityType>
         <EntityType Name="Facturas">
           <Key>
             <PropertyRef Name="IdFactura" />
           </Key>
           <Property Name="IdFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Fecha" Type="date" />
           <Property Name="IdCliente" Type="int" />
           <Property Name="NombreCliente" Type="varchar" MaxLength="50" />
           <Property Name="Subtotal" Type="float" />
@@ -103,10 +103,16 @@
           </Key>
           <Property Name="IdVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdFactura" Type="int" Nullable="false" />
-          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Fecha" Type="date" />
           <Property Name="IdCliente" Type="int" Nullable="false" />
           <Property Name="Pagado" Type="varchar" MaxLength="50" />
         </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'Finca_Monte_Carlo.dbo.Vista_ventas_dias' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Vista_ventas_dias">
+          <Property Name="Total" Type="float" />
+          <Property Name="Fecha" Type="date" />
+        </EntityType>-->
         <Association Name="FK_DetalleVenta_Clientes">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
           <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
@@ -167,24 +173,12 @@
           <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DetalleVenta" Relationship="Finca_Monte_CarloModel.FK_DetalleVenta_Clientes" FromRole="Clientes" ToRole="DetalleVenta" />
         </EntityType>
-        <EntityType Name="Empleados">
-          <Key>
-            <PropertyRef Name="IdEmpleado" />
-          </Key>
-          <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NIdentidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Edad" Type="Int32" />
-          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FechaIngreso" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="Facturas">
           <Key>
             <PropertyRef Name="IdFactura" />
           </Key>
           <Property Name="IdFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
           <Property Name="IdCliente" Type="Int32" />
           <Property Name="NombreCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Subtotal" Type="Double" />
@@ -236,7 +230,6 @@
         </EntityType>
         <EntityContainer Name="Finca_Monte_CarloEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" />
-          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" />
           <EntitySet Name="Menu" EntityType="Self.Menu" />
           <EntitySet Name="Pedidos" EntityType="Self.Pedidos" />
@@ -256,13 +249,14 @@
             <End Role="Facturas" EntitySet="Facturas" />
             <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
+          <EntitySet Name="Empleados" EntityType="Finca_Monte_CarloModel.Empleados" />
         </EntityContainer>
         <EntityType Name="DetalleVenta">
           <Key>
             <PropertyRef Name="IdDetalleVentas" />
           </Key>
           <Property Name="IdDetalleVentas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
           <Property Name="IdVenta" Type="Int32" Nullable="false" />
           <Property Name="IdFactura" Type="Int32" Nullable="false" />
           <Property Name="IdCliente" Type="Int32" Nullable="false" />
@@ -304,7 +298,7 @@
           </Key>
           <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdFactura" Type="Int32" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
           <Property Name="IdCliente" Type="Int32" Nullable="false" />
           <Property Name="Pagado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -320,6 +314,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="IdEmpleado" />
+          </Key>
+          <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NIdentidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Edad" Type="Int32" />
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Precision="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -336,19 +342,6 @@
                 <ScalarProperty Name="Edad" ColumnName="Edad" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
                 <ScalarProperty Name="Correo" ColumnName="Correo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Empleados">
-            <EntityTypeMapping TypeName="Finca_Monte_CarloModel.Empleados">
-              <MappingFragment StoreEntitySet="Empleados">
-                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
-                <ScalarProperty Name="NIdentidad" ColumnName="NIdentidad" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
-                <ScalarProperty Name="Edad" ColumnName="Edad" />
-                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
-                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -434,6 +427,19 @@
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
                 <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="Finca_Monte_CarloModel.Empleados">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="NIdentidad" ColumnName="NIdentidad" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

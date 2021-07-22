@@ -17,7 +17,7 @@
       <PropertyRef Name="IdDetalleVentas" />
     </Key>
     <Property Name="IdDetalleVentas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Fecha" Type="date" />
     <Property Name="IdVenta" Type="int" Nullable="false" />
     <Property Name="IdFactura" Type="int" Nullable="false" />
     <Property Name="IdCliente" Type="int" Nullable="false" />
@@ -37,14 +37,14 @@
     <Property Name="Apellidos" Type="varchar" MaxLength="50" />
     <Property Name="Edad" Type="int" />
     <Property Name="Cargo" Type="varchar" MaxLength="50" />
-    <Property Name="FechaIngreso" Type="datetime" />
+    <Property Name="FechaIngreso" Type="date" />
   </EntityType>
   <EntityType Name="Facturas">
     <Key>
       <PropertyRef Name="IdFactura" />
     </Key>
     <Property Name="IdFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Fecha" Type="date" />
     <Property Name="IdCliente" Type="int" />
     <Property Name="NombreCliente" Type="varchar" MaxLength="50" />
     <Property Name="Subtotal" Type="float" />
@@ -98,10 +98,16 @@
     </Key>
     <Property Name="IdVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdFactura" Type="int" Nullable="false" />
-    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Fecha" Type="date" />
     <Property Name="IdCliente" Type="int" Nullable="false" />
     <Property Name="Pagado" Type="varchar" MaxLength="50" />
   </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'Finca_Monte_Carlo.dbo.Vista_ventas_dias' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Vista_ventas_dias">
+          <Property Name="Total" Type="float" />
+          <Property Name="Fecha" Type="date" />
+        </EntityType>-->
   <Association Name="FK_DetalleVenta_Clientes">
     <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
     <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />

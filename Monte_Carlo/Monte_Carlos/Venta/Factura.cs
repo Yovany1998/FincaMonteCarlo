@@ -23,12 +23,7 @@ namespace Monte_Carlos.Venta
 
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu_Venta ventana = new Menu_Venta();
-            ventana.Show();
-        }
+ 
 
         private void dgvFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -90,6 +85,7 @@ namespace Monte_Carlos.Venta
                 // MessageBox.Show(Convert.ToString(dvFactura.F));
                 dvFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 contador = dvFactura.RowCount-1;
+                lbTotVentas.Text = Convert.ToString(contador);
               //  MessageBox.Show(Convert.ToString(contador));
 
                 clave = Convert.ToInt32(dvFactura.SelectedCells[0].Value);

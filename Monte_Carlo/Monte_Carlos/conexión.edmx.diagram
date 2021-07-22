@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="5fc2263c723d4ca6aee5c4032d0ef202" Name="Diagram1" ZoomLevel="81">
         <EntityTypeShape EntityType="Finca_Monte_CarloModel.Clientes" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Empleados" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Finca_Monte_CarloModel.Facturas" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Finca_Monte_CarloModel.Menu" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Finca_Monte_CarloModel.Pedidos" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
@@ -17,6 +16,7 @@
         <AssociationConnector Association="Finca_Monte_CarloModel.FK_DetalleVenta_Menu" />
         <EntityTypeShape EntityType="Finca_Monte_CarloModel.Ventas" Width="1.5" PointX="3" PointY="2.25" />
         <AssociationConnector Association="Finca_Monte_CarloModel.FK_Ventas_Facturas" />
+        <EntityTypeShape EntityType="Finca_Monte_CarloModel.Empleados" Width="1.5" PointX="3.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

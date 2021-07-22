@@ -114,41 +114,17 @@
     <Compile Include="Cliente\Insertar_Cliente.Designer.cs">
       <DependentUpon>Insertar_Cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente\Modificar_Cliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cliente\Modificar_Cliente.Designer.cs">
-      <DependentUpon>Modificar_Cliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Cliente\Ver_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cliente\Ver_Cliente.Designer.cs">
       <DependentUpon>Ver_Cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empleado\Eliminar_Empleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empleado\Eliminar_Empleado.Designer.cs">
-      <DependentUpon>Eliminar_Empleado.cs</DependentUpon>
-    </Compile>
     <Compile Include="Empleado\Insertar_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empleado\Insertar_Empleado.Designer.cs">
       <DependentUpon>Insertar_Empleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empleado\Menu_Empleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empleado\Menu_Empleado.Designer.cs">
-      <DependentUpon>Menu_Empleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empleado\Modificar_Empleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empleado\Modificar_Empleado.Designer.cs">
-      <DependentUpon>Modificar_Empleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Empleado\Ver_Empleado.cs">
       <SubType>Form</SubType>
@@ -168,12 +144,6 @@
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente\Menu_Cliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cliente\Menu_Cliente.Designer.cs">
-      <DependentUpon>Menu_Cliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pedidos.cs">
       <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
@@ -182,29 +152,11 @@
     <Compile Include="Reservaciones.cs">
       <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
-    <Compile Include="Reservaciones\Eliminar_Reservaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reservaciones\Eliminar_Reservaciones.Designer.cs">
-      <DependentUpon>Eliminar_Reservaciones.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reservaciones\Insertar_Reservaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reservaciones\Insertar_Reservaciones.Designer.cs">
       <DependentUpon>Insertar_Reservaciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reservaciones\Menu_Reservaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reservaciones\Menu_Reservaciones.Designer.cs">
-      <DependentUpon>Menu_Reservaciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reservaciones\Modificar_Reservaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reservaciones\Modificar_Reservaciones.Designer.cs">
-      <DependentUpon>Modificar_Reservaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Reservaciones\Ver_Reservaciones.cs">
       <SubType>Form</SubType>
@@ -212,29 +164,11 @@
     <Compile Include="Reservaciones\Ver_Reservaciones.Designer.cs">
       <DependentUpon>Ver_Reservaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos\Eliminar_Pedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pedidos\Eliminar_Pedido.Designer.cs">
-      <DependentUpon>Eliminar_Pedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pedidos\Insertar_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pedidos\Insertar_Pedido.Designer.cs">
       <DependentUpon>Insertar_Pedido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pedidos\Menu_Servico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pedidos\Menu_Servico.Designer.cs">
-      <DependentUpon>Menu_Servico.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pedidos\Modificar_Pedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pedidos\Modificar_Pedido.Designer.cs">
-      <DependentUpon>Modificar_Pedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedidos\Ver_Pedido.cs">
       <SubType>Form</SubType>
@@ -260,18 +194,6 @@
     <Compile Include="Venta\Generar_Venta.Designer.cs">
       <DependentUpon>Generar_Venta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Venta\Menu_Venta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venta\Menu_Venta.Designer.cs">
-      <DependentUpon>Menu_Venta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Venta\Reporte_Ventas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venta\Reporte_Ventas.Designer.cs">
-      <DependentUpon>Reporte_Ventas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Venta\Validacion.cs" />
     <EmbeddedResource Include="Menu\Ingreso_Comida-Bebida.resx">
       <DependentUpon>Ingreso_Comida-Bebida.cs</DependentUpon>
@@ -282,26 +204,11 @@
     <EmbeddedResource Include="Cliente\Insertar_Cliente.resx">
       <DependentUpon>Insertar_Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cliente\Menu_Cliente.resx">
-      <DependentUpon>Menu_Cliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cliente\Modificar_Cliente.resx">
-      <DependentUpon>Modificar_Cliente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Cliente\Ver_Cliente.resx">
       <DependentUpon>Ver_Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empleado\Eliminar_Empleado.resx">
-      <DependentUpon>Eliminar_Empleado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Empleado\Insertar_Empleado.resx">
       <DependentUpon>Insertar_Empleado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empleado\Menu_Empleado.resx">
-      <DependentUpon>Menu_Empleado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empleado\Modificar_Empleado.resx">
-      <DependentUpon>Modificar_Empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleado\Ver_Empleado.resx">
       <DependentUpon>Ver_Empleado.cs</DependentUpon>
@@ -322,32 +229,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reservaciones\Eliminar_Reservaciones.resx">
-      <DependentUpon>Eliminar_Reservaciones.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reservaciones\Insertar_Reservaciones.resx">
       <DependentUpon>Insertar_Reservaciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reservaciones\Menu_Reservaciones.resx">
-      <DependentUpon>Menu_Reservaciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reservaciones\Modificar_Reservaciones.resx">
-      <DependentUpon>Modificar_Reservaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reservaciones\Ver_Reservaciones.resx">
       <DependentUpon>Ver_Reservaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pedidos\Eliminar_Pedido.resx">
-      <DependentUpon>Eliminar_Pedido.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\Insertar_Pedido.resx">
       <DependentUpon>Insertar_Pedido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pedidos\Menu_Servico.resx">
-      <DependentUpon>Menu_Servico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pedidos\Modificar_Pedido.resx">
-      <DependentUpon>Modificar_Pedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\Ver_Pedido.resx">
       <DependentUpon>Ver_Pedido.cs</DependentUpon>
@@ -357,12 +246,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Venta\Generar_Venta.resx">
       <DependentUpon>Generar_Venta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Venta\Menu_Venta.resx">
-      <DependentUpon>Menu_Venta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Venta\Reporte_Ventas.resx">
-      <DependentUpon>Reporte_Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Conexión.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

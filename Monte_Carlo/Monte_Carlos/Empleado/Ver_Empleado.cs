@@ -19,9 +19,7 @@ namespace Monte_Carlos.Empleado
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Menu_Empleado ventana = new Menu_Empleado();
-            ventana.Show();
+          
         }
     }
 }

@@ -23,12 +23,6 @@ namespace Monte_Carlos.Cliente
         
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu_Cliente ventana = new Menu_Cliente();
-            ventana.Show();
-        }
 
         private void txtInsertarCliente_Click(object sender, EventArgs e)
         {
@@ -111,7 +105,7 @@ namespace Monte_Carlos.Cliente
                     char Arroba = txtCorreo.Text[r];
                     if ( Arroba == Convert.ToChar("@"))
                     {
-                         NArroba = NArroba + 1;
+                         NArroba ++;
                     }
 
                 }
@@ -155,7 +149,7 @@ namespace Monte_Carlos.Cliente
 
                 Variables.SaveChanges();
             }
-            limpiar();
+            Limpiar();
             editar = false;
             idCliente = 0;
 
@@ -173,9 +167,9 @@ namespace Monte_Carlos.Cliente
             dvClientes.DataSource = tClientes.CopyAnonymusToDataTable();
 
             MessageBox.Show("Informacion guardada!");
-            limpiar();
+            Limpiar();
         }
-        private void limpiar()
+        private void Limpiar()
         {
             txtIdentidad.Text = "";
             txtNombre.Text = "";
@@ -203,9 +197,9 @@ namespace Monte_Carlos.Cliente
             dvClientes.DataSource = tCliente.CopyAnonymusToDataTable();
             dvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             idCliente = 0;
-            limpiar();
+            Limpiar();
             editar = false;
-            limpiar();
+            Limpiar();
 
         }
 
@@ -244,22 +238,17 @@ namespace Monte_Carlos.Cliente
             }
             if(contador == 5)
             {
-                limpiar();
+                Limpiar();
                // contador = 0;
 
             }
-            if (contador == 3)
-            {
-                limpiar();
-                 contador = 2;
-
-            }
+          
 
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            limpiar();
+            Limpiar();
             editar = false;
             idCliente = 0;
         }

@@ -13,24 +13,12 @@
     <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="DetalleVenta" Relationship="Finca_Monte_CarloModel.FK_DetalleVenta_Clientes" FromRole="Clientes" ToRole="DetalleVenta" />
   </EntityType>
-  <EntityType Name="Empleados">
-    <Key>
-      <PropertyRef Name="IdEmpleado" />
-    </Key>
-    <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NIdentidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Edad" Type="Int32" />
-    <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="FechaIngreso" Type="DateTime" Precision="3" />
-  </EntityType>
   <EntityType Name="Facturas">
     <Key>
       <PropertyRef Name="IdFactura" />
     </Key>
     <Property Name="IdFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
     <Property Name="IdCliente" Type="Int32" />
     <Property Name="NombreCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Subtotal" Type="Double" />
@@ -82,7 +70,6 @@
   </EntityType>
   <EntityContainer Name="Finca_Monte_CarloEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Clientes" EntityType="Self.Clientes" />
-    <EntitySet Name="Empleados" EntityType="Self.Empleados" />
     <EntitySet Name="Facturas" EntityType="Self.Facturas" />
     <EntitySet Name="Menu" EntityType="Self.Menu" />
     <EntitySet Name="Pedidos" EntityType="Self.Pedidos" />
@@ -102,13 +89,14 @@
       <End Role="Facturas" EntitySet="Facturas" />
       <End Role="Ventas" EntitySet="Ventas" />
     </AssociationSet>
+    <EntitySet Name="Empleados" EntityType="Finca_Monte_CarloModel.Empleados" />
   </EntityContainer>
   <EntityType Name="DetalleVenta">
     <Key>
       <PropertyRef Name="IdDetalleVentas" />
     </Key>
     <Property Name="IdDetalleVentas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
     <Property Name="IdVenta" Type="Int32" Nullable="false" />
     <Property Name="IdFactura" Type="Int32" Nullable="false" />
     <Property Name="IdCliente" Type="Int32" Nullable="false" />
@@ -150,7 +138,7 @@
     </Key>
     <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdFactura" Type="Int32" Nullable="false" />
-    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
     <Property Name="IdCliente" Type="Int32" Nullable="false" />
     <Property Name="Pagado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
@@ -166,4 +154,16 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NIdentidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Edad" Type="Int32" />
+    <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaIngreso" Type="DateTime" Precision="0" />
+  </EntityType>
 </Schema>
