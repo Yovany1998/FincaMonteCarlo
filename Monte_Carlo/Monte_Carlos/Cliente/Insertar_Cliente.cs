@@ -15,7 +15,7 @@ namespace Monte_Carlos.Cliente
         Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
         long idCliente = 0;
         bool editar = false;
-        int contador = 0;
+        int ContadorCliente = 0;
 
         public Insertar_Cliente()
         {
@@ -117,10 +117,7 @@ namespace Monte_Carlos.Cliente
                     return;
                 }
             }
-            {
-                MessageBox.Show("Por favor ingresar el numero telefonico");
-                return;
-            }
+          
 
             if (editar)
             {
@@ -210,7 +207,7 @@ namespace Monte_Carlos.Cliente
 
         private void dvClientes_SelectionChanged(object sender, EventArgs e)
         {
-             contador++;
+             ContadorCliente++;
             if (dvClientes.RowCount > 1)
             {
              //  MessageBox.Show("Entre");
@@ -219,7 +216,7 @@ namespace Monte_Carlos.Cliente
 
                 try
                 {
-                   // MessageBox.Show(Convert.ToString(contador));
+                   // MessageBox.Show(Convert.ToString(ContadorCliente));
                     idCliente = Convert.ToInt64(dvClientes.SelectedCells[0].Value);
                     var tCliente = Variables.Clientes.FirstOrDefault(x => x.IdCliente == idCliente);
                     txtIdentidad.Text = tCliente.Identidad;
@@ -236,10 +233,10 @@ namespace Monte_Carlos.Cliente
 
                 }
             }
-            if(contador == 5)
+            if(ContadorCliente == 5)
             {
                 Limpiar();
-               // contador = 0;
+               // ContadorCliente = 0;
 
             }
           

@@ -83,6 +83,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Conexión.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Demas\Entrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demas\Entrada.Designer.cs">
+      <DependentUpon>Entrada.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetalleVenta.cs">
       <DependentUpon>Conexión.tt</DependentUpon>
     </Compile>
@@ -195,6 +201,9 @@
       <DependentUpon>Generar_Venta.cs</DependentUpon>
     </Compile>
     <Compile Include="Venta\Validacion.cs" />
+    <EmbeddedResource Include="Demas\Entrada.resx">
+      <DependentUpon>Entrada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu\Ingreso_Comida-Bebida.resx">
       <DependentUpon>Ingreso_Comida-Bebida.cs</DependentUpon>
     </EmbeddedResource>

@@ -18,6 +18,7 @@ namespace Monte_Carlos
 {
     public partial class Inicio : Form
     {
+        private int Contador;
         public Inicio()
         {
             InitializeComponent();
@@ -27,58 +28,68 @@ namespace Monte_Carlos
         {
             if (this.PanelCentral.Controls.Count > 0)
                 this.PanelCentral.Controls.RemoveAt(0);
-            Form fh = formhija as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.PanelCentral.Controls.Add(fh);
-            this.PanelCentral.Tag = fh;
-            fh.Show();
+          
+      
+         if(Contador < 100)
+            {
+                Barras.Value = 0;
+                Contador++;
+                for (int x = 0; x < 100; x++)
+                {
+                    Barras.Value++;
+
+                }
+                Form fh = formhija as Form;
+                fh.TopLevel = false;
+                fh.Dock = DockStyle.Fill;
+                this.PanelCentral.Controls.Add(fh);
+                this.PanelCentral.Tag = fh;
+                fh.Show();
+
+            }
+            else
+            {
+                Contador = 0;
+            }
+
+            Barras.Visible = true;
+          
+           
 
         }
         private void btncliente_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //Menu_Cliente ventana = new Menu_Cliente();
-            //ventana.Show();
+           
             AbrirFormEnPanel(new Cliente.Insertar_Cliente());
         }
 
         private void btnservicio_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //Menu_Servico ventana = new Menu_Servico();
-            //ventana.Show();
+            
             AbrirFormEnPanel(new Ver_Pedido());
         }
 
         private void btnempleado_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //Menu_Empleado ventana = new Menu_Empleado();
-            //ventana.Show();
+
             AbrirFormEnPanel(new Insertar_Empleado());
         }
 
         private void Venta_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //Menu_Venta ventana = new Menu_Venta();
-            //ventana.Show();
+
             AbrirFormEnPanel(new Generar_Venta());
         }
 
         private void btnReservaciones_Click(object sender, EventArgs e)
         {
-            // this.Hide();
-            // Menu_Reservaciones ventana = new Menu_Reservacion();
-            // ventana.Show();
-           // AbrirFormEnPanel(new Insertar_Reservaciones());
+            AbrirFormEnPanel(new Reservaciones.Insertar_Reservaciones());
         }
 
         private void horafecha_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToShortTimeString();
-            lblFecha.Text = DateTime.Now.ToShortDateString(); 
+            lblFecha.Text = DateTime.Now.ToLongDateString();
         }
 
         private void lblFecha_Click(object sender, EventArgs e)
@@ -95,16 +106,14 @@ namespace Monte_Carlos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //Menu_Carta ventana = new Menu_Carta();
-            //ventana.Show();
+    
             AbrirFormEnPanel(new Ingreso_Comida());
 
         }
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(new Demas.Entrada());
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -154,6 +163,17 @@ namespace Monte_Carlos
         private void btnGraficos_Click(object sender, EventArgs e)
         {
             //
+        }
+
+        private void ProgesoBarra_Tick(object sender, EventArgs e)
+        {
+            Contador++;
+            Barras.Value++;
+            if (Contador == 100)
+            {
+                Contador = 0;
+            }
+            MessageBox.Show("algo");
         }
     }
 }
