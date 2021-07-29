@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,18 +22,29 @@ namespace Monte_Carlos.Demas
             InitializeComponent();
         }
 
+        public class Hash
+        {
+            public static string obtenerHash256(string text)
+            {
+
+                byte[] bytes = Encoding.Unicode.GetBytes(text);
+                SHA256Managed hashString = new SHA256Managed();
+
+                byte[] hash = hashString.ComputeHash(bytes);
+                string hashStr = string.Empty;
+
+                foreach (byte x in hash)
+                {
+                    hashStr += String.Format("{0:x2}", x);
+                }
+
+                return hashStr;
+
+            }
+        }
         private void Ingresar_Usuario_Load(object sender, EventArgs e)
         {
-            var tUsuario = from p in Variables.Usuario
-                                select new
-                                {
-                                    p.IdUsuario,
-                                    p.NIdentidad,
-                                    p.Nombre,
-                                    p.Estado
-                                };
-
-            dvUsuario.DataSource = tUsuario.CopyAnonymusToDataTable();
+            CargaDv();
             dvUsuario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             idUsuario = 0;
             Limpiar();
@@ -43,10 +55,24 @@ namespace Monte_Carlos.Demas
             txtContrasena.Text = "";
             txtIdentidad.Text = "";
             txtNombre.Text = "";
-            //  ActivoInactivo = true;
-          
-        }
+            ActivoInactivo.Checked = false;
+            idUsuario = 0;
+            editar = false;
 
+        }
+        private void CargaDv()
+        {
+            var tUsuario = from p in Variables.Usuario
+                           select new
+                           {
+                               p.IdUsuario,
+                               p.NIdentidad,
+                               p.Nombre,
+                               p.Estado
+                           };
+
+            dvUsuario.DataSource = tUsuario.CopyAnonymusToDataTable();
+        }
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Equals(""))
@@ -65,6 +91,7 @@ namespace Monte_Carlos.Demas
                 return;
             }
 
+            string pass = Hash.obtenerHash256(txtContrasena.Text);
 
             if (editar)
             {
@@ -72,10 +99,8 @@ namespace Monte_Carlos.Demas
                 var tusuario = Variables.Usuario.FirstOrDefault(x => x.IdUsuario == idUsuario);
                 tusuario.NIdentidad = txtIdentidad.Text;
                 tusuario.Nombre = txtNombre.Text;
-                tusuario.Contrasena = txtContrasena.Text;
-                tusuario.Estado = Convert.ToBoolean(ActivoInactivo.Text);
-
-
+                tusuario.Contrasena = pass;
+                tusuario.Estado = ActivoInactivo.Checked; 
                 Variables.SaveChanges();
             }
             else
@@ -84,8 +109,8 @@ namespace Monte_Carlos.Demas
                 Usuario tbUsuario = new Usuario();
                 tbUsuario.NIdentidad = txtIdentidad.Text;
                 tbUsuario.Nombre = txtNombre.Text;
-                tbUsuario.Contrasena = txtContrasena.Text;
-                tbUsuario.Estado = Convert.ToBoolean(ActivoInactivo.Text);
+                tbUsuario.Contrasena = pass;
+                tbUsuario.Estado = ActivoInactivo.Checked;
                 Variables.Usuario.Add(tbUsuario);
                 Variables.SaveChanges();
             }
@@ -93,17 +118,7 @@ namespace Monte_Carlos.Demas
             Limpiar();
             editar = false;
             idUsuario = 0;
-
-            var tUsuario = from p in Variables.Usuario
-                           select new
-                           {
-                               p.IdUsuario,
-                               p.NIdentidad,
-                               p.Nombre,
-                               p.Estado
-                           };
-
-            dvUsuario.DataSource = tUsuario.CopyAnonymusToDataTable();
+            CargaDv();
 
             MessageBox.Show("Informacion guardada!");
             Limpiar();
@@ -128,11 +143,35 @@ namespace Monte_Carlos.Demas
                     var tUsuario = Variables.Usuario.FirstOrDefault(x => x.IdUsuario == idUsuario);
                     txtNombre.Text = tUsuario.Nombre;
                     txtIdentidad.Text = tUsuario.NIdentidad;
-                    txtContrasena.Text = tUsuario.Contrasena;
+                    txtContrasena.Text = "**********";
                     editar = true;
                 }
                 catch (Exception)
                 {
+                }
+            }
+           
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show("Debe haber un registro seleccionado para poder borrarlo");
+            }
+            else
+            {
+                if (dvUsuario.RowCount == 2)
+                {
+                    MessageBox.Show("Si eliminas este registro no podras acceder al programa");
+                }
+                else
+                {
+
+                    Variables.Usuario.RemoveRange(Variables.Usuario.Where(x => x.IdUsuario == idUsuario));
+                    Variables.SaveChanges();
+                    Limpiar();
+                    CargaDv();
                 }
             }
            

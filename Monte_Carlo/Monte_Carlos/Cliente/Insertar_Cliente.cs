@@ -147,9 +147,6 @@ namespace Monte_Carlos.Cliente
                 Variables.SaveChanges();
             }
             Limpiar();
-            editar = false;
-            idCliente = 0;
-
             var tClientes = from p in Variables.Clientes
                                 select new
                                 {
@@ -162,7 +159,6 @@ namespace Monte_Carlos.Cliente
                                     p.Correo,
                                 };
             dvClientes.DataSource = tClientes.CopyAnonymusToDataTable();
-
             MessageBox.Show("Informacion guardada!");
             Limpiar();
         }
@@ -174,6 +170,8 @@ namespace Monte_Carlos.Cliente
             txtEdad.Text = "";
             txtTelefono.Text = "";
             txtCorreo.Text = "";
+            idCliente = 0;
+            editar = false;
             
         }
 
@@ -193,11 +191,7 @@ namespace Monte_Carlos.Cliente
                            };
             dvClientes.DataSource = tCliente.CopyAnonymusToDataTable();
             dvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            idCliente = 0;
             Limpiar();
-            editar = false;
-            Limpiar();
-
         }
 
         private void dvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -210,13 +204,8 @@ namespace Monte_Carlos.Cliente
              ContadorCliente++;
             if (dvClientes.RowCount > 1)
             {
-             //  MessageBox.Show("Entre");
-              //  int contado = 0;
-               // contado = contado + 1;
-
                 try
                 {
-                   // MessageBox.Show(Convert.ToString(ContadorCliente));
                     idCliente = Convert.ToInt64(dvClientes.SelectedCells[0].Value);
                     var tCliente = Variables.Clientes.FirstOrDefault(x => x.IdCliente == idCliente);
                     txtIdentidad.Text = tCliente.Identidad;
@@ -230,14 +219,12 @@ namespace Monte_Carlos.Cliente
                 }
                 catch (Exception)
                 {
-
+                   
                 }
             }
             if(ContadorCliente == 5)
             {
                 Limpiar();
-               // ContadorCliente = 0;
-
             }
           
 
@@ -246,10 +233,6 @@ namespace Monte_Carlos.Cliente
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
-            editar = false;
-            idCliente = 0;
         }
-
-        
     }
 }

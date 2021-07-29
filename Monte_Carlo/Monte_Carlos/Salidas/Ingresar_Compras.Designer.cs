@@ -40,6 +40,8 @@ namespace Monte_Carlos.Salidas
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDetalle = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dvCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@ namespace Monte_Carlos.Salidas
             this.btnNuevo.BackColor = System.Drawing.Color.Peru;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(146, 211);
+            this.btnNuevo.Location = new System.Drawing.Point(115, 228);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
@@ -62,7 +64,7 @@ namespace Monte_Carlos.Salidas
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEliminar.Location = new System.Drawing.Point(301, 211);
+            this.btnEliminar.Location = new System.Drawing.Point(270, 228);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(98, 49);
@@ -74,7 +76,7 @@ namespace Monte_Carlos.Salidas
             // txtPrecio
             // 
             this.txtPrecio.AllowDrop = true;
-            this.txtPrecio.Location = new System.Drawing.Point(248, 84);
+            this.txtPrecio.Location = new System.Drawing.Point(217, 63);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
@@ -86,7 +88,7 @@ namespace Monte_Carlos.Salidas
             this.btnIngresar.BackColor = System.Drawing.Color.Peru;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnIngresar.Location = new System.Drawing.Point(434, 211);
+            this.btnIngresar.Location = new System.Drawing.Point(403, 228);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(98, 49);
@@ -100,18 +102,18 @@ namespace Monte_Carlos.Salidas
             // 
             this.dvCompra.BackgroundColor = System.Drawing.Color.White;
             this.dvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvCompra.Location = new System.Drawing.Point(129, 273);
+            this.dvCompra.Location = new System.Drawing.Point(11, 281);
             this.dvCompra.Margin = new System.Windows.Forms.Padding(2);
             this.dvCompra.Name = "dvCompra";
             this.dvCompra.RowHeadersWidth = 51;
             this.dvCompra.RowTemplate.Height = 24;
-            this.dvCompra.Size = new System.Drawing.Size(425, 167);
+            this.dvCompra.Size = new System.Drawing.Size(588, 167);
             this.dvCompra.TabIndex = 51;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(152, 134);
+            this.label3.Location = new System.Drawing.Point(121, 151);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 24);
@@ -121,7 +123,7 @@ namespace Monte_Carlos.Salidas
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(152, 84);
+            this.label2.Location = new System.Drawing.Point(121, 63);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
@@ -131,7 +133,7 @@ namespace Monte_Carlos.Salidas
             // txtProducto
             // 
             this.txtProducto.AllowDrop = true;
-            this.txtProducto.Location = new System.Drawing.Point(248, 35);
+            this.txtProducto.Location = new System.Drawing.Point(217, 14);
             this.txtProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtProducto.Multiline = true;
             this.txtProducto.Name = "txtProducto";
@@ -141,7 +143,7 @@ namespace Monte_Carlos.Salidas
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(152, 35);
+            this.label1.Location = new System.Drawing.Point(121, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 24);
@@ -151,19 +153,41 @@ namespace Monte_Carlos.Salidas
             // txtDetalle
             // 
             this.txtDetalle.AllowDrop = true;
-            this.txtDetalle.Location = new System.Drawing.Point(248, 134);
+            this.txtDetalle.Location = new System.Drawing.Point(217, 151);
             this.txtDetalle.Margin = new System.Windows.Forms.Padding(2);
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
             this.txtDetalle.Size = new System.Drawing.Size(284, 63);
             this.txtDetalle.TabIndex = 52;
             // 
+            // txtCantidad
+            // 
+            this.txtCantidad.AllowDrop = true;
+            this.txtCantidad.Location = new System.Drawing.Point(217, 106);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCantidad.Multiline = true;
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(148, 24);
+            this.txtCantidad.TabIndex = 53;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(121, 106);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 24);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "Cantidad:";
+            // 
             // Ingresar_Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(690, 461);
+            this.ClientSize = new System.Drawing.Size(605, 472);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDetalle);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEliminar);
@@ -195,5 +219,7 @@ namespace Monte_Carlos.Salidas
         private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDetalle;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label label4;
     }
 }

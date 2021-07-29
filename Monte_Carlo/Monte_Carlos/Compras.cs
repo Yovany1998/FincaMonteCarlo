@@ -17,7 +17,9 @@ namespace Monte_Carlos
         public int IdCompra { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
         public string Producto { get; set; }
-        public string Detalle { get; set; }
+        public Nullable<int> Cantidad { get; set; }
         public Nullable<double> Precio { get; set; }
+        public string Detalle { get; set; }
+        public Nullable<double> Subtotal { get; set; }
     }
 }

@@ -13,16 +13,6 @@
     <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="DetalleVenta" Relationship="Self.FK_DetalleVenta_Clientes" FromRole="Clientes" ToRole="DetalleVenta" />
   </EntityType>
-  <EntityType Name="Compras">
-    <Key>
-      <PropertyRef Name="IdCompra" />
-    </Key>
-    <Property Name="IdCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fecha" Type="DateTime" Precision="0" />
-    <Property Name="Producto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Precio" Type="Double" />
-  </EntityType>
   <EntityType Name="DetalleVenta">
     <Key>
       <PropertyRef Name="IdDetalleVentas" />
@@ -142,7 +132,6 @@
   </Association>
   <EntityContainer Name="MonteCarlo" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Clientes" EntityType="Self.Clientes" />
-    <EntitySet Name="Compras" EntityType="Self.Compras" />
     <EntitySet Name="DetalleVenta" EntityType="Self.DetalleVenta" />
     <EntitySet Name="Empleados" EntityType="Self.Empleados" />
     <EntitySet Name="Facturas" EntityType="Self.Facturas" />
@@ -159,5 +148,18 @@
       <End Role="Menu" EntitySet="Menu" />
       <End Role="DetalleVenta" EntitySet="DetalleVenta" />
     </AssociationSet>
+    <EntitySet Name="Compras" EntityType="FincaMonteCarlo.Compras" />
   </EntityContainer>
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="IdCompra" />
+    </Key>
+    <Property Name="IdCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Producto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Int32" />
+    <Property Name="Precio" Type="Double" />
+    <Property Name="Detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Subtotal" Type="Double" />
+  </EntityType>
 </Schema>

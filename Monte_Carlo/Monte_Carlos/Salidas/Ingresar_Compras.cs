@@ -16,6 +16,7 @@ namespace Monte_Carlos.Salidas
         long idCompras = 0;
         bool editar = false;
         int contador = 0;
+        Double Subto;
 
         public Ingresar_Compras()
         {
@@ -27,18 +28,26 @@ namespace Monte_Carlos.Salidas
             txtDetalle.Text = "";
             txtPrecio.Text = "";
             txtProducto.Text = "";
+            txtCantidad.Text = "";
+            idCompras = 0;
+            editar = false;
 
         }
 
         private void Ingresar_Compras_Load(object sender, EventArgs e)
         {
+            DateTime Fechas = Convert.ToDateTime(FechaActual.ToString("yyyy/MM/dd 00:00:00"));
             var tCompras = from p in Variables.Compras
-                                select new
+                           where p.Fecha == Fechas
+                           select new
                                 {
                                     p.IdCompra,
+                                    p.Fecha,
                                     p.Producto,
                                     p.Precio,
-                                    p.Detalle
+                                    p.Cantidad,
+                                    p.Detalle,
+                                    p.Subtotal
                                 };
 
             dvCompra.DataSource = tCompras.CopyAnonymusToDataTable();
@@ -46,6 +55,11 @@ namespace Monte_Carlos.Salidas
             idCompras = 0;
             Limpiar();
             editar = false;
+        }
+        public DateTime FechaActual
+        {
+            get { return DateTime.Today; ; }
+            set { this.FechaActual = value; }
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -66,6 +80,7 @@ namespace Monte_Carlos.Salidas
                 return;
             }
 
+            Subto = Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text);
 
             if (editar)
             {
@@ -74,7 +89,9 @@ namespace Monte_Carlos.Salidas
                 tCompra.Producto = txtProducto.Text;
                 tCompra.Precio = Convert.ToDouble(txtPrecio.Text);
                 tCompra.Detalle = txtDetalle.Text;
-
+                tCompra.Cantidad =Convert.ToInt32(txtCantidad.Text);
+                tCompra.Subtotal = Subto;
+               // tCompra.Fecha = FechaActual;
                 Variables.SaveChanges();
             }
             else
@@ -84,6 +101,9 @@ namespace Monte_Carlos.Salidas
                 tbCompra.Producto = txtProducto.Text;
                 tbCompra.Precio = Convert.ToDouble(txtPrecio.Text);
                 tbCompra.Detalle = txtDetalle.Text;
+                tbCompra.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                tbCompra.Fecha = FechaActual;
+                tbCompra.Subtotal = Subto;
                 Variables.Compras.Add(tbCompra);
                 Variables.SaveChanges();
             }
@@ -92,16 +112,20 @@ namespace Monte_Carlos.Salidas
             editar = false;
             idCompras = 0;
 
-            var tUsuario = from p in Variables.Usuario
+            var tCompras = from p in Variables.Compras
                            select new
                            {
-                               p.IdUsuario,
-                               p.NIdentidad,
-                               p.Nombre,
-                               p.Estado
+                               p.IdCompra,
+                               p.Fecha,
+                               p.Producto,
+                               p.Precio,
+                               p.Cantidad,
+                               p.Detalle,
+                               p.Subtotal
+                             
                            };
 
-            dvCompra.DataSource = tUsuario.CopyAnonymusToDataTable();
+            dvCompra.DataSource = tCompras.CopyAnonymusToDataTable();
 
             MessageBox.Show("Informacion guardada!");
             Limpiar();

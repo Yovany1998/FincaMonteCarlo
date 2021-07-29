@@ -26,7 +26,6 @@ namespace Monte_Carlos
         }
     
         public virtual DbSet<Clientes> Clientes { get; set; }
-        public virtual DbSet<Compras> Compras { get; set; }
         public virtual DbSet<DetalleVenta> DetalleVenta { get; set; }
         public virtual DbSet<Empleados> Empleados { get; set; }
         public virtual DbSet<Facturas> Facturas { get; set; }
@@ -35,5 +34,6 @@ namespace Monte_Carlos
         public virtual DbSet<Reservacion> Reservaciones { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Ventas> Ventas { get; set; }
+        public virtual DbSet<Compras> Compras { get; set; }
     }
 }
