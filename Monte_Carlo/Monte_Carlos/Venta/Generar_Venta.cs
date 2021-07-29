@@ -17,7 +17,7 @@ namespace Monte_Carlos.Venta
         long idVenta = 0;
         private bool VentaValida = true;
         private int contadorcomida=0;
-        Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
+        MonteCarlo Variables = new MonteCarlo();
         long idDetalleVenta = 0;
         string nombre = "";
         bool editar = false;

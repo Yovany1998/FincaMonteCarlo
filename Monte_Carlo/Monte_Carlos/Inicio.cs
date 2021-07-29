@@ -160,20 +160,14 @@ namespace Monte_Carlos
             AbrirFormEnPanel(new Factura());
         }
 
-        private void btnGraficos_Click(object sender, EventArgs e)
+        private void btnCompras_Click(object sender, EventArgs e)
         {
-            //
+            AbrirFormEnPanel(new Salidas.Ingresar_Compras());
         }
 
-        private void ProgesoBarra_Tick(object sender, EventArgs e)
+        private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            Contador++;
-            Barras.Value++;
-            if (Contador == 100)
-            {
-                Contador = 0;
-            }
-            MessageBox.Show("algo");
+            AbrirFormEnPanel(new Demas.Ingresar_Usuario());
         }
     }
 }

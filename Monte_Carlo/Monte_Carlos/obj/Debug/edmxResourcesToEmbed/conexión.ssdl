@@ -12,6 +12,16 @@
     <Property Name="Telefono" Type="int" />
     <Property Name="Correo" Type="varchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="IdCompra" />
+    </Key>
+    <Property Name="IdCompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Detalle" Type="varchar" MaxLength="50" />
+    <Property Name="Precio" Type="float" />
+  </EntityType>
   <EntityType Name="DetalleVenta">
     <Key>
       <PropertyRef Name="IdDetalleVentas" />
@@ -134,6 +144,7 @@ advertencia 6013: La tabla o vista 'Finca_Monte_Carlo.dbo.Vista_ventas_dias' no 
   </Association>
   <EntityContainer Name="Finca_Monte_CarloModelStoreContainer">
     <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Compras" EntityType="Self.Compras" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DetalleVenta" EntityType="Self.DetalleVenta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />

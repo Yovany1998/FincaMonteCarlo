@@ -13,7 +13,7 @@ namespace Monte_Carlos
 {
     public partial class Login : Form
     {
-        Finca_Monte_CarloEntities1 entity = new Finca_Monte_CarloEntities1();
+        MonteCarlo entity = new MonteCarlo();
         public Login()
         {
             InitializeComponent();

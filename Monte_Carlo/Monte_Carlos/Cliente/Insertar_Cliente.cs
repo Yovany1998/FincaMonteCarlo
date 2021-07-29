@@ -12,7 +12,7 @@ namespace Monte_Carlos.Cliente
 {
     public partial class Insertar_Cliente : Form
     {
-        Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
+        MonteCarlo Variables = new MonteCarlo();
         long idCliente = 0;
         bool editar = false;
         int ContadorCliente = 0;

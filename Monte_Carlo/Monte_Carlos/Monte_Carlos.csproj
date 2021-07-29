@@ -66,22 +66,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clientes.cs">
-      <DependentUpon>Conexión.tt</DependentUpon>
+      <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
-    <Compile Include="Conexión.Context.cs">
+    <Compile Include="Compras.cs">
+      <DependentUpon>Conexiones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Conexiones.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Conexión.Context.tt</DependentUpon>
+      <DependentUpon>Conexiones.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Conexión.cs">
+    <Compile Include="Conexiones.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Conexión.tt</DependentUpon>
+      <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
-    <Compile Include="Conexión.Designer.cs">
+    <Compile Include="Conexiones.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Conexión.edmx</DependentUpon>
+      <DependentUpon>Conexiones.edmx</DependentUpon>
     </Compile>
     <Compile Include="Demas\Entrada.cs">
       <SubType>Form</SubType>
@@ -89,18 +92,24 @@
     <Compile Include="Demas\Entrada.Designer.cs">
       <DependentUpon>Entrada.cs</DependentUpon>
     </Compile>
+    <Compile Include="Demas\Ingresar_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demas\Ingresar_Usuario.Designer.cs">
+      <DependentUpon>Ingresar_Usuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetalleVenta.cs">
-      <DependentUpon>Conexión.tt</DependentUpon>
+      <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
     <Compile Include="Empleados.cs">
-      <DependentUpon>Conexión.tt</DependentUpon>
+      <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
     <Compile Include="Facturas.cs">
-      <DependentUpon>Conexión.tt</DependentUpon>
+      <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
     <Compile Include="LINQTODATATABLE.cs" />
     <Compile Include="Menu.cs">
-      <DependentUpon>Conexión.tt</DependentUpon>
+      <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
     <Compile Include="Menu\Ingreso_Comida-Bebida.cs">
       <SubType>Form</SubType>
@@ -151,12 +160,12 @@
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedidos.cs">
-      <DependentUpon>Conexión.tt</DependentUpon>
+      <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservaciones.cs">
-      <DependentUpon>Conexión.tt</DependentUpon>
+      <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
     <Compile Include="Reservaciones\Insertar_Reservaciones.cs">
       <SubType>Form</SubType>
@@ -182,11 +191,17 @@
     <Compile Include="Pedidos\Ver_Pedido.Designer.cs">
       <DependentUpon>Ver_Pedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Salidas\Ingresar_Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salidas\Ingresar_Compras.Designer.cs">
+      <DependentUpon>Ingresar_Compras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs">
-      <DependentUpon>Conexión.tt</DependentUpon>
+      <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
     <Compile Include="Ventas.cs">
-      <DependentUpon>Conexión.tt</DependentUpon>
+      <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
     <Compile Include="Venta\Factura.cs">
       <SubType>Form</SubType>
@@ -203,6 +218,9 @@
     <Compile Include="Venta\Validacion.cs" />
     <EmbeddedResource Include="Demas\Entrada.resx">
       <DependentUpon>Entrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demas\Ingresar_Usuario.resx">
+      <DependentUpon>Ingresar_Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu\Ingreso_Comida-Bebida.resx">
       <DependentUpon>Ingreso_Comida-Bebida.cs</DependentUpon>
@@ -250,18 +268,21 @@
     <EmbeddedResource Include="Pedidos\Ver_Pedido.resx">
       <DependentUpon>Ver_Pedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Salidas\Ingresar_Compras.resx">
+      <DependentUpon>Ingresar_Compras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Venta\Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta\Generar_Venta.resx">
       <DependentUpon>Generar_Venta.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Conexión.edmx">
+    <EntityDeploy Include="Conexiones.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Conexión.Designer.cs</LastGenOutput>
+      <LastGenOutput>Conexiones.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Conexión.edmx.diagram">
-      <DependentUpon>Conexión.edmx</DependentUpon>
+    <None Include="Conexiones.edmx.diagram">
+      <DependentUpon>Conexiones.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -293,15 +314,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Conexión.Context.tt">
+    <Content Include="Conexiones.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Conexión.edmx</DependentUpon>
-      <LastGenOutput>Conexión.Context.cs</LastGenOutput>
+      <DependentUpon>Conexiones.edmx</DependentUpon>
+      <LastGenOutput>Conexiones.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Conexión.tt">
+    <Content Include="Conexiones.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Conexión.edmx</DependentUpon>
-      <LastGenOutput>Conexión.cs</LastGenOutput>
+      <DependentUpon>Conexiones.edmx</DependentUpon>
+      <LastGenOutput>Conexiones.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

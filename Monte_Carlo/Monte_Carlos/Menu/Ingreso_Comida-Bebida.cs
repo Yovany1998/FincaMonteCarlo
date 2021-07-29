@@ -12,7 +12,7 @@ namespace Monte_Carlos.Carta
 {
     public partial class Ingreso_Comida : Form
     {
-        Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
+        MonteCarlo Variables = new MonteCarlo();
         long idComidaBebida = 0;
         bool editar = false;
             int contador = 0;
@@ -24,12 +24,6 @@ namespace Monte_Carlos.Carta
         }
 
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu_Carta ventana = new Menu_Carta();
-            ventana.Show();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -134,34 +128,23 @@ namespace Monte_Carlos.Carta
             contador++;
             if (dvComida.RowCount > 1)
             {
-                //  MessageBox.Show("Entre");
-                //  int contado = 0;
-                // contado = contado + 1;
-
                 try
                 {
-                    //  MessageBox.Show(Convert.ToString(contado));
                     idComidaBebida = Convert.ToInt64(dvComida.SelectedCells[0].Value);
                     var tComidaBebida = Variables.Menu.FirstOrDefault(x => x.IdComidaBebida == idComidaBebida);
                     txtNombre.Text = tComidaBebida.Nombre;
                     txtPrecio.Text = Convert.ToString(tComidaBebida.Precio);
                     cmbTipo.Text = Convert.ToString(tComidaBebida.Tipo);
-                  
                     editar = true;
-
                 }
                 catch (Exception)
                 {
-
                 }
             }
             if (contador == 5)
             {
                 Limpiar();
-                // contador = 0;
-
-            }
-          
+                }          
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

@@ -90,6 +90,7 @@
       <End Role="Ventas" EntitySet="Ventas" />
     </AssociationSet>
     <EntitySet Name="Empleados" EntityType="Finca_Monte_CarloModel.Empleados" />
+    <EntitySet Name="Compras" EntityType="Finca_Monte_CarloModel.Compras" />
   </EntityContainer>
   <EntityType Name="DetalleVenta">
     <Key>
@@ -165,5 +166,15 @@
     <Property Name="Edad" Type="Int32" />
     <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="FechaIngreso" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="IdCompra" />
+    </Key>
+    <Property Name="IdCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Precio" Type="Double" />
   </EntityType>
 </Schema>

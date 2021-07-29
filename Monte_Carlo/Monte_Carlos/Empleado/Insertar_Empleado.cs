@@ -12,7 +12,7 @@ namespace Monte_Carlos.Empleado
 {
     public partial class Insertar_Empleado : Form
     {
-        Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
+        MonteCarlo Variables = new MonteCarlo();
         long idEmpleado = 0;
         bool editar = false;
         int contador = 0;

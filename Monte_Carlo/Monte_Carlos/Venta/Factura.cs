@@ -15,7 +15,7 @@ namespace Monte_Carlos.Venta
         int contador;
         int clave=0;
         private double total;
-        Finca_Monte_CarloEntities1 Variables = new Finca_Monte_CarloEntities1();
+        MonteCarlo Variables = new MonteCarlo();
 
         public Factura()
         {

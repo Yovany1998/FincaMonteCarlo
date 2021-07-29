@@ -14,12 +14,6 @@ namespace Monte_Carlos
     
     public partial class Facturas
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Facturas()
-        {
-            this.Ventas = new HashSet<Ventas>();
-        }
-    
         public int IdFactura { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<int> IdCliente { get; set; }
@@ -27,8 +21,5 @@ namespace Monte_Carlos
         public Nullable<double> Subtotal { get; set; }
         public Nullable<double> Impuesto { get; set; }
         public Nullable<double> Total { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ventas> Ventas { get; set; }
     }
 }
