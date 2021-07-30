@@ -117,7 +117,8 @@
             this.dvEmpleado.RowTemplate.Height = 24;
             this.dvEmpleado.Size = new System.Drawing.Size(516, 149);
             this.dvEmpleado.TabIndex = 31;
-            this.dvEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvempleado_CellContentClick);
+            this.dvEmpleado.SelectionChanged += new System.EventHandler(this.dvEmpleado_SelectionChanged);
+            this.dvEmpleado.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvEmpleado_MouseClick);
             // 
             // txtEdad
             // 
@@ -190,6 +191,7 @@
             this.btnElimicar.Text = "Eliminar";
             this.btnElimicar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnElimicar.UseVisualStyleBackColor = false;
+            this.btnElimicar.Click += new System.EventHandler(this.btnElimicar_Click);
             // 
             // cmbCargo
             // 

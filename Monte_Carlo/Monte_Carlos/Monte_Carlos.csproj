@@ -98,6 +98,9 @@
     <Compile Include="Demas\Ingresar_Usuario.Designer.cs">
       <DependentUpon>Ingresar_Usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetalleReservacion.cs">
+      <DependentUpon>Conexiones.tt</DependentUpon>
+    </Compile>
     <Compile Include="DetalleVenta.cs">
       <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
@@ -164,7 +167,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reservaciones.cs">
+    <Compile Include="Reservacion.cs">
       <DependentUpon>Conexiones.tt</DependentUpon>
     </Compile>
     <Compile Include="Reservaciones\Insertar_Reservaciones.cs">

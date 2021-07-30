@@ -54,6 +54,7 @@
             this.dvComida.Size = new System.Drawing.Size(425, 167);
             this.dvComida.TabIndex = 41;
             this.dvComida.SelectionChanged += new System.EventHandler(this.dvComida_SelectionChanged);
+            this.dvComida.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvComida_MouseClick);
             // 
             // label3
             // 
@@ -163,10 +164,9 @@
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(148, 21);
             this.cmbTipo.TabIndex = 2;
-            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
-            // 
+            //
             // Ingreso_Comida
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

@@ -78,18 +78,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Reservaciones">
-      <EntityTypeMapping TypeName="FincaMonteCarlo.Reservaciones">
-        <MappingFragment StoreEntitySet="Reservaciones">
-          <ScalarProperty Name="IdReservacion" ColumnName="IdReservacion" />
-          <ScalarProperty Name="Lugar" ColumnName="Lugar" />
-          <ScalarProperty Name="Pedido" ColumnName="Pedido" />
-          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="Hora" ColumnName="Hora" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Usuario">
       <EntityTypeMapping TypeName="FincaMonteCarlo.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
@@ -122,6 +110,28 @@
           <ScalarProperty Name="Producto" ColumnName="Producto" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleReservacion">
+      <EntityTypeMapping TypeName="FincaMonteCarlo.DetalleReservacion">
+        <MappingFragment StoreEntitySet="DetalleReservacion">
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Pedido" ColumnName="Pedido" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdDetalleReservacion" ColumnName="IdDetalleReservacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservacion">
+      <EntityTypeMapping TypeName="FincaMonteCarlo.Reservacion">
+        <MappingFragment StoreEntitySet="Reservacion">
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Zona" ColumnName="Zona" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="IdReservacion" ColumnName="IdReservacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

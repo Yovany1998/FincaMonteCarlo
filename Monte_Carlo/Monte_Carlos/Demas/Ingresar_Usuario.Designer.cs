@@ -67,7 +67,8 @@ namespace Monte_Carlos.Demas
             this.dvUsuario.Size = new System.Drawing.Size(348, 189);
             this.dvUsuario.TabIndex = 51;
             this.dvUsuario.SelectionChanged += new System.EventHandler(this.dvUsuario_SelectionChanged);
-            // 
+            this.dvUsuario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvUsuario_MouseClick);
+          
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

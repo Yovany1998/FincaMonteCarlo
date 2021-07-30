@@ -15,7 +15,7 @@ namespace Monte_Carlos.Cliente
         MonteCarlo Variables = new MonteCarlo();
         long idCliente = 0;
         bool editar = false;
-        int ContadorCliente = 0;
+        int Log=0;
 
         public Insertar_Cliente()
         {
@@ -117,7 +117,7 @@ namespace Monte_Carlos.Cliente
                     return;
                 }
             }
-          
+       
 
             if (editar)
             {
@@ -147,20 +147,24 @@ namespace Monte_Carlos.Cliente
                 Variables.SaveChanges();
             }
             Limpiar();
-            var tClientes = from p in Variables.Clientes
-                                select new
-                                {
-                                    p.IdCliente,
-                                    p.Identidad,
-                                    p.Nombre,
-                                    p.Apellido,
-                                    p.Edad,
-                                    p.Telefono,
-                                    p.Correo,
-                                };
-            dvClientes.DataSource = tClientes.CopyAnonymusToDataTable();
+            CargaDv();
             MessageBox.Show("Informacion guardada!");
             Limpiar();
+        }
+        private void CargaDv()
+        {
+            var tClientes = from p in Variables.Clientes
+                            select new
+                            {
+                                p.IdCliente,
+                                p.Identidad,
+                                p.Nombre,
+                                p.Apellido,
+                                p.Edad,
+                                p.Telefono,
+                                p.Correo,
+                            };
+            dvClientes.DataSource = tClientes.CopyAnonymusToDataTable();
         }
         private void Limpiar()
         {
@@ -172,38 +176,24 @@ namespace Monte_Carlos.Cliente
             txtCorreo.Text = "";
             idCliente = 0;
             editar = false;
-            
+            dvClientes.ClearSelection();
+
+
         }
 
         private void Insertar_Cliente_Load(object sender, EventArgs e)
         {
-            
-            var tCliente = from p in Variables.Clientes
-                           select new
-                                 {
-                               p.IdCliente,
-                               p.Identidad,
-                               p.Nombre,
-                               p.Apellido,
-                               p.Edad,
-                               p.Telefono,
-                               p.Correo,
-                           };
-            dvClientes.DataSource = tCliente.CopyAnonymusToDataTable();
+            Log = 1;
+            CargaDv();
             dvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             Limpiar();
         }
 
-        private void dvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void dvClientes_SelectionChanged(object sender, EventArgs e)
         {
-             ContadorCliente++;
-            if (dvClientes.RowCount > 1)
-            {
+          
                 try
                 {
                     idCliente = Convert.ToInt64(dvClientes.SelectedCells[0].Value);
@@ -221,8 +211,8 @@ namespace Monte_Carlos.Cliente
                 {
                    
                 }
-            }
-            if(ContadorCliente == 5)
+            
+            if(Log==1)
             {
                 Limpiar();
             }
@@ -233,6 +223,37 @@ namespace Monte_Carlos.Cliente
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void dvClientes_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (Log == 1)
+            {
+               Log = 2;
+            }
+        }
+
+        private void btnElimicar_Click(object sender, EventArgs e)
+        {
+            if (editar == false)
+            {
+                MessageBox.Show("Debe haber un registro seleccionado para poder borrarlo");
+            }
+            else
+            {
+                if (dvClientes.RowCount == 2)
+                {
+                    MessageBox.Show("Si eliminas este registro no podras acceder al programa");
+                }
+                else
+                {
+
+                    Variables.Clientes.RemoveRange(Variables.Clientes.Where(x => x.IdCliente == idCliente));
+                    Variables.SaveChanges();
+                    Limpiar();
+                    CargaDv();
+                }
+            }
         }
     }
 }

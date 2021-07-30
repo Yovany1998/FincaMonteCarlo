@@ -16,7 +16,7 @@ namespace Monte_Carlos.Demas
         MonteCarlo Variables = new MonteCarlo();
         long idUsuario = 0;
         bool editar = false;
-        int contador = 0;
+        int login = 0;
         public Ingresar_Usuario()
         {
             InitializeComponent();
@@ -29,27 +29,16 @@ namespace Monte_Carlos.Demas
 
                 byte[] bytes = Encoding.Unicode.GetBytes(text);
                 SHA256Managed hashString = new SHA256Managed();
-
                 byte[] hash = hashString.ComputeHash(bytes);
                 string hashStr = string.Empty;
-
                 foreach (byte x in hash)
                 {
                     hashStr += String.Format("{0:x2}", x);
                 }
-
                 return hashStr;
-
             }
         }
-        private void Ingresar_Usuario_Load(object sender, EventArgs e)
-        {
-            CargaDv();
-            dvUsuario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            idUsuario = 0;
-            Limpiar();
-            editar = false;
-        }
+
         private void Limpiar()
         {
             txtContrasena.Text = "";
@@ -58,7 +47,7 @@ namespace Monte_Carlos.Demas
             ActivoInactivo.Checked = false;
             idUsuario = 0;
             editar = false;
-
+            dvUsuario.ClearSelection();
         }
         private void CargaDv()
         {
@@ -70,8 +59,14 @@ namespace Monte_Carlos.Demas
                                p.Nombre,
                                p.Estado
                            };
-
             dvUsuario.DataSource = tUsuario.CopyAnonymusToDataTable();
+        }
+        private void dvUsuario_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (login == 1)
+            {
+                login = 2;
+            }
         }
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -133,29 +128,42 @@ namespace Monte_Carlos.Demas
 
         private void dvUsuario_SelectionChanged(object sender, EventArgs e)
         {
-            contador++;
-            if (dvUsuario.RowCount > 1)
-            {
+             
                 try
                 {
-                  
+                    
                     idUsuario = Convert.ToInt64(dvUsuario.SelectedCells[0].Value);
                     var tUsuario = Variables.Usuario.FirstOrDefault(x => x.IdUsuario == idUsuario);
                     txtNombre.Text = tUsuario.Nombre;
                     txtIdentidad.Text = tUsuario.NIdentidad;
                     txtContrasena.Text = "**********";
                     editar = true;
+                    
                 }
                 catch (Exception)
                 {
                 }
+            
+            if (login == 1)
+            {
+                Limpiar();
             }
-           
-        }
 
+        }
+        private void Ingresar_Usuario_Load(object sender, EventArgs e)
+        {
+            CargaDv();
+            dvUsuario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            idUsuario = 0;
+           
+            editar = false;
+            MessageBox.Show("inicio");
+            Limpiar();
+            login = 1;
+        }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "")
+            if (editar==false)
             {
                 MessageBox.Show("Debe haber un registro seleccionado para poder borrarlo");
             }

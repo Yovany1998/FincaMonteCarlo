@@ -29,6 +29,15 @@
           <Property Name="Detalle" Type="varchar" MaxLength="50" />
           <Property Name="Subtotal" Type="float" />
         </EntityType>
+        <EntityType Name="DetalleReservacion">
+          <Key>
+            <PropertyRef Name="IdDetalleReservacion" />
+          </Key>
+          <Property Name="IdDetalleReservacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Pedido" Type="varchar" MaxLength="50" />
+          <Property Name="Cantidad" Type="int" />
+        </EntityType>
         <EntityType Name="DetalleVenta">
           <Key>
             <PropertyRef Name="IdDetalleVentas" />
@@ -88,15 +97,15 @@
           <Property Name="Precio" Type="float" />
           <Property Name="Cantidad" Type="int" />
         </EntityType>
-        <EntityType Name="Reservaciones">
+        <EntityType Name="Reservacion">
           <Key>
             <PropertyRef Name="IdReservacion" />
           </Key>
           <Property Name="IdReservacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Lugar" Type="varchar" MaxLength="50" />
-          <Property Name="Pedido" Type="varchar" MaxLength="50" />
-          <Property Name="Cantidad" Type="int" />
-          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Cliente" Type="varchar" MaxLength="50" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" />
+          <Property Name="Zona" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha" Type="date" />
           <Property Name="Hora" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Usuario">
@@ -146,12 +155,13 @@
         <EntityContainer Name="FincaMonteCarloStoreContainer">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Compras" EntityType="Self.Compras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetalleReservacion" EntityType="Self.DetalleReservacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DetalleVenta" EntityType="Self.DetalleVenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pedidos" EntityType="Self.Pedidos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Reservaciones" EntityType="Self.Reservaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservacion" EntityType="Self.Reservacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_DetalleVenta_Clientes" Association="Self.FK_DetalleVenta_Clientes">
@@ -242,17 +252,6 @@
           <Property Name="Precio" Type="Double" />
           <Property Name="Cantidad" Type="Int32" />
         </EntityType>
-        <EntityType Name="Reservaciones">
-          <Key>
-            <PropertyRef Name="IdReservacion" />
-          </Key>
-          <Property Name="IdReservacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Lugar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Pedido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Cantidad" Type="Int32" />
-          <Property Name="Fecha" Type="DateTime" Precision="3" />
-          <Property Name="Hora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="IdUsuario" />
@@ -304,7 +303,6 @@
           <EntitySet Name="Facturas" EntityType="Self.Facturas" />
           <EntitySet Name="Menu" EntityType="Self.Menu" />
           <EntitySet Name="Pedidos" EntityType="Self.Pedidos" />
-          <EntitySet Name="Reservaciones" EntityType="Self.Reservaciones" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
           <EntitySet Name="Ventas" EntityType="Self.Ventas" />
           <AssociationSet Name="FK_DetalleVenta_Clientes" Association="Self.FK_DetalleVenta_Clientes">
@@ -316,6 +314,8 @@
             <End Role="DetalleVenta" EntitySet="DetalleVenta" />
           </AssociationSet>
           <EntitySet Name="Compras" EntityType="FincaMonteCarlo.Compras" />
+          <EntitySet Name="DetalleReservacion" EntityType="FincaMonteCarlo.DetalleReservacion" />
+          <EntitySet Name="Reservacion" EntityType="FincaMonteCarlo.Reservacion" />
         </EntityContainer>
         <EntityType Name="Compras">
           <Key>
@@ -328,6 +328,26 @@
           <Property Name="Precio" Type="Double" />
           <Property Name="Detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Subtotal" Type="Double" />
+        </EntityType>
+        <EntityType Name="DetalleReservacion">
+          <Key>
+            <PropertyRef Name="IdDetalleReservacion" />
+          </Key>
+          <Property Name="IdDetalleReservacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Pedido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Reservacion">
+          <Key>
+            <PropertyRef Name="IdReservacion" />
+          </Key>
+          <Property Name="IdReservacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Hora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -412,18 +432,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Reservaciones">
-            <EntityTypeMapping TypeName="FincaMonteCarlo.Reservaciones">
-              <MappingFragment StoreEntitySet="Reservaciones">
-                <ScalarProperty Name="IdReservacion" ColumnName="IdReservacion" />
-                <ScalarProperty Name="Lugar" ColumnName="Lugar" />
-                <ScalarProperty Name="Pedido" ColumnName="Pedido" />
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="Hora" ColumnName="Hora" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="FincaMonteCarlo.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
@@ -456,6 +464,28 @@
                 <ScalarProperty Name="Producto" ColumnName="Producto" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleReservacion">
+            <EntityTypeMapping TypeName="FincaMonteCarlo.DetalleReservacion">
+              <MappingFragment StoreEntitySet="DetalleReservacion">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Pedido" ColumnName="Pedido" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdDetalleReservacion" ColumnName="IdDetalleReservacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservacion">
+            <EntityTypeMapping TypeName="FincaMonteCarlo.Reservacion">
+              <MappingFragment StoreEntitySet="Reservacion">
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Zona" ColumnName="Zona" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="IdReservacion" ColumnName="IdReservacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

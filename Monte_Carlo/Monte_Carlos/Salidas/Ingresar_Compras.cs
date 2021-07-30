@@ -15,7 +15,6 @@ namespace Monte_Carlos.Salidas
         MonteCarlo Variables = new MonteCarlo();
         long idCompras = 0;
         bool editar = false;
-        int contador = 0;
         Double Subto;
 
         public Ingresar_Compras()
@@ -31,6 +30,7 @@ namespace Monte_Carlos.Salidas
             txtCantidad.Text = "";
             idCompras = 0;
             editar = false;
+            dvCompra.ClearSelection();
 
         }
 
@@ -112,6 +112,15 @@ namespace Monte_Carlos.Salidas
             editar = false;
             idCompras = 0;
 
+            CargaDv();
+            MessageBox.Show("Informacion guardada!");
+            Limpiar();
+
+
+        }
+        private void CargaDv()
+        {
+
             var tCompras = from p in Variables.Compras
                            select new
                            {
@@ -122,15 +131,33 @@ namespace Monte_Carlos.Salidas
                                p.Cantidad,
                                p.Detalle,
                                p.Subtotal
-                             
+
                            };
 
             dvCompra.DataSource = tCompras.CopyAnonymusToDataTable();
+        }
 
-            MessageBox.Show("Informacion guardada!");
-            Limpiar();
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (editar == false)
+            {
+                MessageBox.Show("Debe haber un registro seleccionado para poder borrarlo");
+            }
+            else
+            {
+                if (dvCompra.RowCount == 2)
+                {
+                    MessageBox.Show("Si eliminas este registro no podras acceder al programa");
+                }
+                else
+                {
 
-
+                    Variables.Compras.RemoveRange(Variables.Compras.Where(x => x.IdCompra == idCompras));
+                    Variables.SaveChanges();
+                    Limpiar();
+                    CargaDv();
+                }
+            }
         }
     }
     

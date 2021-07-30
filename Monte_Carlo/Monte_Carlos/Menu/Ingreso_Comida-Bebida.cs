@@ -15,7 +15,7 @@ namespace Monte_Carlos.Carta
         MonteCarlo Variables = new MonteCarlo();
         long idComidaBebida = 0;
         bool editar = false;
-            int contador = 0;
+        int log;
 
         public Ingreso_Comida()
         {
@@ -68,22 +68,26 @@ namespace Monte_Carlos.Carta
             editar = false;
             idComidaBebida = 0;
 
-            var tbComidaBebida = from p in Variables.Menu
-                            select new
-                            {
-                                p.IdComidaBebida,
-                                p.Nombre,
-                                p.Precio,
-                                p.Tipo,
-                             
-                            };
-            dvComida.DataSource = tbComidaBebida.CopyAnonymusToDataTable();
+            CargaDv();
 
             MessageBox.Show("Informacion guardada!");
             Limpiar();
             
         }
     
+        private void CargaDv()
+        {
+            var tbComidaBebida = from p in Variables.Menu
+                                 select new
+                                 {
+                                     p.IdComidaBebida,
+                                     p.Nombre,
+                                     p.Precio,
+                                     p.Tipo,
+
+                                 };
+            dvComida.DataSource = tbComidaBebida.CopyAnonymusToDataTable();
+        }
 
     
     
@@ -92,42 +96,21 @@ namespace Monte_Carlos.Carta
             txtNombre.Text = "";
             txtPrecio.Text = "";
             cmbTipo.SelectedIndex = cmbTipo.SelectedIndex = cmbTipo.SelectedIndex = -1;
-
-
+            dvComida.ClearSelection();
         }
     
         private void Ingreso_Comida_Load(object sender, EventArgs e)
         {
-            var tComidaBebida = from p in Variables.Menu
-                           select new
-                           {
-                               p.IdComidaBebida,
-                               p.Nombre,
-                               p.Precio,
-                               p.Tipo
-                           };
-    
-            dvComida.DataSource = tComidaBebida.CopyAnonymusToDataTable();
+            CargaDv();
             dvComida.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             idComidaBebida = 0;
             Limpiar();
             editar = false;
+            log = 1;
         }
-
-        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           // if (cmbTipo.SelectedItem != null)
-            //{
-              //  MessageBox.Show(cmbTipo.SelectedItem.ToString());
-            //}
-         
-        }
-
         private void dvComida_SelectionChanged(object sender, EventArgs e)
         {
-            contador++;
-            if (dvComida.RowCount > 1)
-            {
+
                 try
                 {
                     idComidaBebida = Convert.ToInt64(dvComida.SelectedCells[0].Value);
@@ -140,16 +123,24 @@ namespace Monte_Carlos.Carta
                 catch (Exception)
                 {
                 }
-            }
-            if (contador == 5)
+            if (log == 1)
             {
                 Limpiar();
-                }          
+            }
+        
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void dvComida_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (log == 1)
+            {
+                log = 2;
+            }
         }
     }
 }

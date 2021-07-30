@@ -15,7 +15,7 @@ namespace Monte_Carlos.Empleado
         MonteCarlo Variables = new MonteCarlo();
         long idEmpleado = 0;
         bool editar = false;
-        int contador = 0;
+        int Log;
 
 
         public Insertar_Empleado()
@@ -29,24 +29,30 @@ namespace Monte_Carlos.Empleado
         
         }
 
-        private void Insertar_Empleado_Load(object sender, EventArgs e)
+        private void CargarDv()
         {
             var tEmpleado = from p in Variables.Empleados
                             select new
                             {
+                                p.IdEmpleado,
                                 p.NIdentidad,
                                 p.Nombre,
                                 p.Apellidos,
                                 p.Edad,
                                 p.Cargo,
                                 p.FechaIngreso
-                                };
+                            };
 
             dvEmpleado.DataSource = tEmpleado.CopyAnonymusToDataTable();
+        }
+        private void Insertar_Empleado_Load(object sender, EventArgs e)
+        {
+            CargarDv();
             dvEmpleado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             idEmpleado = 0;
             Limpiar();
             editar = false;
+            Log = 1;
         }
 
         private void btninsertar_Click(object sender, EventArgs e)
@@ -83,19 +89,7 @@ namespace Monte_Carlos.Empleado
             Limpiar();
             editar = false;
             idEmpleado = 0;
-
-            var tblEmpleado = from p in Variables.Empleados
-                                 select new
-                                 {
-                                     p.NIdentidad,
-                                     p.Nombre,
-                                     p.Apellidos,
-                                     p.Edad,
-                                     p.Cargo,
-                                     p.FechaIngreso
-
-                                 };
-            dvEmpleado.DataSource = tblEmpleado.CopyAnonymusToDataTable();
+            CargarDv();
 
             MessageBox.Show("Informacion guardada!");
             Limpiar();
@@ -111,10 +105,62 @@ namespace Monte_Carlos.Empleado
             cmbCargo.SelectedIndex = cmbCargo.SelectedIndex = cmbCargo.SelectedIndex = -1;
 
         }
-
-        private void dvempleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dvEmpleado_SelectionChanged(object sender, EventArgs e)
         {
 
+            try
+            {
+                idEmpleado = Convert.ToInt64(dvEmpleado.SelectedCells[0].Value);
+                var tEmpleado = Variables.Empleados.FirstOrDefault(x => x.IdEmpleado == idEmpleado);
+                txtId.Text = tEmpleado.NIdentidad;
+                txtNombre.Text = tEmpleado.Nombre;
+                txtApellido.Text = tEmpleado.Apellidos;
+                txtEdad.Text = Convert.ToString(tEmpleado.Edad);
+                cmbCargo.Text = Convert.ToString(tEmpleado.Cargo);
+      
+                editar = true;
+
+            }
+            catch (Exception)
+            {
+
+            }
+
+            if (Log == 1)
+            {
+                Limpiar();
+            }
+        }
+
+        private void dvEmpleado_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (Log == 1)
+            {
+                Log = 2;
+            }
+        }
+
+        private void btnElimicar_Click(object sender, EventArgs e)
+        {
+            if (editar == false)
+            {
+                MessageBox.Show("Debe haber un registro seleccionado para poder borrarlo");
+            }
+            else
+            {
+                if (dvEmpleado.RowCount == 2)
+                {
+                    MessageBox.Show("Si eliminas este registro no podras acceder al programa");
+                }
+                else
+                {
+
+                    Variables.Empleados.RemoveRange(Variables.Empleados.Where(x => x.IdEmpleado == idEmpleado));
+                    Variables.SaveChanges();
+                    Limpiar();
+                    CargarDv();
+                }
+            }
         }
     }
 }

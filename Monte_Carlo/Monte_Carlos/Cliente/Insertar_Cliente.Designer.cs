@@ -133,8 +133,8 @@
             this.dvClientes.RowHeadersWidth = 51;
             this.dvClientes.Size = new System.Drawing.Size(545, 176);
             this.dvClientes.TabIndex = 44;
-            this.dvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvClientes_CellContentClick);
             this.dvClientes.SelectionChanged += new System.EventHandler(this.dvClientes_SelectionChanged);
+            this.dvClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvClientes_MouseClick);
             // 
             // txtTelefono
             // 
@@ -210,6 +210,7 @@
             this.btnElimicar.Text = "Eliminar";
             this.btnElimicar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnElimicar.UseVisualStyleBackColor = false;
+            this.btnElimicar.Click += new System.EventHandler(this.btnElimicar_Click);
             // 
             // btnNuevo
             // 

@@ -322,10 +322,7 @@ namespace Monte_Carlos.Venta
                 {
                     txtIdFactura.Text = "1";
                 }
-                    
-                    guardar();
-                
-              
+                     guardar();    
         }
 
         private void Generar_Venta_Load(object sender, EventArgs e)
@@ -397,27 +394,19 @@ namespace Monte_Carlos.Venta
 
 
         private void dvVenta_SelectionChanged(object sender, EventArgs e)
-        { Limpiardetalle();
+        {
+            Limpiardetalle();
             if (dvVenta.RowCount > 1)
             {
-                //  MessageBox.Show("Entre");
-                //  int contado = 0;
-                // contado = contado + 1;
-
                 try
                 {
-                    //  MessageBox.Show(Convert.ToString(contado));
                     idDetalleVenta = Convert.ToInt64(dvVenta.SelectedCells[0].Value);
                     MessageBox.Show(Convert.ToString(idDetalleVenta));
                     var tDetalle = Variables.DetalleVenta.FirstOrDefault(x => x.IdDetalleVentas == idDetalleVenta);
-
                     cmbComidaBebida.Text = Convert.ToString(tDetalle.IdComidaBebida);
                     txtPrecio.Text = Convert.ToString(tDetalle.PrecioComidaBebida);
                     txtCantidad.Text = Convert.ToString(tDetalle.Cantidad);
-                    // txtSubtotal.Text= Convert.ToString(tDetalle.Subtotal);
-                   
                     editar = true;
-
                 }
                 catch (Exception)
                 {
