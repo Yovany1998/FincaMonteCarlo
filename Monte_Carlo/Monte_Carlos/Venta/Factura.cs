@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace Monte_Carlos.Venta
 {
@@ -14,8 +15,10 @@ namespace Monte_Carlos.Venta
     {
         int contador;
         int clave=0;
+        String LaFecha = "";
         private double total;
         MonteCarlo Variables = new MonteCarlo();
+        string imagen = @"C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\Resources\Logo.jpeg";
 
         public Factura()
         {
@@ -74,20 +77,17 @@ namespace Monte_Carlos.Venta
                                {
                                    p.IdFactura,
                                    p.Fecha,
-                                   p.NombreCliente,
+                                   p.NombreCliente,                                   
                                    p.Subtotal,
                                    p.Impuesto,
                                    p.Total,
-
                                };
-
                 dvFactura.DataSource = tFactura.CopyAnonymusToDataTable();
-                // MessageBox.Show(Convert.ToString(dvFactura.F));
                 dvFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 contador = dvFactura.RowCount-1;
                 lbTotVentas.Text = Convert.ToString(contador);
-              //  MessageBox.Show(Convert.ToString(contador));
-
+                DateTime FechaNormal = Convert.ToDateTime(DateTimes.Value.ToString("yyyy/MM/dd"));
+                LaFecha = Convert.ToString(FechaNormal);
                 clave = Convert.ToInt32(dvFactura.SelectedCells[0].Value);
 
             }
@@ -98,21 +98,101 @@ namespace Monte_Carlos.Venta
             
             for(int y=0; y < contador; y++)
             {
-               
-                //  MessageBox.Show(Convert.ToString(Fechas));
-
-                var tFactura = Variables.Facturas.FirstOrDefault(x => x.IdFactura == clave );
-                if(tFactura != null)
+                try
                 {
-                    total = total + Convert.ToDouble(tFactura.Total);
-                   // MessageBox.Show(Convert.ToString(dvFactura.SelectedCells[0].Value));
-                    clave=clave+1;
-
+                    var tFactura = Variables.Facturas.FirstOrDefault(x => x.IdFactura == clave);
+                    if (tFactura != null)
+                    {
+                        total = total + Convert.ToDouble(tFactura.Total);
+                        clave = clave + 1;
+                    }
                 }
-               
+                catch
+                {
+                }         
             }
             lbTotal.Text = Convert.ToString(total);
                 total = 0;
+        }
+        private void ImprimirFactura()
+        {
+            printDocument1 = new PrintDocument();
+            PrinterSettings ps = new PrinterSettings();
+            printDocument1.PrinterSettings = ps;
+            printDocument1.PrintPage += Imprimir;
+            //Dialogo
+            printDocument1.Print();
+
+        }
+        private void Imprimir(object sender,PrintPageEventArgs e)
+        {
+            //Configuración para la factura( tipo de letra,
+            //ancho total de la factura, separación entre textos
+            //tipos de alineado
+            Font font = new Font("Arial", 12,FontStyle.Regular, GraphicsUnit.Point);
+            Font Emcabezado = new Font("Arial", 12,FontStyle.Bold, GraphicsUnit.Point);
+            int ancho = 300;
+            int MargenSuperior = 50;
+            int ReporteDiario = 240;
+            int y = 0;
+            int Columna1 = 80;
+            int Columna2 = 160;
+            int Columna3 = 440;
+            int Columna4 = 540;
+            int Columna5 = 640;
+            int Columna6 = 740;
+            StringFormat stringFormatLeft = new StringFormat();
+            stringFormatLeft.Alignment = StringAlignment.Near;
+            stringFormatLeft.LineAlignment = StringAlignment.Near;
+            Image image = Image.FromFile(imagen);
+            e.Graphics.DrawString("REPORTE DIARIO DE FINCA MONTECARLO  ", Emcabezado, Brushes.Black, new RectangleF(ReporteDiario, MargenSuperior, 1000, 0), stringFormatLeft);
+            //La fecha que seleccione
+            e.Graphics.DrawString("Fecha " + LaFecha, Emcabezado, Brushes.Black, new RectangleF(Columna1, MargenSuperior+40, ancho, 0), stringFormatLeft);
+            //La imagen
+            e.Graphics.DrawImage(image, new Rectangle(700,MargenSuperior,100,100));
+            e.Graphics.DrawString("ENTRADAS", Emcabezado, Brushes.Black, new RectangleF(Columna1, MargenSuperior+80, 1000, 0), stringFormatLeft);
+            MargenSuperior =MargenSuperior*3+20;
+            int Mat = MargenSuperior - 20;
+            e.Graphics.DrawString("_______________________________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, Mat, Columna6, 0), stringFormatLeft);
+            e.Graphics.DrawString("|Numero ", Emcabezado, Brushes.Black, new RectangleF(Columna1,MargenSuperior, ancho, 0), stringFormatLeft);
+            e.Graphics.DrawString("|Cliente ", Emcabezado, Brushes.Black, new RectangleF(Columna2, MargenSuperior, ancho, 0), stringFormatLeft);
+            e.Graphics.DrawString("|SubTotal ", Emcabezado, Brushes.Black, new RectangleF(Columna3, MargenSuperior, ancho, 0), stringFormatLeft);
+            e.Graphics.DrawString("|Impuesto ", Emcabezado, Brushes.Black, new RectangleF(Columna4, MargenSuperior, ancho, 0), stringFormatLeft);
+            e.Graphics.DrawString("|Total ", Emcabezado, Brushes.Black, new RectangleF(Columna5, MargenSuperior, ancho, 0), stringFormatLeft);
+            e.Graphics.DrawString("|", Emcabezado, Brushes.Black, new RectangleF(Columna6, MargenSuperior, ancho, 0), stringFormatLeft);
+            e.Graphics.DrawString("", Emcabezado, Brushes.Black, new RectangleF(0, 20, ancho, 0), stringFormatLeft);
+            try                 
+            {
+                int Num = 0;
+                y = y + MargenSuperior;
+                foreach (DataGridViewRow row in dvFactura.Rows)
+                {
+                    Num++;
+                   // y = y + 2;
+                    e.Graphics.DrawString("_______________________________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
+                    y = y + 20;
+                    if(row.Cells[2].Value.ToString() != "")
+                    {
+                        e.Graphics.DrawString("|" + Num, font, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
+                    }                
+                    e.Graphics.DrawString("|" + row.Cells[2].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna2, y, ancho, 0), stringFormatLeft);
+                    e.Graphics.DrawString("|" + row.Cells[3].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna3, y, ancho, 0), stringFormatLeft);
+                    e.Graphics.DrawString("|" + row.Cells[4].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna4, y, ancho, 0), stringFormatLeft);
+                    e.Graphics.DrawString("|" + row.Cells[5].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
+                    e.Graphics.DrawString("|", font, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
+
+                    //  e.Graphics.DrawString(row.Cells[2].Value.ToString() + " X " + row.Cells[3].Value.ToString(), font, Brushes.Black, new RectangleF(0, y += 25, ancho, 20), stringFormatLeft);
+                }
+            }
+            catch { }
+            y = y + 60;
+            e.Graphics.DrawString("SALIDAS", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, 1000, 0), stringFormatLeft);
+
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            ImprimirFactura();
         }
     }
 }

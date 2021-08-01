@@ -280,6 +280,7 @@
             this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Minimizar.TabIndex = 2;
             this.Minimizar.TabStop = false;
+            this.Minimizar.Click += new System.EventHandler(this.Minimizar_Click);
             // 
             // GrandePeque
             // 

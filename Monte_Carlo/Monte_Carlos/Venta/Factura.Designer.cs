@@ -41,6 +41,8 @@
             this.lbTotVentas = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -76,7 +78,7 @@
             this.Btndetalle.Location = new System.Drawing.Point(426, 122);
             this.Btndetalle.Name = "Btndetalle";
             this.Btndetalle.Size = new System.Drawing.Size(131, 45);
-            this.Btndetalle.TabIndex = 48;
+            this.Btndetalle.TabIndex = 0;
             this.Btndetalle.Text = "Desplegar";
             this.Btndetalle.UseVisualStyleBackColor = false;
             this.Btndetalle.Click += new System.EventHandler(this.Btndetalle_Click);
@@ -164,12 +166,29 @@
             this.pictureBox4.TabIndex = 54;
             this.pictureBox4.TabStop = false;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.Imprimir);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.Peru;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(426, 32);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(131, 45);
+            this.btnImprimir.TabIndex = 1;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(605, 472);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.lbVentas);
             this.Controls.Add(this.lbTotVentas);
             this.Controls.Add(this.pictureBox3);
@@ -210,5 +229,7 @@
         private System.Windows.Forms.Label lbTotVentas;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

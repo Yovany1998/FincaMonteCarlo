@@ -212,18 +212,15 @@ namespace Monte_Carlos.Venta
 
         private void BtnGenerarVenta_Click(object sender, EventArgs e)
         {
-
-
-            Validar();
-            if (editar)
+            if (txtApellido.Text=="")
             {
-                MessageBox.Show("No deberia entrar aqui");
+                MessageBox.Show("No Se ha realizao ninguna venta");
             }
             else
             {
                 if (txtIdVenta.Text == "")
                 {
-                    MessageBox.Show("No puede ingresar un porducto sin ingresar la venta");
+                    MessageBox.Show("No puede ingresar un producto sin ingresar la venta");
                     btnVenta.Focus();
                     return;
                 }
@@ -237,7 +234,7 @@ namespace Monte_Carlos.Venta
                 tbfactura.Impuesto = TotImpuesto;
                 tbfactura.Total = Convert.ToInt32(Total.Text);
                 var rowNomCli = Variables.Clientes.FirstOrDefault(x => x.IdCliente == tbfactura.IdCliente);
-                tbfactura.NombreCliente = Convert.ToString(rowNomCli.Nombre);
+                tbfactura.NombreCliente = Convert.ToString(rowNomCli.Nombre+" "+rowNomCli.Apellido);
                 tbfactura.Impuesto = impuesto;
                 Variables.Facturas.Add(tbfactura);
                 Variables.SaveChanges();
