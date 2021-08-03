@@ -16,7 +16,7 @@ namespace Monte_Carlos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Venta.Factura());
+            Application.Run(new Inicio());
         }
     }
 }

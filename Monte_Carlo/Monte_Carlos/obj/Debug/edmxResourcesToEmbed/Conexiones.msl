@@ -14,22 +14,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DetalleVenta">
-      <EntityTypeMapping TypeName="FincaMonteCarlo.DetalleVenta">
-        <MappingFragment StoreEntitySet="DetalleVenta">
-          <ScalarProperty Name="IdDetalleVentas" ColumnName="IdDetalleVentas" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
-          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
-          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
-          <ScalarProperty Name="IdComidaBebida" ColumnName="IdComidaBebida" />
-          <ScalarProperty Name="PrecioComidaBebida" ColumnName="PrecioComidaBebida" />
-          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
-          <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Empleados">
       <EntityTypeMapping TypeName="FincaMonteCarlo.Empleados">
         <MappingFragment StoreEntitySet="Empleados">
@@ -89,17 +73,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Ventas">
-      <EntityTypeMapping TypeName="FincaMonteCarlo.Ventas">
-        <MappingFragment StoreEntitySet="Ventas">
-          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
-          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
-          <ScalarProperty Name="Pagado" ColumnName="Pagado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Compras">
       <EntityTypeMapping TypeName="FincaMonteCarlo.Compras">
         <MappingFragment StoreEntitySet="Compras">
@@ -132,6 +105,35 @@
           <ScalarProperty Name="Apellido" ColumnName="Apellido" />
           <ScalarProperty Name="Cliente" ColumnName="Cliente" />
           <ScalarProperty Name="IdReservacion" ColumnName="IdReservacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleVenta">
+      <EntityTypeMapping TypeName="FincaMonteCarlo.DetalleVenta">
+        <MappingFragment StoreEntitySet="DetalleVenta">
+          <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="PrecioComidaBebida" ColumnName="PrecioComidaBebida" />
+          <ScalarProperty Name="Comida" ColumnName="Comida" />
+          <ScalarProperty Name="IdComidaBebida" ColumnName="IdComidaBebida" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdDetalleVentas" ColumnName="IdDetalleVentas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ventas">
+      <EntityTypeMapping TypeName="FincaMonteCarlo.Ventas">
+        <MappingFragment StoreEntitySet="Ventas">
+          <ScalarProperty Name="Pagado" ColumnName="Pagado" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

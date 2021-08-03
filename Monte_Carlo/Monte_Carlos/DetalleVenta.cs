@@ -20,6 +20,7 @@ namespace Monte_Carlos
         public int IdFactura { get; set; }
         public int IdCliente { get; set; }
         public int IdComidaBebida { get; set; }
+        public string Comida { get; set; }
         public Nullable<double> PrecioComidaBebida { get; set; }
         public Nullable<int> Cantidad { get; set; }
         public Nullable<double> Subtotal { get; set; }

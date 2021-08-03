@@ -43,6 +43,7 @@
     <Property Name="IdFactura" Type="int" Nullable="false" />
     <Property Name="IdCliente" Type="int" Nullable="false" />
     <Property Name="IdComidaBebida" Type="int" Nullable="false" />
+    <Property Name="Comida" Type="varchar" MaxLength="50" />
     <Property Name="PrecioComidaBebida" Type="float" />
     <Property Name="Cantidad" Type="int" />
     <Property Name="Subtotal" Type="float" />
@@ -118,9 +119,10 @@
       <PropertyRef Name="IdVenta" />
     </Key>
     <Property Name="IdVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdFactura" Type="int" Nullable="false" />
     <Property Name="Fecha" Type="date" />
     <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" />
     <Property Name="Pagado" Type="varchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_DetalleVenta_Clientes">

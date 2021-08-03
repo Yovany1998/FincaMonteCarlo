@@ -224,18 +224,18 @@
             this.PanelArriba.Controls.Add(this.Minimizar);
             this.PanelArriba.Controls.Add(this.GrandePeque);
             this.PanelArriba.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelArriba.Location = new System.Drawing.Point(0, 0);
+            this.PanelArriba.Location = new System.Drawing.Point(206, 0);
             this.PanelArriba.Name = "PanelArriba";
-            this.PanelArriba.Size = new System.Drawing.Size(811, 52);
+            this.PanelArriba.Size = new System.Drawing.Size(902, 52);
             this.PanelArriba.TabIndex = 15;
             this.PanelArriba.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelArriba_Paint);
             this.PanelArriba.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelArriba_MouseDown);
             // 
             // Barras
             // 
-            this.Barras.Location = new System.Drawing.Point(559, 44);
+            this.Barras.Location = new System.Drawing.Point(570, 35);
             this.Barras.Name = "Barras";
-            this.Barras.Size = new System.Drawing.Size(86, 2);
+            this.Barras.Size = new System.Drawing.Size(86, 11);
             this.Barras.Step = 20;
             this.Barras.TabIndex = 13;
             // 
@@ -245,9 +245,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Peque.Image = ((System.Drawing.Image)(resources.GetObject("Peque.Image")));
-            this.Peque.Location = new System.Drawing.Point(713, 3);
+            this.Peque.Location = new System.Drawing.Point(744, 0);
             this.Peque.Name = "Peque";
-            this.Peque.Size = new System.Drawing.Size(44, 46);
+            this.Peque.Size = new System.Drawing.Size(80, 49);
             this.Peque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Peque.TabIndex = 3;
             this.Peque.TabStop = false;
@@ -260,9 +260,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Cerrar.Image")));
-            this.Cerrar.Location = new System.Drawing.Point(764, 4);
+            this.Cerrar.Location = new System.Drawing.Point(842, 0);
             this.Cerrar.Name = "Cerrar";
-            this.Cerrar.Size = new System.Drawing.Size(44, 46);
+            this.Cerrar.Size = new System.Drawing.Size(57, 49);
             this.Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Cerrar.TabIndex = 0;
             this.Cerrar.TabStop = false;
@@ -274,9 +274,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Minimizar.Image")));
-            this.Minimizar.Location = new System.Drawing.Point(652, 3);
+            this.Minimizar.Location = new System.Drawing.Point(679, 2);
             this.Minimizar.Name = "Minimizar";
-            this.Minimizar.Size = new System.Drawing.Size(44, 46);
+            this.Minimizar.Size = new System.Drawing.Size(59, 49);
             this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Minimizar.TabIndex = 2;
             this.Minimizar.TabStop = false;
@@ -288,9 +288,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrandePeque.Image = ((System.Drawing.Image)(resources.GetObject("GrandePeque.Image")));
-            this.GrandePeque.Location = new System.Drawing.Point(713, 3);
+            this.GrandePeque.Location = new System.Drawing.Point(744, 3);
             this.GrandePeque.Name = "GrandePeque";
-            this.GrandePeque.Size = new System.Drawing.Size(44, 46);
+            this.GrandePeque.Size = new System.Drawing.Size(65, 49);
             this.GrandePeque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.GrandePeque.TabIndex = 1;
             this.GrandePeque.TabStop = false;
@@ -318,9 +318,9 @@
             this.PanelIzquierdo.Controls.Add(this.btncliente);
             this.PanelIzquierdo.Controls.Add(this.btnservicio);
             this.PanelIzquierdo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelIzquierdo.Location = new System.Drawing.Point(0, 52);
+            this.PanelIzquierdo.Location = new System.Drawing.Point(0, 0);
             this.PanelIzquierdo.Name = "PanelIzquierdo";
-            this.PanelIzquierdo.Size = new System.Drawing.Size(206, 468);
+            this.PanelIzquierdo.Size = new System.Drawing.Size(206, 520);
             this.PanelIzquierdo.TabIndex = 16;
             // 
             // panel9
@@ -453,10 +453,10 @@
             // 
             // PanelCentral
             // 
-            this.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelCentral.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelCentral.Location = new System.Drawing.Point(206, 52);
             this.PanelCentral.Name = "PanelCentral";
-            this.PanelCentral.Size = new System.Drawing.Size(605, 468);
+            this.PanelCentral.Size = new System.Drawing.Size(902, 468);
             this.PanelCentral.TabIndex = 17;
             // 
             // Inicio
@@ -464,10 +464,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(811, 520);
+            this.ClientSize = new System.Drawing.Size(1108, 520);
+            this.Controls.Add(this.PanelArriba);
             this.Controls.Add(this.PanelCentral);
             this.Controls.Add(this.PanelIzquierdo);
-            this.Controls.Add(this.PanelArriba);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

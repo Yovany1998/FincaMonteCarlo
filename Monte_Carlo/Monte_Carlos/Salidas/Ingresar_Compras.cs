@@ -41,14 +41,12 @@ namespace Monte_Carlos.Salidas
                            where p.Fecha == Fechas
                            select new
                                 {
-                                    p.IdCompra,
-                                    p.Fecha,
-                                    p.Producto,
-                                    p.Precio,
-                                    p.Cantidad,
-                                    p.Detalle,
-                                    p.Subtotal
-                                };
+                               p.IdCompra,
+                               p.Producto,
+                               p.Precio,
+                               p.Cantidad,
+                               p.Subtotal
+                           };
 
             dvCompra.DataSource = tCompras.CopyAnonymusToDataTable();
             dvCompra.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -121,15 +119,15 @@ namespace Monte_Carlos.Salidas
         private void CargaDv()
         {
 
+            DateTime Fechas = Convert.ToDateTime(FechaActual.ToString("yyyy/MM/dd 00:00:00"));
             var tCompras = from p in Variables.Compras
+                           where p.Fecha == Fechas
                            select new
                            {
                                p.IdCompra,
-                               p.Fecha,
                                p.Producto,
                                p.Precio,
                                p.Cantidad,
-                               p.Detalle,
                                p.Subtotal
 
                            };

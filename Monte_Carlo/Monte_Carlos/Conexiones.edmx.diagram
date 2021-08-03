@@ -6,19 +6,19 @@
     <edmx:Diagrams>
       <Diagram DiagramId="8ec5dd6f0e98491386b795bee11ff648" Name="Diagram1">
         <EntityTypeShape EntityType="FincaMonteCarlo.Clientes" Width="1.5" PointX="0.5" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FincaMonteCarlo.DetalleVenta" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="FincaMonteCarlo.Empleados" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FincaMonteCarlo.Facturas" Width="1.5" PointX="4.875" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FincaMonteCarlo.Menu" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FincaMonteCarlo.Pedidos" Width="1.5" PointX="5.125" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="FincaMonteCarlo.Usuario" Width="1.5" PointX="2.75" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FincaMonteCarlo.Ventas" Width="1.5" PointX="5.125" PointY="8.5" IsExpanded="true" />
-        <AssociationConnector Association="FincaMonteCarlo.FK_DetalleVenta_Clientes" ManuallyRouted="false" />
-        <AssociationConnector Association="FincaMonteCarlo.FK_DetalleVenta_Menu" ManuallyRouted="false" />
         <EntityTypeShape EntityType="FincaMonteCarlo.Compras" Width="1.5" PointX="0.625" PointY="8.375" />
         <EntityTypeShape EntityType="FincaMonteCarlo.DetalleReservacion" Width="1.5" PointX="0.875" PointY="3.5" />
         <EntityTypeShape EntityType="FincaMonteCarlo.Reservacion" Width="1.5" PointX="5.25" PointY="3.125" />
-      </Diagram>
+        <EntityTypeShape EntityType="FincaMonteCarlo.DetalleVenta" Width="1.5" PointX="3.375" PointY="1.875" />
+        <AssociationConnector Association="FincaMonteCarlo.FK_DetalleVenta_Clientes" />
+        <AssociationConnector Association="FincaMonteCarlo.FK_DetalleVenta_Menu" />
+        <EntityTypeShape EntityType="FincaMonteCarlo.Ventas" Width="1.5" PointX="7.375" PointY="0.75" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

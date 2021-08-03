@@ -11,24 +11,7 @@
     <Property Name="Edad" Type="Int32" />
     <Property Name="Telefono" Type="Int32" />
     <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="DetalleVenta" Relationship="Self.FK_DetalleVenta_Clientes" FromRole="Clientes" ToRole="DetalleVenta" />
-  </EntityType>
-  <EntityType Name="DetalleVenta">
-    <Key>
-      <PropertyRef Name="IdDetalleVentas" />
-    </Key>
-    <Property Name="IdDetalleVentas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fecha" Type="DateTime" Precision="0" />
-    <Property Name="IdVenta" Type="Int32" Nullable="false" />
-    <Property Name="IdFactura" Type="Int32" Nullable="false" />
-    <Property Name="IdCliente" Type="Int32" Nullable="false" />
-    <Property Name="IdComidaBebida" Type="Int32" Nullable="false" />
-    <Property Name="PrecioComidaBebida" Type="Double" />
-    <Property Name="Cantidad" Type="Int32" />
-    <Property Name="Subtotal" Type="Double" />
-    <Property Name="Impuesto" Type="Double" />
-    <NavigationProperty Name="Clientes" Relationship="Self.FK_DetalleVenta_Clientes" FromRole="DetalleVenta" ToRole="Clientes" />
-    <NavigationProperty Name="Menu" Relationship="Self.FK_DetalleVenta_Menu" FromRole="DetalleVenta" ToRole="Menu" />
+    <NavigationProperty Name="DetalleVenta" Relationship="FincaMonteCarlo.FK_DetalleVenta_Clientes" FromRole="Clientes" ToRole="DetalleVenta" />
   </EntityType>
   <EntityType Name="Empleados">
     <Key>
@@ -62,7 +45,7 @@
     <Property Name="Nombre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Precio" Type="Double" />
     <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="DetalleVenta" Relationship="Self.FK_DetalleVenta_Menu" FromRole="Menu" ToRole="DetalleVenta" />
+    <NavigationProperty Name="DetalleVenta" Relationship="FincaMonteCarlo.FK_DetalleVenta_Menu" FromRole="Menu" ToRole="DetalleVenta" />
   </EntityType>
   <EntityType Name="Pedidos">
     <Key>
@@ -85,60 +68,26 @@
     <Property Name="Estado" Type="Boolean" />
     <Property Name="Contrasena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="Ventas">
-    <Key>
-      <PropertyRef Name="IdVenta" />
-    </Key>
-    <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IdFactura" Type="Int32" Nullable="false" />
-    <Property Name="Fecha" Type="DateTime" Precision="0" />
-    <Property Name="IdCliente" Type="Int32" Nullable="false" />
-    <Property Name="Pagado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <Association Name="FK_DetalleVenta_Clientes">
-    <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
-    <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Clientes">
-        <PropertyRef Name="IdCliente" />
-      </Principal>
-      <Dependent Role="DetalleVenta">
-        <PropertyRef Name="IdCliente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DetalleVenta_Menu">
-    <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
-    <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Menu">
-        <PropertyRef Name="IdComidaBebida" />
-      </Principal>
-      <Dependent Role="DetalleVenta">
-        <PropertyRef Name="IdComidaBebida" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="MonteCarlo" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Clientes" EntityType="Self.Clientes" />
-    <EntitySet Name="DetalleVenta" EntityType="Self.DetalleVenta" />
     <EntitySet Name="Empleados" EntityType="Self.Empleados" />
     <EntitySet Name="Facturas" EntityType="Self.Facturas" />
     <EntitySet Name="Menu" EntityType="Self.Menu" />
     <EntitySet Name="Pedidos" EntityType="Self.Pedidos" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-    <EntitySet Name="Ventas" EntityType="Self.Ventas" />
-    <AssociationSet Name="FK_DetalleVenta_Clientes" Association="Self.FK_DetalleVenta_Clientes">
-      <End Role="Clientes" EntitySet="Clientes" />
-      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DetalleVenta_Menu" Association="Self.FK_DetalleVenta_Menu">
-      <End Role="Menu" EntitySet="Menu" />
-      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
-    </AssociationSet>
     <EntitySet Name="Compras" EntityType="FincaMonteCarlo.Compras" />
     <EntitySet Name="DetalleReservacion" EntityType="FincaMonteCarlo.DetalleReservacion" />
     <EntitySet Name="Reservacion" EntityType="FincaMonteCarlo.Reservacion" />
+    <EntitySet Name="DetalleVenta" EntityType="FincaMonteCarlo.DetalleVenta" />
+    <AssociationSet Name="FK_DetalleVenta_Clientes" Association="FincaMonteCarlo.FK_DetalleVenta_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleVenta_Menu" Association="FincaMonteCarlo.FK_DetalleVenta_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+    </AssociationSet>
+    <EntitySet Name="Ventas" EntityType="FincaMonteCarlo.Ventas" />
   </EntityContainer>
   <EntityType Name="Compras">
     <Key>
@@ -171,5 +120,58 @@
     <Property Name="Zona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Fecha" Type="DateTime" Precision="0" />
     <Property Name="Hora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DetalleVenta">
+    <Key>
+      <PropertyRef Name="IdDetalleVentas" />
+    </Key>
+    <Property Name="IdDetalleVentas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="IdVenta" Type="Int32" Nullable="false" />
+    <Property Name="IdFactura" Type="Int32" Nullable="false" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="IdComidaBebida" Type="Int32" Nullable="false" />
+    <Property Name="Comida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrecioComidaBebida" Type="Double" />
+    <Property Name="Cantidad" Type="Int32" />
+    <Property Name="Subtotal" Type="Double" />
+    <Property Name="Impuesto" Type="Double" />
+    <NavigationProperty Name="Clientes" Relationship="FincaMonteCarlo.FK_DetalleVenta_Clientes" FromRole="DetalleVenta" ToRole="Clientes" />
+    <NavigationProperty Name="Menu" Relationship="FincaMonteCarlo.FK_DetalleVenta_Menu" FromRole="DetalleVenta" ToRole="Menu" />
+  </EntityType>
+  <Association Name="FK_DetalleVenta_Clientes">
+    <End Type="FincaMonteCarlo.Clientes" Role="Clientes" Multiplicity="1" />
+    <End Type="FincaMonteCarlo.DetalleVenta" Role="DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleVenta_Menu">
+    <End Type="FincaMonteCarlo.Menu" Role="Menu" Multiplicity="1" />
+    <End Type="FincaMonteCarlo.DetalleVenta" Role="DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="IdComidaBebida" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="IdComidaBebida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Ventas">
+    <Key>
+      <PropertyRef Name="IdVenta" />
+    </Key>
+    <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pagado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>
