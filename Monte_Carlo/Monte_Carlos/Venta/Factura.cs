@@ -16,6 +16,7 @@ namespace Monte_Carlos.Venta
         int contador;
         int clave=0;
         int ClaveSalida = 0;
+        Double sali;
         String LaFecha = "";
         private double total;
         MonteCarlo Variables = new MonteCarlo();
@@ -89,31 +90,26 @@ namespace Monte_Carlos.Venta
                 lbTotVentas.Text = Convert.ToString(contador);
                 DateTime FechaNormal = Convert.ToDateTime(DateTimes.Value.ToString("yyyy/MM/dd"));
                 LaFecha = Convert.ToString(FechaNormal);
-                clave = Convert.ToInt32(dvFactura.SelectedCells[0].Value);
-
             }
             catch
             {
                 MessageBox.Show("Esa fecha no tiene registro");
             }
             
-            for(int y=0; y < contador; y++)
+         
+            try
             {
-                try
+                foreach (DataGridViewRow row in dvFactura.Rows)
                 {
-                    var tFactura = Variables.Facturas.FirstOrDefault(x => x.IdFactura == clave);
-                    if (tFactura != null)
-                    {
-                        total = total + Convert.ToDouble(tFactura.Total);
-                        clave = clave + 1;
-                    }
+                   total=total+Convert.ToDouble(row.Cells[5].Value.ToString());
+                    lbTotal.Text = Convert.ToString(total);
                 }
-                catch
-                {
-                }         
             }
-            lbTotal.Text = Convert.ToString(total);
-                total = 0;
+            catch { }
+
+          
+
+            //   total = 0;
 
             //Todo esto es de salidas
             try
@@ -134,6 +130,17 @@ namespace Monte_Carlos.Venta
             {
                 MessageBox.Show("Esa fecha no tiene registro");
             }
+            try
+            {
+
+                foreach (DataGridViewRow row in dvSalidas.Rows)
+                {
+                    sali = sali + Convert.ToDouble(row.Cells[3].Value.ToString());
+                    TotalSalidas.Text = Convert.ToString(sali);
+                    MessageBox.Show("sali");
+                }
+            }
+            catch { }
         }
         private void ImprimirFactura()
         {
@@ -214,53 +221,71 @@ namespace Monte_Carlos.Venta
                 e.Graphics.DrawString("_______________________________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
                 y = y + 20;
                 e.Graphics.DrawString("|" + "Total de Salidas", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
-                e.Graphics.DrawString("|" + "L. " + lbTotVentas.Text + "", Emcabezado, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("|" + "L. " + TotalSalidas.Text + "", Emcabezado, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
                 e.Graphics.DrawString("|", Emcabezado, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
                 e.Graphics.DrawString("_______________________________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
-                Double resta = (Convert.ToDouble(lbTotal.Text) - Convert.ToDouble(lbTotVentas.Text));
+                Double resta = (Convert.ToDouble(lbTotal.Text) - Convert.ToDouble(TotalSalidas.Text));
                 y = y + 20;
                 e.Graphics.DrawString("|" + "", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
                 e.Graphics.DrawString("|" + "L. " + Convert.ToString(resta) + "", Emcabezado, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
                 e.Graphics.DrawString("|", Emcabezado, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
                 e.Graphics.DrawString("_______________________________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
-
-                Columna1 = 80;
-                 Columna2 = 180;
-                 Columna3 = 280;
-                Columna4 = 380;
-                 Columna5 = 480;
-                Columna6 = 580;
-       
-                int Nume = 0;
-                y = y + 60;
-                e.Graphics.DrawString("SALIDAS", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, 1000, 0), stringFormatLeft);
                 y = y + 20;
-                e.Graphics.DrawString("______________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
-                e.Graphics.DrawString("|Numero ", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
-                e.Graphics.DrawString("|Producto ", Emcabezado, Brushes.Black, new RectangleF(Columna2, y, ancho, 0), stringFormatLeft);
-                e.Graphics.DrawString("|Cantidad ", Emcabezado, Brushes.Black, new RectangleF(Columna3, y, ancho, 0), stringFormatLeft);
-                e.Graphics.DrawString("|Precio ", Emcabezado, Brushes.Black, new RectangleF(Columna4, y, ancho, 0), stringFormatLeft);
-                e.Graphics.DrawString("|Subtotal", Emcabezado, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
-                e.Graphics.DrawString("|", font, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
-                foreach (DataGridViewRow row in dvSalidas.Rows)
-                {
-                    Nume++;
-                    // y = y + 2;
-                    e.Graphics.DrawString("______________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
-                    y = y + 20;
-                    if (row.Cells[2].Value.ToString() != "")
-                    {
-                        e.Graphics.DrawString("|" + Nume, font, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
-                    }
-                    e.Graphics.DrawString("|" + row.Cells[0].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna2, y, ancho, 0), stringFormatLeft);
-                    e.Graphics.DrawString("|" + row.Cells[1].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna3, y, ancho, 0), stringFormatLeft);
-                    e.Graphics.DrawString("|" + "L. " + row.Cells[2].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna4, y, ancho, 0), stringFormatLeft);
-                    e.Graphics.DrawString("|" + "L. " + row.Cells[3].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
-                    e.Graphics.DrawString("|", font, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("|" + "Caja Anterior", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("|" + "L. " + Convert.ToString(txtCajaAnterior.Text) + "", Emcabezado, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("|", Emcabezado, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("_______________________________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
+                y = y + 20;
+                e.Graphics.DrawString("|" + "Dinero Contado", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("|" + "L. " + Convert.ToString(txtDineroContado.Text) + "", Emcabezado, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("|", Emcabezado, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("_______________________________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
+                y = y + 20;
+                double Total = resta + Convert.ToDouble(txtCajaAnterior.Text) - Convert.ToDouble(txtDineroContado.Text);
+                e.Graphics.DrawString("|" + "Total De dinero", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("|" + "L. " + Convert.ToString(Total) + "", Emcabezado, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("|", Emcabezado, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
+                e.Graphics.DrawString("_______________________________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
+                /*
+                                Columna1 = 80;
+                                 Columna2 = 180;
+                                 Columna3 = 280;
+                                Columna4 = 380;
+                                 Columna5 = 480;
+                                Columna6 = 580;
 
-                    //  e.Graphics.DrawString(row.Cells[2].Value.ToString() + " X " + row.Cells[3].Value.ToString(), font, Brushes.Black, new RectangleF(0, y += 25, ancho, 20), stringFormatLeft);
-                }
+                                int Nume = 0;
+                                y = y + 60;
+                                e.Graphics.DrawString("SALIDAS", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, 1000, 0), stringFormatLeft);
+                                y = y + 20;
+                                e.Graphics.DrawString("______________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
+                                e.Graphics.DrawString("|Numero ", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
+                                e.Graphics.DrawString("|Producto ", Emcabezado, Brushes.Black, new RectangleF(Columna2, y, ancho, 0), stringFormatLeft);
+                                e.Graphics.DrawString("|Cantidad ", Emcabezado, Brushes.Black, new RectangleF(Columna3, y, ancho, 0), stringFormatLeft);
+                                e.Graphics.DrawString("|Precio ", Emcabezado, Brushes.Black, new RectangleF(Columna4, y, ancho, 0), stringFormatLeft);
+                                e.Graphics.DrawString("|Subtotal", Emcabezado, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
+                                e.Graphics.DrawString("|", font, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
+                                foreach (DataGridViewRow row in dvSalidas.Rows)
+                                {
+                                    Nume++;
+                                    // y = y + 2;
+                                    e.Graphics.DrawString("______________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
+                                    y = y + 20;
+                                    if (row.Cells[2].Value.ToString() != "")
+                                    {
+                                        e.Graphics.DrawString("|" + Nume, font, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
+                                    }
+                                    e.Graphics.DrawString("|" + row.Cells[0].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna2, y, ancho, 0), stringFormatLeft);
+                                    e.Graphics.DrawString("|" + row.Cells[1].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna3, y, ancho, 0), stringFormatLeft);
+                                    e.Graphics.DrawString("|" + "L. " + row.Cells[2].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna4, y, ancho, 0), stringFormatLeft);
+                                    e.Graphics.DrawString("|" + "L. " + row.Cells[3].Value.ToString() + "", font, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
+                                    e.Graphics.DrawString("|", font, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
+
+                                    //  e.Graphics.DrawString(row.Cells[2].Value.ToString() + " X " + row.Cells[3].Value.ToString(), font, Brushes.Black, new RectangleF(0, y += 25, ancho, 20), stringFormatLeft);
+                                }
+                */
             }
+
             catch { }
 
         }

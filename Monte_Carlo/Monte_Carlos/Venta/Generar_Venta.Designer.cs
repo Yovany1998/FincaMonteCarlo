@@ -80,7 +80,7 @@
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.Image")));
             this.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnCancelar.Location = new System.Drawing.Point(208, 206);
+            this.BtnCancelar.Location = new System.Drawing.Point(317, 206);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(98, 49);
             this.BtnCancelar.TabIndex = 7;
@@ -95,7 +95,7 @@
             this.BtnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInsertar.Image = ((System.Drawing.Image)(resources.GetObject("BtnInsertar.Image")));
             this.BtnInsertar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnInsertar.Location = new System.Drawing.Point(341, 206);
+            this.BtnInsertar.Location = new System.Drawing.Point(437, 206);
             this.BtnInsertar.Name = "BtnInsertar";
             this.BtnInsertar.Size = new System.Drawing.Size(98, 49);
             this.BtnInsertar.TabIndex = 6;
@@ -216,7 +216,7 @@
             this.dvVenta.Location = new System.Drawing.Point(30, 283);
             this.dvVenta.Name = "dvVenta";
             this.dvVenta.RowHeadersWidth = 51;
-            this.dvVenta.Size = new System.Drawing.Size(539, 162);
+            this.dvVenta.Size = new System.Drawing.Size(581, 162);
             this.dvVenta.TabIndex = 43;
             this.dvVenta.SelectionChanged += new System.EventHandler(this.dvVenta_SelectionChanged);
             // 
@@ -319,10 +319,10 @@
             // 
             this.dvCliente.BackgroundColor = System.Drawing.Color.White;
             this.dvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvCliente.Location = new System.Drawing.Point(595, 28);
+            this.dvCliente.Location = new System.Drawing.Point(628, 28);
             this.dvCliente.Name = "dvCliente";
             this.dvCliente.RowHeadersWidth = 51;
-            this.dvCliente.Size = new System.Drawing.Size(295, 382);
+            this.dvCliente.Size = new System.Drawing.Size(262, 382);
             this.dvCliente.TabIndex = 56;
             this.dvCliente.SelectionChanged += new System.EventHandler(this.dvCliente_SelectionChanged);
             this.dvCliente.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dvCliente_MouseMove);
@@ -342,7 +342,7 @@
             this.btnQuitar.BackColor = System.Drawing.Color.Peru;
             this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnQuitar.Location = new System.Drawing.Point(704, 416);
+            this.btnQuitar.Location = new System.Drawing.Point(727, 416);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(98, 49);
             this.btnQuitar.TabIndex = 58;
@@ -356,11 +356,11 @@
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLimpiar.Location = new System.Drawing.Point(461, 206);
+            this.btnLimpiar.Location = new System.Drawing.Point(183, 206);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(98, 49);
+            this.btnLimpiar.Size = new System.Drawing.Size(128, 49);
             this.btnLimpiar.TabIndex = 59;
-            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Text = "Nueva Venta";
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);

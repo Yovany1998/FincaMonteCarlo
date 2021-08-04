@@ -61,6 +61,7 @@
             this.dvReservacion.RowHeadersWidth = 51;
             this.dvReservacion.Size = new System.Drawing.Size(237, 218);
             this.dvReservacion.TabIndex = 40;
+            this.dvReservacion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvReservacion_MouseClick);
             // 
             // txtCantidad
             // 
@@ -186,6 +187,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnElimicar
             // 
@@ -248,6 +250,7 @@
             this.dvRegistro.RowHeadersWidth = 51;
             this.dvRegistro.Size = new System.Drawing.Size(544, 128);
             this.dvRegistro.TabIndex = 48;
+            this.dvRegistro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvRegistro_MouseClick);
             // 
             // Insertar_Reservaciones
             // 

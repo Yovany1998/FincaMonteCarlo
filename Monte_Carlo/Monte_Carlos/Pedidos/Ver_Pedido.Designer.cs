@@ -28,75 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DateTimes = new System.Windows.Forms.DateTimePicker();
-            this.Btndetalle = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dvFactura = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dvFactura)).BeginInit();
+            this.dvPedidos = new System.Windows.Forms.DataGridView();
+            this.dvVenta = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dvPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvVenta)).BeginInit();
             this.SuspendLayout();
             // 
-            // DateTimes
+            // dvPedidos
             // 
-            this.DateTimes.Location = new System.Drawing.Point(198, 27);
-            this.DateTimes.Name = "DateTimes";
-            this.DateTimes.Size = new System.Drawing.Size(200, 20);
-            this.DateTimes.TabIndex = 53;
+            this.dvPedidos.BackgroundColor = System.Drawing.Color.White;
+            this.dvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvPedidos.Location = new System.Drawing.Point(92, 72);
+            this.dvPedidos.Name = "dvPedidos";
+            this.dvPedidos.RowHeadersWidth = 51;
+            this.dvPedidos.Size = new System.Drawing.Size(194, 363);
+            this.dvPedidos.TabIndex = 50;
             // 
-            // Btndetalle
+            // dvVenta
             // 
-            this.Btndetalle.BackColor = System.Drawing.Color.Peru;
-            this.Btndetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btndetalle.Location = new System.Drawing.Point(438, 16);
-            this.Btndetalle.Name = "Btndetalle";
-            this.Btndetalle.Size = new System.Drawing.Size(131, 45);
-            this.Btndetalle.TabIndex = 52;
-            this.Btndetalle.Text = "Desplegar";
-            this.Btndetalle.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 18);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Pedidos por fecha:";
-            // 
-            // dvFactura
-            // 
-            this.dvFactura.BackgroundColor = System.Drawing.Color.White;
-            this.dvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvFactura.Location = new System.Drawing.Point(47, 72);
-            this.dvFactura.Name = "dvFactura";
-            this.dvFactura.RowHeadersWidth = 51;
-            this.dvFactura.Size = new System.Drawing.Size(522, 238);
-            this.dvFactura.TabIndex = 50;
+            this.dvVenta.BackgroundColor = System.Drawing.Color.White;
+            this.dvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvVenta.Location = new System.Drawing.Point(491, 72);
+            this.dvVenta.Name = "dvVenta";
+            this.dvVenta.RowHeadersWidth = 51;
+            this.dvVenta.Size = new System.Drawing.Size(332, 363);
+            this.dvVenta.TabIndex = 51;
+            this.dvVenta.SelectionChanged += new System.EventHandler(this.dvVenta_SelectionChanged);
             // 
             // Ver_Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 472);
-            this.Controls.Add(this.DateTimes);
-            this.Controls.Add(this.Btndetalle);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dvFactura);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(902, 468);
+            this.Controls.Add(this.dvVenta);
+            this.Controls.Add(this.dvPedidos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ver_Pedido";
             this.Text = "Ver_Pedido";
             this.Load += new System.EventHandler(this.Ver_Pedido_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dvFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvVenta)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker DateTimes;
-        private System.Windows.Forms.Button Btndetalle;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dvFactura;
+        private System.Windows.Forms.DataGridView dvPedidos;
+        private System.Windows.Forms.DataGridView dvVenta;
     }
 }

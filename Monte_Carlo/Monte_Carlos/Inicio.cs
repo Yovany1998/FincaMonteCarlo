@@ -97,12 +97,7 @@ namespace Monte_Carlos
 
         }
 
-        private void btnCarta_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu_Carta ventana = new Menu_Carta();
-            ventana.Show();
-        }
+  
 
         private void button1_Click(object sender, EventArgs e)
         {

@@ -12,6 +12,7 @@ namespace Monte_Carlos.Venta
 {
     public partial class Generar_Venta : Form
     {
+        double imp;
         private int conta = 0;
         int CodigoVenta;
         double total = 0.0;
@@ -72,7 +73,6 @@ namespace Monte_Carlos.Venta
                 Int64 IdVen = Convert.ToInt64(txtIdVenta.Text);
                 Int64 IdComidaBebida = Convert.ToInt64(cmbComidaBebida.SelectedValue.ToString());
                 var tdetalle = from p in Variables.DetalleVenta
-                                   //  join t in Variables.Menu on p.IdComidaBebida equals t.IdComidaBebida
                                join f in Variables.Ventas on p.IdVenta equals f.IdVenta
                                where p.IdVenta == IdVen
                                select new
@@ -86,6 +86,15 @@ namespace Monte_Carlos.Venta
                                };
                 dvVenta.DataSource = tdetalle.CopyAnonymusToDataTable();
                 dvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                foreach (DataGridViewRow row in dvVenta.Rows)
+                {
+
+
+                    total = total + Convert.ToDouble(row.Cells[4].Value.ToString());
+
+                }
+
+                Total.Text = Convert.ToString(total);
             }
             catch
             {
@@ -98,19 +107,20 @@ namespace Monte_Carlos.Venta
         {
 
             //   Validar();
+ 
             if (txtIdVenta.Text == "")
             {
                 MessageBox.Show("Ingrese el codigo de la venta");
                 txtIdVenta.Focus();
                 return;
             }
-            else if (Convert.ToDouble(txtPrecio.Text) == 0)
+             if (Convert.ToDouble(txtPrecio.Text) == 0)
             {
                 MessageBox.Show("Ingrese un precio mayor a 0");
                 txtPrecio.Focus();
                 return;
             }
-            else if (txtCantidad.Text == "")
+            if (txtCantidad.Text == "")
             {
                 MessageBox.Show("Ingrese la cantidad");
                 txtCantidad.Focus();
@@ -123,7 +133,7 @@ namespace Monte_Carlos.Venta
 
                 return;
             }
-            else if (txtApellido.Text == "")
+            if (txtApellido.Text == "")
             {
                 MessageBox.Show("Ingrese el apellido");
                 txtApellido.Focus();
@@ -165,7 +175,7 @@ namespace Monte_Carlos.Venta
             {
                 if (txtIdVenta.Text == "")
                 {
-                    MessageBox.Show("No puede ingresar un porducto sin ingresar la venta");
+                    MessageBox.Show("No puede ingresar un producto sin ingresar la venta");
                     btnVenta.Focus();
                     return;
                 }
@@ -196,11 +206,11 @@ namespace Monte_Carlos.Venta
                     impuesto = 0.18;
                 }
                 impuesto = impuesto * (Convert.ToInt32(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text));
-
+             
                 tbdetalles.Impuesto = impuesto;
                 Variables.DetalleVenta.Add(tbdetalles);
                 Variables.SaveChanges();
-                total = total + Convert.ToInt32(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text) + impuesto;
+                total = imp + Subtotal - impuesto;
                 Total.Text = Convert.ToString(total);
                 TotImpuesto = TotImpuesto + impuesto;
                 TotSubtotal = TotSubtotal + Subtotal;
@@ -342,24 +352,17 @@ namespace Monte_Carlos.Venta
             Variables.Ventas.Add(tbventas);
             Variables.SaveChanges();
             CodigoVenta = tbventas.IdVenta;
-            //  idVenta = tbventas.IdVenta;
+            txtIdVenta.Text = Convert.ToString(CodigoVenta);
         }
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (txtApellido.Text != "")
             {
-
                 log = 2;
             }
             // dvCliente.ClearSelection();
             validad_venta();
                 int idVenta = Convert.ToInt32(CodigoVenta);
-                txtIdVenta.Text = Convert.ToString(idVenta);
-       
-        
             guardar();
             //Area de Clientes
             var tClientes = from p in Variables.Ventas
@@ -369,14 +372,12 @@ namespace Monte_Carlos.Venta
                                 p.IdVenta,
                                 p.Nombre,
                                 p.Apellido,
-                                p.Pagado
+                            //    p.Pagado
 
                             };
 
             dvCliente.DataSource = tClientes.CopyAnonymusToDataTable();
             dvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-      
-
         }
 
         private void Generar_Venta_Load(object sender, EventArgs e)
@@ -427,14 +428,15 @@ namespace Monte_Carlos.Venta
                                 p.IdVenta,
                                 p.Nombre,
                                 p.Apellido,
-                                p.Pagado
+                              //  p.Pagado
 
                             };
 
 
             dvCliente.DataSource = tClientes.CopyAnonymusToDataTable();
             dvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        }        private void cmbComida_SelectedIndexChanged(object sender, EventArgs e)
+        }     
+        private void cmbComida_SelectedIndexChanged(object sender, EventArgs e)
         {
         
      
@@ -484,7 +486,6 @@ namespace Monte_Carlos.Venta
                 try
                 {
                     idDetalleVenta = Convert.ToInt64(dvVenta.SelectedCells[0].Value);
-                    MessageBox.Show(Convert.ToString(idDetalleVenta));
                     var tDetalle = Variables.DetalleVenta.FirstOrDefault(x => x.IdDetalleVentas == idDetalleVenta);
                 var tcomida = Variables.Menu.FirstOrDefault(x => x.IdComidaBebida == tDetalle.IdComidaBebida);
                 cmbComidaBebida.Text = Convert.ToString(tcomida.Nombre);
@@ -514,10 +515,10 @@ namespace Monte_Carlos.Venta
                     idCliente = 0;
                 }
                 var tClien = Variables.Ventas.FirstOrDefault(x => x.IdVenta == idCliente);
-                var tClient = Variables.Clientes.FirstOrDefault(x => x.IdCliente == idCliente);
-                cmbCliente.Text = tClient.Nombre;
-                txtApellido.Text = Convert.ToString(tClient.Apellido);
+                cmbCliente.Text = tClien.Nombre;
+                txtApellido.Text = Convert.ToString(tClien.Apellido);
                 txtIdVenta.Text = Convert.ToString(tClien.IdVenta);
+       
                 editar = true;
                     Int64 IdVen = Convert.ToInt32(txtIdVenta.Text);              
                 var tdetalle = from p in Variables.DetalleVenta
@@ -533,6 +534,16 @@ namespace Monte_Carlos.Venta
                                    };
                     dvVenta.DataSource = tdetalle.CopyAnonymusToDataTable();
                     dvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+                foreach (DataGridViewRow row in dvVenta.Rows)
+                {
+
+                    total = total + Convert.ToDouble(row.Cells[4].Value.ToString());
+                    Total.Text = Convert.ToString(total);
+                    imp = total;
+                }
+            
+
             }
             catch (Exception)
             {
@@ -558,12 +569,15 @@ namespace Monte_Carlos.Venta
         {
             dvVenta.ClearSelection();
             dvCliente.ClearSelection();
+            editar = false;
+            Limpiardetalle();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
             Limpiardetalle();
+            DvDetalle();
         }
     }
 }

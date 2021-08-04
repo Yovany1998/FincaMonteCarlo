@@ -49,7 +49,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(326, 92);
+            this.label5.Location = new System.Drawing.Point(326, 80);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 24);
@@ -59,7 +59,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(326, 46);
+            this.label3.Location = new System.Drawing.Point(37, 67);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 24);
@@ -69,7 +69,7 @@
             // txtApellido
             // 
             this.txtApellido.AllowDrop = true;
-            this.txtApellido.Location = new System.Drawing.Point(158, 135);
+            this.txtApellido.Location = new System.Drawing.Point(684, 27);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Multiline = true;
             this.txtApellido.Name = "txtApellido";
@@ -79,7 +79,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 136);
+            this.label2.Location = new System.Drawing.Point(586, 27);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
@@ -89,7 +89,7 @@
             // txtNombre
             // 
             this.txtNombre.AllowDrop = true;
-            this.txtNombre.Location = new System.Drawing.Point(158, 92);
+            this.txtNombre.Location = new System.Drawing.Point(411, 27);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
@@ -99,7 +99,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 92);
+            this.label1.Location = new System.Drawing.Point(326, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 24);
@@ -110,12 +110,12 @@
             // 
             this.dvEmpleado.BackgroundColor = System.Drawing.Color.White;
             this.dvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvEmpleado.Location = new System.Drawing.Point(51, 241);
+            this.dvEmpleado.Location = new System.Drawing.Point(135, 194);
             this.dvEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.dvEmpleado.Name = "dvEmpleado";
             this.dvEmpleado.RowHeadersWidth = 51;
             this.dvEmpleado.RowTemplate.Height = 24;
-            this.dvEmpleado.Size = new System.Drawing.Size(516, 149);
+            this.dvEmpleado.Size = new System.Drawing.Size(590, 250);
             this.dvEmpleado.TabIndex = 31;
             this.dvEmpleado.SelectionChanged += new System.EventHandler(this.dvEmpleado_SelectionChanged);
             this.dvEmpleado.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvEmpleado_MouseClick);
@@ -123,7 +123,7 @@
             // txtEdad
             // 
             this.txtEdad.AllowDrop = true;
-            this.txtEdad.Location = new System.Drawing.Point(408, 46);
+            this.txtEdad.Location = new System.Drawing.Point(135, 67);
             this.txtEdad.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdad.Multiline = true;
             this.txtEdad.Name = "txtEdad";
@@ -135,7 +135,7 @@
             this.btninsertar.BackColor = System.Drawing.Color.Peru;
             this.btninsertar.Image = ((System.Drawing.Image)(resources.GetObject("btninsertar.Image")));
             this.btninsertar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btninsertar.Location = new System.Drawing.Point(424, 181);
+            this.btninsertar.Location = new System.Drawing.Point(589, 129);
             this.btninsertar.Name = "btninsertar";
             this.btninsertar.Size = new System.Drawing.Size(98, 49);
             this.btninsertar.TabIndex = 5;
@@ -147,7 +147,7 @@
             // txtId
             // 
             this.txtId.AllowDrop = true;
-            this.txtId.Location = new System.Drawing.Point(158, 45);
+            this.txtId.Location = new System.Drawing.Point(135, 27);
             this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Multiline = true;
             this.txtId.Name = "txtId";
@@ -157,7 +157,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 45);
+            this.label4.Location = new System.Drawing.Point(37, 27);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 24);
@@ -170,7 +170,7 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.Black;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(74, 181);
+            this.btnNuevo.Location = new System.Drawing.Point(174, 129);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
             this.btnNuevo.TabIndex = 35;
@@ -184,7 +184,7 @@
             this.btnElimicar.ForeColor = System.Drawing.Color.Black;
             this.btnElimicar.Image = ((System.Drawing.Image)(resources.GetObject("btnElimicar.Image")));
             this.btnElimicar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnElimicar.Location = new System.Drawing.Point(250, 181);
+            this.btnElimicar.Location = new System.Drawing.Point(386, 129);
             this.btnElimicar.Name = "btnElimicar";
             this.btnElimicar.Size = new System.Drawing.Size(98, 49);
             this.btnElimicar.TabIndex = 36;
@@ -201,9 +201,9 @@
             "Aseo",
             "Barra",
             "Caja"});
-            this.cmbCargo.Location = new System.Drawing.Point(424, 92);
+            this.cmbCargo.Location = new System.Drawing.Point(411, 80);
             this.cmbCargo.Name = "cmbCargo";
-            this.cmbCargo.Size = new System.Drawing.Size(121, 21);
+            this.cmbCargo.Size = new System.Drawing.Size(144, 21);
             this.cmbCargo.TabIndex = 37;
             // 
             // Insertar_Empleado
@@ -211,7 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(605, 472);
+            this.ClientSize = new System.Drawing.Size(902, 468);
             this.Controls.Add(this.cmbCargo);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnElimicar);

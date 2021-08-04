@@ -48,7 +48,7 @@ namespace Monte_Carlos.Demas
             // txtIdentidad
             // 
             this.txtIdentidad.AllowDrop = true;
-            this.txtIdentidad.Location = new System.Drawing.Point(131, 62);
+            this.txtIdentidad.Location = new System.Drawing.Point(192, 94);
             this.txtIdentidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdentidad.Multiline = true;
             this.txtIdentidad.Name = "txtIdentidad";
@@ -59,20 +59,20 @@ namespace Monte_Carlos.Demas
             // 
             this.dvUsuario.BackgroundColor = System.Drawing.Color.White;
             this.dvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvUsuario.Location = new System.Drawing.Point(131, 272);
+            this.dvUsuario.Location = new System.Drawing.Point(522, 13);
             this.dvUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.dvUsuario.Name = "dvUsuario";
             this.dvUsuario.RowHeadersWidth = 51;
             this.dvUsuario.RowTemplate.Height = 24;
-            this.dvUsuario.Size = new System.Drawing.Size(348, 189);
+            this.dvUsuario.Size = new System.Drawing.Size(348, 330);
             this.dvUsuario.TabIndex = 51;
             this.dvUsuario.SelectionChanged += new System.EventHandler(this.dvUsuario_SelectionChanged);
             this.dvUsuario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvUsuario_MouseClick);
-          
+            // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 112);
+            this.label3.Location = new System.Drawing.Point(71, 144);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 24);
@@ -82,7 +82,7 @@ namespace Monte_Carlos.Demas
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 62);
+            this.label2.Location = new System.Drawing.Point(71, 94);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 24);
@@ -92,7 +92,7 @@ namespace Monte_Carlos.Demas
             // txtNombre
             // 
             this.txtNombre.AllowDrop = true;
-            this.txtNombre.Location = new System.Drawing.Point(131, 13);
+            this.txtNombre.Location = new System.Drawing.Point(192, 45);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
@@ -102,7 +102,7 @@ namespace Monte_Carlos.Demas
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 13);
+            this.label1.Location = new System.Drawing.Point(71, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 24);
@@ -114,7 +114,7 @@ namespace Monte_Carlos.Demas
             this.btnNuevo.BackColor = System.Drawing.Color.Peru;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(110, 193);
+            this.btnNuevo.Location = new System.Drawing.Point(73, 294);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
@@ -129,7 +129,7 @@ namespace Monte_Carlos.Demas
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEliminar.Location = new System.Drawing.Point(265, 193);
+            this.btnEliminar.Location = new System.Drawing.Point(228, 294);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(98, 49);
@@ -144,7 +144,7 @@ namespace Monte_Carlos.Demas
             this.btnIngresar.BackColor = System.Drawing.Color.Peru;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnIngresar.Location = new System.Drawing.Point(398, 193);
+            this.btnIngresar.Location = new System.Drawing.Point(361, 294);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(98, 49);
@@ -157,7 +157,7 @@ namespace Monte_Carlos.Demas
             // txtContrasena
             // 
             this.txtContrasena.AllowDrop = true;
-            this.txtContrasena.Location = new System.Drawing.Point(131, 112);
+            this.txtContrasena.Location = new System.Drawing.Point(192, 144);
             this.txtContrasena.Margin = new System.Windows.Forms.Padding(2);
             this.txtContrasena.Multiline = true;
             this.txtContrasena.Name = "txtContrasena";
@@ -167,7 +167,7 @@ namespace Monte_Carlos.Demas
             // ActivoInactivo
             // 
             this.ActivoInactivo.AutoSize = true;
-            this.ActivoInactivo.Location = new System.Drawing.Point(131, 160);
+            this.ActivoInactivo.Location = new System.Drawing.Point(192, 192);
             this.ActivoInactivo.Name = "ActivoInactivo";
             this.ActivoInactivo.Size = new System.Drawing.Size(99, 17);
             this.ActivoInactivo.TabIndex = 53;
@@ -177,7 +177,7 @@ namespace Monte_Carlos.Demas
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 158);
+            this.label4.Location = new System.Drawing.Point(71, 190);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 24);
@@ -189,7 +189,7 @@ namespace Monte_Carlos.Demas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(605, 472);
+            this.ClientSize = new System.Drawing.Size(902, 468);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ActivoInactivo);
             this.Controls.Add(this.txtContrasena);

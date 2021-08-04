@@ -46,12 +46,12 @@
             // 
             this.dvComida.BackgroundColor = System.Drawing.Color.White;
             this.dvComida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvComida.Location = new System.Drawing.Point(87, 247);
+            this.dvComida.Location = new System.Drawing.Point(498, 11);
             this.dvComida.Margin = new System.Windows.Forms.Padding(2);
             this.dvComida.Name = "dvComida";
             this.dvComida.RowHeadersWidth = 51;
             this.dvComida.RowTemplate.Height = 24;
-            this.dvComida.Size = new System.Drawing.Size(425, 167);
+            this.dvComida.Size = new System.Drawing.Size(367, 435);
             this.dvComida.TabIndex = 41;
             this.dvComida.SelectionChanged += new System.EventHandler(this.dvComida_SelectionChanged);
             this.dvComida.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvComida_MouseClick);
@@ -59,7 +59,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(85, 132);
+            this.label3.Location = new System.Drawing.Point(83, 164);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 24);
@@ -69,7 +69,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(85, 82);
+            this.label2.Location = new System.Drawing.Point(83, 114);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
@@ -79,7 +79,7 @@
             // txtNombre
             // 
             this.txtNombre.AllowDrop = true;
-            this.txtNombre.Location = new System.Drawing.Point(206, 33);
+            this.txtNombre.Location = new System.Drawing.Point(204, 65);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
@@ -89,7 +89,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(85, 33);
+            this.label1.Location = new System.Drawing.Point(83, 65);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 24);
@@ -101,7 +101,7 @@
             this.btnIngresar.BackColor = System.Drawing.Color.Peru;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnIngresar.Location = new System.Drawing.Point(392, 185);
+            this.btnIngresar.Location = new System.Drawing.Point(366, 290);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(98, 49);
@@ -114,7 +114,7 @@
             // txtPrecio
             // 
             this.txtPrecio.AllowDrop = true;
-            this.txtPrecio.Location = new System.Drawing.Point(206, 82);
+            this.txtPrecio.Location = new System.Drawing.Point(204, 114);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
@@ -126,7 +126,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEliminar.Location = new System.Drawing.Point(259, 185);
+            this.btnEliminar.Location = new System.Drawing.Point(233, 290);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(98, 49);
@@ -140,7 +140,7 @@
             this.btnNuevo.BackColor = System.Drawing.Color.Peru;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(104, 185);
+            this.btnNuevo.Location = new System.Drawing.Point(78, 290);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
@@ -159,18 +159,18 @@
             "Comida",
             "Bebida",
             "Extra"});
-            this.cmbTipo.Location = new System.Drawing.Point(206, 132);
+            this.cmbTipo.Location = new System.Drawing.Point(204, 164);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(148, 21);
             this.cmbTipo.TabIndex = 2;
-            //
+            // 
             // Ingreso_Comida
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(605, 472);
+            this.ClientSize = new System.Drawing.Size(902, 468);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEliminar);

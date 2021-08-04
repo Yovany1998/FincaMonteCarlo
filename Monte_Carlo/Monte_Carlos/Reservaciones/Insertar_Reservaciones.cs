@@ -14,6 +14,7 @@ namespace Monte_Carlos.Reservaciones
     {
         private int conta = 0;
         int registro=0;
+        int log;
         DateTime FechaRegistro;
         double total = 0.0;
         long idVenta = 0;
@@ -49,7 +50,13 @@ namespace Monte_Carlos.Reservaciones
         private void Limpiar()
         {
             txtCantidad.Text = "";
+            txtApellido.Text = "";
+            txtHora.Text = "";
+            txtLugar.Text = "";
             cmbCliente.SelectedIndex = cmbCliente.SelectedIndex = cmbCliente.SelectedIndex = -1;
+            cmbComida.SelectedIndex = cmbComida.SelectedIndex = cmbComida.SelectedIndex = -1;
+          //  dvRegistro.ClearSelection();
+           // dvReservacion.ClearSelection();
         }
         private void CargaDetalleDv()
         {
@@ -84,6 +91,7 @@ namespace Monte_Carlos.Reservaciones
 
         private void Insertar_Reservaciones_Load(object sender, EventArgs e)
         {
+            log = 1;
             var tMod = from mod in Variables.Clientes
                        select new
                        {
@@ -110,6 +118,8 @@ namespace Monte_Carlos.Reservaciones
             CargaDv();
             Limpiar();
             ValidarCliente = false;
+            dvRegistro.ClearSelection();
+         
         }
 
         private void btnInsertar_Click_1(object sender, EventArgs e)
@@ -143,6 +153,18 @@ namespace Monte_Carlos.Reservaciones
                     FechaRegistro = Convert.ToDateTime(Fecha.Text);
                     tbReservacion.Hora = Convert.ToString(txtHora.Text);
                     Variables.Reservacion.Add(tbReservacion);
+                    Variables.SaveChanges();
+
+                    //area de detalle
+                    DetalleReservacion tbReservaciones = new DetalleReservacion();
+                    long comida = Convert.ToInt32(cmbComida.SelectedItem.ToString());
+                    var tComida = Variables.Menu.FirstOrDefault(x => x.IdComidaBebida == comida);
+                    tbReservaciones.Pedido = tComida.Nombre;
+                    tbReservaciones.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                    tbReservaciones.Fecha = Convert.ToDateTime(Fecha.Text);
+                    FechaRegistro = Convert.ToDateTime(Fecha.Text);
+                    tbReservacion.Hora = Convert.ToString(txtHora.Text);
+                    Variables.DetalleReservacion.Add(tbReservaciones);
                     Variables.SaveChanges();
                 }
 
@@ -178,13 +200,10 @@ namespace Monte_Carlos.Reservaciones
                     Variables.DetalleReservacion.Add(tbDetalle);
                     Variables.SaveChanges();
                 }
-
                 Limpiar();
                 editar = false;
                 idReservacion = 0;
-
                 CargaDetalleDv();
-
                 MessageBox.Show("Informacion guardada!");
                 Limpiar();
             }
@@ -194,15 +213,7 @@ namespace Monte_Carlos.Reservaciones
 
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            conta++;
-            MessageBox.Show(Convert.ToString(conta));
 
-            if (conta == 5)
-            {
-                ValidarCliente = true;
-            }
-            if (ValidarCliente == true)
-            {
                 try
                 {
                     Int64 IdVen = Convert.ToInt64(cmbCliente.SelectedValue.ToString());
@@ -213,8 +224,31 @@ namespace Monte_Carlos.Reservaciones
                 {
 
                 }
-            
+
+            if (log == 1)
+            {
+              //  MessageBox.Show("Algo");
+               // Limpiar();
             }
+        }
+
+        private void dvReservacion_MouseClick(object sender, MouseEventArgs e)
+        {
+
+         
+        }
+
+        private void dvRegistro_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (log == 1)
+            {
+                log = 2;
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

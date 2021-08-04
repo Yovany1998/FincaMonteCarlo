@@ -50,6 +50,10 @@
             this.TotalSalidas = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.txtCajaAnterior = new System.Windows.Forms.TextBox();
+            this.txtDineroContado = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dvFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -260,12 +264,50 @@
             this.pictureBox6.TabIndex = 61;
             this.pictureBox6.TabStop = false;
             // 
+            // txtCajaAnterior
+            // 
+            this.txtCajaAnterior.Location = new System.Drawing.Point(510, 63);
+            this.txtCajaAnterior.Name = "txtCajaAnterior";
+            this.txtCajaAnterior.Size = new System.Drawing.Size(100, 20);
+            this.txtCajaAnterior.TabIndex = 65;
+            // 
+            // txtDineroContado
+            // 
+            this.txtDineroContado.Location = new System.Drawing.Point(666, 63);
+            this.txtDineroContado.Name = "txtDineroContado";
+            this.txtDineroContado.Size = new System.Drawing.Size(100, 20);
+            this.txtDineroContado.TabIndex = 66;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(635, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(132, 18);
+            this.label6.TabIndex = 67;
+            this.label6.Text = "Dinero Contado:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(474, 42);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 18);
+            this.label7.TabIndex = 68;
+            this.label7.Text = "Caja Anterior:";
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(902, 468);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtDineroContado);
+            this.Controls.Add(this.txtCajaAnterior);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TotalSalidas);
             this.Controls.Add(this.pictureBox5);
@@ -326,5 +368,9 @@
         private System.Windows.Forms.Label TotalSalidas;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.TextBox txtCajaAnterior;
+        private System.Windows.Forms.TextBox txtDineroContado;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

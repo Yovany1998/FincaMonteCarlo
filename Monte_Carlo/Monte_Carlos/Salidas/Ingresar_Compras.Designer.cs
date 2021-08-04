@@ -42,6 +42,9 @@ namespace Monte_Carlos.Salidas
             this.txtDetalle = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.DateTimes = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnVer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +53,7 @@ namespace Monte_Carlos.Salidas
             this.btnNuevo.BackColor = System.Drawing.Color.Peru;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(115, 228);
+            this.btnNuevo.Location = new System.Drawing.Point(80, 288);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
@@ -58,13 +61,14 @@ namespace Monte_Carlos.Salidas
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEliminar.Location = new System.Drawing.Point(270, 228);
+            this.btnEliminar.Location = new System.Drawing.Point(235, 288);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(98, 49);
@@ -77,7 +81,7 @@ namespace Monte_Carlos.Salidas
             // txtPrecio
             // 
             this.txtPrecio.AllowDrop = true;
-            this.txtPrecio.Location = new System.Drawing.Point(217, 63);
+            this.txtPrecio.Location = new System.Drawing.Point(182, 84);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
@@ -89,7 +93,7 @@ namespace Monte_Carlos.Salidas
             this.btnIngresar.BackColor = System.Drawing.Color.Peru;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnIngresar.Location = new System.Drawing.Point(403, 228);
+            this.btnIngresar.Location = new System.Drawing.Point(368, 288);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(98, 49);
@@ -103,18 +107,20 @@ namespace Monte_Carlos.Salidas
             // 
             this.dvCompra.BackgroundColor = System.Drawing.Color.White;
             this.dvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvCompra.Location = new System.Drawing.Point(11, 281);
+            this.dvCompra.Location = new System.Drawing.Point(554, 84);
             this.dvCompra.Margin = new System.Windows.Forms.Padding(2);
             this.dvCompra.Name = "dvCompra";
             this.dvCompra.RowHeadersWidth = 51;
             this.dvCompra.RowTemplate.Height = 24;
-            this.dvCompra.Size = new System.Drawing.Size(588, 167);
+            this.dvCompra.Size = new System.Drawing.Size(323, 354);
             this.dvCompra.TabIndex = 51;
+            this.dvCompra.SelectionChanged += new System.EventHandler(this.dvCompra_SelectionChanged);
+            this.dvCompra.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvCompra_MouseClick);
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(121, 151);
+            this.label3.Location = new System.Drawing.Point(86, 172);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 24);
@@ -124,7 +130,7 @@ namespace Monte_Carlos.Salidas
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(121, 63);
+            this.label2.Location = new System.Drawing.Point(86, 84);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
@@ -134,7 +140,7 @@ namespace Monte_Carlos.Salidas
             // txtProducto
             // 
             this.txtProducto.AllowDrop = true;
-            this.txtProducto.Location = new System.Drawing.Point(217, 14);
+            this.txtProducto.Location = new System.Drawing.Point(182, 35);
             this.txtProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtProducto.Multiline = true;
             this.txtProducto.Name = "txtProducto";
@@ -144,7 +150,7 @@ namespace Monte_Carlos.Salidas
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(121, 14);
+            this.label1.Location = new System.Drawing.Point(86, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 24);
@@ -154,17 +160,17 @@ namespace Monte_Carlos.Salidas
             // txtDetalle
             // 
             this.txtDetalle.AllowDrop = true;
-            this.txtDetalle.Location = new System.Drawing.Point(217, 151);
+            this.txtDetalle.Location = new System.Drawing.Point(182, 172);
             this.txtDetalle.Margin = new System.Windows.Forms.Padding(2);
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
-            this.txtDetalle.Size = new System.Drawing.Size(284, 63);
+            this.txtDetalle.Size = new System.Drawing.Size(308, 112);
             this.txtDetalle.TabIndex = 52;
             // 
             // txtCantidad
             // 
             this.txtCantidad.AllowDrop = true;
-            this.txtCantidad.Location = new System.Drawing.Point(217, 106);
+            this.txtCantidad.Location = new System.Drawing.Point(182, 127);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidad.Multiline = true;
             this.txtCantidad.Name = "txtCantidad";
@@ -174,19 +180,51 @@ namespace Monte_Carlos.Salidas
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(121, 106);
+            this.label4.Location = new System.Drawing.Point(86, 127);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 24);
             this.label4.TabIndex = 54;
             this.label4.Text = "Cantidad:";
             // 
+            // DateTimes
+            // 
+            this.DateTimes.Location = new System.Drawing.Point(554, 39);
+            this.DateTimes.Name = "DateTimes";
+            this.DateTimes.Size = new System.Drawing.Size(200, 20);
+            this.DateTimes.TabIndex = 55;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(551, 9);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(249, 24);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "Listar una fecha en especifico:";
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.Color.Peru;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Location = new System.Drawing.Point(772, 36);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(105, 31);
+            this.btnVer.TabIndex = 57;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
             // Ingresar_Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(605, 472);
+            this.ClientSize = new System.Drawing.Size(902, 468);
+            this.Controls.Add(this.btnVer);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.DateTimes);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDetalle);
@@ -222,5 +260,8 @@ namespace Monte_Carlos.Salidas
         private System.Windows.Forms.TextBox txtDetalle;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker DateTimes;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnVer;
     }
 }

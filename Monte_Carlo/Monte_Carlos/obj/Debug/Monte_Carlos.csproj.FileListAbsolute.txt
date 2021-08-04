@@ -444,7 +444,6 @@ C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.csproj.AssemblyReference.cache
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.exe.config
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Carta.Ingreso_Comida.resources
-C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Carta.Menu_Carta.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Cliente.Insertar_Cliente.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Cliente.Ver_Cliente.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Empleado.Insertar_Empleado.resources
@@ -453,7 +452,6 @@ C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Properties.Resources.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Reservaciones.Insertar_Reservaciones.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Reservaciones.Ver_Reservaciones.resources
-C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Servicio.Insertar_Pedido.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Servicio.Ver_Pedido.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Venta.Factura.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Venta.Generar_Venta.resources

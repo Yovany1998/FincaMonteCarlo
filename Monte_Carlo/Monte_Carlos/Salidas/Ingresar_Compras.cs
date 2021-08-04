@@ -16,7 +16,7 @@ namespace Monte_Carlos.Salidas
         long idCompras = 0;
         bool editar = false;
         Double Subto;
-
+        int log;
         public Ingresar_Compras()
         {
             InitializeComponent();
@@ -36,6 +36,7 @@ namespace Monte_Carlos.Salidas
 
         private void Ingresar_Compras_Load(object sender, EventArgs e)
         {
+            log = 1;
             DateTime Fechas = Convert.ToDateTime(FechaActual.ToString("yyyy/MM/dd 00:00:00"));
             var tCompras = from p in Variables.Compras
                            where p.Fecha == Fechas
@@ -156,6 +157,67 @@ namespace Monte_Carlos.Salidas
                     CargaDv();
                 }
             }
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            DateTime Fechas = Convert.ToDateTime(DateTimes.Value.ToString("yyyy/MM/dd 00:00:00"));
+
+            //  Int64 Fechas = Convert.ToInt64(Fecha);           
+            try
+            {
+                var tSalidas = from p in Variables.Compras
+                               where p.Fecha == Fechas
+                               select new
+                               {
+                                   p.IdCompra,
+                                   //  p.Fecha,
+                                   p.Producto,
+                                   p.Precio,
+                                   p.Cantidad,
+                                   p.Subtotal,
+                               };
+                dvCompra.DataSource = tSalidas.CopyAnonymusToDataTable();
+                dvCompra.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            }
+            catch { }
+        }
+
+        private void dvCompra_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                idCompras = Convert.ToInt64(dvCompra.SelectedCells[0].Value);
+                var tComidaBebida = Variables.Compras.FirstOrDefault(x => x.IdCompra == idCompras);
+                txtCantidad.Text = Convert.ToString( tComidaBebida.Cantidad);
+                txtPrecio.Text = Convert.ToString(tComidaBebida.Precio);
+                txtProducto.Text = Convert.ToString(tComidaBebida.Producto);
+                txtDetalle.Text = Convert.ToString(tComidaBebida.Detalle);
+                        editar = true;
+            }
+            catch (Exception)
+            {
+            }
+            if (log == 1)
+            {
+                Limpiar();
+            }
+
+        }
+
+        private void dvCompra_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            if (log == 1)
+            {
+                log = 2;
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            dvCompra.ClearSelection();
         }
     }
     
