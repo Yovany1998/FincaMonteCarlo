@@ -48,25 +48,29 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cmbComida = new System.Windows.Forms.ComboBox();
             this.dvRegistro = new System.Windows.Forms.DataGridView();
+            this.Pedidos = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvReservacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvRegistro)).BeginInit();
+            this.Pedidos.SuspendLayout();
             this.SuspendLayout();
             // 
             // dvReservacion
             // 
             this.dvReservacion.BackgroundColor = System.Drawing.Color.White;
             this.dvReservacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvReservacion.Location = new System.Drawing.Point(352, 12);
+            this.dvReservacion.Location = new System.Drawing.Point(577, 242);
             this.dvReservacion.Name = "dvReservacion";
             this.dvReservacion.RowHeadersWidth = 51;
-            this.dvReservacion.Size = new System.Drawing.Size(237, 218);
+            this.dvReservacion.Size = new System.Drawing.Size(318, 218);
             this.dvReservacion.TabIndex = 40;
             this.dvReservacion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvReservacion_MouseClick);
             // 
             // txtCantidad
             // 
             this.txtCantidad.AllowDrop = true;
-            this.txtCantidad.Location = new System.Drawing.Point(198, 173);
+            this.txtCantidad.Location = new System.Drawing.Point(188, 58);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidad.Multiline = true;
             this.txtCantidad.Name = "txtCantidad";
@@ -76,7 +80,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 173);
+            this.label7.Location = new System.Drawing.Point(14, 58);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 24);
@@ -86,7 +90,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 139);
+            this.label4.Location = new System.Drawing.Point(12, 24);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 24);
@@ -97,11 +101,11 @@
             // 
             this.btnInsertar.BackColor = System.Drawing.Color.Peru;
             this.btnInsertar.Image = ((System.Drawing.Image)(resources.GetObject("btnInsertar.Image")));
-            this.btnInsertar.Location = new System.Drawing.Point(420, 275);
+            this.btnInsertar.Location = new System.Drawing.Point(375, 133);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(98, 49);
+            this.btnInsertar.Size = new System.Drawing.Size(129, 49);
             this.btnInsertar.TabIndex = 35;
-            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.Text = "Insertar Reservacion";
             this.btnInsertar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnInsertar.UseVisualStyleBackColor = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click_1);
@@ -109,7 +113,7 @@
             // txtHora
             // 
             this.txtHora.AllowDrop = true;
-            this.txtHora.Location = new System.Drawing.Point(196, 242);
+            this.txtHora.Location = new System.Drawing.Point(420, 75);
             this.txtHora.Margin = new System.Windows.Forms.Padding(2);
             this.txtHora.Multiline = true;
             this.txtHora.Name = "txtHora";
@@ -119,7 +123,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 242);
+            this.label5.Location = new System.Drawing.Point(313, 75);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 24);
@@ -128,7 +132,7 @@
             // 
             // Fecha
             // 
-            this.Fecha.Location = new System.Drawing.Point(196, 206);
+            this.Fecha.Location = new System.Drawing.Point(141, 79);
             this.Fecha.Margin = new System.Windows.Forms.Padding(2);
             this.Fecha.Name = "Fecha";
             this.Fecha.Size = new System.Drawing.Size(132, 20);
@@ -137,7 +141,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 206);
+            this.label3.Location = new System.Drawing.Point(20, 79);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 24);
@@ -147,7 +151,7 @@
             // txtLugar
             // 
             this.txtLugar.AllowDrop = true;
-            this.txtLugar.Location = new System.Drawing.Point(196, 99);
+            this.txtLugar.Location = new System.Drawing.Point(699, 26);
             this.txtLugar.Margin = new System.Windows.Forms.Padding(2);
             this.txtLugar.Multiline = true;
             this.txtLugar.Name = "txtLugar";
@@ -157,7 +161,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 99);
+            this.label2.Location = new System.Drawing.Point(574, 26);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 24);
@@ -180,7 +184,7 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.Black;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(84, 275);
+            this.btnNuevo.Location = new System.Drawing.Point(39, 133);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
             this.btnNuevo.TabIndex = 42;
@@ -195,7 +199,7 @@
             this.btnElimicar.ForeColor = System.Drawing.Color.Black;
             this.btnElimicar.Image = ((System.Drawing.Image)(resources.GetObject("btnElimicar.Image")));
             this.btnElimicar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnElimicar.Location = new System.Drawing.Point(251, 275);
+            this.btnElimicar.Location = new System.Drawing.Point(206, 133);
             this.btnElimicar.Name = "btnElimicar";
             this.btnElimicar.Size = new System.Drawing.Size(98, 49);
             this.btnElimicar.TabIndex = 43;
@@ -206,7 +210,7 @@
             // cmbCliente
             // 
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(198, 26);
+            this.cmbCliente.Location = new System.Drawing.Point(143, 26);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(130, 21);
             this.cmbCliente.TabIndex = 44;
@@ -216,7 +220,7 @@
             // 
             this.txtApellido.AllowDrop = true;
             this.txtApellido.Enabled = false;
-            this.txtApellido.Location = new System.Drawing.Point(197, 60);
+            this.txtApellido.Location = new System.Drawing.Point(420, 26);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Multiline = true;
             this.txtApellido.Name = "txtApellido";
@@ -226,7 +230,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 60);
+            this.label6.Location = new System.Drawing.Point(313, 26);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(171, 24);
@@ -236,7 +240,7 @@
             // cmbComida
             // 
             this.cmbComida.FormattingEnabled = true;
-            this.cmbComida.Location = new System.Drawing.Point(199, 142);
+            this.cmbComida.Location = new System.Drawing.Point(189, 27);
             this.cmbComida.Name = "cmbComida";
             this.cmbComida.Size = new System.Drawing.Size(130, 21);
             this.cmbComida.TabIndex = 47;
@@ -245,30 +249,70 @@
             // 
             this.dvRegistro.BackgroundColor = System.Drawing.Color.White;
             this.dvRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvRegistro.Location = new System.Drawing.Point(27, 332);
+            this.dvRegistro.Location = new System.Drawing.Point(5, 205);
             this.dvRegistro.Name = "dvRegistro";
             this.dvRegistro.RowHeadersWidth = 51;
-            this.dvRegistro.Size = new System.Drawing.Size(544, 128);
+            this.dvRegistro.Size = new System.Drawing.Size(544, 255);
             this.dvRegistro.TabIndex = 48;
+            this.dvRegistro.SelectionChanged += new System.EventHandler(this.dvRegistro_SelectionChanged);
             this.dvRegistro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvRegistro_MouseClick);
+            // 
+            // Pedidos
+            // 
+            this.Pedidos.BackColor = System.Drawing.Color.Goldenrod;
+            this.Pedidos.Controls.Add(this.button1);
+            this.Pedidos.Controls.Add(this.cmbComida);
+            this.Pedidos.Controls.Add(this.button2);
+            this.Pedidos.Controls.Add(this.label4);
+            this.Pedidos.Controls.Add(this.label7);
+            this.Pedidos.Controls.Add(this.txtCantidad);
+            this.Pedidos.Location = new System.Drawing.Point(566, 55);
+            this.Pedidos.Name = "Pedidos";
+            this.Pedidos.Size = new System.Drawing.Size(335, 401);
+            this.Pedidos.TabIndex = 49;
+            this.Pedidos.TabStop = false;
+            this.Pedidos.Text = "Area de pedidos de la reservacion";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Peru;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(11, 132);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 49);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "Eliminar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Peru;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(228, 132);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 49);
+            this.button2.TabIndex = 50;
+            this.button2.Text = "Insertar ";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Insertar_Reservaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(605, 472);
+            this.ClientSize = new System.Drawing.Size(902, 468);
             this.Controls.Add(this.dvRegistro);
-            this.Controls.Add(this.cmbComida);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnElimicar);
             this.Controls.Add(this.dvReservacion);
-            this.Controls.Add(this.txtCantidad);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.txtHora);
             this.Controls.Add(this.label5);
@@ -277,6 +321,7 @@
             this.Controls.Add(this.txtLugar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.Pedidos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -285,6 +330,8 @@
             this.Load += new System.EventHandler(this.Insertar_Reservaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvReservacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvRegistro)).EndInit();
+            this.Pedidos.ResumeLayout(false);
+            this.Pedidos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,5 +358,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbComida;
         private System.Windows.Forms.DataGridView dvRegistro;
+        private System.Windows.Forms.GroupBox Pedidos;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

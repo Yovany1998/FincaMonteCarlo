@@ -76,7 +76,6 @@
     <EntitySet Name="Pedidos" EntityType="Self.Pedidos" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" />
     <EntitySet Name="Compras" EntityType="FincaMonteCarlo.Compras" />
-    <EntitySet Name="DetalleReservacion" EntityType="FincaMonteCarlo.DetalleReservacion" />
     <EntitySet Name="Reservacion" EntityType="FincaMonteCarlo.Reservacion" />
     <EntitySet Name="DetalleVenta" EntityType="FincaMonteCarlo.DetalleVenta" />
     <AssociationSet Name="FK_DetalleVenta_Clientes" Association="FincaMonteCarlo.FK_DetalleVenta_Clientes">
@@ -88,6 +87,7 @@
       <End Role="DetalleVenta" EntitySet="DetalleVenta" />
     </AssociationSet>
     <EntitySet Name="Ventas" EntityType="FincaMonteCarlo.Ventas" />
+    <EntitySet Name="DetalleReservacion" EntityType="FincaMonteCarlo.DetalleReservacion" />
   </EntityContainer>
   <EntityType Name="Compras">
     <Key>
@@ -100,15 +100,6 @@
     <Property Name="Precio" Type="Double" />
     <Property Name="Detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Subtotal" Type="Double" />
-  </EntityType>
-  <EntityType Name="DetalleReservacion">
-    <Key>
-      <PropertyRef Name="IdDetalleReservacion" />
-    </Key>
-    <Property Name="IdDetalleReservacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fecha" Type="DateTime" Precision="0" />
-    <Property Name="Pedido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Cantidad" Type="Int32" />
   </EntityType>
   <EntityType Name="Reservacion">
     <Key>
@@ -173,5 +164,15 @@
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Pagado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DetalleReservacion">
+    <Key>
+      <PropertyRef Name="IdDetalleReservacion" />
+    </Key>
+    <Property Name="IdDetalleReservacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="IdReservacion" Type="Int32" />
+    <Property Name="Pedido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Int32" />
   </EntityType>
 </Schema>

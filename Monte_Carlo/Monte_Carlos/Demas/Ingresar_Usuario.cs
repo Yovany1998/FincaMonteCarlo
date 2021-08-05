@@ -157,7 +157,6 @@ namespace Monte_Carlos.Demas
             idUsuario = 0;
            
             editar = false;
-            MessageBox.Show("inicio");
             Limpiar();
             login = 1;
         }

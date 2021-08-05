@@ -30,6 +30,7 @@
     </Key>
     <Property Name="IdDetalleReservacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Fecha" Type="date" />
+    <Property Name="IdReservacion" Type="int" />
     <Property Name="Pedido" Type="varchar" MaxLength="50" />
     <Property Name="Cantidad" Type="int" />
   </EntityType>

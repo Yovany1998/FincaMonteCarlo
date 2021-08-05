@@ -16,6 +16,7 @@ namespace Monte_Carlos
     {
         public int IdDetalleReservacion { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
+        public Nullable<int> IdReservacion { get; set; }
         public string Pedido { get; set; }
         public Nullable<int> Cantidad { get; set; }
     }
