@@ -16,6 +16,7 @@ namespace Monte_Carlos.Reservaciones
         int registro=0;
         long idTemporal;
         int log;
+        long CodigoReserva;
         DateTime FechaRegistro;
         double total = 0.0;
         long idVenta = 0;
@@ -66,10 +67,11 @@ namespace Monte_Carlos.Reservaciones
         }
         private void CargaDetalleDv()
         {
-
+            MessageBox.Show(Convert.ToString(CodigoReserva));
             var tbReservacion = from p in Variables.DetalleReservacion
+                                where p.IdReservacion == CodigoReserva
                                 select new
-                                {
+                                {p.IdReservacion,
                                   p.IdDetalleReservacion,
                                   p.Pedido,
                                   p.Cantidad
@@ -153,9 +155,12 @@ namespace Monte_Carlos.Reservaciones
             log = 2;
             if (editar)
                 {
-                    MessageBox.Show("Modifique");
-                    var tReservacion = Variables.Reservacion.FirstOrDefault(x => x.IdReservacion == idReservacion);
-                var tCliente = Variables.Clientes.FirstOrDefault(x => x.IdCliente == Convert.ToInt32(cmbCliente.SelectedItem.ToString()));
+                    MessageBox.Show("Modifico la reservación");
+                //  int idR = Convert.ToInt32(.SelectedIndex.ToString()) + 1;
+                long idReservaciones = Convert.ToInt64(dvRegistro.SelectedCells[0].Value);
+                var tReservacion = Variables.Reservacion.FirstOrDefault(x => x.IdReservacion == idReservaciones);
+                int id = Convert.ToInt32(cmbCliente.SelectedIndex.ToString()) + 1;
+                var tCliente = Variables.Clientes.FirstOrDefault(x => x.IdCliente == id);
                 tReservacion.Cliente = tCliente.Nombre;
                     tReservacion.Apellido = Convert.ToString(txtApellido.Text);
                     tReservacion.Zona = Convert.ToString(txtLugar.Text);
@@ -167,7 +172,6 @@ namespace Monte_Carlos.Reservaciones
                 else
                 {
                
-                    MessageBox.Show("Guarde");
                     Reservacion tbReservacion = new Reservacion();
                 int id = Convert.ToInt32(cmbCliente.SelectedIndex.ToString()) + 1;
                 var tCliente = Variables.Clientes.FirstOrDefault(x => x.IdCliente ==id);
@@ -181,12 +185,13 @@ namespace Monte_Carlos.Reservaciones
                     Variables.SaveChanges();
 
                     idTemporal = tbReservacion.IdReservacion;
-                }
+
+                MessageBox.Show("La reservacion se realizo!");
+            }
                 editar = false;
                 idReservacion = 0;
                 CargaDv();
-    
-                MessageBox.Show("La reservacion se realizo!");
+
         }
 
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -246,6 +251,8 @@ namespace Monte_Carlos.Reservaciones
             {
                
                 long  idReservaciones = Convert.ToInt64(dvRegistro.SelectedCells[0].Value);
+                CodigoReserva = idReservaciones;
+             //   MessageBox.Show(Convert.ToString(idReservaciones));
                 var tbReservacion = from p in Variables.DetalleReservacion
                                     where p.IdReservacion == idReservaciones
                                     select new
@@ -256,11 +263,34 @@ namespace Monte_Carlos.Reservaciones
 
                                     };
                 dvReservacion.DataSource = tbReservacion.CopyAnonymusToDataTable();
-                editarDetalle = true;
+                editarDetalle = false;
+                dvReservacion.ClearSelection();
+                LimpiarPedido();
+
             }
             catch (Exception)
             {
-               
+                dvReservacion.ClearSelection();
+                dvRegistro.ClearSelection();
+            }
+            if (log == 1)
+            {
+                Limpiar();
+            }
+
+            try
+            {
+                long idReservaciones = Convert.ToInt64(dvRegistro.SelectedCells[0].Value);
+                var tReserva = Variables.Reservacion.FirstOrDefault(x => x.IdReservacion == idReservaciones);
+                txtApellido.Text = tReserva.Apellido;
+                txtHora.Text = tReserva.Hora;
+                txtLugar.Text = tReserva.Zona;
+                cmbCliente.Text = Convert.ToString(tReserva.Cliente);
+                Fecha.Text = Convert.ToString(tReserva.Fecha);
+                editar = true;
+            }
+            catch (Exception)
+            {
             }
             if (log == 1)
             {
@@ -277,47 +307,94 @@ namespace Monte_Carlos.Reservaciones
                 MessageBox.Show("Necesita ingresar una reservacion antes de ingresar los productos para ella");
                 return;
             }
+         
+
             if (txtCantidad.Text == "")
             {
                 MessageBox.Show("Necesita ingresar una cantidad");
+                return;
+            }
+            if (txtCantidad.Text != "")
+            {
+                if (Convert.ToInt32(txtCantidad.Text) < 1)
+                {
+                    MessageBox.Show("La cantidad debe ser mayor a 0");
+                    return;
+                }
+
             }
             if (cmbComida.SelectedItem.ToString().Equals(""))
             {
                 MessageBox.Show("Por favor seleccione el preoducto");
                 return;
             }
-            if (Convert.ToInt32(txtCantidad.Text) <=0)
-            {
-                MessageBox.Show("La cantidad debe ser mayor a 0");
-            }
+
             if (editarDetalle)
             {
-                MessageBox.Show("Modifique el detalle");
-                var tDetalle = Variables.DetalleReservacion.FirstOrDefault(x => x.IdDetalleReservacion == idDetalleReservacion);
-                tDetalle.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                tDetalle.Pedido = Convert.ToString(cmbComida.Text);
-                tDetalle.Fecha = FechaRegistro;
+                MessageBox.Show("Modifico el pedido!");
+                long idPedido = Convert.ToInt64(dvReservacion.SelectedCells[0].Value);
+                var tDetalles = Variables.DetalleReservacion.FirstOrDefault(x => x.IdDetalleReservacion == idPedido);
+             //   MessageBox.Show(Convert.ToString(idDetalleReservacion));
+                tDetalles.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                tDetalles.Pedido = Convert.ToString(cmbComida.Text);
+                tDetalles.Fecha = FechaRegistro;
 
                 Variables.SaveChanges();
+                dvReservacion.ClearSelection();
             }
             else
             {
                 MessageBox.Show("Guarde");
                 DetalleReservacion tbDetalle = new DetalleReservacion();
-                tbDetalle.IdReservacion = Convert.ToInt32(idTemporal);
+                if(idTemporal >0)
+                {
+                    tbDetalle.IdReservacion = Convert.ToInt32(idTemporal);
+                }
+                if(idTemporal == 0)
+                {
+                    tbDetalle.IdReservacion = Convert.ToInt32(CodigoReserva);
+                }
+
                 tbDetalle.Cantidad = Convert.ToInt32(txtCantidad.Text);
                 tbDetalle.Pedido = Convert.ToString(cmbComida.Text);
                 tbDetalle.Fecha = FechaRegistro;
                 Variables.DetalleReservacion.Add(tbDetalle);
                 Variables.SaveChanges();
+                MessageBox.Show("Pedido guardado!");
             }
            
             editarDetalle = false;
             idReservacion = 0;
             CargaDetalleDv();
-            MessageBox.Show("Pedido guardado!");
+
             LimpiarPedido();
        
+        }
+
+        private void dvReservacion_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long idPedido = Convert.ToInt64(dvReservacion.SelectedCells[0].Value);
+                var tPedido = Variables.DetalleReservacion.FirstOrDefault(x => x.IdDetalleReservacion == idPedido);
+                txtCantidad.Text = Convert.ToString(tPedido.Cantidad);
+                cmbComida.Text = Convert.ToString(tPedido.Pedido);
+                editarDetalle = true;
+            }
+            catch (Exception)
+            {
+            }
+            if (log == 1)
+            {
+                Limpiar();
+            }
+
+        }
+
+        private void btnLimpiarPedido_Click(object sender, EventArgs e)
+        {
+            dvReservacion.ClearSelection();
+            LimpiarPedido();
         }
     }
 }

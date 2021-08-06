@@ -51,6 +51,7 @@
             this.Pedidos = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnLimpiarPedido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvReservacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvRegistro)).BeginInit();
             this.Pedidos.SuspendLayout();
@@ -65,6 +66,7 @@
             this.dvReservacion.RowHeadersWidth = 51;
             this.dvReservacion.Size = new System.Drawing.Size(318, 218);
             this.dvReservacion.TabIndex = 40;
+            this.dvReservacion.SelectionChanged += new System.EventHandler(this.dvReservacion_SelectionChanged);
             this.dvReservacion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvReservacion_MouseClick);
             // 
             // txtCantidad
@@ -260,6 +262,7 @@
             // Pedidos
             // 
             this.Pedidos.BackColor = System.Drawing.Color.Goldenrod;
+            this.Pedidos.Controls.Add(this.btnLimpiarPedido);
             this.Pedidos.Controls.Add(this.button1);
             this.Pedidos.Controls.Add(this.cmbComida);
             this.Pedidos.Controls.Add(this.button2);
@@ -299,6 +302,21 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnLimpiarPedido
+            // 
+            this.btnLimpiarPedido.BackColor = System.Drawing.Color.Peru;
+            this.btnLimpiarPedido.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiarPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiarPedido.Image")));
+            this.btnLimpiarPedido.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLimpiarPedido.Location = new System.Drawing.Point(125, 132);
+            this.btnLimpiarPedido.Name = "btnLimpiarPedido";
+            this.btnLimpiarPedido.Size = new System.Drawing.Size(97, 49);
+            this.btnLimpiarPedido.TabIndex = 52;
+            this.btnLimpiarPedido.Text = "Nuevo";
+            this.btnLimpiarPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLimpiarPedido.UseVisualStyleBackColor = false;
+            this.btnLimpiarPedido.Click += new System.EventHandler(this.btnLimpiarPedido_Click);
             // 
             // Insertar_Reservaciones
             // 
@@ -361,5 +379,6 @@
         private System.Windows.Forms.GroupBox Pedidos;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLimpiarPedido;
     }
 }
