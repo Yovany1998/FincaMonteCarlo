@@ -16,15 +16,13 @@ namespace Monte_Carlos.Venta
         private int conta = 0;
         int CodigoVenta;
         double total = 0.0;
-        long idVenta = 0;
         int log;
-        private bool VentaValida = true;
-        private int contadorcomida = 0;
+
         MonteCarlo Variables = new MonteCarlo();
         long idDetalleVenta = 0;
         string nombre = "";
         bool editar = false;
-        bool ValidarComida = false;
+     //   bool ValidarComida = false;
         bool ValidarCliente = false;
         double impuesto = 0.0;
         double TotImpuesto = 0.0;
@@ -45,7 +43,7 @@ namespace Monte_Carlos.Venta
         private void Limpiar()
         {
             conta = 2;
-            contadorcomida = 4;
+
             cmbCliente.SelectedIndex = -1;
             txtApellido.Text = "";
             txtIdVenta.Text = "";
@@ -181,11 +179,13 @@ namespace Monte_Carlos.Venta
                 }
 
                 MessageBox.Show("Guarde");
-                DetalleVenta tbdetalles = new DetalleVenta();
-                tbdetalles.Fecha = FechaActual;
-                tbdetalles.IdCliente = Convert.ToInt32(cmbCliente.SelectedValue.ToString());
-                tbdetalles.IdVenta = Convert.ToInt32(txtIdVenta.Text);
-                tbdetalles.IdComidaBebida = Convert.ToInt32(cmbComidaBebida.SelectedValue.ToString());
+                DetalleVenta tbdetalles = new DetalleVenta
+                {
+                    Fecha = FechaActual,
+                    IdCliente = Convert.ToInt32(cmbCliente.SelectedValue.ToString()),
+                    IdVenta = Convert.ToInt32(txtIdVenta.Text),
+                    IdComidaBebida = Convert.ToInt32(cmbComidaBebida.SelectedValue.ToString())
+                };
                 var MENU = Variables.Menu.FirstOrDefault(x => x.IdComidaBebida == tbdetalles.IdComidaBebida);
                 tbdetalles.Comida = MENU.Nombre;
                 tbdetalles.PrecioComidaBebida = Convert.ToDouble(txtPrecio.Text);
@@ -282,13 +282,14 @@ namespace Monte_Carlos.Venta
                 }
 
                 MessageBox.Show("Guarde la factura");
-                Facturas tbfactura = new Facturas();
-                //tbfactura.Fecha = FechaActual;
-                tbfactura.Fecha = DateTime.Today;
-                tbfactura.IdCliente = Convert.ToInt32(cmbCliente.SelectedValue.ToString());
-                tbfactura.Subtotal = TotSubtotal;
-                tbfactura.Impuesto = TotImpuesto;
-                tbfactura.Total = Convert.ToInt32(Total.Text);
+                Facturas tbfactura = new Facturas
+                {
+                    Fecha = DateTime.Today,
+                    IdCliente = Convert.ToInt32(cmbCliente.SelectedValue.ToString()),
+                    Subtotal = TotSubtotal,
+                    Impuesto = TotImpuesto,
+                    Total = Convert.ToInt32(Total.Text)
+                };
                 var rowNomCli = Variables.Clientes.FirstOrDefault(x => x.IdCliente == tbfactura.IdCliente);
                 tbfactura.NombreCliente = Convert.ToString(rowNomCli.Nombre + " " + rowNomCli.Apellido);
                 tbfactura.Impuesto = impuesto;
@@ -319,7 +320,6 @@ namespace Monte_Carlos.Venta
             {
                 MessageBox.Show("Para realizar la venta necesita un  cliente");
                 cmbCliente.Focus();
-                VentaValida = false;
                 return;
             }
             if (txtIdVenta.Text != "")
@@ -340,15 +340,14 @@ namespace Monte_Carlos.Venta
         {
             Int64 IdNombre = Convert.ToInt64(cmbCliente.SelectedValue.ToString());
             var tMenus = Variables.Clientes.FirstOrDefault(x => x.IdCliente == IdNombre);
-            // MessageBox.Show("Aqui esta el precio");
-
-
             MessageBox.Show("Guarde");
-            Ventas tbventas = new Ventas();
-            tbventas.Nombre = Convert.ToString(tMenus.Nombre);
-            tbventas.Apellido = txtApellido.Text;
-            tbventas.Fecha = FechaActual;
-            tbventas.IdCliente = Convert.ToInt32(cmbCliente.SelectedIndex.ToString() + 1);
+            Ventas tbventas = new Ventas
+            {
+                Nombre = Convert.ToString(tMenus.Nombre),
+                Apellido = txtApellido.Text,
+                Fecha = FechaActual,
+                IdCliente = Convert.ToInt32(cmbCliente.SelectedIndex.ToString() + 1)
+            };
             Variables.Ventas.Add(tbventas);
             Variables.SaveChanges();
             CodigoVenta = tbventas.IdVenta;

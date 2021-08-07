@@ -445,9 +445,7 @@ C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.exe.config
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Carta.Ingreso_Comida.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Cliente.Insertar_Cliente.resources
-C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Cliente.Ver_Cliente.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Empleado.Insertar_Empleado.resources
-C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Empleado.Ver_Empleado.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Login.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Properties.Resources.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Reservaciones.Insertar_Reservaciones.resources

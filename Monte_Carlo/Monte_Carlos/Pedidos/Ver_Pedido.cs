@@ -12,25 +12,11 @@ namespace Monte_Carlos.Servicio
 {
     public partial class Ver_Pedido : Form
     {
-        private int conta = 0;
-        int CodigoVenta;
-        double total = 0.0;
-        long idVenta = 0;
-        int log;
-        private bool VentaValida = true;
-        private int contadorcomida = 0;
-        MonteCarlo Variables = new MonteCarlo();
-        long idDetalleVenta = 0;
-        string nombre = "";
-        bool editar = false;
-        bool ValidarComida = false;
-        bool ValidarCliente = false;
-        double impuesto = 0.0;
-        double TotImpuesto = 0.0;
-        double TotSubtotal = 0.0;
-        double Subtotal = 0.0;
-        DataTable dtVentas = new DataTable();
 
+
+        long idVenta = 0;
+        MonteCarlo Variables = new MonteCarlo();
+      
         public Ver_Pedido()
         {
             InitializeComponent();

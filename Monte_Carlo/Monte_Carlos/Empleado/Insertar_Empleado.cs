@@ -16,19 +16,11 @@ namespace Monte_Carlos.Empleado
         long idEmpleado = 0;
         bool editar = false;
         int Log;
-
-
         public Insertar_Empleado()
         {
             InitializeComponent();
            
         }
-
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-        
-        }
-
         private void CargarDv()
         {
             var tEmpleado = from p in Variables.Empleados
@@ -53,15 +45,67 @@ namespace Monte_Carlos.Empleado
             Limpiar();
             editar = false;
             Log = 1;
+            dvEmpleado.ClearSelection();
         }
 
         private void btninsertar_Click(object sender, EventArgs e)
         {
+            String Identidad = txtId.Text;
+      
+            char guion = Convert.ToChar("-");
+            char Guion1 = txtId.Text[4];
+            char Guion2 = txtId.Text[9];
+            if (Guion1 != guion || Guion2 != guion)
+            {
+                MessageBox.Show("El numero de idententidad debe llevar guiones o esta mal escrito");
+                txtId.Focus();
+                return;
+            }
+
+
+            var TamanoIdentidad = txtId.TextLength;
+            if (TamanoIdentidad < 15)
+            {
+                MessageBox.Show("El numero de identidad es muy corto");
+                txtId.Focus();
+                return;
+            }
+             if(txtId.Text == "")
+            {
+                MessageBox.Show("Ingrese el numero de identidad");
+                txtId.Focus();
+                return;
+            }
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show("Ingrese el nombre del empleado");
+                txtNombre.Focus();
+                return;
+            }
+            if (txtApellido.Text == "")
+            {
+                MessageBox.Show("Ingrese el apellido del empleado");
+                txtApellido.Focus();
+                return;
+            }
+            if (txtEdad.Text == "")
+            {
+                MessageBox.Show("Ingrese la edad");
+                txtEdad.Focus();
+                return;
+            }
+            if (Convert.ToInt32(txtEdad.Text) <16)
+            {
+                MessageBox.Show("La edad del empleado debe de ser mayor a 16");
+                txtEdad.Focus();
+                return;
+            }
 
 
             if (editar)
             {
-                MessageBox.Show("Modifique");
+
+                MessageBox.Show("Empleado modificado!");
                 var tEmpleado = Variables.Empleados.FirstOrDefault(x => x.IdEmpleado == idEmpleado);
                 tEmpleado.NIdentidad = txtId.Text;
                 tEmpleado.Nombre = txtNombre.Text;
@@ -74,26 +118,30 @@ namespace Monte_Carlos.Empleado
             }
             else
             {
-                MessageBox.Show("Guarde");
-                Empleados tbEmpleado = new Empleados();
-                tbEmpleado.NIdentidad = txtId.Text;
-                tbEmpleado.Nombre = txtNombre.Text;
-                tbEmpleado.Apellidos = txtApellido.Text;
-                tbEmpleado.Edad = Convert.ToInt32(txtEdad.Text);
-                tbEmpleado.FechaIngreso = DateTime.Today;
-                tbEmpleado.Cargo = cmbCargo.SelectedItem.ToString();
+                var tEmpleados = Variables.Empleados.FirstOrDefault(x => x.NIdentidad == Identidad);
+                if (tEmpleados != null)
+                {
+                    MessageBox.Show("El numero de identidad ya existe");
+                    txtId.Focus();
+                    return;
+                }
+                MessageBox.Show("Empleado Guardado!");
+                Empleados tbEmpleado = new Empleados
+                {
+                    NIdentidad = txtId.Text,
+                    Nombre = txtNombre.Text,
+                    Apellidos = txtApellido.Text,
+                    Edad = Convert.ToInt32(txtEdad.Text),
+                    FechaIngreso = DateTime.Today,
+                    Cargo = cmbCargo.SelectedItem.ToString()
+                };
                 Variables.Empleados.Add(tbEmpleado);
                 Variables.SaveChanges();
             }
-
-            Limpiar();
             editar = false;
             idEmpleado = 0;
             CargarDv();
-
-            MessageBox.Show("Informacion guardada!");
             Limpiar();
-
         }
 
         private void Limpiar()
@@ -117,17 +165,17 @@ namespace Monte_Carlos.Empleado
                 txtApellido.Text = tEmpleado.Apellidos;
                 txtEdad.Text = Convert.ToString(tEmpleado.Edad);
                 cmbCargo.Text = Convert.ToString(tEmpleado.Cargo);
-      
                 editar = true;
-
             }
             catch (Exception)
             {
-
+                dvEmpleado.ClearSelection();
+                editar = false;
             }
 
             if (Log == 1)
             {
+                dvEmpleado.ClearSelection();
                 Limpiar();
             }
         }
@@ -147,19 +195,11 @@ namespace Monte_Carlos.Empleado
                 MessageBox.Show("Debe haber un registro seleccionado para poder borrarlo");
             }
             else
-            {
-                if (dvEmpleado.RowCount == 2)
-                {
-                    MessageBox.Show("Si eliminas este registro no podras acceder al programa");
-                }
-                else
-                {
-
+            {              
                     Variables.Empleados.RemoveRange(Variables.Empleados.Where(x => x.IdEmpleado == idEmpleado));
                     Variables.SaveChanges();
                     Limpiar();
                     CargarDv();
-                }
             }
         }
     }

@@ -37,6 +37,12 @@ namespace Monte_Carlos.Carta
                 MessageBox.Show("Por favor ingresar el precio");
                 return;
             }
+
+            if (Convert.ToInt32(txtPrecio.Text) <= 0)
+            {
+                MessageBox.Show("El precio no puede ser menor o igual a 0");
+                return;
+            }
             if (cmbTipo.SelectedItem.ToString().Equals(""))
             {
                 MessageBox.Show("Por favor seleccione el tipo");
@@ -45,21 +51,24 @@ namespace Monte_Carlos.Carta
 
             if (editar)
             {
-                MessageBox.Show("Modifique");
+                MessageBox.Show("Menu modificado!");
                 var tComidaBebida = Variables.Menu.FirstOrDefault(x => x.IdComidaBebida == idComidaBebida);
-                tComidaBebida.Nombre = txtNombre.Text;
+                tComidaBebida.Nombre =txtNombre.Text;
                 tComidaBebida.Precio = Convert.ToDouble(txtPrecio.Text);
                 tComidaBebida.Tipo = cmbTipo.SelectedItem.ToString();
-
+                MessageBox.Show(Convert.ToString(tComidaBebida.IdComidaBebida));
                 Variables.SaveChanges();
             }
             else
             {
-                MessageBox.Show("Guarde");
-                Menu tbMenu = new Menu();
-                tbMenu.Nombre = txtNombre.Text;
-                tbMenu.Precio = Convert.ToDouble(txtPrecio.Text);
-                tbMenu.Tipo = Convert.ToString(cmbTipo.SelectedItem.ToString());
+
+                MessageBox.Show("Informacion guardada!");
+                Menu tbMenu = new Menu
+                {
+                    Nombre = Convert.ToString(txtNombre.Text),
+                    Precio = Convert.ToDouble(txtPrecio.Text),
+                    Tipo = Convert.ToString(cmbTipo.SelectedItem.ToString())
+                };
                 Variables.Menu.Add(tbMenu);
                 Variables.SaveChanges();
             }
@@ -70,7 +79,6 @@ namespace Monte_Carlos.Carta
 
             CargaDv();
 
-            MessageBox.Show("Informacion guardada!");
             Limpiar();
             
         }
@@ -122,7 +130,8 @@ namespace Monte_Carlos.Carta
                 }
                 catch (Exception)
                 {
-                }
+                editar = false;
+            }
             if (log == 1)
             {
                 Limpiar();
@@ -142,5 +151,21 @@ namespace Monte_Carlos.Carta
                 log = 2;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (editar == false)
+            {
+                MessageBox.Show("Debe haber un registro seleccionado para poder borrarlo");
+            }
+            else
+            {
+                Variables.Menu.RemoveRange(Variables.Menu.Where(x => x.IdComidaBebida == idComidaBebida));
+                Variables.SaveChanges();
+                Limpiar();
+                CargaDv();
+            }
+        }
+    
     }
 }

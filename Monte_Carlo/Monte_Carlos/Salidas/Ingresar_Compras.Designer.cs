@@ -57,7 +57,7 @@ namespace Monte_Carlos.Salidas
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
-            this.btnNuevo.TabIndex = 46;
+            this.btnNuevo.TabIndex = 6;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -72,7 +72,7 @@ namespace Monte_Carlos.Salidas
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(98, 49);
-            this.btnEliminar.TabIndex = 47;
+            this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -86,7 +86,7 @@ namespace Monte_Carlos.Salidas
             this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(148, 24);
-            this.txtPrecio.TabIndex = 43;
+            this.txtPrecio.TabIndex = 1;
             // 
             // btnIngresar
             // 
@@ -97,7 +97,7 @@ namespace Monte_Carlos.Salidas
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(98, 49);
-            this.btnIngresar.TabIndex = 45;
+            this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -113,7 +113,7 @@ namespace Monte_Carlos.Salidas
             this.dvCompra.RowHeadersWidth = 51;
             this.dvCompra.RowTemplate.Height = 24;
             this.dvCompra.Size = new System.Drawing.Size(323, 354);
-            this.dvCompra.TabIndex = 51;
+            this.dvCompra.TabIndex = 9;
             this.dvCompra.SelectionChanged += new System.EventHandler(this.dvCompra_SelectionChanged);
             this.dvCompra.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvCompra_MouseClick);
             // 
@@ -145,7 +145,7 @@ namespace Monte_Carlos.Salidas
             this.txtProducto.Multiline = true;
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(148, 24);
-            this.txtProducto.TabIndex = 42;
+            this.txtProducto.TabIndex = 0;
             // 
             // label1
             // 
@@ -165,7 +165,7 @@ namespace Monte_Carlos.Salidas
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
             this.txtDetalle.Size = new System.Drawing.Size(308, 112);
-            this.txtDetalle.TabIndex = 52;
+            this.txtDetalle.TabIndex = 3;
             // 
             // txtCantidad
             // 
@@ -175,7 +175,7 @@ namespace Monte_Carlos.Salidas
             this.txtCantidad.Multiline = true;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(148, 24);
-            this.txtCantidad.TabIndex = 53;
+            this.txtCantidad.TabIndex = 2;
             // 
             // label4
             // 
@@ -192,7 +192,7 @@ namespace Monte_Carlos.Salidas
             this.DateTimes.Location = new System.Drawing.Point(554, 39);
             this.DateTimes.Name = "DateTimes";
             this.DateTimes.Size = new System.Drawing.Size(200, 20);
-            this.DateTimes.TabIndex = 55;
+            this.DateTimes.TabIndex = 7;
             // 
             // label5
             // 
@@ -211,7 +211,7 @@ namespace Monte_Carlos.Salidas
             this.btnVer.Location = new System.Drawing.Point(772, 36);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(105, 31);
-            this.btnVer.TabIndex = 57;
+            this.btnVer.TabIndex = 8;
             this.btnVer.Text = "Ver";
             this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);

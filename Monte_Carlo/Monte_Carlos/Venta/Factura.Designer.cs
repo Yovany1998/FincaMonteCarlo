@@ -92,7 +92,7 @@
             this.Btndetalle.Location = new System.Drawing.Point(413, 122);
             this.Btndetalle.Name = "Btndetalle";
             this.Btndetalle.Size = new System.Drawing.Size(131, 45);
-            this.Btndetalle.TabIndex = 0;
+            this.Btndetalle.TabIndex = 1;
             this.Btndetalle.Text = "Desplegar";
             this.Btndetalle.UseVisualStyleBackColor = false;
             this.Btndetalle.Click += new System.EventHandler(this.Btndetalle_Click);
@@ -102,7 +102,7 @@
             this.DateTimes.Location = new System.Drawing.Point(173, 133);
             this.DateTimes.Name = "DateTimes";
             this.DateTimes.Size = new System.Drawing.Size(200, 20);
-            this.DateTimes.TabIndex = 49;
+            this.DateTimes.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -191,7 +191,7 @@
             this.btnImprimir.Location = new System.Drawing.Point(641, 123);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(131, 45);
-            this.btnImprimir.TabIndex = 1;
+            this.btnImprimir.TabIndex = 4;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
@@ -269,14 +269,14 @@
             this.txtCajaAnterior.Location = new System.Drawing.Point(510, 63);
             this.txtCajaAnterior.Name = "txtCajaAnterior";
             this.txtCajaAnterior.Size = new System.Drawing.Size(100, 20);
-            this.txtCajaAnterior.TabIndex = 65;
+            this.txtCajaAnterior.TabIndex = 2;
             // 
             // txtDineroContado
             // 
             this.txtDineroContado.Location = new System.Drawing.Point(666, 63);
             this.txtDineroContado.Name = "txtDineroContado";
             this.txtDineroContado.Size = new System.Drawing.Size(100, 20);
-            this.txtDineroContado.TabIndex = 66;
+            this.txtDineroContado.TabIndex = 3;
             // 
             // label6
             // 

@@ -121,7 +121,7 @@ namespace Monte_Carlos.Cliente
 
             if (editar)
             {
-                MessageBox.Show("Modifique");
+                MessageBox.Show("Cliente modificado!");
                 var tCliente = Variables.Clientes.FirstOrDefault(x => x.IdCliente == idCliente);
                 tCliente.Identidad = txtIdentidad.Text;
                 tCliente.Nombre = txtNombre.Text;
@@ -134,21 +134,21 @@ namespace Monte_Carlos.Cliente
             }
             else
             {
-                MessageBox.Show("Guarde");
-                Clientes tbClientes = new Clientes();
-                tbClientes.Identidad = txtIdentidad.Text;
-                tbClientes.Nombre = txtNombre.Text;
-                tbClientes.Apellido = txtApellido.Text;
-                tbClientes.Edad = Convert.ToInt32(txtEdad.Text);
-                tbClientes.Telefono = Convert.ToInt32(txtTelefono.Text);
-                tbClientes.Correo = txtCorreo.Text;
+                MessageBox.Show("Cliente guardado!");
+                Clientes tbClientes = new Clientes
+                {
+                    Identidad = txtIdentidad.Text,
+                    Nombre = txtNombre.Text,
+                    Apellido = txtApellido.Text,
+                    Edad = Convert.ToInt32(txtEdad.Text),
+                    Telefono = Convert.ToInt32(txtTelefono.Text),
+                    Correo = txtCorreo.Text
+                };
                 Variables.Clientes.Add(tbClientes);
 
                 Variables.SaveChanges();
             }
-            Limpiar();
             CargaDv();
-            MessageBox.Show("Informacion guardada!");
             Limpiar();
         }
         private void CargaDv()
@@ -216,8 +216,6 @@ namespace Monte_Carlos.Cliente
             {
                 Limpiar();
             }
-          
-
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -241,19 +239,11 @@ namespace Monte_Carlos.Cliente
             }
             else
             {
-                if (dvClientes.RowCount == 2)
-                {
-                    MessageBox.Show("Si eliminas este registro no podras acceder al programa");
-                }
-                else
-                {
-
                     Variables.Clientes.RemoveRange(Variables.Clientes.Where(x => x.IdCliente == idCliente));
                     Variables.SaveChanges();
                     Limpiar();
                     CargaDv();
-                }
-            }
+                          }
         }
     }
 }

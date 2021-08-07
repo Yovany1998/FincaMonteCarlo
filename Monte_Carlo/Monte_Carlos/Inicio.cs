@@ -169,5 +169,23 @@ namespace Monte_Carlos
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void PanelCentral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PanelIzquierdo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login ventana = new Login();
+            ventana.Show();
+
+        }
     }
 }

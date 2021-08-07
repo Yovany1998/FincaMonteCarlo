@@ -27,6 +27,8 @@ namespace Monte_Carlos
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
+
+
             if (txtUsuario.Text == string.Empty)
             {
                 MessageBox.Show("Ingrese usuario");
@@ -39,18 +41,8 @@ namespace Monte_Carlos
                 return;
             }
             string pass = Hash.obtenerHash256(txtContraseña.Text);
-          //  MessageBox.Show(pass);
-            // string pass = Convert.ToInt64(txtContraseña.Text);
+                 var tUsuarios = entity.Usuario.FirstOrDefault(x => x.Nombre == txtUsuario.Text && x.Contrasena == pass && x.Estado == true);
 
-            //MessageBox.Show(txtUsuario.Text,"Usuario");
-
-           // MessageBox.Show(txtContraseña.Text, "Contraseña");
-         //   var tUsuarios = entity.Usuario.FirstOrDefault(x => x.Nombre == txtUsuario.Text && x.Contrasena == txtContraseña.Text);
-            var tUsuarios = entity.Usuario.FirstOrDefault(x => x.Nombre == txtUsuario.Text && x.Contrasena == pass);
-
-
-           // string algo = Convert.ToString(tUsuarios);
-           // MessageBox.Show(algo,"Resultado");
             if (tUsuarios == null)
             {
                 MessageBox.Show("Usuario o Contrasenia incorrecto");
@@ -70,6 +62,7 @@ namespace Monte_Carlos
 
 
         }
+    
 
         public class Hash
         {
@@ -105,23 +98,55 @@ namespace Monte_Carlos
         private void txtContraseña_MouseClick(object sender, MouseEventArgs e)
         {
             txtContraseña.Text = "";
-            panel2.BackColor = Color.FromArgb(217, 4, 142);
+            panel2.BackColor = Color.Yellow;
         }
 
         private void txtUsuario_MouseClick(object sender, MouseEventArgs e)
         {
             txtUsuario.Text = "";
-            panel1.BackColor = Color.FromArgb(217, 4, 142);
+            panel1.BackColor = Color.Yellow;
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
+            CargaDv();
 
+        }
+
+
+        private void CargaDv()
+        {
+            var tUsuario = from p in entity.Usuario
+                           select new
+                           {
+                               p.IdUsuario,
+
+                           };
+            if (tUsuario.Count() == 0)
+            {
+                string pass = Hash.obtenerHash256("1234");
+                Usuario tbUsuario = new Usuario
+                {
+                    NIdentidad = "1306-1998-00185",
+                    Nombre = "Coba",
+                    Contrasena = pass,
+                    Estado = Convert.ToBoolean(1),            };
+            entity.Usuario.Add(tbUsuario);
+            entity.SaveChanges();
+        }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void horafecha_Tick_1(object sender, EventArgs e)
+        {
+           
+                lblHora.Text = DateTime.Now.ToShortTimeString();
+                lblFecha.Text = DateTime.Now.ToLongDateString();
+            
         }
     }
 }

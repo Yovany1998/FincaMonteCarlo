@@ -52,7 +52,7 @@
             this.dvComida.RowHeadersWidth = 51;
             this.dvComida.RowTemplate.Height = 24;
             this.dvComida.Size = new System.Drawing.Size(367, 435);
-            this.dvComida.TabIndex = 41;
+            this.dvComida.TabIndex = 6;
             this.dvComida.SelectionChanged += new System.EventHandler(this.dvComida_SelectionChanged);
             this.dvComida.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvComida_MouseClick);
             // 
@@ -130,10 +130,11 @@
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(98, 49);
-            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnNuevo
             // 
@@ -144,7 +145,7 @@
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
-            this.btnNuevo.TabIndex = 4;
+            this.btnNuevo.TabIndex = 5;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;

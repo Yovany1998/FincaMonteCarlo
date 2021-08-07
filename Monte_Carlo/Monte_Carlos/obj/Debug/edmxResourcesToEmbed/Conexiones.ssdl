@@ -79,7 +79,7 @@
       <PropertyRef Name="IdComidaBebida" />
     </Key>
     <Property Name="IdComidaBebida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nombre" Type="nchar" MaxLength="10" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
     <Property Name="Precio" Type="float" />
     <Property Name="Tipo" Type="varchar" MaxLength="50" />
   </EntityType>

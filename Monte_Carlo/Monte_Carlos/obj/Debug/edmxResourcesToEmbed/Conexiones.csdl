@@ -37,16 +37,6 @@
     <Property Name="Impuesto" Type="Double" />
     <Property Name="Total" Type="Double" />
   </EntityType>
-  <EntityType Name="Menu">
-    <Key>
-      <PropertyRef Name="IdComidaBebida" />
-    </Key>
-    <Property Name="IdComidaBebida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Precio" Type="Double" />
-    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="DetalleVenta" Relationship="FincaMonteCarlo.FK_DetalleVenta_Menu" FromRole="Menu" ToRole="DetalleVenta" />
-  </EntityType>
   <EntityType Name="Pedidos">
     <Key>
       <PropertyRef Name="IdPedido" />
@@ -72,7 +62,6 @@
     <EntitySet Name="Clientes" EntityType="Self.Clientes" />
     <EntitySet Name="Empleados" EntityType="Self.Empleados" />
     <EntitySet Name="Facturas" EntityType="Self.Facturas" />
-    <EntitySet Name="Menu" EntityType="Self.Menu" />
     <EntitySet Name="Pedidos" EntityType="Self.Pedidos" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" />
     <EntitySet Name="Compras" EntityType="FincaMonteCarlo.Compras" />
@@ -82,12 +71,13 @@
       <End Role="Clientes" EntitySet="Clientes" />
       <End Role="DetalleVenta" EntitySet="DetalleVenta" />
     </AssociationSet>
+    <EntitySet Name="Ventas" EntityType="FincaMonteCarlo.Ventas" />
+    <EntitySet Name="DetalleReservacion" EntityType="FincaMonteCarlo.DetalleReservacion" />
+    <EntitySet Name="Menu" EntityType="FincaMonteCarlo.Menu" />
     <AssociationSet Name="FK_DetalleVenta_Menu" Association="FincaMonteCarlo.FK_DetalleVenta_Menu">
       <End Role="Menu" EntitySet="Menu" />
       <End Role="DetalleVenta" EntitySet="DetalleVenta" />
     </AssociationSet>
-    <EntitySet Name="Ventas" EntityType="FincaMonteCarlo.Ventas" />
-    <EntitySet Name="DetalleReservacion" EntityType="FincaMonteCarlo.DetalleReservacion" />
   </EntityContainer>
   <EntityType Name="Compras">
     <Key>
@@ -142,18 +132,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_DetalleVenta_Menu">
-    <End Type="FincaMonteCarlo.Menu" Role="Menu" Multiplicity="1" />
-    <End Type="FincaMonteCarlo.DetalleVenta" Role="DetalleVenta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Menu">
-        <PropertyRef Name="IdComidaBebida" />
-      </Principal>
-      <Dependent Role="DetalleVenta">
-        <PropertyRef Name="IdComidaBebida" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="Ventas">
     <Key>
       <PropertyRef Name="IdVenta" />
@@ -175,4 +153,26 @@
     <Property Name="Pedido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Cantidad" Type="Int32" />
   </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="IdComidaBebida" />
+    </Key>
+    <Property Name="IdComidaBebida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Precio" Type="Double" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DetalleVenta" Relationship="FincaMonteCarlo.FK_DetalleVenta_Menu" FromRole="Menu" ToRole="DetalleVenta" />
+  </EntityType>
+  <Association Name="FK_DetalleVenta_Menu">
+    <End Type="FincaMonteCarlo.Menu" Role="Menu" Multiplicity="1" />
+    <End Type="FincaMonteCarlo.DetalleVenta" Role="DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="IdComidaBebida" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="IdComidaBebida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

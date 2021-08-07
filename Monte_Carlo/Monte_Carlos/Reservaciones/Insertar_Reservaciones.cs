@@ -12,29 +12,21 @@ namespace Monte_Carlos.Reservaciones
 {
     public partial class Insertar_Reservaciones : Form
     {
-        private int conta = 0;
-        int registro=0;
+       
         long idTemporal;
         int log;
         long CodigoReserva;
         DateTime FechaRegistro;
-        double total = 0.0;
-        long idVenta = 0;
-        private bool VentaValida = true;
-        private int contadorcomida = 0;
+   
         MonteCarlo Variables = new MonteCarlo();
         long idReservacion = 0;
         long idDetalleReservacion = 0;
         string nombre = "";
         bool editar = false;
         bool editarDetalle = false;
-        bool ValidarComida = false;
+       // bool ValidarComida = false;
         bool ValidarCliente = false;
-        double impuesto = 0.0;
-        double TotImpuesto = 0.0;
-        double TotSubtotal = 0.0;
-        double Subtotal = 0.0;
-        DataTable dtVentas = new DataTable();
+
 
         public Insertar_Reservaciones()
         {
@@ -67,7 +59,6 @@ namespace Monte_Carlos.Reservaciones
         }
         private void CargaDetalleDv()
         {
-            MessageBox.Show(Convert.ToString(CodigoReserva));
             var tbReservacion = from p in Variables.DetalleReservacion
                                 where p.IdReservacion == CodigoReserva
                                 select new
@@ -252,7 +243,6 @@ namespace Monte_Carlos.Reservaciones
                
                 long  idReservaciones = Convert.ToInt64(dvRegistro.SelectedCells[0].Value);
                 CodigoReserva = idReservaciones;
-             //   MessageBox.Show(Convert.ToString(idReservaciones));
                 var tbReservacion = from p in Variables.DetalleReservacion
                                     where p.IdReservacion == idReservaciones
                                     select new
@@ -334,7 +324,6 @@ namespace Monte_Carlos.Reservaciones
                 MessageBox.Show("Modifico el pedido!");
                 long idPedido = Convert.ToInt64(dvReservacion.SelectedCells[0].Value);
                 var tDetalles = Variables.DetalleReservacion.FirstOrDefault(x => x.IdDetalleReservacion == idPedido);
-             //   MessageBox.Show(Convert.ToString(idDetalleReservacion));
                 tDetalles.Cantidad = Convert.ToInt32(txtCantidad.Text);
                 tDetalles.Pedido = Convert.ToString(cmbComida.Text);
                 tDetalles.Fecha = FechaRegistro;
@@ -344,7 +333,7 @@ namespace Monte_Carlos.Reservaciones
             }
             else
             {
-                MessageBox.Show("Guarde");
+                MessageBox.Show("Pedido guardado!");
                 DetalleReservacion tbDetalle = new DetalleReservacion();
                 if(idTemporal >0)
                 {
@@ -360,7 +349,7 @@ namespace Monte_Carlos.Reservaciones
                 tbDetalle.Fecha = FechaRegistro;
                 Variables.DetalleReservacion.Add(tbDetalle);
                 Variables.SaveChanges();
-                MessageBox.Show("Pedido guardado!");
+
             }
            
             editarDetalle = false;

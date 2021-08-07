@@ -40,16 +40,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Menu">
-      <EntityTypeMapping TypeName="FincaMonteCarlo.Menu">
-        <MappingFragment StoreEntitySet="Menu">
-          <ScalarProperty Name="IdComidaBebida" ColumnName="IdComidaBebida" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Precio" ColumnName="Precio" />
-          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Pedidos">
       <EntityTypeMapping TypeName="FincaMonteCarlo.Pedidos">
         <MappingFragment StoreEntitySet="Pedidos">
@@ -135,6 +125,16 @@
           <ScalarProperty Name="IdReservacion" ColumnName="IdReservacion" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="IdDetalleReservacion" ColumnName="IdDetalleReservacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu">
+      <EntityTypeMapping TypeName="FincaMonteCarlo.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdComidaBebida" ColumnName="IdComidaBebida" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

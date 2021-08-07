@@ -14,8 +14,7 @@ namespace Monte_Carlos.Venta
     public partial class Factura : Form
     {
         int contador;
-        int clave=0;
-        int ClaveSalida = 0;
+
         Double sali;
         String LaFecha = "";
         private double total;

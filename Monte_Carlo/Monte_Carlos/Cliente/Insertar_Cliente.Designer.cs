@@ -145,7 +145,7 @@
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(148, 23);
-            this.txtTelefono.TabIndex = 4;
+            this.txtTelefono.TabIndex = 3;
             // 
             // label4
             // 
@@ -185,7 +185,7 @@
             this.txtEdad.Multiline = true;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(148, 23);
-            this.txtEdad.TabIndex = 3;
+            this.txtEdad.TabIndex = 4;
             // 
             // label7
             // 
@@ -206,7 +206,7 @@
             this.btnElimicar.Location = new System.Drawing.Point(388, 127);
             this.btnElimicar.Name = "btnElimicar";
             this.btnElimicar.Size = new System.Drawing.Size(98, 49);
-            this.btnElimicar.TabIndex = 8;
+            this.btnElimicar.TabIndex = 7;
             this.btnElimicar.Text = "Eliminar";
             this.btnElimicar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnElimicar.UseVisualStyleBackColor = false;
@@ -221,7 +221,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(177, 127);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
-            this.btnNuevo.TabIndex = 7;
+            this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;

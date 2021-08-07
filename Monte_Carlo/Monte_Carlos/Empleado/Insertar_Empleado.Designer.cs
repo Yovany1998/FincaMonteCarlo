@@ -84,7 +84,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
             this.label2.TabIndex = 22;
-            this.label2.Text = "Apellidos:";
+            this.label2.Text = "Apellido:";
             // 
             // txtNombre
             // 
@@ -116,7 +116,7 @@
             this.dvEmpleado.RowHeadersWidth = 51;
             this.dvEmpleado.RowTemplate.Height = 24;
             this.dvEmpleado.Size = new System.Drawing.Size(590, 250);
-            this.dvEmpleado.TabIndex = 31;
+            this.dvEmpleado.TabIndex = 8;
             this.dvEmpleado.SelectionChanged += new System.EventHandler(this.dvEmpleado_SelectionChanged);
             this.dvEmpleado.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvEmpleado_MouseClick);
             // 
@@ -149,6 +149,7 @@
             this.txtId.AllowDrop = true;
             this.txtId.Location = new System.Drawing.Point(135, 27);
             this.txtId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtId.MaxLength = 15;
             this.txtId.Multiline = true;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(148, 24);
@@ -173,7 +174,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(174, 129);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
-            this.btnNuevo.TabIndex = 35;
+            this.btnNuevo.TabIndex = 7;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -187,7 +188,7 @@
             this.btnElimicar.Location = new System.Drawing.Point(386, 129);
             this.btnElimicar.Name = "btnElimicar";
             this.btnElimicar.Size = new System.Drawing.Size(98, 49);
-            this.btnElimicar.TabIndex = 36;
+            this.btnElimicar.TabIndex = 6;
             this.btnElimicar.Text = "Eliminar";
             this.btnElimicar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnElimicar.UseVisualStyleBackColor = false;
@@ -204,7 +205,7 @@
             this.cmbCargo.Location = new System.Drawing.Point(411, 80);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(144, 21);
-            this.cmbCargo.TabIndex = 37;
+            this.cmbCargo.TabIndex = 4;
             // 
             // Insertar_Empleado
             // 

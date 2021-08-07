@@ -75,11 +75,29 @@ namespace Monte_Carlos.Demas
                 MessageBox.Show("Por favor ingrese el Nombre");
                 return;
             }
-            if (txtIdentidad.Text.Equals(""))
+            String Identidad = txtIdentidad.Text;
+
+
+            var Usuarios = Variables.Usuario.FirstOrDefault(x => x.NIdentidad == Identidad);
+
+           
+            var TamanoIdentidad = txtIdentidad.TextLength;
+            if (TamanoIdentidad < 15)
             {
-                MessageBox.Show("Por favor ingresar el precio");
+                MessageBox.Show("El numero de identidad es muy corto");
+                txtIdentidad.Focus();
                 return;
             }
+            char guion = Convert.ToChar("-");
+            char Guion1 = txtIdentidad.Text[4];
+            char Guion2 = txtIdentidad.Text[9];
+            if (Guion1 != guion || Guion2 != guion)
+            {
+                MessageBox.Show("El numero de idententidad debe llevar guiones o esta mal escrito");
+                txtIdentidad.Focus();
+                return;
+            }
+
             if (txtContrasena.Text.Equals(""))
             {
                 MessageBox.Show("Por favor ingresar su contraseña");
@@ -90,7 +108,7 @@ namespace Monte_Carlos.Demas
 
             if (editar)
             {
-                MessageBox.Show("Modifique");
+                MessageBox.Show("Usuario modificado");
                 var tusuario = Variables.Usuario.FirstOrDefault(x => x.IdUsuario == idUsuario);
                 tusuario.NIdentidad = txtIdentidad.Text;
                 tusuario.Nombre = txtNombre.Text;
@@ -100,25 +118,28 @@ namespace Monte_Carlos.Demas
             }
             else
             {
-                MessageBox.Show("Guarde");
-                Usuario tbUsuario = new Usuario();
-                tbUsuario.NIdentidad = txtIdentidad.Text;
-                tbUsuario.Nombre = txtNombre.Text;
-                tbUsuario.Contrasena = pass;
-                tbUsuario.Estado = ActivoInactivo.Checked;
+                if (Usuarios != null)
+                {
+                    MessageBox.Show("El numero de identidad ya existe");
+                    txtIdentidad.Focus();
+                    return;
+                }
+
+                MessageBox.Show("Usuario guardado!");
+                Usuario tbUsuario = new Usuario
+                {
+                    NIdentidad = txtIdentidad.Text,
+                    Nombre = txtNombre.Text,
+                    Contrasena = pass,
+                    Estado = ActivoInactivo.Checked
+                };
                 Variables.Usuario.Add(tbUsuario);
                 Variables.SaveChanges();
             }
-
-            Limpiar();
             editar = false;
             idUsuario = 0;
             CargaDv();
-
-            MessageBox.Show("Informacion guardada!");
-            Limpiar();
-
-            
+            Limpiar();            
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -137,6 +158,7 @@ namespace Monte_Carlos.Demas
                     txtNombre.Text = tUsuario.Nombre;
                     txtIdentidad.Text = tUsuario.NIdentidad;
                     txtContrasena.Text = "**********";
+                ActivoInactivo.Checked = (bool)tUsuario.Estado;
                     editar = true;
                     
                 }

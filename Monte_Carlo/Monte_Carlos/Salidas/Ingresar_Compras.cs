@@ -73,6 +73,11 @@ namespace Monte_Carlos.Salidas
                 MessageBox.Show("Por favor ingresar el precio");
                 return;
             }
+            if (Convert.ToInt32(txtPrecio.Text) <= 0)
+            {
+                MessageBox.Show("El precio no puede ser menor o igual a 0");
+                return;
+            }
             if (txtDetalle.Text.Equals(""))
             {
                 MessageBox.Show("Por favor ingresar el detalle de la compra");
@@ -83,7 +88,7 @@ namespace Monte_Carlos.Salidas
 
             if (editar)
             {
-                MessageBox.Show("Modifique");
+                MessageBox.Show("Modifico con exito!");
                 var tCompra = Variables.Compras.FirstOrDefault(x => x.IdCompra == idCompras);
                 tCompra.Producto = txtProducto.Text;
                 tCompra.Precio = Convert.ToDouble(txtPrecio.Text);
@@ -95,26 +100,23 @@ namespace Monte_Carlos.Salidas
             }
             else
             {
-                MessageBox.Show("Guarde");
-                Compras tbCompra = new Compras();
-                tbCompra.Producto = txtProducto.Text;
-                tbCompra.Precio = Convert.ToDouble(txtPrecio.Text);
-                tbCompra.Detalle = txtDetalle.Text;
-                tbCompra.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                tbCompra.Fecha = FechaActual;
-                tbCompra.Subtotal = Subto;
+                MessageBox.Show("Informacion guardada!");
+                Compras tbCompra = new Compras
+                {
+                    Producto = txtProducto.Text,
+                    Precio = Convert.ToDouble(txtPrecio.Text),
+                    Detalle = txtDetalle.Text,
+                    Cantidad = Convert.ToInt32(txtCantidad.Text),
+                    Fecha = FechaActual,
+                    Subtotal = Subto
+                };
                 Variables.Compras.Add(tbCompra);
                 Variables.SaveChanges();
             }
-
-            Limpiar();
             editar = false;
             idCompras = 0;
-
             CargaDv();
-            MessageBox.Show("Informacion guardada!");
             Limpiar();
-
 
         }
         private void CargaDv()
@@ -130,7 +132,6 @@ namespace Monte_Carlos.Salidas
                                p.Precio,
                                p.Cantidad,
                                p.Subtotal
-
                            };
 
             dvCompra.DataSource = tCompras.CopyAnonymusToDataTable();
@@ -161,9 +162,7 @@ namespace Monte_Carlos.Salidas
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            DateTime Fechas = Convert.ToDateTime(DateTimes.Value.ToString("yyyy/MM/dd 00:00:00"));
-
-            //  Int64 Fechas = Convert.ToInt64(Fecha);           
+            DateTime Fechas = Convert.ToDateTime(DateTimes.Value.ToString("yyyy/MM/dd 00:00:00"));       
             try
             {
                 var tSalidas = from p in Variables.Compras
@@ -171,7 +170,6 @@ namespace Monte_Carlos.Salidas
                                select new
                                {
                                    p.IdCompra,
-                                   //  p.Fecha,
                                    p.Producto,
                                    p.Precio,
                                    p.Cantidad,

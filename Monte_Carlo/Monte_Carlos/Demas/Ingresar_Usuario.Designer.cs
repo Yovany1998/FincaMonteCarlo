@@ -50,10 +50,11 @@ namespace Monte_Carlos.Demas
             this.txtIdentidad.AllowDrop = true;
             this.txtIdentidad.Location = new System.Drawing.Point(192, 94);
             this.txtIdentidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdentidad.MaxLength = 15;
             this.txtIdentidad.Multiline = true;
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Size = new System.Drawing.Size(148, 24);
-            this.txtIdentidad.TabIndex = 43;
+            this.txtIdentidad.TabIndex = 1;
             // 
             // dvUsuario
             // 
@@ -65,7 +66,7 @@ namespace Monte_Carlos.Demas
             this.dvUsuario.RowHeadersWidth = 51;
             this.dvUsuario.RowTemplate.Height = 24;
             this.dvUsuario.Size = new System.Drawing.Size(348, 330);
-            this.dvUsuario.TabIndex = 51;
+            this.dvUsuario.TabIndex = 7;
             this.dvUsuario.SelectionChanged += new System.EventHandler(this.dvUsuario_SelectionChanged);
             this.dvUsuario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dvUsuario_MouseClick);
             // 
@@ -97,7 +98,7 @@ namespace Monte_Carlos.Demas
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(148, 24);
-            this.txtNombre.TabIndex = 42;
+            this.txtNombre.TabIndex = 0;
             // 
             // label1
             // 
@@ -118,7 +119,7 @@ namespace Monte_Carlos.Demas
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(98, 49);
-            this.btnNuevo.TabIndex = 46;
+            this.btnNuevo.TabIndex = 6;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -133,7 +134,7 @@ namespace Monte_Carlos.Demas
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(98, 49);
-            this.btnEliminar.TabIndex = 47;
+            this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -148,7 +149,7 @@ namespace Monte_Carlos.Demas
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(98, 49);
-            this.btnIngresar.TabIndex = 45;
+            this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -162,7 +163,7 @@ namespace Monte_Carlos.Demas
             this.txtContrasena.Multiline = true;
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(148, 24);
-            this.txtContrasena.TabIndex = 52;
+            this.txtContrasena.TabIndex = 2;
             // 
             // ActivoInactivo
             // 
@@ -170,7 +171,7 @@ namespace Monte_Carlos.Demas
             this.ActivoInactivo.Location = new System.Drawing.Point(192, 192);
             this.ActivoInactivo.Name = "ActivoInactivo";
             this.ActivoInactivo.Size = new System.Drawing.Size(99, 17);
-            this.ActivoInactivo.TabIndex = 53;
+            this.ActivoInactivo.TabIndex = 3;
             this.ActivoInactivo.Text = "Activo/Inactivo";
             this.ActivoInactivo.UseVisualStyleBackColor = true;
             // 
