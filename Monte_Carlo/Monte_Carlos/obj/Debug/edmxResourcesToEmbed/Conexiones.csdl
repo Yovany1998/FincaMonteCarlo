@@ -25,18 +25,6 @@
     <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="FechaIngreso" Type="DateTime" Precision="0" />
   </EntityType>
-  <EntityType Name="Facturas">
-    <Key>
-      <PropertyRef Name="IdFactura" />
-    </Key>
-    <Property Name="IdFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Fecha" Type="DateTime" Precision="0" />
-    <Property Name="IdCliente" Type="Int32" />
-    <Property Name="NombreCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Subtotal" Type="Double" />
-    <Property Name="Impuesto" Type="Double" />
-    <Property Name="Total" Type="Double" />
-  </EntityType>
   <EntityType Name="Pedidos">
     <Key>
       <PropertyRef Name="IdPedido" />
@@ -61,7 +49,6 @@
   <EntityContainer Name="MonteCarlo" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Clientes" EntityType="Self.Clientes" />
     <EntitySet Name="Empleados" EntityType="Self.Empleados" />
-    <EntitySet Name="Facturas" EntityType="Self.Facturas" />
     <EntitySet Name="Pedidos" EntityType="Self.Pedidos" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" />
     <EntitySet Name="Compras" EntityType="FincaMonteCarlo.Compras" />
@@ -78,6 +65,7 @@
       <End Role="Menu" EntitySet="Menu" />
       <End Role="DetalleVenta" EntitySet="DetalleVenta" />
     </AssociationSet>
+    <EntitySet Name="Facturas" EntityType="FincaMonteCarlo.Facturas" />
   </EntityContainer>
   <EntityType Name="Compras">
     <Key>
@@ -175,4 +163,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Facturas">
+    <Key>
+      <PropertyRef Name="IdFactura" />
+    </Key>
+    <Property Name="IdFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdVenta" Type="Int32" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="IdCliente" Type="Int32" />
+    <Property Name="NombreCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Subtotal" Type="Double" />
+    <Property Name="Impuesto" Type="Double" />
+    <Property Name="Total" Type="Double" />
+  </EntityType>
 </Schema>

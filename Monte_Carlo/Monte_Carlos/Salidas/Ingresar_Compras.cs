@@ -88,19 +88,18 @@ namespace Monte_Carlos.Salidas
 
             if (editar)
             {
-                MessageBox.Show("Modifico con exito!");
+                MessageBox.Show("Compra modificada!");
                 var tCompra = Variables.Compras.FirstOrDefault(x => x.IdCompra == idCompras);
                 tCompra.Producto = txtProducto.Text;
                 tCompra.Precio = Convert.ToDouble(txtPrecio.Text);
                 tCompra.Detalle = txtDetalle.Text;
                 tCompra.Cantidad =Convert.ToInt32(txtCantidad.Text);
                 tCompra.Subtotal = Subto;
-               // tCompra.Fecha = FechaActual;
                 Variables.SaveChanges();
             }
             else
             {
-                MessageBox.Show("Informacion guardada!");
+                MessageBox.Show("Compra guardada");
                 Compras tbCompra = new Compras
                 {
                     Producto = txtProducto.Text,

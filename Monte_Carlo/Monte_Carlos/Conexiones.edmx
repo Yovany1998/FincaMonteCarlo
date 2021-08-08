@@ -72,6 +72,7 @@
             <PropertyRef Name="IdFactura" />
           </Key>
           <Property Name="IdFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdVenta" Type="int" />
           <Property Name="Fecha" Type="date" />
           <Property Name="IdCliente" Type="int" />
           <Property Name="NombreCliente" Type="varchar" MaxLength="50" />
@@ -205,18 +206,6 @@
           <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="FechaIngreso" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="Facturas">
-          <Key>
-            <PropertyRef Name="IdFactura" />
-          </Key>
-          <Property Name="IdFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fecha" Type="DateTime" Precision="0" />
-          <Property Name="IdCliente" Type="Int32" />
-          <Property Name="NombreCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Subtotal" Type="Double" />
-          <Property Name="Impuesto" Type="Double" />
-          <Property Name="Total" Type="Double" />
-        </EntityType>
         <EntityType Name="Pedidos">
           <Key>
             <PropertyRef Name="IdPedido" />
@@ -241,7 +230,6 @@
         <EntityContainer Name="MonteCarlo" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" />
           <EntitySet Name="Empleados" EntityType="Self.Empleados" />
-          <EntitySet Name="Facturas" EntityType="Self.Facturas" />
           <EntitySet Name="Pedidos" EntityType="Self.Pedidos" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
           <EntitySet Name="Compras" EntityType="FincaMonteCarlo.Compras" />
@@ -258,6 +246,7 @@
             <End Role="Menu" EntitySet="Menu" />
             <End Role="DetalleVenta" EntitySet="DetalleVenta" />
           </AssociationSet>
+          <EntitySet Name="Facturas" EntityType="FincaMonteCarlo.Facturas" />
           </EntityContainer>
         <EntityType Name="Compras">
           <Key>
@@ -355,6 +344,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="IdFactura" />
+          </Key>
+          <Property Name="IdFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdVenta" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="IdCliente" Type="Int32" />
+          <Property Name="NombreCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Subtotal" Type="Double" />
+          <Property Name="Impuesto" Type="Double" />
+          <Property Name="Total" Type="Double" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -384,19 +386,6 @@
                 <ScalarProperty Name="Edad" ColumnName="Edad" />
                 <ScalarProperty Name="Cargo" ColumnName="Cargo" />
                 <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Facturas">
-            <EntityTypeMapping TypeName="FincaMonteCarlo.Facturas">
-              <MappingFragment StoreEntitySet="Facturas">
-                <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
-                <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
-                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
-                <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -495,6 +484,20 @@
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="IdComidaBebida" ColumnName="IdComidaBebida" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facturas">
+            <EntityTypeMapping TypeName="FincaMonteCarlo.Facturas">
+              <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+                <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

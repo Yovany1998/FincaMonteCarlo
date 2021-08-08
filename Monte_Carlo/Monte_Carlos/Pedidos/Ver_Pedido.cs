@@ -32,8 +32,6 @@ namespace Monte_Carlos.Servicio
                                 p.IdVenta,
                                 p.Nombre,
                                 p.Apellido,
-                                p.Pagado
-
                             };
             dvVenta.DataSource = tClientes.CopyAnonymusToDataTable();
             dvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;

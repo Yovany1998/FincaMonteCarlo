@@ -27,19 +27,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Facturas">
-      <EntityTypeMapping TypeName="FincaMonteCarlo.Facturas">
-        <MappingFragment StoreEntitySet="Facturas">
-          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
-          <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
-          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
-          <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Pedidos">
       <EntityTypeMapping TypeName="FincaMonteCarlo.Pedidos">
         <MappingFragment StoreEntitySet="Pedidos">
@@ -135,6 +122,20 @@
           <ScalarProperty Name="Precio" ColumnName="Precio" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="IdComidaBebida" ColumnName="IdComidaBebida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="FincaMonteCarlo.Facturas">
+        <MappingFragment StoreEntitySet="Facturas">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+          <ScalarProperty Name="NombreCliente" ColumnName="NombreCliente" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

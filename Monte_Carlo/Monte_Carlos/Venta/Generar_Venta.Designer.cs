@@ -310,6 +310,7 @@
             this.dvCliente.RowHeadersWidth = 51;
             this.dvCliente.Size = new System.Drawing.Size(262, 382);
             this.dvCliente.TabIndex = 10;
+            this.dvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvCliente_CellContentClick);
             this.dvCliente.SelectionChanged += new System.EventHandler(this.dvCliente_SelectionChanged);
             this.dvCliente.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dvCliente_MouseMove);
             // 
@@ -318,11 +319,11 @@
             this.btnQuitar.BackColor = System.Drawing.Color.Peru;
             this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnQuitar.Location = new System.Drawing.Point(727, 416);
+            this.btnQuitar.Location = new System.Drawing.Point(723, 416);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(98, 49);
             this.btnQuitar.TabIndex = 9;
-            this.btnQuitar.Text = "Quitar elección";
+            this.btnQuitar.Text = "Quitar Eleccion";
             this.btnQuitar.UseVisualStyleBackColor = false;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 

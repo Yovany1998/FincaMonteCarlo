@@ -67,6 +67,7 @@
       <PropertyRef Name="IdFactura" />
     </Key>
     <Property Name="IdFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdVenta" Type="int" />
     <Property Name="Fecha" Type="date" />
     <Property Name="IdCliente" Type="int" />
     <Property Name="NombreCliente" Type="varchar" MaxLength="50" />

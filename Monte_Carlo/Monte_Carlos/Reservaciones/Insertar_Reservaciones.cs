@@ -146,8 +146,7 @@ namespace Monte_Carlos.Reservaciones
             log = 2;
             if (editar)
                 {
-                    MessageBox.Show("Modifico la reservación");
-                //  int idR = Convert.ToInt32(.SelectedIndex.ToString()) + 1;
+                    MessageBox.Show("Reservación Modificada");
                 long idReservaciones = Convert.ToInt64(dvRegistro.SelectedCells[0].Value);
                 var tReservacion = Variables.Reservacion.FirstOrDefault(x => x.IdReservacion == idReservaciones);
                 int id = Convert.ToInt32(cmbCliente.SelectedIndex.ToString()) + 1;
@@ -161,8 +160,7 @@ namespace Monte_Carlos.Reservaciones
                     Variables.SaveChanges();
                 }
                 else
-                {
-               
+                {               
                     Reservacion tbReservacion = new Reservacion();
                 int id = Convert.ToInt32(cmbCliente.SelectedIndex.ToString()) + 1;
                 var tCliente = Variables.Clientes.FirstOrDefault(x => x.IdCliente ==id);
@@ -174,10 +172,8 @@ namespace Monte_Carlos.Reservaciones
                     tbReservacion.Hora = Convert.ToString(txtHora.Text);
                     Variables.Reservacion.Add(tbReservacion);
                     Variables.SaveChanges();
-
                     idTemporal = tbReservacion.IdReservacion;
-
-                MessageBox.Show("La reservacion se realizo!");
+                MessageBox.Show("La reservación se realizo!");
             }
                 editar = false;
                 idReservacion = 0;

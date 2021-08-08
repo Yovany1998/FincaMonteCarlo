@@ -62,7 +62,7 @@ namespace Monte_Carlos.Carta
             else
             {
 
-                MessageBox.Show("Informacion guardada!");
+                MessageBox.Show("Producto guardado!");
                 Menu tbMenu = new Menu
                 {
                     Nombre = Convert.ToString(txtNombre.Text),

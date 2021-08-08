@@ -15,6 +15,7 @@ namespace Monte_Carlos
     public partial class Facturas
     {
         public int IdFactura { get; set; }
+        public Nullable<int> IdVenta { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<int> IdCliente { get; set; }
         public string NombreCliente { get; set; }
