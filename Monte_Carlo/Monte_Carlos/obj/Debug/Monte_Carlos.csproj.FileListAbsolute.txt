@@ -465,3 +465,7 @@ C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Demas.Entrada.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Demas.Ingresar_Usuario.resources
 C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.Salidas.Ingresar_Compras.resources
+C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\bin\Debug\Monte_Carlos.exe.manifest
+C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\bin\Debug\Monte_Carlos.application
+C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.exe.manifest
+C:\Users\Hernandez Garcia\Desktop\Repositorio nuevo\FincaMonteCarlo\Monte_Carlo\Monte_Carlos\obj\Debug\Monte_Carlos.application

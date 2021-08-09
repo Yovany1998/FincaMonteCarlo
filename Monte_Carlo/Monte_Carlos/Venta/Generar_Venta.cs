@@ -197,6 +197,7 @@ namespace Monte_Carlos.Venta
                 tbdetalles.Impuesto = impuesto;
                 Variables.DetalleVenta.Add(tbdetalles);
                 Variables.SaveChanges();
+
                 total = imp + Subtotal - impuesto;
                 Total.Text = Convert.ToString(total);
                 TotImpuesto = TotImpuesto + impuesto;
@@ -287,6 +288,7 @@ namespace Monte_Carlos.Venta
                         Subtotal = TotSubtotal,
                         Impuesto = TotImpuesto,
                         Total = Convert.ToInt32(Total.Text)
+                        
                     };
                     var rowNomCli = Variables.Clientes.FirstOrDefault(x => x.IdCliente == tbfactura.IdCliente);
                     tbfactura.NombreCliente = Convert.ToString(rowNomCli.Nombre + " " + rowNomCli.Apellido);
@@ -376,7 +378,6 @@ namespace Monte_Carlos.Venta
 
         private void Generar_Venta_Load(object sender, EventArgs e)
         {
-
             dvCliente.ClearSelection();
 
             dvVenta.ClearSelection();
@@ -541,11 +542,13 @@ namespace Monte_Carlos.Venta
             }
             catch (Exception)
             {
+                
             }
             if (log == 1)
             {
                 Limpiar();
                 DvDetalle();
+                dvCliente.ClearSelection();
             }
           
         }

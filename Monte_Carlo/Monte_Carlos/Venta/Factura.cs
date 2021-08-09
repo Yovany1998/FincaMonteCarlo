@@ -47,25 +47,22 @@ namespace Monte_Carlos.Venta
          
         }
 
-        private void llenarFactura()
+        private void Limpiar()
         {
-           
+            lbTotal.Text = "0";
+            lbTotVentas.Text = "0";
+            TotalSalidas.Text = "0";
 
         }
 
         private void cmbdetalle_SelectedIndexChanged(object sender, EventArgs e)
         {
-           // string fee;
-            //Int64 IdFactura = Convert.ToInt64(cmbFactura.SelectedValue.ToString());
-            //var tFac = Variables.Facturas.FirstOrDefault(x => x.IdFactura == IdFactura);
-          // fee = Convert.ToString( tFac.Fecha);
-
-
 
         }
 
         private void Btndetalle_Click(object sender, EventArgs e)
         {
+            Limpiar();
             // string Fecha = DateTimes.Value.ToString("yyyy/MM/dd 00:00:00");
             DateTime Fechas = Convert.ToDateTime (DateTimes.Value.ToString("yyyy/MM/dd 00:00:00"));
 
@@ -92,6 +89,7 @@ namespace Monte_Carlos.Venta
             }
             catch
             {
+                Limpiar();
                 MessageBox.Show("Esa fecha no tiene registro");
             }
             
@@ -136,7 +134,6 @@ namespace Monte_Carlos.Venta
                 {
                     sali = sali + Convert.ToDouble(row.Cells[3].Value.ToString());
                     TotalSalidas.Text = Convert.ToString(sali);
-                    MessageBox.Show("sali");
                 }
             }
             catch { }
@@ -240,7 +237,7 @@ namespace Monte_Carlos.Venta
                 e.Graphics.DrawString("|", Emcabezado, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);
                 e.Graphics.DrawString("_______________________________________________________________________", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, Columna6, 0), stringFormatLeft);
                 y = y + 20;
-                double Total = resta + Convert.ToDouble(txtCajaAnterior.Text) - Convert.ToDouble(txtDineroContado.Text);
+                double Total = Convert.ToDouble(txtDineroContado.Text) - (resta + Convert.ToDouble(txtCajaAnterior.Text));
                 e.Graphics.DrawString("|" + "Total De dinero", Emcabezado, Brushes.Black, new RectangleF(Columna1, y, ancho, 0), stringFormatLeft);
                 e.Graphics.DrawString("|" + "L. " + Convert.ToString(Total) + "", Emcabezado, Brushes.Black, new RectangleF(Columna5, y, ancho, 0), stringFormatLeft);
                 e.Graphics.DrawString("|", Emcabezado, Brushes.Black, new RectangleF(Columna6, y, ancho, 0), stringFormatLeft);

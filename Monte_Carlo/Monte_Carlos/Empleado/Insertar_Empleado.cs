@@ -146,11 +146,13 @@ namespace Monte_Carlos.Empleado
 
         private void Limpiar()
         {
+            dvEmpleado.ClearSelection();
             txtId.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtEdad.Text = "";
             cmbCargo.SelectedIndex = cmbCargo.SelectedIndex = cmbCargo.SelectedIndex = -1;
+            editar = false;
 
         }
         private void dvEmpleado_SelectionChanged(object sender, EventArgs e)
@@ -201,6 +203,11 @@ namespace Monte_Carlos.Empleado
                     Limpiar();
                     CargarDv();
             }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

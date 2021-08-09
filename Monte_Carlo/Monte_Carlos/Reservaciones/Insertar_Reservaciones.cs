@@ -351,6 +351,32 @@ namespace Monte_Carlos.Reservaciones
             editarDetalle = false;
             idReservacion = 0;
             CargaDetalleDv();
+            try
+
+            {
+
+                long idReservaciones = Convert.ToInt64(dvRegistro.SelectedCells[0].Value);
+                CodigoReserva = idReservaciones;
+                var tbReservacion = from p in Variables.DetalleReservacion
+                                    where p.IdReservacion == idReservaciones
+                                    select new
+                                    {
+                                        p.IdDetalleReservacion,
+                                        p.Pedido,
+                                        p.Cantidad
+
+                                    };
+                dvReservacion.DataSource = tbReservacion.CopyAnonymusToDataTable();
+                editarDetalle = false;
+                dvReservacion.ClearSelection();
+                LimpiarPedido();
+
+            }
+            catch (Exception)
+            {
+                dvReservacion.ClearSelection();
+                dvRegistro.ClearSelection();
+            }
 
             LimpiarPedido();
        
@@ -379,6 +405,7 @@ namespace Monte_Carlos.Reservaciones
         private void btnLimpiarPedido_Click(object sender, EventArgs e)
         {
             dvReservacion.ClearSelection();
+            editarDetalle = false;
             LimpiarPedido();
         }
     }

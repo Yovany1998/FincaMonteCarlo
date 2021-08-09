@@ -56,7 +56,6 @@ namespace Monte_Carlos.Carta
                 tComidaBebida.Nombre =txtNombre.Text;
                 tComidaBebida.Precio = Convert.ToDouble(txtPrecio.Text);
                 tComidaBebida.Tipo = cmbTipo.SelectedItem.ToString();
-                MessageBox.Show(Convert.ToString(tComidaBebida.IdComidaBebida));
                 Variables.SaveChanges();
             }
             else

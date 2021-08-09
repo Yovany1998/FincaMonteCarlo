@@ -178,6 +178,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnElimicar
             // 
@@ -196,6 +197,8 @@
             // 
             // cmbCargo
             // 
+            this.cmbCargo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCargo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCargo.FormattingEnabled = true;
             this.cmbCargo.Items.AddRange(new object[] {
             "Cocina",

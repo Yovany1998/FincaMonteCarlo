@@ -27,17 +27,6 @@ namespace Monte_Carlos.Cliente
         private void txtInsertarCliente_Click(object sender, EventArgs e)
         {
             String Identidad = txtIdentidad.Text;
-
-
-            var tClientee = Variables.Clientes.FirstOrDefault(x => x.Identidad == Identidad);
-
-            if (tClientee != null)              
-            {
-                MessageBox.Show("El numero de identidad ya existe");
-                txtIdentidad.Focus();
-                return;
-            }
-
             var TamanoIdentidad = txtIdentidad.TextLength;
             if (TamanoIdentidad < 15)
             {
@@ -90,13 +79,25 @@ namespace Monte_Carlos.Cliente
                 return;
             }
 
+            int si = 0;
             //Agregar validacion para 2
-            char TigoClaro = txtTelefono.Text[0];
-            if(TigoClaro !=Convert.ToChar("3") || TigoClaro != Convert.ToChar("8") || TigoClaro != Convert.ToChar("9"))
+            char TigoClaro = Convert.ToChar(txtTelefono.Text[0]);
+            //  MessageBox.Show(Convert.ToString(txtTelefono.Text[0]));
+            if (TigoClaro == Convert.ToChar("3") || TigoClaro == Convert.ToChar("8") || TigoClaro == Convert.ToChar("9"))
             {
-                MessageBox.Show("El numero de telefono debe ser tigo o claro");
+                si = 1;
             }
+            else
+            {
+                if(si != 1)
+                {
 
+                    MessageBox.Show("El numero de telefono debe ser Tigo o Claro");
+                    txtTelefono.Focus();
+                    return;
+                }
+              
+            }
             if (txtCorreo.Text != "")
             {
                 int NArroba = 0;
@@ -134,6 +135,14 @@ namespace Monte_Carlos.Cliente
             }
             else
             {
+                var tClientee = Variables.Clientes.FirstOrDefault(x => x.Identidad == Identidad);
+
+                if (tClientee != null)
+                {
+                    MessageBox.Show("El numero de identidad ya existe");
+                    txtIdentidad.Focus();
+                    return;
+                }
                 MessageBox.Show("Cliente guardado!");
                 Clientes tbClientes = new Clientes
                 {
