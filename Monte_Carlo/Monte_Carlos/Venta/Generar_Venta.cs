@@ -106,12 +106,13 @@ namespace Monte_Carlos.Venta
                 txtIdVenta.Focus();
                 return;
             }
-             if (Convert.ToDouble(txtPrecio.Text) == 0)
+            /* if (Convert.ToDouble(txtPrecio.Text) == 0)
             {
                 MessageBox.Show("Ingrese un precio mayor a 0");
                 txtPrecio.Focus();
                 return;
             }
+            */
             if (txtCantidad.Text == "")
             {
                 MessageBox.Show("Ingrese la cantidad");
@@ -266,6 +267,9 @@ namespace Monte_Carlos.Venta
 
         private void BtnGenerarVenta_Click(object sender, EventArgs e)
         {
+           // MessageBox.Show(Convert.ToString(TotSubtotal));
+           // MessageBox.Show(Convert.ToString(Total));
+
             if (txtApellido.Text == "")
             {
                 MessageBox.Show("No Se ha realizao ninguna venta");
@@ -285,7 +289,7 @@ namespace Monte_Carlos.Venta
                         Fecha = DateTime.Today,
                         IdVenta = Convert.ToInt32(txtIdVenta.Text),
                         IdCliente = Convert.ToInt32(cmbCliente.SelectedValue.ToString()),
-                        Subtotal = TotSubtotal,
+                        Subtotal = TotSubtotal,                   
                         Impuesto = TotImpuesto,
                         Total = Convert.ToInt32(Total.Text)
                         
@@ -344,6 +348,7 @@ namespace Monte_Carlos.Venta
         }
         private void button1_Click(object sender, EventArgs e)
         {
+
             if (txtApellido.Text != "")
             {
                 log = 2;
@@ -374,6 +379,10 @@ namespace Monte_Carlos.Venta
 
             dvCliente.DataSource = tClientes.CopyAnonymusToDataTable();
             dvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dvCliente.ClearSelection();
+            dvCliente.Rows[dvCliente.Rows.Count - 2].Selected = true;
+
+
         }
 
         private void Generar_Venta_Load(object sender, EventArgs e)
@@ -573,6 +582,10 @@ namespace Monte_Carlos.Venta
         {
             Limpiar();
             Limpiardetalle();
+            dvVenta.ClearSelection();
+            editar = false;
+            Limpiardetalle();
+            MessageBox.Show("Aqui se bacia");
             DvDetalle();
         }
 
